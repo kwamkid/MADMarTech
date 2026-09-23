@@ -17,13 +17,13 @@
 .icon-cell .lab{font-size:10px}
 .lockup{display:inline-flex;align-items:center;gap:14px;padding:22px 20px}
 .lockup img{flex:none}
-.lockup img{width:56px;height:56px;image-rendering:pixelated}
+.lockup img{height:56px;width:auto}
 .lockup .wm{font-family:var(--font-body);font-weight:700;font-size:24px;line-height:1.05;letter-spacing:-.01em;white-space:nowrap}
 .lockup.stack .wm{white-space:normal}
 .lockup .wm span{color:var(--accent-hi)}
 .lockup .desc{font-family:var(--font-display);font-size:10px;letter-spacing:.22em;color:var(--muted);margin-top:4px}
 .lockup.stack{flex-direction:column;text-align:center;gap:10px}
-.lockup.on-red .wm,.lockup.on-red .wm span,.lockup.on-red .desc{color:#fff}
+.lockup.on-red .wm,.lockup.on-red .desc{color:#fff}.lockup.on-red .wm span{color:#111}
 .lockup.on-yellow .wm,.lockup.on-yellow .desc{color:#111}.lockup.on-yellow .wm span{color:#111}
 .lockup.on-off .wm{color:#111}.lockup.on-off .desc{color:#5a5854}
 .lockup.on-green .wm,.lockup.on-green .desc{color:var(--offwhite)}.lockup.on-green .wm span{color:var(--accent2)}
@@ -33,23 +33,20 @@
 .social .shot{flex:1;background:var(--card2);border:1px solid var(--line);display:flex;align-items:center;justify-content:center;color:var(--muted);font-size:13px}
 .social .data{display:grid;grid-template-columns:1fr 1fr;gap:6px 14px;margin-top:12px}
 .social .foot{display:flex;justify-content:space-between;align-items:center;margin-top:14px}
-.social .foot img{width:28px;height:28px;image-rendering:pixelated}
+.social .foot img{height:26px;width:auto}
 .dont{border-left:4px solid var(--accent)}
 .do{border-left:4px solid var(--ok)}
 </style>
 </head>
 <body>
 
-<nav><div class="wrap">
-  <a class="brand" href="index.html"><img src="assets/brand/character-96.png" alt="" width="34" height="34">Nerd <span>MarTech</span></a>
-  <div class="links">
-    <a href="index.html">หน้าแรก</a>
-    <a href="use-cases.html">Use Cases</a>
-    <a href="prompts.html">Prompts</a>
-    <a href="compare.html">Model Compare</a>
-    <a href="design-system.html" class="active">Design System</a>
-  </div>
-</div></nav>
+<header class="site-head">
+  <a class="logo" href="index.html" aria-label="Nerd MarTech">
+    <img src="assets/brand/logo-on-dark.svg" alt="" class="logo-sym">
+    <span class="logo-wm">Nerd<br>Mar<span>Tech</span></span>
+  </a>
+  <nav class="site-nav"><div class="wrap"><div class="links"><a href="index.html">หน้าแรก</a><a href="use-cases.html">Use Cases</a><a href="prompts.html">Prompts</a><a href="compare.html">Model Compare</a><a href="design-system.html" class="active">Design System</a></div></div></nav>
+</header>
 
 <div class="wrap">
 
@@ -63,22 +60,23 @@
 <!-- ===== 1. LOGO ===== -->
 <section>
   <div class="eyebrow"><span class="lab">01</span><span class="lab">Logo &amp; Lockup</span></div>
-  <p class="h2sub">Master Symbol = Pixel Nerd Head · ชื่อแสดง <b>Nerd MarTech</b> (เว้นวรรค) · descriptor <b>MARKETING · AI · DATA</b></p>
+  <p class="h2sub">Master Symbol = Pixel Nerd Head (SVG แนวนอน 500×361) · ชื่อแสดง <b>Nerd MarTech</b> — เน้นสีเฉพาะ <b>Tech</b> · descriptor <b>MARKETING · AI · DATA</b></p>
+  <div class="ds-row" style="margin-bottom:14px"><span class="lab">SVG variants:</span><code class="tok">logo-on-dark.svg</code><code class="tok">logo-on-light.svg</code><code class="tok">logo-mono-white.svg</code><code class="tok">logo-mono-black.svg</code></div>
 
   <div class="grid g2">
     <div class="ds-sample">
       <div class="lab" style="margin-bottom:12px">Primary Horizontal</div>
       <div class="lockup">
-        <img src="assets/brand/character.png" alt="">
-        <div><div class="wm">Nerd <span>MarTech</span></div><div class="desc">MARKETING · AI · DATA</div></div>
+        <img src="assets/brand/logo-on-dark.svg" alt="">
+        <div><div class="wm">Nerd Mar<span>Tech</span></div><div class="desc">MARKETING · AI · DATA</div></div>
       </div>
     </div>
     <div class="ds-sample" style="display:flex;justify-content:center">
       <div>
         <div class="lab" style="margin-bottom:12px">Primary Stacked</div>
         <div class="lockup stack">
-          <img src="assets/brand/character.png" alt="">
-          <div><div class="wm">Nerd<br><span>MarTech</span></div><div class="desc">MARKETING · AI · DATA</div></div>
+          <img src="assets/brand/logo-on-dark.svg" alt="">
+          <div><div class="wm">Nerd<br>Mar<span>Tech</span></div><div class="desc">MARKETING · AI · DATA</div></div>
         </div>
       </div>
     </div>
@@ -86,11 +84,11 @@
 
   <div class="lab" style="margin:22px 0 10px">Color Background Set</div>
   <div class="grid g3" style="gap:10px">
-    <div class="lockup bg-red on-red"><img src="assets/brand/character.png" alt=""><div><div class="wm">Nerd <span>MarTech</span></div><div class="desc">MARKETING · AI · DATA</div></div></div>
-    <div class="lockup bg-green on-green"><img src="assets/brand/character.png" alt=""><div><div class="wm">Nerd <span>MarTech</span></div><div class="desc">MARKETING · AI · DATA</div></div></div>
-    <div class="lockup bg-yellow on-yellow"><img src="assets/brand/character.png" alt=""><div><div class="wm">Nerd <span>MarTech</span></div><div class="desc">MARKETING · AI · DATA</div></div></div>
-    <div class="lockup bg-purple on-purple"><img src="assets/brand/character.png" alt=""><div><div class="wm">Nerd <span>MarTech</span></div><div class="desc">MARKETING · AI · DATA</div></div></div>
-    <div class="lockup bg-off on-off"><img src="assets/brand/character.png" alt=""><div><div class="wm">Nerd <span>MarTech</span></div><div class="desc">MARKETING · AI · DATA</div></div></div>
+    <div class="lockup bg-red on-red"><img src="assets/brand/logo-on-light.svg" alt=""><div><div class="wm">Nerd Mar<span>Tech</span></div><div class="desc">MARKETING · AI · DATA</div></div></div>
+    <div class="lockup bg-green on-green"><img src="assets/brand/logo-on-dark.svg" alt=""><div><div class="wm">Nerd Mar<span>Tech</span></div><div class="desc">MARKETING · AI · DATA</div></div></div>
+    <div class="lockup bg-yellow on-yellow"><img src="assets/brand/logo-on-light.svg" alt=""><div><div class="wm">Nerd Mar<span>Tech</span></div><div class="desc">MARKETING · AI · DATA</div></div></div>
+    <div class="lockup bg-purple on-purple"><img src="assets/brand/logo-on-dark.svg" alt=""><div><div class="wm">Nerd Mar<span>Tech</span></div><div class="desc">MARKETING · AI · DATA</div></div></div>
+    <div class="lockup bg-off on-off"><img src="assets/brand/logo-on-light.svg" alt=""><div><div class="wm">Nerd Mar<span>Tech</span></div><div class="desc">MARKETING · AI · DATA</div></div></div>
     <div class="lockup" style="background:#111;border:1px solid var(--line)"><img src="assets/brand/icon-192.png" alt="" style="image-rendering:pixelated"><div><div class="lab">Symbol only</div><div class="ds-note">profile · favicon · watermark</div></div></div>
   </div>
   <p class="ds-note" style="margin-top:10px">Clear space = 1X (X = ความกว้างกรอบแว่น 1 ข้าง) · social ลดได้ 0.5X · ห้าม redraw เพิ่มจมูก/ปาก/คาง</p>
@@ -237,7 +235,7 @@
           <span class="lab"><b>24</b> CREDIT</span><span class="lab"><b>03:00</b> MIN</span>
           <span class="lab">MODEL <b>FLASH 1.1</b></span><span class="badge pass" style="justify-self:start"><svg><use href="assets/pixel-icons.svg#i-pass"/></svg>Pass</span>
         </div>
-        <div class="foot"><span class="lab">MARKETING · AI · DATA</span><img src="assets/brand/character.png" alt=""></div>
+        <div class="foot"><span class="lab">MARKETING · AI · DATA</span><img src="assets/brand/logo-on-dark.svg" alt=""></div>
       </div>
     </div>
   </div>

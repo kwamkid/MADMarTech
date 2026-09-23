@@ -32,12 +32,16 @@
 
 <div class="wrap">
 
-<div class="hero" style="padding-bottom:12px">
+<div class="hero">
   <h1>Prompts ที่ใช้จริง</h1>
   <p>ทุก prompt ในหน้านี้ถูกใช้เจนจริงแล้ว พร้อมบอกว่าใช้กับโมเดลไหน ได้ผลอย่างไร — กดปุ่ม Copy แล้วแก้เฉพาะส่วนที่อยู่ใน [ ]</p>
+  <div class="px-divider"></div>
 </div>
 
-<section>
+<div class="doc">
+<aside class="side-toc"><span class="toc-title">ไปที่หัวข้อ</span><a href="#structure">โครง prompt 6 ส่วน</a><a href="#p-ugc">#1 UGC รีวิวบ้าน</a><a href="#p-start">#2 Start image</a><a href="#p-motion">#3 Motion transfer</a><a href="#p-edit">#4 เปลี่ยนคนในคลิป</a><a href="#p-extend">#5 ต่อคลิป (Extend)</a></aside>
+<main>
+<section id="structure">
   <h2>โครง prompt สำหรับวิดีโอคนพูด</h2>
   <p class="h2sub">สูตรที่ใช้ทุกครั้ง — 6 ส่วน เรียงตามนี้</p>
   <div class="grid g3">
@@ -57,10 +61,10 @@
     <span>ใช้กับ <b>Gemini Omni Flash 1.1</b> (mode: reference-to-video)</span>
     <span>·</span><span>input: รูปคน + รูปบ้าน (image_references)</span>
     <span>·</span><span>9:16 · 8s · 720p</span>
-    <span>·</span><span class="verdict v-ok">✅ ผ่าน — ดีที่สุดจาก 11 โมเดล</span>
+    <span class="badge soft sm pass"><svg><use href="#i-pass"/></svg>Pass</span><span>ดีที่สุดจาก 11 โมเดล</span>
   </div>
   <div class="prompt">
-    <button class="copy" onclick="cp(this)">Copy</button>
+    <button class="copy">Copy</button>
 <pre>UGC-style vertical selfie video. The young Thai woman from the reference photo stands in front of the [luxury two-story grey house] from the reference photo at dusk, holding the phone at arm's length, natural handheld movement, warm evening light. She smiles and speaks to camera in clear natural Thai with accurate lip sync, friendly excited tone. She says in Thai: "[สวัสดีค่ะ วันนี้พามาดูบ้านหลังนี้ค่ะ สองชั้น สไตล์คลาสสิก หน้าบ้านกว้างมาก จอดรถได้สองคันสบายๆ ใครสนใจทักมาได้เลยนะคะ]" Native Thai speech audio only, soft ambient evening sound, no music, no subtitles.</pre>
   </div>
   <div class="lesson"><b>ผลเมื่อใช้ prompt เดียวกันกับโมเดลอื่น</b> — Omni Flash (รุ่นเก่า) ผ่าน · MiniMax H3 ไทยชัดแต่ภาพดูเจน · Seedance 2.5 ไทยเพี้ยน · FLUX 3 ไม่มีบ้านในภาพ → prompt ดีไม่ช่วยถ้าโมเดลไม่รองรับไทย</div>
@@ -72,10 +76,10 @@
   <div class="pmeta">
     <span>ใช้กับ <b>Veo 3.1 · Kling 3.0 · Grok 1.5</b></span>
     <span>·</span><span>input: ภาพนิ่ง "คนยืนหน้าบ้าน" 1 รูป (start_image)</span>
-    <span>·</span><span class="verdict v-warn">⚠️ ผลขึ้นกับโมเดล — Veo เสียงดีภาพกระตุก · Kling เป็นเขมร · Grok เสียงคอม</span>
+    <span class="badge soft sm maybe"><svg><use href="#i-maybe"/></svg>Maybe</span><span>ผลขึ้นกับโมเดล — Veo เสียงดีภาพกระตุก · Kling เป็นเขมร · Grok เสียงคอม</span>
   </div>
   <div class="prompt">
-    <button class="copy" onclick="cp(this)">Copy</button>
+    <button class="copy">Copy</button>
 <pre>UGC-style vertical selfie video, animate the start frame. The young Thai woman holds the phone at arm's length in front of the [luxury two-story grey house] at dusk, natural handheld movement, warm evening light. She smiles and speaks to camera in clear natural Thai with accurate lip sync, friendly excited tone. She says in Thai: "[บทพูด]" Native Thai speech audio only, soft ambient evening sound, no music, no subtitles.</pre>
   </div>
   <div class="lesson"><b>ต่างจาก #1 ตรงไหน</b> — เพิ่ม "animate the start frame" และไม่ต้องอ้าง reference photo เพราะโมเดลกลุ่มนี้รับรูปเดียว · ข้อสังเกต: Veo 3.1 เขียน prompt ใหม่ให้เองยาว 5 เท่า (enhance_prompt) ผลออกมาไม่ได้ดีกว่า</div>
@@ -87,10 +91,10 @@
   <div class="pmeta">
     <span>ใช้กับ <b>Genjutsu — Higgsfield Motion Control</b></span>
     <span>·</span><span>input: คลิปต้นแบบ (video_references) + รูปคนใหม่ (image_references)</span>
-    <span>·</span><span class="verdict v-ok">✅ ผ่าน — หน้าและภาษาดีมาก</span>
+    <span class="badge soft sm pass"><svg><use href="#i-pass"/></svg>Pass</span><span>หน้าและภาษาดีมาก</span>
   </div>
   <div class="prompt">
-    <button class="copy" onclick="cp(this)">Copy</button>
+    <button class="copy">Copy</button>
 <pre>Transfer the motion, expressions, lip movement and Thai speech from the reference video to the woman in the reference image. Keep her identity from the reference image, keep the [house background and dusk lighting]. Preserve the original Thai audio.</pre>
   </div>
 </section>
@@ -101,10 +105,10 @@
   <div class="pmeta">
     <span>ใช้กับ <b>Kling 3.0 Omni Edit</b> (mode: pro)</span>
     <span>·</span><span>input: คลิปต้นแบบ (video_references) + รูปคนใหม่ (image_references)</span>
-    <span>·</span><span class="verdict v-ok">✅ ผ่าน — ถูกที่สุด 16 credits</span>
+    <span class="badge soft sm pass"><svg><use href="#i-pass"/></svg>Pass</span><span>ถูกที่สุด 16 credits</span>
   </div>
   <div class="prompt">
-    <button class="copy" onclick="cp(this)">Copy</button>
+    <button class="copy">Copy</button>
 <pre>Keep the video exactly as is (same [house], same camera motion, same Thai speech and lip sync) but replace the presenter with the woman from the reference image, matching her face and hair.</pre>
   </div>
   <div class="lesson"><b>หัวใจของ prompt แก้คลิป</b> — บอกให้ชัดว่า "อะไรห้ามเปลี่ยน" (เสียง กล้อง ฉาก) ก่อนบอกว่า "เปลี่ยนอะไร" — โมเดลแก้คลิปมักเปลี่ยนเกินที่สั่งถ้าไม่ล็อกไว้</div>
@@ -115,30 +119,25 @@
   <h2>Prompt #5 — ต่อคลิป (Extend) — ไม่แนะนำ</h2>
   <div class="pmeta">
     <span>ใช้กับ <b>Gemini Omni Flash 1.1</b> (reference-to-video + video_references)</span>
-    <span>·</span><span class="verdict v-bad">❌ ผ่าน MCP ถูก safety filter บล็อก · ผ่านหน้าเว็บทำได้ (70 credits/ครั้ง) แต่เสียงเปลี่ยน</span>
+    <span class="badge soft sm fail"><svg><use href="#i-fail"/></svg>Fail</span><span>ผ่าน MCP ถูก safety filter บล็อก · ผ่านหน้าเว็บทำได้ (70 credits/ครั้ง) แต่เสียงเปลี่ยน</span>
   </div>
   <div class="prompt">
-    <button class="copy" onclick="cp(this)">Copy</button>
+    <button class="copy">Copy</button>
 <pre>Continue the reference video as the next shot — same young Thai woman, same voice, same house, same dusk lighting and handheld selfie style. She now turns slightly and gestures toward the driveway and front door, then speaks to camera in clear natural Thai with accurate lip sync, friendly tone. She says in Thai: "[ด้านหน้ามีสวนเล็กๆ กับที่จอดรถกว้างมาก เดี๋ยวพาเข้าไปดูข้างในกันนะคะ]" Native Thai speech audio only, soft ambient evening sound, no music, no subtitles.</pre>
   </div>
   <div class="lesson"><b>ทำไมไม่ผ่าน</b> — คำว่า "same voice" ใน prompt ไม่มีผล เพราะโมเดลไม่มี voice reference ให้ฟัง มันสร้างเสียงใหม่จากบทเสมอ → ใช้วิธีใน <a href="use-cases.html#long-clip">Use Case 03</a> แทน</div>
 </section>
 
+</main>
+</div>
+
 <footer>
-  Nerd MarTech · จัดทำโดย AOO Commerce · ผลทดสอบเป็นข้อมูล ณ วันที่ทดสอบ โมเดล AI เปลี่ยนเร็ว ควรทดสอบซ้ำก่อนใช้งานจริง
+  <div class="foot-links"><a href="index.html">หน้าแรก</a><a href="ai-video.html">สร้างวิดีโอด้วย AI</a><a href="use-cases.html">Use Cases</a><a href="prompts.html">Prompts</a><a href="compare.html">Model Compare</a></div>
+  <p>Nerd MarTech · จัดทำโดย AOO Commerce · ผลทดสอบเป็นข้อมูล ณ วันที่ทดสอบ โมเดล AI เปลี่ยนเร็ว ควรทดสอบซ้ำก่อนใช้งานจริง</p>
 </footer>
 
 </div>
 
-<script>
-function cp(btn){
-  var t=btn.parentNode.querySelector('pre').innerText;
-  navigator.clipboard.writeText(t).then(function(){
-    btn.textContent='Copied ✓';btn.classList.add('done');
-    setTimeout(function(){btn.textContent='Copy';btn.classList.remove('done')},1800);
-  });
-}
-</script>
 <script src="assets/site.js"></script>
 </body>
 </html>

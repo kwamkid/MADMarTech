@@ -39,13 +39,17 @@
 
 <div class="wrap">
 
-<div class="hero" style="padding-bottom:8px">
+<div class="hero">
   <div class="lab red">NERD COMPARE / 001</div>
   <h1>โมเดล AI Video ตัวไหน <em>พูดไทย</em> ได้จริง</h1>
   <p>8 โมเดล โจทย์เดียวกันเป๊ะ — รูปอ้างอิง 2 รูปเดิม · prompt เดิม · บทพูดไทยเดิม · 9:16 · 8 วินาที — แล้วดูว่าใครทำได้ ใครทำไม่ได้ ในราคาเท่าไหร่</p>
+  <div class="px-divider"></div>
 </div>
 
-<section style="padding-top:0">
+<div class="doc">
+<aside class="side-toc"><span class="toc-title">ไปที่หัวข้อ</span><a href="#input">โจทย์ที่ใช้ทดสอบ</a><a href="#ranking">01 · ผลเรียงตามอันดับ</a><a href="#summary">02 · ตารางสรุป</a><a href="#lessons">03 · สิ่งที่ได้จากการเทียบ</a><a href="#faq">04 · คำถามที่พบบ่อย</a></aside>
+<main>
+<section id="input">
   <div class="brief">
     <div class="brief-in">
       <img data-zoom src="assets/image-reference/presenter.jpg" alt="รูปพรีเซนเตอร์ที่ใช้เป็นรูปอ้างอิง">
@@ -64,7 +68,7 @@
   </div>
 </section>
 
-<section style="padding-top:8px">
+<section id="ranking">
 <div class="eyebrow"><span class="lab">01</span><span class="lab">ผลเรียงตามอันดับ</span></div>
 <div class="grid g4">
   <div class="vcard">
@@ -148,30 +152,30 @@
     </div>
   </div>
 </div>
-<p class="ds-note" style="color:var(--muted);font-size:var(--fs-sm);margin:10px 0 0">โมเดลที่รับได้แค่รูปเดียว (Veo · Kling · Grok) ใช้เฟรมแรกของคลิปอันดับ 1 เป็นภาพตั้งต้น เพื่อให้คนและบ้านเหมือนกันทุกตัว · โมเดลแก้คลิป/เปลี่ยนคน (Genjutsu · Kling Omni Edit) เป็นคนละงาน ดูที่ <a href="use-cases.html#motion-transfer">Use Case 02</a></p>
+<p class="ds-note" style="margin:10px 0 0">โมเดลที่รับได้แค่รูปเดียว (Veo · Kling · Grok) ใช้เฟรมแรกของคลิปอันดับ 1 เป็นภาพตั้งต้น เพื่อให้คนและบ้านเหมือนกันทุกตัว · โมเดลแก้คลิป/เปลี่ยนคน (Genjutsu · Kling Omni Edit) เป็นคนละงาน ดูที่ <a href="use-cases.html#motion-transfer">Use Case 02</a></p>
 </section>
 
-<section>
+<section id="summary">
 <div class="eyebrow"><span class="lab">02</span><span class="lab">ตารางสรุป</span></div>
 <div class="tablewrap">
 <table>
   <thead><tr><th>#</th><th>โมเดล</th><th class="num">credits · บาท</th><th>เสียงไทย</th><th>ภาพ</th><th>ผล</th></tr></thead>
   <tbody>
-    <tr><td>1</td><td>Gemini Omni Flash 1.1</td><td class="num" data-cr="24">24</td><td>✓ ชัด</td><td>✓ smooth</td><td><span class="badge ghost pass">PASS</span></td></tr>
-    <tr><td>2</td><td>Gemini Omni Flash</td><td class="num" data-cr="24">24</td><td>✓ ชัด</td><td>✓</td><td><span class="badge ghost pass">PASS</span></td></tr>
-    <tr><td>3</td><td>Google Veo 3.1</td><td class="num" data-cr="80">80</td><td>✓ ชัดมาก</td><td>✗ กระตุก</td><td><span class="badge ghost maybe">MAYBE</span></td></tr>
-    <tr><td>4</td><td>MiniMax H3</td><td class="num" data-cr="16">16</td><td>✓ ชัด</td><td>△ ดูเป็นภาพเจน</td><td><span class="badge ghost maybe">MAYBE</span></td></tr>
-    <tr><td>5</td><td>Grok Video 1.5</td><td class="num" data-cr="36">36</td><td>△ เสียงคอม</td><td>△ แทบไม่ขยับ · ผิดสัดส่วน</td><td><span class="badge ghost maybe">MAYBE</span></td></tr>
-    <tr><td>6</td><td>Seedance 2.5</td><td class="num" data-cr="56">56</td><td>✗ เพี้ยน</td><td>✓</td><td><span class="badge ghost fail">FAIL</span></td></tr>
-    <tr><td>7</td><td>Kling 3.0 pro</td><td class="num" data-cr="20">20</td><td>✗ เป็นเขมร</td><td>✓</td><td><span class="badge ghost fail">FAIL</span></td></tr>
-    <tr><td>8</td><td>FLUX 3 Video</td><td class="num" data-cr="44">44</td><td>✓</td><td>✗ ไม่มีบ้าน</td><td><span class="badge ghost fail">FAIL</span></td></tr>
+    <tr><td>1</td><td>Gemini Omni Flash 1.1</td><td class="num" data-cr="24">24</td><td>✓ ชัด</td><td>✓ smooth</td><td><span class="badge soft sm pass"><svg><use href="#i-pass"/></svg>PASS</span></td></tr>
+    <tr><td>2</td><td>Gemini Omni Flash</td><td class="num" data-cr="24">24</td><td>✓ ชัด</td><td>✓</td><td><span class="badge soft sm pass"><svg><use href="#i-pass"/></svg>PASS</span></td></tr>
+    <tr><td>3</td><td>Google Veo 3.1</td><td class="num" data-cr="80">80</td><td>✓ ชัดมาก</td><td>✗ กระตุก</td><td><span class="badge soft sm maybe"><svg><use href="#i-maybe"/></svg>MAYBE</span></td></tr>
+    <tr><td>4</td><td>MiniMax H3</td><td class="num" data-cr="16">16</td><td>✓ ชัด</td><td>△ ดูเป็นภาพเจน</td><td><span class="badge soft sm maybe"><svg><use href="#i-maybe"/></svg>MAYBE</span></td></tr>
+    <tr><td>5</td><td>Grok Video 1.5</td><td class="num" data-cr="36">36</td><td>△ เสียงคอม</td><td>△ แทบไม่ขยับ · ผิดสัดส่วน</td><td><span class="badge soft sm maybe"><svg><use href="#i-maybe"/></svg>MAYBE</span></td></tr>
+    <tr><td>6</td><td>Seedance 2.5</td><td class="num" data-cr="56">56</td><td>✗ เพี้ยน</td><td>✓</td><td><span class="badge soft sm fail"><svg><use href="#i-fail"/></svg>FAIL</span></td></tr>
+    <tr><td>7</td><td>Kling 3.0 pro</td><td class="num" data-cr="20">20</td><td>✗ เป็นเขมร</td><td>✓</td><td><span class="badge soft sm fail"><svg><use href="#i-fail"/></svg>FAIL</span></td></tr>
+    <tr><td>8</td><td>FLUX 3 Video</td><td class="num" data-cr="44">44</td><td>✓</td><td>✗ ไม่มีบ้าน</td><td><span class="badge soft sm fail"><svg><use href="#i-fail"/></svg>FAIL</span></td></tr>
   </tbody>
 </table>
 </div>
 <p class="rate-note" style="margin-top:8px">ราคาบาทคิดจากแพ็กเกจ Higgsfield $39 = 1.29 บาท/เครดิต (แพ็กเกจ $15 = 2.50 · $99 = 1.09) — เปลี่ยนแพ็กเกจ ราคาต่อคลิปเปลี่ยนตาม</p>
 </section>
 
-<section>
+<section id="lessons">
 <div class="eyebrow"><span class="lab">03</span><span class="lab">สิ่งที่ได้จากการเทียบ</span></div>
 <div class="grid g2">
 <div class="lesson"><b>แพงไม่ได้แปลว่าดี</b> — อันดับ 1 (24 credits) ถูกกว่าตัวที่แพงที่สุด (Veo 3.1, 80 credits) 3 เท่า และผลดีกว่า</div>
@@ -180,7 +184,23 @@
 <div class="lesson"><b>โมเดลเดียวกัน คนละโหมด ผลคนละเรื่อง</b> — Kling 3.0 เจนจากศูนย์พูดเป็นเขมร แต่โหมดแก้คลิปเดิม (คงเสียงต้นฉบับ) ใช้ได้ดี — คำตอบไม่ใช่ "แบรนด์ไหน" แต่คือ "ให้มันสร้างอะไร"</div>
 </div>
 </section>
-<footer>Nerd MarTech · จัดทำโดย AOO Commerce · ทดสอบ 22 ก.ย. 2569 ผ่าน Higgsfield · ผลเป็นข้อมูล ณ วันที่ทดสอบ โมเดล AI เปลี่ยนเร็ว ควรทดสอบซ้ำก่อนใช้งานจริง</footer>
+
+<section id="faq">
+<div class="eyebrow"><span class="lab">04</span><span class="lab">คำถามที่พบบ่อย</span></div>
+  <div class="faq">
+    <details><summary>โมเดล AI สร้างวิดีโอตัวไหนพูดภาษาไทยได้ชัดที่สุด</summary><p>จากการทดสอบ 8 โมเดลด้วยโจทย์เดียวกัน Gemini Omni Flash 1.1 ให้เสียงไทยชัด ปากตรง และภาพ smooth ที่สุด ในราคา 24 credits ต่อคลิป 8 วินาที รองลงมาคือ Gemini Omni Flash รุ่นเดิม ส่วน Kling 3.0 พูดไทยออกมาเป็นสำเนียงเขมร และ Seedance 2.5 เพี้ยนแบบชาวต่างชาติพูดไทย</p></details>
+    <details><summary>Google Veo 3.1 พูดไทยได้ไหม</summary><p>เสียงไทยชัดมาก แต่ภาพกระตุกไม่ smooth และเป็นโมเดลที่แพงที่สุดในการทดสอบ (80 credits) แพงกว่า Gemini Omni Flash 1.1 ประมาณ 3 เท่าโดยผลไม่ดีกว่า</p></details>
+    <details><summary>ฟีเจอร์ Extend ต่อความยาววิดีโอ AI ใช้ได้ไหม</summary><p>ต่อภาพได้ แต่เสียงถูกสร้างใหม่ทุกครั้ง ทำให้เสียงและสำเนียงเปลี่ยน วิธีที่ใช้ได้คือเจนหลายคลิปสั้นจากรูปอ้างอิงชุดเดิมและโมเดลเดิม แล้วนำมาตัดต่อ</p></details>
+    <details><summary>ถ้ามีคลิปที่ดีแล้ว เปลี่ยนพรีเซนเตอร์เป็นคนอื่นได้ไหม</summary><p>ได้ ด้วย motion transfer เช่น Genjutsu ของ Higgsfield (56 credits) หรือ Kling 3.0 Omni Edit (16 credits) ซึ่งคงเสียงและการเคลื่อนไหวเดิม เปลี่ยนเฉพาะหน้าคน</p></details>
+  </div>
+</section>
+</main>
+</div>
+
+<footer>
+  <div class="foot-links"><a href="index.html">หน้าแรก</a><a href="ai-video.html">สร้างวิดีโอด้วย AI</a><a href="use-cases.html">Use Cases</a><a href="prompts.html">Prompts</a><a href="compare.html">Model Compare</a></div>
+  <p>Nerd MarTech · จัดทำโดย AOO Commerce · ทดสอบ 22 ก.ย. 2569 ผ่าน Higgsfield · ผลเป็นข้อมูล ณ วันที่ทดสอบ โมเดล AI เปลี่ยนเร็ว ควรทดสอบซ้ำก่อนใช้งานจริง</p>
+</footer>
 </div>
 <script src="assets/site.js"></script>
 </body>

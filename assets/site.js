@@ -8,25 +8,59 @@
   holder.innerHTML = '<svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" style="position:absolute;width:0;height:0;overflow:hidden">' + SPRITE + '</svg>';
   document.body.insertBefore(holder.firstChild, document.body.firstChild);
 
-  // --- side TOC: highlight the section currently in view ---
+  // --- nav: on narrow screens scroll the active menu item into view ---
+  var act = document.querySelector('.links a.active'), lk = document.querySelector('.links');
+  if (act && lk && lk.scrollWidth > lk.clientWidth) lk.scrollLeft = act.offsetLeft - (lk.clientWidth - act.offsetWidth) / 2;
+
+  // --- side TOC: highlight section in view · on mobile becomes a bottom "journey" bar that opens the list ---
   var toc = document.querySelector('.side-toc');
-  if (toc && 'IntersectionObserver' in window) {
-    var links = {}, secs = [];
+  if (toc) {
+    var links = {}, secs = [], order = [];
     toc.querySelectorAll('a[href^="#"]').forEach(function(a){
       var sec = document.getElementById(a.getAttribute('href').slice(1));
-      if (sec) { links[sec.id] = a; secs.push(sec); }
+      if (sec) { links[sec.id] = a; secs.push(sec); order.push(sec.id); }
     });
+    var bar = document.createElement('button');
+    bar.type = 'button'; bar.className = 'toc-bar'; bar.setAttribute('aria-expanded', 'false');
+    bar.innerHTML = '<span class="toc-step"></span><span class="toc-now"></span><span class="toc-dots">' +
+      order.map(function(){ return '<i></i>'; }).join('') + '</span>';
+    toc.appendChild(bar);
+    var step = bar.querySelector('.toc-step'), now = bar.querySelector('.toc-now'), dots = bar.querySelectorAll('.toc-dots i');
+    function setOpen(v){ toc.classList.toggle('open', v); bar.setAttribute('aria-expanded', v ? 'true' : 'false'); }
+    bar.addEventListener('click', function(){ setOpen(!toc.classList.contains('open')); });
+    toc.querySelectorAll('a').forEach(function(a){ a.addEventListener('click', function(){ setOpen(false); }); });
+    document.addEventListener('keydown', function(e){ if (e.key === 'Escape') setOpen(false); });
     function mark(id){
+      var i = order.indexOf(id); if (i < 0) return;
       toc.querySelectorAll('a.on').forEach(function(a){ a.classList.remove('on'); });
-      var a = links[id]; if (!a) return;
-      a.classList.add('on');
-      if (toc.scrollWidth > toc.clientWidth) a.scrollIntoView({block:'nearest', inline:'center'});
+      links[id].classList.add('on');
+      step.textContent = (i + 1) + '/' + order.length;
+      now.textContent = links[id].textContent;
+      dots.forEach(function(d, j){ d.className = j < i ? 'past' : (j === i ? 'cur' : ''); });
     }
-    var io = new IntersectionObserver(function(entries){
-      entries.forEach(function(e){ if (e.isIntersecting) mark(e.target.id); });
-    }, {rootMargin:'-30% 0px -60% 0px'});
-    secs.forEach(function(s){ io.observe(s); });
+    if (order.length) mark(order[0]);
+    if ('IntersectionObserver' in window) {
+      var io = new IntersectionObserver(function(entries){
+        entries.forEach(function(e){ if (e.isIntersecting) mark(e.target.id); });
+      }, {rootMargin:'-30% 0px -60% 0px'});
+      secs.forEach(function(s){ io.observe(s); });
+    }
   }
+
+  // --- copy buttons: .prompt .copy (copies <pre>) · .anno .copy (joins <mark> parts) ---
+  var ICON_COPY = '<svg class="pi sm"><use href="#i-copy"/></svg>', ICON_DONE = '<svg class="pi sm"><use href="#i-pass"/></svg>';
+  document.querySelectorAll('.prompt .copy, .anno .copy').forEach(function(btn){
+    var label = btn.textContent.trim() || 'Copy';
+    btn.innerHTML = ICON_COPY + label;
+    btn.addEventListener('click', function(){
+      var box = btn.parentNode, marks = box.querySelectorAll('mark'), pre = box.querySelector('pre');
+      var t = marks.length ? Array.prototype.map.call(marks, function(m){ return m.textContent.trim(); }).join(' ') : (pre ? pre.innerText : '');
+      navigator.clipboard.writeText(t).then(function(){
+        btn.innerHTML = ICON_DONE + 'Copied'; btn.classList.add('done');
+        setTimeout(function(){ btn.innerHTML = ICON_COPY + label; btn.classList.remove('done'); }, 1800);
+      });
+    });
+  });
 
   // --- credits → บาท (Higgsfield $39 package = 1.29 THB/credit) ---
   var RATE = 1.29;

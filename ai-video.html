@@ -57,19 +57,6 @@
 .legend div b{display:block;font-size:var(--fs-md);margin-bottom:2px}
 .legend div span{color:var(--muted)}
 
-/* ---- settings table ---- */
-.settings{display:grid;grid-template-columns:repeat(auto-fit,minmax(170px,1fr));gap:10px}
-.settings div{background:var(--card);border:1px solid var(--line);border-radius:var(--r);padding:12px 14px}
-.settings .lab{display:block;margin-bottom:4px}
-.settings b{font-family:var(--font-display);font-size:20px;font-weight:700}
-.settings small{display:block;color:var(--muted);font-size:var(--fs-sm);margin-top:2px}
-
-/* ---- character strip ---- */
-.nerd-note{display:grid;grid-template-columns:120px 1fr;gap:18px;align-items:center;background:var(--yellow-soft);border-radius:var(--r);padding:18px 20px}
-.nerd-note img{width:120px;height:auto}
-.nerd-note p{margin:0;font-size:var(--fs-md)}
-.nerd-note p b{color:var(--text)}
-@media(max-width:600px){.nerd-note{grid-template-columns:1fr}.nerd-note img{width:90px}}
 </style>
 </head>
 <body>
@@ -84,14 +71,18 @@
 
 <div class="wrap">
 
-<div class="hero" style="padding-bottom:8px">
+<div class="hero">
   <div class="lab red">NERD TEST / 001 · HOW IT WAS MADE</div>
   <h1>รูป 2 รูป + prompt 1 ย่อหน้า<br><em>= คลิปพูดไทย 8 วินาที</em></h1>
   <p>หน้านี้ไม่สอนทฤษฎี — เอาของที่ใส่เข้าไปจริงมาวางให้ดูทั้งหมด รูปที่ใช้ prompt ที่พิมพ์ ค่าที่ตั้ง แล้วผลที่ได้ออกมาเป็นอย่างนี้ ใครอยากทำตามก็ก๊อปไปได้เลย</p>
+  <div class="px-divider"></div>
 </div>
 
+<div class="doc">
+<aside class="side-toc"><span class="toc-title">ไปที่หัวข้อ</span><a href="#pipeline">ภาพรวม: เข้า → ออก</a><a href="#anatomy">02 · แกะ prompt</a><a href="#settings">03 · ค่าที่ตั้ง</a><a href="#steps">04 · ลำดับที่ทำจริง</a></aside>
+<main>
 <!-- ===== PIPELINE ===== -->
-<section>
+<section id="pipeline">
   <div class="pipe">
     <div class="node">
       <span class="lab">01 · INPUT — รูป 2 รูป</span>
@@ -119,11 +110,11 @@
 </section>
 
 <!-- ===== PROMPT ANATOMY ===== -->
-<section>
+<section id="anatomy">
   <div class="eyebrow"><span class="lab">02</span><span class="lab">แกะ prompt ทีละส่วน</span></div>
   <p class="h2sub">prompt ทั้งหมดมี 6 ส่วน เรียงตามนี้ทุกครั้ง — ส่วนที่คนมักลืมคือ ส่วน 4 กับ 6 แล้วก็สงสัยว่าทำไมได้สำเนียงเพี้ยนกับมีเพลงโผล่มา</p>
   <div class="anno" id="anno">
-    <button class="copy" onclick="cpAnno(this)">Copy prompt</button>
+    <button class="copy">Copy prompt</button>
     <mark class="c1" data-n="1">UGC-style vertical selfie video.</mark>
     <mark class="c2" data-n="2">The young Thai woman from the reference photo stands in front of the luxury two-story grey house from the reference photo at dusk,</mark>
     <mark class="c3" data-n="3">holding the phone at arm's length, natural handheld movement, warm evening light. She smiles and</mark>
@@ -142,21 +133,21 @@
 </section>
 
 <!-- ===== SETTINGS ===== -->
-<section>
+<section id="settings">
   <div class="eyebrow"><span class="lab">03</span><span class="lab">ค่าที่ตั้งตอนสั่งเจน</span></div>
   <p class="h2sub">ไม่มีค่าลับ ตั้งแค่นี้</p>
-  <div class="settings">
-    <div><span class="lab">Model</span><b style="font-size:var(--fs-md)">Gemini Omni Flash 1.1</b><small>ผ่าน Higgsfield</small></div>
-    <div><span class="lab">Mode</span><b style="font-size:var(--fs-md)">reference-to-video</b><small>รับหลายรูปในรอบเดียว</small></div>
-    <div><span class="lab">Aspect</span><b>9:16</b><small>Reels / TikTok / Shorts</small></div>
-    <div><span class="lab">Duration</span><b>8s</b><small>พอสำหรับบทพูด 1 ประโยคยาว</small></div>
-    <div><span class="lab">Resolution</span><b>720p</b><small>พอสำหรับมือถือ · 1080p แพงกว่าไม่คุ้ม</small></div>
-    <div><span class="lab">Cost</span><b>24</b><small>credits ≈ ฿31 ต่อรอบ (แพ็กเกจ $39)</small></div>
+  <div class="stats">
+    <div class="stat"><span class="lab">Model</span><span class="num txt">Gemini Omni Flash 1.1</span><small>ผ่าน Higgsfield</small></div>
+    <div class="stat"><span class="lab">Mode</span><span class="num txt">reference-to-video</span><small>รับหลายรูปในรอบเดียว</small></div>
+    <div class="stat"><span class="lab">Aspect</span><span class="num">9:16</span><small>Reels / TikTok / Shorts</small></div>
+    <div class="stat"><span class="lab">Duration</span><span class="num">8s</span><small>พอสำหรับบทพูด 1 ประโยคยาว</small></div>
+    <div class="stat"><span class="lab">Resolution</span><span class="num">720p</span><small>พอสำหรับมือถือ · 1080p แพงกว่าไม่คุ้ม</small></div>
+    <div class="stat"><span class="lab">Cost</span><span class="num">24</span><small>credits ≈ ฿31 ต่อรอบ (แพ็กเกจ $39)</small></div>
   </div>
 </section>
 
 <!-- ===== STEPS ===== -->
-<section>
+<section id="steps">
   <div class="eyebrow"><span class="lab">04</span><span class="lab">ลำดับที่ทำจริง</span></div>
   <div class="grid g2">
     <ol class="steps">
@@ -179,21 +170,16 @@
   </div>
 </section>
 
+</main>
+</div>
+
 <footer>
-  Nerd MarTech · จัดทำโดย AOO Commerce · ผลทดสอบเป็นข้อมูล ณ วันที่ทดสอบ โมเดล AI เปลี่ยนเร็ว ควรทดสอบซ้ำก่อนใช้งานจริง
+  <div class="foot-links"><a href="index.html">หน้าแรก</a><a href="ai-video.html">สร้างวิดีโอด้วย AI</a><a href="use-cases.html">Use Cases</a><a href="prompts.html">Prompts</a><a href="compare.html">Model Compare</a></div>
+  <p>Nerd MarTech · จัดทำโดย AOO Commerce · ผลทดสอบเป็นข้อมูล ณ วันที่ทดสอบ โมเดล AI เปลี่ยนเร็ว ควรทดสอบซ้ำก่อนใช้งานจริง</p>
 </footer>
 
 </div>
 
-<script>
-function cpAnno(btn){
-  var t=Array.from(document.querySelectorAll('#anno mark')).map(function(m){return m.textContent.trim()}).join(' ');
-  navigator.clipboard.writeText(t).then(function(){
-    btn.textContent='Copied ✓';btn.classList.add('done');
-    setTimeout(function(){btn.textContent='Copy prompt';btn.classList.remove('done')},1800);
-  });
-}
-</script>
 <script src="assets/site.js"></script>
 </body>
 </html>

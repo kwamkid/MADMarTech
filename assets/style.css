@@ -488,3 +488,4 @@ body.home.past-hero .site-head{background:var(--bg)}
 .hero-bg p.hero-tag{font-size:22px;font-weight:600;color:#fff}
 @media(max-width:560px){.hero-bg p.hero-tag{font-size:18px}}
 .tablewrap.fit table{min-width:0}
+.hero-bg h1 em{display:inline-block;font-size:.72em;margin-top:6px}

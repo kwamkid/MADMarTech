@@ -210,3 +210,12 @@ footer a{color:var(--muted)}
 .ds-note{color:var(--muted);font-size:15px}
 .ds-sample{background:var(--card);border:1px solid var(--line);padding:18px}
 code.tok{font-family:var(--font-display);font-size:12px;background:var(--card2);padding:1px 6px;color:var(--accent2)}
+
+/* compare: same-input brief */
+.brief{display:grid;grid-template-columns:auto 1fr;gap:20px;align-items:center;background:var(--card);border:1px solid var(--line);padding:16px 18px}
+.brief-in{display:flex;gap:8px}
+.brief-in img{width:96px;height:96px;object-fit:cover;border:1px solid var(--line)}
+.brief-txt p{margin:6px 0 10px;font-size:16px}
+.brief-txt .chips{margin:0}
+.vcard .rank.lab{color:var(--accent-hi)}
+@media(max-width:640px){.brief{grid-template-columns:1fr}}

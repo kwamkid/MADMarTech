@@ -132,6 +132,8 @@
       b.addEventListener('click', function(){
         tabs.forEach(function(x){ x.classList.toggle('on', x === b); });
         after.src = b.getAttribute('data-src');
+        var lab = ba.querySelector('.ba-lab.r'), cr = b.getAttribute('data-cr-tab');
+        if (lab && cr) lab.textContent = 'Genjutsu · ' + cr + ' credits';
         after.currentTime = before.currentTime;
         after.play().catch(function(){});
       });

@@ -39,118 +39,101 @@
 
 <!-- ===== UC1 ===== -->
 <section id="ugc-house">
-  <span class="tag" style="color:var(--accent-hi);font-size:13px">Use Case 01 · วิดีโอ</span>
+  <div class="eyebrow"><span class="lab red">USE CASE 01</span><span class="lab">วิดีโอ</span></div>
   <h2>คลิป UGC รีวิวบ้านพูดไทย จากรูป 2 รูป</h2>
   <p class="h2sub">สำหรับ: โครงการบ้านจัดสรร · เพจอสังหาฯ · เซลส์ที่ต้องการคลิป Reels/TikTok โดยไม่ต้องถ่ายจริง</p>
-
-  <div class="grid g2">
-    <div class="vcard">
-      <video controls preload="metadata" src="https://d8j0ntlcm91z4.cloudfront.net/user_3FvAUpXpCnZUma0p4ZCgNFe1CGD/hf_20260922_221717_f3028521-d89f-4e31-a02f-b57101865983.mp4"></video>
-      <div class="body">
-        <div class="name">ผลลัพธ์ — Gemini Omni Flash 1.1</div>
-        <div class="row"><span>9:16 · 8 วินาที · 720p</span><span class="credits">24 credits</span></div>
-        <span class="verdict v-ok">✅ ใช้ได้เลย</span>
+  <div class="uc">
+    <div class="vids">
+      <div class="vcard">
+        <video controls preload="metadata" src="https://d8j0ntlcm91z4.cloudfront.net/user_3FvAUpXpCnZUma0p4ZCgNFe1CGD/hf_20260922_221717_f3028521-d89f-4e31-a02f-b57101865983.mp4"></video>
+        <div class="body"><div class="name">Gemini Omni Flash 1.1</div><div class="row"><span>9:16 · 8s · 720p</span><span class="credits">24 credits</span></div><span class="badge pass"><svg><use href="assets/pixel-icons.svg#i-pass"/></svg>PASS</span></div>
       </div>
     </div>
     <div>
       <div class="kv">
-        <b>โจทย์</b><span>ได้รูปพรีเซนเตอร์ 1 รูป + รูปหน้าโครงการ 1 รูป ต้องการคลิปแนวตั้ง มีคนพูดไทยแนะนำบ้าน</span>
-        <b>เครื่องมือ</b><span>Claude Cowork + Higgsfield MCP (โมเดล Gemini Omni Flash 1.1)</span>
-        <b>เวลา</b><span>~3 นาที ต่อคลิป</span>
-        <b>ต้นทุน</b><span>24 credits ต่อคลิป 8 วิ</span>
-        <b>ทำไมตัวนี้</b><span>รับรูปอ้างอิงได้หลายรูปในรอบเดียว · เสียงไทยชัดที่สุดจาก 11 โมเดลที่ทดสอบ · ราคาถูกกว่าค่าเฉลี่ย</span>
+        <b>โจทย์</b><span>รูปพรีเซนเตอร์ 1 + รูปหน้าโครงการ 1 → คลิปแนวตั้ง มีคนพูดไทยแนะนำบ้าน</span>
+        <b>เครื่องมือ</b><span>Claude Cowork + Higgsfield (Gemini Omni Flash 1.1)</span>
+        <b>เวลา / ต้นทุน</b><span>~3 นาที · 24 credits ต่อคลิป 8 วิ</span>
+        <b>ทำไมตัวนี้</b><span>รับหลายรูปในรอบเดียว · เสียงไทยชัดที่สุดจาก 11 โมเดล · ถูกกว่าค่าเฉลี่ย</span>
       </div>
       <h3>ขั้นตอน</h3>
-      <ol class="steps">
-        <li><b>เตรียมรูป 2 รูป</b><span>รูปคน (หน้าชัด แสงดี) + รูปบ้าน/โครงการ — รูปคนควรเป็นรูปที่ได้รับอนุญาตใช้แล้ว</span></li>
-        <li><b>เขียนบทพูดไทยสั้นๆ</b><span>8 วินาที ≈ 25–30 คำ · ประโยคสั้น · ลงท้ายด้วย call-to-action ("ทักมาได้เลยนะคะ")</span></li>
-        <li><b>สั่งเจนด้วย prompt มาตรฐาน</b><span>ดู <a href="prompts.html#p-ugc">Prompt #1</a> — ระบุมุมกล้อง แสง อารมณ์ และบทพูดในเครื่องหมายคำพูด</span></li>
-        <li><b>เช็ค 3 อย่าง</b><span>ไทยชัดไหม · ปากตรงไหม · หน้าเหมือนรูปไหม — ไม่ผ่านข้อใดข้อหนึ่ง เจนใหม่ (24 credits) ถูกกว่าแก้</span></li>
+      <ol class="steps compact">
+        <li><b>เตรียมรูป 2 รูป</b><span>รูปคนหน้าชัด + รูปบ้าน — รูปคนต้องได้รับอนุญาตแล้ว</span></li>
+        <li><b>เขียนบทพูดไทยสั้นๆ</b><span>8 วิ ≈ 25–30 คำ · ลงท้ายด้วย CTA</span></li>
+        <li><b>สั่งเจนด้วย prompt มาตรฐาน</b><span>ดู <a href="prompts.html#p-ugc">Prompt #1</a> หรือ <a href="ai-video.html">แกะทีละส่วน</a></span></li>
+        <li><b>เช็ค 3 อย่าง</b><span>ไทยชัด · ปากตรง · หน้าเหมือน — ไม่ผ่านเจนใหม่ ถูกกว่าแก้</span></li>
       </ol>
-      <div class="lesson"><b>ข้อควรระวัง</b> — โมเดลอื่นที่ราคาแพงกว่า (Veo 3.1, Seedance 2.5) ให้ผลภาษาไทยแย่กว่า ดู <a href="compare.html">ผลเปรียบเทียบ</a> ก่อนเลือก</div>
+      <div class="lesson"><b>ข้อควรระวัง</b> — โมเดลที่แพงกว่า (Veo 3.1, Seedance 2.5) ให้ผลภาษาไทยแย่กว่า ดู <a href="compare.html">ผลเปรียบเทียบ</a> ก่อนเลือก</div>
     </div>
   </div>
 </section>
 
 <!-- ===== UC2 ===== -->
 <section id="motion-transfer">
-  <span class="tag" style="color:var(--accent-hi);font-size:13px">Use Case 02 · วิดีโอ</span>
+  <div class="eyebrow"><span class="lab red">USE CASE 02</span><span class="lab">วิดีโอ</span></div>
   <h2>ถ่ายพรีเซนเตอร์ครั้งเดียว เปลี่ยนคนได้ไม่จำกัด</h2>
   <p class="h2sub">สำหรับ: แบรนด์ที่ต้องการคลิปหลายเวอร์ชัน (หลายพรีเซนเตอร์ / หลายกลุ่มเป้าหมาย) จากคลิปต้นแบบเดียว</p>
-
-  <div class="grid g2">
-    <div class="grid g2" style="gap:10px">
+  <div class="uc two">
+    <div class="vids">
       <div class="vcard">
         <video controls preload="metadata" src="https://d8j0ntlcm91z4.cloudfront.net/user_3FvAUpXpCnZUma0p4ZCgNFe1CGD/hf_20260922_224524_89072b8a-0713-4898-9764-28af3fb6534c.mp4"></video>
-        <div class="body">
-          <div class="name">Genjutsu (Higgsfield)</div>
-          <div class="row"><span>720p</span><span class="credits">56 credits</span></div>
-          <span class="verdict v-ok">✅ ใช้ได้เลย</span>
-        </div>
+        <div class="body"><div class="name">Genjutsu</div><div class="row"><span>Motion Control</span><span class="credits">56 credits</span></div><span class="badge pass"><svg><use href="assets/pixel-icons.svg#i-pass"/></svg>PASS</span></div>
       </div>
       <div class="vcard">
         <video controls preload="metadata" src="https://d8j0ntlcm91z4.cloudfront.net/user_3FvAUpXpCnZUma0p4ZCgNFe1CGD/hf_20260922_224517_8dc9c414-276f-410a-b6c8-73585a2ee64f.mp4"></video>
-        <div class="body">
-          <div class="name">Kling 3.0 Omni Edit</div>
-          <div class="row"><span>pro</span><span class="credits">16 credits</span></div>
-          <span class="verdict v-ok">✅ ใช้ได้เลย</span>
-        </div>
+        <div class="body"><div class="name">Kling 3.0 Omni Edit</div><div class="row"><span>pro</span><span class="credits">16 credits</span></div><span class="badge pass"><svg><use href="assets/pixel-icons.svg#i-pass"/></svg>PASS</span></div>
       </div>
     </div>
     <div>
       <div class="kv">
-        <b>โจทย์</b><span>มีคลิปที่เสียงและการเคลื่อนไหวดีแล้ว 1 คลิป ต้องการเปลี่ยนเป็นพรีเซนเตอร์อีกคนโดยไม่เจนใหม่ทั้งหมด</span>
+        <b>โจทย์</b><span>มีคลิปที่เสียงและการเคลื่อนไหวดีแล้ว ต้องการเปลี่ยนเป็นพรีเซนเตอร์อีกคนโดยไม่เจนใหม่ทั้งหมด</span>
         <b>เครื่องมือ</b><span>Genjutsu (Higgsfield Motion Control) หรือ Kling 3.0 Omni Edit</span>
-        <b>เวลา</b><span>Genjutsu ~10 นาที · Kling Omni Edit ~5 นาที</span>
-        <b>ต้นทุน</b><span>16–56 credits ต่อเวอร์ชัน</span>
-        <b>ทำไมสำคัญ</b><span>เสียงไทยที่ดีหายาก — พอได้คลิปที่เสียงดีแล้ว ใช้มันเป็น "แม่แบบ" แล้วเปลี่ยนแค่หน้าคน คุ้มกว่าเจนใหม่ทุกครั้ง</span>
+        <b>เวลา / ต้นทุน</b><span>5–10 นาที · 16–56 credits ต่อเวอร์ชัน</span>
+        <b>ทำไมสำคัญ</b><span>เสียงไทยที่ดีหายาก — ได้คลิปดีแล้วใช้เป็น "แม่แบบ" เปลี่ยนแค่หน้าคน คุ้มกว่าเจนใหม่ทุกครั้ง</span>
       </div>
       <h3>ขั้นตอน</h3>
-      <ol class="steps">
-        <li><b>ทำคลิปแม่แบบให้ดีที่สุดก่อน</b><span>ใช้ Use Case 01 — เจนจนได้คลิปที่เสียงไทยชัด ปากตรง</span></li>
+      <ol class="steps compact">
+        <li><b>ทำคลิปแม่แบบให้ดีก่อน</b><span>ใช้ Use Case 01 จนได้เสียงไทยชัด ปากตรง</span></li>
         <li><b>เตรียมรูปคนใหม่</b><span>หน้าตรง แสงดี พื้นหลังเรียบ</span></li>
-        <li><b>ป้อนคลิปแม่แบบ + รูปคนใหม่</b><span>ดู <a href="prompts.html#p-motion">Prompt #3–4</a> — สั่งให้ "คงเสียง ฉาก และการเคลื่อนไหวเดิม เปลี่ยนเฉพาะหน้าคน"</span></li>
-        <li><b>เลือกตัวที่เหมาะ</b><span>Kling Omni Edit ถูกและเร็วกว่า · Genjutsu หน้าคนเนียนกว่าเล็กน้อยแต่ฉากหลังอาจกระตุก</span></li>
+        <li><b>ป้อนคลิปแม่แบบ + รูปคนใหม่</b><span>ดู <a href="prompts.html#p-motion">Prompt #3–4</a> — "คงเสียง ฉาก การเคลื่อนไหวเดิม เปลี่ยนเฉพาะหน้า"</span></li>
+        <li><b>เลือกตัวที่เหมาะ</b><span>Kling ถูกและเร็ว · Genjutsu หน้าเนียนกว่า แต่ฉากหลังอาจกระตุก</span></li>
       </ol>
-      <div class="lesson"><b>สังเกต</b> — Kling 3.0 ตัวเดียวกัน ถ้าให้ "เจนจากศูนย์" พูดไทยเป็นเขมร แต่ถ้าให้ "แก้คลิปเดิม" (คงเสียงต้นฉบับ) ใช้ได้ดี — คำตอบไม่ใช่แบรนด์ไหน แต่คือให้มันสร้างอะไร</div>
+      <div class="lesson"><b>สังเกต</b> — Kling 3.0 ตัวเดียวกัน "เจนจากศูนย์" พูดไทยเป็นเขมร แต่ "แก้คลิปเดิม" ใช้ได้ดี — คำตอบไม่ใช่แบรนด์ไหน แต่คือให้มันสร้างอะไร</div>
     </div>
   </div>
 </section>
 
 <!-- ===== UC3 ===== -->
 <section id="long-clip">
-  <span class="tag" style="color:var(--accent-hi);font-size:13px">Use Case 03 · วิดีโอ</span>
+  <div class="eyebrow"><span class="lab red">USE CASE 03</span><span class="lab">วิดีโอ</span></div>
   <h2>ต้องการคลิปยาวกว่า 10 วินาที ทำยังไง</h2>
   <p class="h2sub">สำหรับ: คลิป Reels/TikTok ที่ต้องเล่าหลายจุดขาย · คลิปแนะนำโครงการ 20–30 วิ</p>
-
-  <div class="grid g2">
-    <div>
-      <div class="grid g2" style="gap:10px;margin-bottom:14px">
-        <div class="vcard">
-          <video controls preload="metadata" src="https://cdn.higgsfield.ai/cinematic/splice/job/d310e5db-30e8-4124-aed9-a1ab6be56caf/spliced.mp4"></video>
-          <div class="body"><div class="name">Extend ครั้งที่ 1</div><div class="row"><span>Flash 1.1 Extend</span><span class="credits">70 credits</span></div><span class="verdict v-bad">❌ เสียงเปลี่ยน</span></div>
-        </div>
-        <div class="vcard">
-          <video controls preload="metadata" src="https://cdn.higgsfield.ai/cinematic/splice/job/4f9acad5-c542-40e0-8159-6db8e3541cd5/spliced.mp4"></video>
-          <div class="body"><div class="name">Extend ครั้งที่ 2</div><div class="row"><span>Flash 1.1 Extend</span><span class="credits">70 credits</span></div><span class="verdict v-bad">❌ เสียงเปลี่ยน</span></div>
-        </div>
+  <div class="uc two">
+    <div class="vids">
+      <div class="vcard">
+        <video controls preload="metadata" src="https://cdn.higgsfield.ai/cinematic/splice/job/d310e5db-30e8-4124-aed9-a1ab6be56caf/spliced.mp4"></video>
+        <div class="body"><div class="name">Extend ครั้งที่ 1</div><div class="row"><span>Flash 1.1 Extend</span><span class="credits">70 credits</span></div><span class="badge fail"><svg><use href="assets/pixel-icons.svg#i-fail"/></svg>FAIL</span></div>
       </div>
-      <div class="kv">
-        <b>โจทย์</b><span>โมเดลส่วนใหญ่เจนได้ครั้งละ 8–10 วิ ต้องการคลิปยาวกว่านั้นโดยคนและเสียงเหมือนเดิม</span>
-        <b>สิ่งที่ลองแล้วไม่ผ่าน</b><span>ฟีเจอร์ <b>Extend</b> ของ Gemini Omni Flash 1.1 — ต่อภาพได้ แต่<b>เสียงถูกสร้างใหม่</b> กลายเป็นอีกเสียง สำเนียงเพี้ยน ("ห้องรับแขก" → "ห้องรับแข้ว") เพราะ Extend ไม่มี voice reference — เลือกโมเดลเสียงไม่ได้</span>
-        <b>วิธีที่ใช้ได้</b><span>เจนหลายคลิปสั้นจาก<b>รูปอ้างอิงชุดเดิม + โมเดลเดิม</b> แต่ละคลิปบทพูดคนละท่อน แล้วตัดต่อ — เสียงจะใกล้เคียงกันเพราะ input เดียวกัน</span>
-        <b>ต้นทุน</b><span>24 credits × จำนวนคลิป (คลิป 24 วิ = 3 คลิป = 72 credits) — เทียบกับ Extend 70 credits/ครั้ง ที่ได้ผลแย่กว่า</span>
+      <div class="vcard">
+        <video controls preload="metadata" src="https://cdn.higgsfield.ai/cinematic/splice/job/4f9acad5-c542-40e0-8159-6db8e3541cd5/spliced.mp4"></video>
+        <div class="body"><div class="name">Extend ครั้งที่ 2</div><div class="row"><span>Flash 1.1 Extend</span><span class="credits">70 credits</span></div><span class="badge fail"><svg><use href="assets/pixel-icons.svg#i-fail"/></svg>FAIL</span></div>
       </div>
     </div>
     <div>
+      <div class="kv">
+        <b>โจทย์</b><span>โมเดลส่วนใหญ่เจนได้ครั้งละ 8–10 วิ ต้องการยาวกว่านั้นโดยคนและเสียงเหมือนเดิม</span>
+        <b>ที่ไม่ผ่าน</b><span><b>Extend</b> ของ Omni Flash 1.1 — ต่อภาพได้ แต่<b>เสียงถูกสร้างใหม่</b> สำเนียงเพี้ยน เพราะไม่มี voice reference</span>
+        <b>ที่ใช้ได้</b><span>เจนหลายคลิปสั้นจาก<b>รูปอ้างอิงชุดเดิม + โมเดลเดิม</b> คนละท่อนบทพูด แล้วตัดต่อ</span>
+        <b>ต้นทุน</b><span>24 × จำนวนคลิป (24 วิ = 72 credits) เทียบ Extend 70/ครั้ง ที่แย่กว่า</span>
+      </div>
       <h3>ขั้นตอน</h3>
-      <ol class="steps">
-        <li><b>แบ่งบทเป็นท่อนละ 8 วิ</b><span>ท่อนละ 1 จุดขาย: เปิดตัว → หน้าบ้าน/ที่จอดรถ → ภายใน → CTA</span></li>
-        <li><b>เจนทุกท่อนด้วยรูปอ้างอิงชุดเดียวกัน</b><span>คน + บ้าน เหมือนเดิมทุกท่อน · prompt เหมือนเดิม เปลี่ยนเฉพาะบทพูดและท่าทาง</span></li>
-        <li><b>คัดท่อนที่เสียงใกล้กันที่สุด</b><span>ท่อนไหนเสียงต่างมาก เจนใหม่ (ถูกกว่าฝืนใช้)</span></li>
-        <li><b>ตัดต่อ + ใส่ซับ</b><span>CapCut / Premiere · ใส่ transition สั้นๆ ระหว่างท่อน ซับไตเติลช่วยกลบความต่างของเสียง</span></li>
+      <ol class="steps compact">
+        <li><b>แบ่งบทท่อนละ 8 วิ</b><span>ท่อนละ 1 จุดขาย: เปิดตัว → หน้าบ้าน → ภายใน → CTA</span></li>
+        <li><b>เจนทุกท่อนด้วยรูปชุดเดียวกัน</b><span>prompt เดิม เปลี่ยนเฉพาะบทพูดและท่าทาง</span></li>
+        <li><b>คัดท่อนที่เสียงใกล้กัน</b><span>ท่อนไหนต่างมาก เจนใหม่</span></li>
+        <li><b>ตัดต่อ + ใส่ซับ</b><span>CapCut / Premiere · ซับช่วยกลบความต่างของเสียง</span></li>
       </ol>
-      <div class="lesson"><b>บทเรียน</b> — ฟีเจอร์ที่ชื่อว่า "Extend" ไม่ได้แปลว่าต่อทุกอย่าง ต้องทดสอบก่อนว่ามันต่ออะไร (ภาพ? เสียง? ทั้งคู่?) ก่อนวางแผนงานจริง</div>
+      <div class="lesson"><b>บทเรียน</b> — ฟีเจอร์ชื่อ "Extend" ไม่ได้แปลว่าต่อทุกอย่าง ต้องทดสอบก่อนว่ามันต่ออะไร (ภาพ? เสียง?)</div>
     </div>
   </div>
 </section>

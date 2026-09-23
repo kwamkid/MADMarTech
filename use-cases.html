@@ -98,7 +98,7 @@
       <ol class="steps">
         <li><b>ทำคลิปแม่แบบให้ดีที่สุดก่อน</b><span>ใช้ Use Case 01 — เจนจนได้คลิปที่เสียงไทยชัด ปากตรง</span></li>
         <li><b>เตรียมรูปคนใหม่</b><span>หน้าตรง แสงดี พื้นหลังเรียบ</span></li>
-        <li><b>ป้อนคลิปแม่แบบ + รูปคนใหม่</b><span>ดู <a href="prompts.html#p-motion">Prompt #4–5</a> — สั่งให้ "คงเสียง ฉาก และการเคลื่อนไหวเดิม เปลี่ยนเฉพาะหน้าคน"</span></li>
+        <li><b>ป้อนคลิปแม่แบบ + รูปคนใหม่</b><span>ดู <a href="prompts.html#p-motion">Prompt #3–4</a> — สั่งให้ "คงเสียง ฉาก และการเคลื่อนไหวเดิม เปลี่ยนเฉพาะหน้าคน"</span></li>
         <li><b>เลือกตัวที่เหมาะ</b><span>Kling Omni Edit ถูกและเร็วกว่า · Genjutsu หน้าคนเนียนกว่าเล็กน้อยแต่ฉากหลังอาจกระตุก</span></li>
       </ol>
       <div class="lesson"><b>สังเกต</b> — Kling 3.0 ตัวเดียวกัน ถ้าให้ "เจนจากศูนย์" พูดไทยเป็นเขมร แต่ถ้าให้ "แก้คลิปเดิม" (คงเสียงต้นฉบับ) ใช้ได้ดี — คำตอบไม่ใช่แบรนด์ไหน แต่คือให้มันสร้างอะไร</div>
@@ -114,11 +114,21 @@
 
   <div class="grid g2">
     <div>
+      <div class="grid g2" style="gap:10px;margin-bottom:14px">
+        <div class="vcard">
+          <video controls preload="metadata" src="https://cdn.higgsfield.ai/cinematic/splice/job/d310e5db-30e8-4124-aed9-a1ab6be56caf/spliced.mp4"></video>
+          <div class="body"><div class="name">Extend ครั้งที่ 1</div><div class="row"><span>Flash 1.1 Extend</span><span class="credits">70 credits</span></div><span class="verdict v-bad">❌ เสียงเปลี่ยน</span></div>
+        </div>
+        <div class="vcard">
+          <video controls preload="metadata" src="https://cdn.higgsfield.ai/cinematic/splice/job/4f9acad5-c542-40e0-8159-6db8e3541cd5/spliced.mp4"></video>
+          <div class="body"><div class="name">Extend ครั้งที่ 2</div><div class="row"><span>Flash 1.1 Extend</span><span class="credits">70 credits</span></div><span class="verdict v-bad">❌ เสียงเปลี่ยน</span></div>
+        </div>
+      </div>
       <div class="kv">
         <b>โจทย์</b><span>โมเดลส่วนใหญ่เจนได้ครั้งละ 8–10 วิ ต้องการคลิปยาวกว่านั้นโดยคนและเสียงเหมือนเดิม</span>
         <b>สิ่งที่ลองแล้วไม่ผ่าน</b><span>ฟีเจอร์ <b>Extend</b> ของ Gemini Omni Flash 1.1 — ต่อภาพได้ แต่<b>เสียงถูกสร้างใหม่</b> กลายเป็นอีกเสียง สำเนียงเพี้ยน ("ห้องรับแขก" → "ห้องรับแข้ว") เพราะ Extend ไม่มี voice reference — เลือกโมเดลเสียงไม่ได้</span>
         <b>วิธีที่ใช้ได้</b><span>เจนหลายคลิปสั้นจาก<b>รูปอ้างอิงชุดเดิม + โมเดลเดิม</b> แต่ละคลิปบทพูดคนละท่อน แล้วตัดต่อ — เสียงจะใกล้เคียงกันเพราะ input เดียวกัน</span>
-        <b>ต้นทุน</b><span>24 credits × จำนวนคลิป (คลิป 24 วิ = 3 คลิป = 72 credits)</span>
+        <b>ต้นทุน</b><span>24 credits × จำนวนคลิป (คลิป 24 วิ = 3 คลิป = 72 credits) — เทียบกับ Extend 70 credits/ครั้ง ที่ได้ผลแย่กว่า</span>
       </div>
     </div>
     <div>

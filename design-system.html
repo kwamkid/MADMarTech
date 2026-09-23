@@ -7,7 +7,7 @@
 <meta name="robots" content="noindex">
 <meta name="theme-color" content="#f9f8f6">
 <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans+Thai:wght@400;500;600;700&family=Space+Grotesk:wght@500;600;700&family=Zen+Kaku+Gothic+New:wght@500;700&display=swap" rel="stylesheet">
-<link rel="stylesheet" href="assets/style.css?v=20260924a">
+<link rel="stylesheet" href="assets/style.css?v=20260924b">
 <link rel="icon" href="favicon.ico" sizes="any">
 <link rel="icon" type="image/png" sizes="32x32" href="assets/brand/favicon-32.png">
 <style>
@@ -365,7 +365,12 @@
         </ol>
       </div>
       <div>
-        <p class="demo-label">Prompt block</p>
+        <p class="demo-label">Step heading + tool pill</p>
+        <h3 style="margin:0 0 6px"><span class="stepno">1</span>เขียนบท</h3>
+        <span class="tool">Claude Code</span><span class="tool">CapCut</span>
+      </div>
+      <div>
+        <p class="demo-label">Prompt block · ข้อความชิดบน ปุ่ม Copy มุมขวา</p>
         <div class="prompt"><button class="copy"><svg class="pi sm"><use href="#i-copy"/></svg>Copy</button><pre>UGC-style vertical selfie video.
 The young Thai woman from the reference photo…</pre></div>
       </div>
@@ -389,11 +394,13 @@ The young Thai woman from the reference photo…</pre></div>
       <tr><td>Stat tile</td><td><code class="tok">.stat</code></td><td>ทำคลิปด้วย AI · Compare</td><td><span class="st ok">พร้อม (.stats)</span></td></tr>
       <tr><td>Key–value</td><td><code class="tok">.kv</code></td><td>ทำคลิปด้วย AI</td><td><span class="st ok">พร้อม</span></td></tr>
       <tr><td>Steps</td><td><code class="tok">.steps .compact</code></td><td>ทำคลิปด้วย AI</td><td><span class="st ok">พร้อม</span></td></tr>
+      <tr><td>หัวข้อขั้นตอน (เลขสีแดง)</td><td><code class="tok">.stepno</code></td><td>ทำคลิปด้วย AI · ตัดต่อด้วย AI</td><td><span class="st ok">พร้อม (ย้ายเข้า style.css)</span></td></tr>
+      <tr><td>Tool pill (บอกเครื่องมือของขั้น)</td><td><code class="tok">.tool</code></td><td>ทำคลิปด้วย AI · ตัดต่อด้วย AI</td><td><span class="st ok">พร้อม (พื้นขาว + ขอบ)</span></td></tr>
       <tr><td>Prompt block + copy</td><td><code class="tok">.prompt .pmeta</code></td><td>ทำคลิปด้วย AI</td><td><span class="st ok">พร้อม</span></td></tr>
       <tr><td>Annotated prompt</td><td><code class="tok">.anno .legend</code></td><td>ทำคลิปด้วย AI</td><td><span class="st ok">พร้อม (พื้นสีแทนขีดเส้นใต้)</span></td></tr>
       <tr><td>Pipeline (input → output)</td><td><code class="tok">.pipe .node</code></td><td>ทำคลิปด้วย AI</td><td><span class="st ok">พร้อม</span></td></tr>
       <tr><td>Input brief</td><td><code class="tok">.brief</code></td><td>Compare</td><td><span class="st ok">พร้อม</span></td></tr>
-      <tr><td>Table</td><td><code class="tok">.tablewrap table</code></td><td>Compare</td><td><span class="st ok">พร้อม</span></td></tr>
+      <tr><td>Table</td><td><code class="tok">.tablewrap table</code></td><td>Compare · ทำคลิป · ตัดต่อ</td><td><span class="st ok">พร้อม (หัวตารางพื้น --bg2)</span></td></tr>
       <tr><td>Callout / Lesson</td><td><code class="tok">.lesson .callout .note .ok .info</code></td><td>ทุกหน้า</td><td><span class="st ok">พร้อม (พื้นสีเต็ม)</span></td></tr>
       <tr><td>Nerd note (ตัวละคร + ทิป)</td><td><code class="tok">.nerd-note</code></td><td>ทำคลิปด้วย AI</td><td><span class="st ok">พร้อม</span></td></tr>
       <tr><td>Lightbox</td><td><code class="tok">img[data-zoom]</code></td><td>Compare · ทำคลิปด้วย AI</td><td><span class="st ok">พร้อม</span></td></tr>
@@ -508,6 +515,6 @@ The young Thai woman from the reference photo…</pre></div>
 
 </main>
 
-<script src="assets/site.js?v=20260924a"></script>
+<script src="assets/site.js?v=20260924b"></script>
 </body>
 </html>

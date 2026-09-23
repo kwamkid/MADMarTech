@@ -17,7 +17,7 @@
 {"@context":"https://schema.org","@type":"HowTo","name":"ทำคลิปพูดไทย 1 นาที ด้วย Claude × Higgsfield","description":"คู่มือทำคลิปพูดไทย 1 นาทีด้วย Claude × Higgsfield ตั้งแต่เขียนบท วาง storyboard อัปโหลดรูป เลือกโมเดลที่พูดไทยได้จริง เจนทีละช็อต ต่อคลิป ใส่ซับและเพลง พร้อมเครดิตและค่าใช้จ่ายจริง","tool":[{"@type":"HowToTool","name":"Claude Cowork"},{"@type":"HowToTool","name":"Higgsfield (Gemini Omni Flash 1.1)"},{"@type":"HowToTool","name":"CapCut"}],"step":[{"@type":"HowToStep","name":"เขียนบทและ storyboard","text":"ให้ Claude เขียนบท 60 วินาที แล้วแบ่งเป็น 8 ช็อต ช็อตละ 8 วินาที"},{"@type":"HowToStep","name":"เตรียมรูปและอัปโหลด","text":"รูปคนหน้าชัดและรูปฉากจริง อัปโหลดเข้า Higgsfield ผ่าน Claude Cowork"},{"@type":"HowToStep","name":"เลือกโมเดล","text":"ใช้โมเดลที่พูดไทยผ่านการทดสอบ เช่น Gemini Omni Flash 1.1"},{"@type":"HowToStep","name":"เจนทีละช็อต","text":"ใช้ prompt 6 ส่วนกับรูปอ้างอิงชุดเดิมทุกช็อต"},{"@type":"HowToStep","name":"ต่อคลิป","text":"ให้ Claude Cowork เรียงและรวมทุกช็อตเป็นไฟล์เดียว"},{"@type":"HowToStep","name":"ใส่ซับและเพลง","text":"ใส่ซับไทยและเพลงที่มีสิทธิ์ใช้ใน CapCut แล้ว export 9:16"},{"@type":"HowToStep","name":"สรุปต้นทุน","text":"รวมเครดิตทุกช็อตรวมรอบที่เจนใหม่"}]}
 </script>
 <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans+Thai:wght@400;500;600;700&family=Space+Grotesk:wght@500;600;700&family=Zen+Kaku+Gothic+New:wght@500;700&display=swap" rel="stylesheet">
-<link rel="stylesheet" href="assets/style.css?v=20260924a">
+<link rel="stylesheet" href="assets/style.css?v=20260924b">
 <link rel="icon" href="favicon.ico" sizes="any">
 <link rel="icon" type="image/png" sizes="32x32" href="assets/brand/favicon-32.png">
 <link rel="apple-touch-icon" href="assets/brand/apple-touch-icon.png">
@@ -64,8 +64,6 @@
 .guide-hero{display:grid;grid-template-columns:minmax(0,1fr) 260px;gap:32px;align-items:start}
 .guide-hero .wip-box{aspect-ratio:9/16}
 @media(max-width:820px){.guide-hero{grid-template-columns:minmax(0,1fr)}.guide-hero .wip-box{aspect-ratio:16/9}}
-.stepno{display:inline-flex;align-items:center;justify-content:center;width:36px;height:36px;background:var(--text);color:#fff;font-family:var(--font-display);font-weight:700;font-size:var(--fs-lg);margin-right:10px;vertical-align:4px;clip-path:polygon(var(--px) 0,calc(100% - var(--px)) 0,100% var(--px),100% calc(100% - var(--px)),calc(100% - var(--px)) 100%,var(--px) 100%,0 calc(100% - var(--px)),0 var(--px))}
-.tool{display:inline-block;font-size:var(--fs-sm);font-weight:600;background:var(--card2);color:var(--text);padding:2px 10px;border-radius:999px;margin-right:6px}
 .flow{display:grid;grid-template-columns:repeat(auto-fit,minmax(190px,1fr));gap:10px}
 .flow a{display:flex;flex-direction:column;gap:4px;background:var(--card);border:1px solid var(--line);border-radius:var(--r);padding:14px 16px;color:var(--text)}
 .flow a:hover{text-decoration:none;border-color:var(--line2);box-shadow:var(--shadow)}
@@ -384,6 +382,6 @@
 
 </main>
 
-<script src="assets/site.js?v=20260924a"></script>
+<script src="assets/site.js?v=20260924b"></script>
 </body>
 </html>

@@ -5,215 +5,319 @@
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>Design System — Nerd MarTech</title>
 <meta name="robots" content="noindex">
+<meta name="theme-color" content="#f9f8f6">
 <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans+Thai:wght@400;500;600;700&family=Space+Grotesk:wght@500;600;700&family=Zen+Kaku+Gothic+New:wght@500;700&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="assets/style.css">
 <link rel="icon" href="favicon.ico" sizes="any">
 <link rel="icon" type="image/png" sizes="32x32" href="assets/brand/favicon-32.png">
 <style>
+/* page-only helpers */
+.rule{border-radius:var(--r);padding:16px 18px;display:flex;flex-direction:column;gap:4px}
+.rule b{font-size:var(--fs-lg)}
+.rule span{font-size:var(--fs-sm);color:var(--muted)}
 .ds-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(150px,1fr));gap:12px}
-.type-row{display:grid;grid-template-columns:150px 1fr;gap:16px;align-items:baseline;padding:12px 0;border-bottom:1px solid var(--line)}
-.type-row .lab{font-size:var(--fs-xs)}
-.icon-cell{display:flex;flex-direction:column;align-items:center;gap:8px;background:var(--card);border:1px solid var(--line);padding:16px 8px}
-.icon-cell .lab{font-size:var(--fs-xs)}
-.lockup{display:inline-flex;align-items:center;gap:14px;padding:22px 20px}
-.lockup img{flex:none}
-.lockup img{height:56px;width:auto}
-.lockup .wm{font-family:var(--font-body);font-weight:700;font-size:24px;line-height:1.05;letter-spacing:-.01em;white-space:nowrap}
-.lockup.stack .wm{white-space:normal}
-.g3 .lockup{padding:18px 16px;gap:10px;overflow:hidden}.g3 .lockup img{height:44px}.g3 .lockup .wm{font-size:20px}.g3 .lockup .desc{white-space:nowrap}
-.lockup .wm span{color:var(--accent-hi)}
-.lockup .desc{font-family:var(--font-display);font-size:var(--fs-xs);letter-spacing:.22em;color:var(--muted);margin-top:4px}
+.swatch b{font-size:var(--fs-sm)}
+.swatch small{font-size:var(--fs-sm);color:var(--muted);line-height:1.4}
+.type-row{display:grid;grid-template-columns:190px 1fr;gap:16px;align-items:baseline;padding:14px 0;border-bottom:1px solid var(--line)}
+.type-row .meta{font-size:var(--fs-sm);color:var(--muted);line-height:1.5}
+.type-row .meta b{display:block;color:var(--text)}
+@media(max-width:640px){.type-row{grid-template-columns:1fr;gap:4px}}
+.icon-cell{display:flex;flex-direction:column;align-items:center;gap:8px;background:var(--card);border:1px solid var(--line);border-radius:var(--r);padding:18px 8px 12px}
+.icon-cell .n{font-size:var(--fs-sm);font-weight:600}
+.icon-cell .new{font-size:var(--fs-sm);font-weight:600;color:var(--accent-ink);background:var(--accent-soft);padding:0 8px;border-radius:999px}
+.icon-cell.c-ok{color:var(--ok-ink)}.icon-cell.c-warn{color:var(--warn-ink)}.icon-cell.c-bad{color:var(--bad-ink)}
+.icon-cell .n{color:var(--text)}
+.lockup{display:inline-flex;align-items:center;gap:14px;padding:22px 20px;border-radius:var(--r)}
+.lockup img{flex:none;height:52px;width:auto}
+.lockup .wm{font-weight:700;font-size:24px;line-height:1.05;white-space:nowrap}
+.lockup .wm span{color:var(--accent)}
+.lockup .desc{font-family:var(--font-display);font-weight:600;font-size:var(--fs-sm);color:var(--muted);margin-top:4px}
 .lockup.stack{flex-direction:column;text-align:center;gap:10px}
-.lockup.on-red .wm,.lockup.on-red .desc{color:#fff}.lockup.on-red .wm span{color:#111}
-.lockup.on-yellow .wm,.lockup.on-yellow .desc{color:#111}.lockup.on-yellow .wm span{color:#111}
-.lockup.on-off .wm{color:#111}.lockup.on-off .desc{color:#5a5854}
-.lockup.on-green .wm,.lockup.on-green .desc{color:var(--offwhite)}.lockup.on-green .wm span{color:var(--accent2)}
-.lockup.on-purple .wm,.lockup.on-purple .desc{color:var(--offwhite)}.lockup.on-purple .wm span{color:var(--accent2)}
-.social{aspect-ratio:4/5;background:var(--bg);border:1px solid var(--line);padding:28px;display:flex;flex-direction:column;position:relative;max-width:360px}
-.social .h{font-weight:700;font-size:26px;line-height:1.2;margin:14px 0 10px}
-.social .shot{flex:1;background:var(--card2);border:1px solid var(--line);display:flex;align-items:center;justify-content:center;color:var(--muted);font-size:var(--fs-xs)}
-.social .data{display:grid;grid-template-columns:1fr 1fr;gap:6px 14px;margin-top:12px}
-.social .foot{display:flex;justify-content:space-between;align-items:center;margin-top:14px}
-.social .foot img{height:26px;width:auto}
-.dont{border-left:4px solid var(--accent)}
-.do{border-left:4px solid var(--ok)}
+.lockup.on-red .wm,.lockup.on-red .desc,.lockup.on-green .wm,.lockup.on-green .desc,.lockup.on-black .wm,.lockup.on-black .desc{color:#fff}
+.lockup.on-red .wm span{color:#111}.lockup.on-green .wm span,.lockup.on-black .wm span{color:var(--accent2)}
+.lockup.on-yellow .wm,.lockup.on-yellow .desc,.lockup.on-yellow .wm span{color:#111}
+.g3 .lockup{padding:18px 16px;gap:10px}.g3 .lockup img{height:40px}.g3 .lockup .wm{font-size:20px}
+.demo-label{font-size:var(--fs-sm);font-weight:600;color:var(--muted);margin:0 0 10px}
+/* component inventory */
+.inv td:first-child{font-weight:600;white-space:nowrap}
+.inv td code{white-space:normal;word-break:break-word}
+.st{display:inline-block;font-size:var(--fs-sm);font-weight:600;padding:1px 8px;border-radius:999px;white-space:nowrap}
+.st.ok{background:var(--ok-soft);color:var(--ok-ink)}.st.fix{background:var(--warn-soft);color:var(--warn-ink)}.st.new{background:var(--accent-soft);color:var(--accent-ink)}
+/* wireframes */
+.pages{display:grid;grid-template-columns:repeat(auto-fill,minmax(330px,1fr));gap:16px}
+.page{background:var(--card);border:1px solid var(--line);border-radius:var(--r);padding:18px;display:flex;flex-direction:column;gap:12px}
+.page h3{margin:0;font-size:var(--fs-lg)}
+.page h3 small{font-weight:500;color:var(--muted);font-size:var(--fs-sm);margin-left:6px}
+.page p{margin:0;font-size:var(--fs-sm);color:var(--muted)}
+.wf{display:flex;flex-direction:column;gap:6px;background:var(--bg2);border-radius:var(--r-sm);padding:10px}
+.wf div{background:var(--card);border-radius:5px;padding:7px 10px;font-size:var(--fs-sm);line-height:1.45;display:flex;justify-content:space-between;gap:8px}
+.wf div i{font-style:normal;color:var(--muted);text-align:right}
+.wf .row{display:grid;grid-template-columns:1fr 1fr 1fr;gap:6px;background:transparent;padding:0}
+.wf .row.two{grid-template-columns:1fr 2fr}
+.wf .row div{justify-content:center;text-align:center}
+.wf .hd{background:var(--text);color:#fff}.wf .hd i{color:#bdb8ae}
+.wf .ac{background:var(--accent-soft)}
+.wf .yl{background:var(--yellow-soft)}
+.wf .new{background:transparent;box-shadow:inset 0 0 0 1.5px dashed var(--line2);outline:1.5px dashed var(--line2);outline-offset:-1.5px}
+.wf-legend{display:flex;flex-wrap:wrap;gap:14px;font-size:var(--fs-sm);color:var(--muted);margin-top:10px}
+.wf-legend span{display:inline-flex;align-items:center;gap:6px}
+.wf-legend span::before{content:"";width:14px;height:14px;border-radius:3px;background:var(--c)}
+.wf-legend span.dash::before{background:transparent;outline:1.5px dashed var(--line2);outline-offset:-1.5px}
+/* do / don't — filled, no side border */
+.do-box{background:var(--ok-soft)}.dont-box{background:var(--bad-soft)}
+.do-box h3,.dont-box h3{margin:0 0 8px;font-size:var(--fs-lg)}
+.do-box h3{color:var(--ok-ink)}.dont-box h3{color:var(--bad-ink)}
+.do-box ul,.dont-box ul{margin:0;padding-left:20px}
+.do-box li,.dont-box li{margin:3px 0}
 </style>
 </head>
 <body>
-
 <header class="site-head">
   <a class="logo" href="index.html" aria-label="Nerd MarTech">
-    <img src="assets/brand/logo-on-dark.svg" alt="" class="logo-sym">
+    <img src="assets/brand/logo-on-light.svg" alt="" class="logo-sym">
     <span class="logo-wm">Nerd<br>Mar<span>Tech</span></span>
   </a>
   <nav class="site-nav"><div class="wrap"><div class="links"><a href="index.html">หน้าแรก</a><a href="ai-video.html">สร้างวิดีโอด้วย AI</a><a href="use-cases.html">Use Cases</a><a href="prompts.html">Prompts</a><a href="compare.html">Model Compare</a><a href="design-system.html" class="active">Design System</a></div></div></nav>
 </header>
-
 <div class="wrap">
 
-<div class="hero" style="padding-bottom:16px">
-  <div class="lab red">NERD MARTECH / DESIGN SYSTEM v1.0</div>
+<div class="hero" style="padding-bottom:12px">
+  <div class="lab red">Design System v2.0 · Light</div>
   <h1>Design System</h1>
-  <p>ทุกอย่างในหน้านี้คือ component ที่ใช้จริงบนเว็บ (ดึงจาก <code class="tok">assets/style.css</code>) — ถ้าเปลี่ยนที่นี่ เว็บทั้งหมดเปลี่ยนตาม · อ้างอิง Brand Guide <code class="tok">00-Context/01-Brand.md</code></p>
-  <div class="px-divider"></div>
+  <p>ทุกอย่างในหน้านี้ดึงจาก <code class="tok">assets/style.css</code> ตัวเดียวกับเว็บจริง แก้ที่ token แล้วทุกหน้าเปลี่ยนตาม · อ้างอิง Brand Guide <code class="tok">00-Context/01-Brand.md</code></p>
 </div>
 
-<!-- ===== 1. LOGO ===== -->
-<section>
-  <div class="eyebrow"><span class="lab">01</span><span class="lab">Logo &amp; Lockup</span></div>
-  <p class="h2sub">Master Symbol = Pixel Nerd Head (SVG แนวนอน 500×361) · ชื่อแสดง <b>Nerd MarTech</b> — เน้นสีเฉพาะ <b>Tech</b> · descriptor <b>MARKETING · AI · DATA</b></p>
-  <div class="ds-row" style="margin-bottom:14px"><span class="lab">SVG variants:</span><code class="tok">logo-on-dark.svg</code><code class="tok">logo-on-light.svg</code><code class="tok">logo-mono-white.svg</code><code class="tok">logo-mono-black.svg</code></div>
+<div class="doc">
+<aside class="side-toc"><span class="toc-title">ไปที่หัวข้อ</span><a href="#principles">หลักการ</a><a href="#logo">Logo</a><a href="#color">สี</a><a href="#type">ตัวอักษร</a><a href="#layout">Spacing &amp; Grid</a><a href="#icons">Icons</a><a href="#graphic">Graphic</a><a href="#components">Components</a><a href="#pages">Layout แต่ละหน้า</a><a href="#dodont">Do / Don't</a></aside>
+<main>
+<!-- ===== 00 PRINCIPLES ===== -->
+<section id="principles">
+  <div class="eyebrow"><span class="lab">00 · หลักการ v2</span></div>
+  <h2>6 กติกาที่ใช้ทั้งเว็บ</h2>
+  <p class="h2sub">เปลี่ยนจาก v1 (ธีมมืด) มาเป็นธีมสว่าง แล้วตัดสิ่งที่อ่านยากออก</p>
+  <div class="grid g3">
+    <div class="rule" style="background:var(--card);border:1px solid var(--line)"><b>พื้นสว่าง</b><span>Off-white <code class="tok">#f9f8f6</code> เป็นพื้นหน้า · การ์ดขาว · ตัวหนังสือดำ <code class="tok">#111</code></span></div>
+    <div class="rule" style="background:var(--accent-soft)"><b>แดง 1 สีหลัก</b><span>แดง Nerd Red ใช้กับปุ่มหลักและจุดเน้นเท่านั้น · สีอื่นใช้แค่สื่อความหมาย · ไม่มีสีฟ้า</span></div>
+    <div class="rule" style="background:var(--yellow-soft)"><b>ตัวอักษรขั้นต่ำ 14px</b><span>เนื้อหา ปุ่ม และ badge ใช้ 16px · caption/meta 14px · ไม่มีอะไรเล็กกว่านี้</span></div>
+    <div class="rule" style="background:var(--green-soft)"><b>ไม่ถ่างตัวอักษร</b><span>letter-spacing = 0 ทุกที่ · ตัวอักษรไทยถ่างแล้วอ่านยาก สระลอยหลุดตำแหน่ง</span></div>
+    <div class="rule" style="background:var(--purple-soft)"><b>เน้นด้วยพื้นสี ไม่ใช้ขอบข้างเดียว</b><span>กล่องบทเรียน โน้ต Do/Don't ใช้พื้นสีอ่อนเต็มกล่อง · ไม่มีเส้นสีด้านซ้าย/ขวา</span></div>
+    <div class="rule" style="background:var(--card2)"><b>ฟอนต์ไทยเป็นหลัก</b><span>IBM Plex Sans Thai ใช้กับทุกอย่างรวมถึงปุ่มและเมนู · Space Grotesk ใช้เฉพาะข้อมูลภาษาอังกฤษสั้นๆ</span></div>
+  </div>
+</section>
 
+<!-- ===== 01 LOGO ===== -->
+<section id="logo">
+  <div class="eyebrow"><span class="lab">01 · Logo</span></div>
+  <h2>Logo &amp; Lockup</h2>
+  <p class="h2sub">Master Symbol = Pixel Nerd Head · ชื่อแสดง <b>Nerd MarTech</b> เน้นสีเฉพาะ <b>Tech</b> · บนพื้นสว่างใช้ <code class="tok">logo-on-light.svg</code></p>
   <div class="grid g2">
     <div class="ds-sample">
-      <div class="lab" style="margin-bottom:12px">Primary Horizontal</div>
-      <div class="lockup">
-        <img src="assets/brand/logo-on-dark.svg" alt="">
+      <p class="demo-label">Primary Horizontal</p>
+      <div class="lockup" style="padding:0">
+        <img src="assets/brand/logo-on-light.svg" alt="">
         <div><div class="wm">Nerd Mar<span>Tech</span></div><div class="desc">MARKETING · AI · DATA</div></div>
       </div>
     </div>
-    <div class="ds-sample" style="display:flex;justify-content:center">
-      <div>
-        <div class="lab" style="margin-bottom:12px">Primary Stacked</div>
-        <div class="lockup stack">
-          <img src="assets/brand/logo-on-dark.svg" alt="">
-          <div><div class="wm">Nerd<br>Mar<span>Tech</span></div><div class="desc">MARKETING · AI · DATA</div></div>
-        </div>
+    <div class="ds-sample" style="display:flex;flex-direction:column;align-items:center">
+      <p class="demo-label" style="align-self:flex-start">Primary Stacked</p>
+      <div class="lockup stack" style="padding:0">
+        <img src="assets/brand/logo-on-light.svg" alt="">
+        <div><div class="wm">Nerd<br>Mar<span>Tech</span></div><div class="desc">MARKETING · AI · DATA</div></div>
       </div>
     </div>
   </div>
-
-  <div class="lab" style="margin:22px 0 10px">Color Background Set</div>
+  <p class="demo-label" style="margin-top:20px">บนพื้นสี</p>
   <div class="grid g3" style="gap:10px">
+    <div class="lockup bg-black on-black"><img src="assets/brand/logo-on-dark.svg" alt=""><div><div class="wm">Nerd Mar<span>Tech</span></div><div class="desc">MARKETING · AI · DATA</div></div></div>
     <div class="lockup bg-red on-red"><img src="assets/brand/logo-on-light.svg" alt=""><div><div class="wm">Nerd Mar<span>Tech</span></div><div class="desc">MARKETING · AI · DATA</div></div></div>
-    <div class="lockup bg-green on-green"><img src="assets/brand/logo-on-dark.svg" alt=""><div><div class="wm">Nerd Mar<span>Tech</span></div><div class="desc">MARKETING · AI · DATA</div></div></div>
     <div class="lockup bg-yellow on-yellow"><img src="assets/brand/logo-on-light.svg" alt=""><div><div class="wm">Nerd Mar<span>Tech</span></div><div class="desc">MARKETING · AI · DATA</div></div></div>
-    <div class="lockup bg-purple on-purple"><img src="assets/brand/logo-on-dark.svg" alt=""><div><div class="wm">Nerd Mar<span>Tech</span></div><div class="desc">MARKETING · AI · DATA</div></div></div>
-    <div class="lockup bg-off on-off"><img src="assets/brand/logo-on-light.svg" alt=""><div><div class="wm">Nerd Mar<span>Tech</span></div><div class="desc">MARKETING · AI · DATA</div></div></div>
-    <div class="lockup" style="background:#111;border:1px solid var(--line)"><img src="assets/brand/icon-192.png" alt="" style="image-rendering:pixelated"><div><div class="lab">Symbol only</div><div class="ds-note">profile · favicon · watermark</div></div></div>
+    <div class="lockup bg-green on-green"><img src="assets/brand/logo-on-dark.svg" alt=""><div><div class="wm">Nerd Mar<span>Tech</span></div><div class="desc">MARKETING · AI · DATA</div></div></div>
+    <div class="lockup" style="background:var(--card);border:1px solid var(--line)"><img src="assets/brand/icon-192.png" alt="" style="height:52px;image-rendering:pixelated"><div><div class="wm" style="font-size:var(--fs-md)">Symbol only</div><div class="ds-note">favicon · profile · watermark</div></div></div>
   </div>
-  <p class="ds-note" style="margin-top:10px">Clear space = 1X (X = ความกว้างกรอบแว่น 1 ข้าง) · social ลดได้ 0.5X · ห้าม redraw เพิ่มจมูก/ปาก/คาง</p>
+  <p class="ds-note" style="margin-top:10px">Clear space = 1X (X = ความกว้างกรอบแว่น 1 ข้าง) · social ลดได้ 0.5X · ห้ามเพิ่มจมูก/ปาก/คาง</p>
 </section>
 
-<!-- ===== 2. COLOR ===== -->
-<section>
-  <div class="eyebrow"><span class="lab">02</span><span class="lab">Color</span></div>
+<!-- ===== 02 COLOR ===== -->
+<section id="color">
+  <div class="eyebrow"><span class="lab">02 · Color</span></div>
+  <h2>สี</h2>
+  <p class="h2sub">แบ่งเป็น 4 กลุ่ม · สีสถานะมี 3 ระดับเสมอ: <b>fill</b> (พื้นเข้ม) · <b>soft</b> (พื้นอ่อน) · <b>ink</b> (ตัวหนังสือบนพื้นอ่อน)</p>
+
+  <p class="demo-label">พื้นและเส้น</p>
   <div class="ds-grid">
-    <div class="swatch"><div class="sw" style="background:#111111"></div><div class="lab">Nerd Black</div><code class="tok">#111111</code></div>
-    <div class="swatch"><div class="sw" style="background:#1c1c1c"></div><div class="lab">Card Dark</div><code class="tok">#1c1c1c</code></div>
-    <div class="swatch"><div class="sw" style="background:#242424"></div><div class="lab">Card Dark 2</div><code class="tok">#242424</code></div>
-    <div class="swatch"><div class="sw" style="background:#2e2e2e"></div><div class="lab">Border Dark</div><code class="tok">#2e2e2e</code></div>
-    <div class="swatch"><div class="sw" style="background:#d25240"></div><div class="lab">Nerd Red ★</div><code class="tok">#d25240</code></div>
-    <div class="swatch"><div class="sw" style="background:#e8674f"></div><div class="lab">Nerd Red Light</div><code class="tok">#e8674f</code></div>
-    <div class="swatch"><div class="sw" style="background:#efd058"></div><div class="lab">Nerd Yellow</div><code class="tok">#efd058</code></div>
-    <div class="swatch"><div class="sw" style="background:#3b605c"></div><div class="lab">Nerd Green</div><code class="tok">#3b605c</code></div>
-    <div class="swatch"><div class="sw" style="background:#6f5cd6"></div><div class="lab">Nerd Purple</div><code class="tok">#6f5cd6</code></div>
-    <div class="swatch"><div class="sw" style="background:#f9f8f6"></div><div class="lab">Nerd Off-white</div><code class="tok">#f9f8f6</code></div>
-    <div class="swatch"><div class="sw" style="background:#a3a19c"></div><div class="lab">Muted Text</div><code class="tok">#a3a19c</code></div>
-    <div class="swatch"><div class="sw" style="background:#7fc8a9"></div><div class="lab">Pass Green</div><code class="tok">#7fc8a9</code></div>
+    <div class="swatch"><div class="sw" style="background:#f9f8f6"></div><b>--bg</b><small>#f9f8f6 · พื้นหน้า</small></div>
+    <div class="swatch"><div class="sw" style="background:#ffffff"></div><b>--card</b><small>#ffffff · การ์ด</small></div>
+    <div class="swatch"><div class="sw" style="background:#f2f0ec"></div><b>--bg2 / --card2</b><small>#f2f0ec · prompt, chip, ปุ่มรอง</small></div>
+    <div class="swatch"><div class="sw" style="background:#e5e1da"></div><b>--line</b><small>#e5e1da · เส้นขอบ</small></div>
+    <div class="swatch"><div class="sw" style="background:#cfc9bf"></div><b>--line2</b><small>#cfc9bf · ขอบตอน hover</small></div>
   </div>
-  <div class="grid g2" style="margin-top:16px">
-    <div class="ds-sample do"><div class="lab" style="color:var(--ok)">DO</div><p class="ds-note">Black / Off-white + <b>1 main accent</b> + สูงสุด 1 supporting — เช่น Black + Off-white + Red · Off-white + Black + Green</p></div>
-    <div class="ds-sample dont"><div class="lab" style="color:var(--accent-hi)">DON'T</div><p class="ds-note">Red + Yellow + Green + Purple น้ำหนักเท่ากันในชิ้นเดียว · <b>สีฟ้าทุกเฉด</b> · gradient neon</p></div>
+
+  <p class="demo-label" style="margin-top:20px">ตัวหนังสือ</p>
+  <div class="ds-grid">
+    <div class="swatch"><div class="sw" style="background:#111111"></div><b>--text</b><small>#111111 · Nerd Black</small></div>
+    <div class="swatch"><div class="sw" style="background:#5f5b54"></div><b>--muted</b><small>#5f5b54 · ข้อความรอง</small></div>
+    <div class="swatch"><div class="sw" style="background:#8a857c"></div><b>--faint</b><small>#8a857c · placeholder</small></div>
+    <div class="swatch"><div class="sw" style="background:#b3402e"></div><b>--accent-ink</b><small>#b3402e · ลิงก์ / ตัวแดง</small></div>
+  </div>
+
+  <p class="demo-label" style="margin-top:20px">แบรนด์ (fill → soft)</p>
+  <div class="ds-grid">
+    <div class="swatch"><div class="sw" style="background:linear-gradient(90deg,#d25240 60%,#f9e4df 60%)"></div><b>Nerd Red ★</b><small>#d25240 → #f9e4df · ปุ่มหลัก จุดเน้น</small></div>
+    <div class="swatch"><div class="sw" style="background:linear-gradient(90deg,#efd058 60%,#fbf2cc 60%)"></div><b>Nerd Yellow</b><small>#efd058 → #fbf2cc · highlight · ห้ามใช้เป็นตัวหนังสือ</small></div>
+    <div class="swatch"><div class="sw" style="background:linear-gradient(90deg,#3b605c 60%,#e2ecea 60%)"></div><b>Nerd Green</b><small>#3b605c → #e2ecea · section สลับ · data</small></div>
+    <div class="swatch"><div class="sw" style="background:linear-gradient(90deg,#6f5cd6 60%,#ebe8fa 60%)"></div><b>Nerd Purple</b><small>#6f5cd6 → #ebe8fa · ทดลอง / โปรโมชัน</small></div>
+  </div>
+
+  <p class="demo-label" style="margin-top:20px">ผลทดสอบ (fill · soft · ink)</p>
+  <div class="ds-grid">
+    <div class="swatch"><div class="sw" style="background:linear-gradient(90deg,#7fc8a9 50%,#e1f2ea 50% 80%,#23694d 80%)"></div><b>PASS</b><small>#7fc8a9 · #e1f2ea · #23694d</small></div>
+    <div class="swatch"><div class="sw" style="background:linear-gradient(90deg,#efd058 50%,#fbf2cc 50% 80%,#7a5f00 80%)"></div><b>MAYBE</b><small>#efd058 · #fbf2cc · #7a5f00</small></div>
+    <div class="swatch"><div class="sw" style="background:linear-gradient(90deg,#d25240 50%,#f9e4df 50% 80%,#b3402e 80%)"></div><b>FAIL</b><small>#d25240 · #f9e4df · #b3402e</small></div>
   </div>
 </section>
 
-<!-- ===== 3. TYPE ===== -->
-<section>
-  <div class="eyebrow"><span class="lab">03</span><span class="lab">Typography</span></div>
-  <div class="type-row"><div class="lab">H1 · --fs-h1<br>28–44 / 700</div><div style="font-size:var(--fs-h1);font-weight:700;line-height:1.15">เนิร์ดทดสอบเครื่องมือการตลาด<span class="px-hl red">ให้ก่อน</span></div></div>
-  <div class="type-row"><div class="lab">H2 · --fs-h2<br>24 / 700</div><div style="font-size:var(--fs-h2);font-weight:700">โมเดล AI Video ตัวไหน "พูดไทย" ได้จริง</div></div>
-  <div class="type-row"><div class="lab">H3 · --fs-h3<br>18 / 700</div><div style="font-size:var(--fs-h3);font-weight:700">ถ่ายพรีเซนเตอร์ครั้งเดียว เปลี่ยนคนได้ไม่จำกัด</div></div>
-  <div class="type-row"><div class="lab">LG · --fs-lg<br>18 / 400 · hero lead</div><div style="font-size:var(--fs-lg);color:var(--muted)">ประโยคนำใต้ H1 เท่านั้น — ไม่ใช้ในเนื้อหา</div></div>
-  <div class="type-row"><div class="lab">MD · --fs-md<br>16 / 400 · body</div><div>เครื่องมือการตลาดและ AI ออกใหม่ทุกสัปดาห์ ไม่มีใครมีเวลาลองหมด — เราลองให้ นั่งเทียบทีละตัว จ่ายเครดิตจริง แล้วเขียนผลตรงๆ</div></div>
-  <div class="type-row"><div class="lab">SM · --fs-sm<br>14 / 400 · caption · meta</div><div class="ds-note">ผลทดสอบเป็นข้อมูล ณ วันที่ทดสอบ โมเดล AI เปลี่ยนเร็ว ควรทดสอบซ้ำก่อนใช้งานจริง</div></div>
-  <div class="type-row"><div class="lab">XS · --fs-xs<br>12 · label · tag · Space Grotesk</div><div class="ds-row"><span class="lab">NERD TEST / <b>014</b></span><span class="lab"><b>128</b> CREDITS</span><span class="lab"><b>02:43</b> MIN</span><span class="lab">RESULT: <b>PASS</b></span></div></div>
-  <div class="type-row"><div class="lab">Big Number<br>Space Grotesk 700</div><div class="lab big">24 <small style="font-size:var(--fs-md);color:var(--muted)">CREDITS</small></div></div>
-  <div class="type-row"><div class="lab">JP Accent<br>Zen Kaku Gothic New</div><div class="ds-row"><span class="jp">マーケティング</span><span class="jp">人工知能</span><span class="jp">データ</span><span class="ds-note">— ใช้ 5–15% ของชิ้นงาน ไม่ใช่ตัวหลัก</span></div></div>
+<!-- ===== 03 TYPE ===== -->
+<section id="type">
+  <div class="eyebrow"><span class="lab">03 · Typography</span></div>
+  <h2>ตัวอักษร</h2>
+  <p class="h2sub">ขั้นต่ำ 14px · letter-spacing 0 ทุกที่ · ไทยทั้งหมดใช้ <b>IBM Plex Sans Thai</b></p>
+  <div class="type-row"><div class="meta"><b>H1</b>30–46px · 700</div><div style="font-size:var(--fs-h1);font-weight:700;line-height:1.25">เนิร์ดทดสอบเครื่องมือการตลาด<em style="color:var(--accent);font-style:normal">ให้ก่อน</em></div></div>
+  <div class="type-row"><div class="meta"><b>H2</b>26px · 700 · หัว section</div><div style="font-size:var(--fs-h2);font-weight:700;line-height:1.35">โมเดล AI Video ตัวไหน "พูดไทย" ได้จริง</div></div>
+  <div class="type-row"><div class="meta"><b>H3</b>20px · 700 · หัวการ์ด/หัวย่อย</div><div style="font-size:var(--fs-h3);font-weight:700">ถ่ายพรีเซนเตอร์ครั้งเดียว เปลี่ยนคนได้ไม่จำกัด</div></div>
+  <div class="type-row"><div class="meta"><b>Lead</b>18px · 400 · ใต้ H1 เท่านั้น</div><div style="font-size:var(--fs-lg);color:var(--muted)">เราลองให้ นั่งเทียบทีละตัว จ่ายเครดิตจริง แล้วเขียนผลตรงๆ</div></div>
+  <div class="type-row"><div class="meta"><b>Body · Button · Badge</b>16px · 400 / 600</div><div>เครื่องมือการตลาดและ AI ออกใหม่ทุกสัปดาห์ ไม่มีใครมีเวลาลองหมด — เราลองให้ครับผม</div></div>
+  <div class="type-row"><div class="meta"><b>Caption · Meta</b>14px · 400 · ตัวเล็กสุด</div><div class="ds-note">ผลทดสอบเป็นข้อมูล ณ วันที่ทดสอบ โมเดล AI เปลี่ยนเร็ว ควรทดสอบซ้ำก่อนใช้งานจริง</div></div>
+  <div class="type-row"><div class="meta"><b>Data label</b>Space Grotesk 600 · 14px · ภาษาอังกฤษเท่านั้น</div><div class="ds-row"><span class="lab">Nerd Test / <b>014</b></span><span class="lab"><b>128</b> Credits</span><span class="lab"><b>02:43</b> Min</span></div></div>
+  <div class="type-row"><div class="meta"><b>Big number</b>Space Grotesk 700</div><div class="lab big">24 <small style="font-size:var(--fs-md);color:var(--muted);font-weight:500">credits</small></div></div>
+  <div class="type-row"><div class="meta"><b>JP accent</b>Zen Kaku Gothic New · 5–15% ของชิ้นงาน</div><div class="ds-row"><span class="jp">マーケティング</span><span class="jp">人工知能</span><span class="jp">データ</span></div></div>
 </section>
 
-<!-- ===== 4. RESULT SYSTEM ===== -->
-<section>
-  <div class="eyebrow"><span class="lab">04</span><span class="lab">Result System</span></div>
-  <p class="h2sub">ใช้แทน ✅ ⚠️ ❌ ในทุก artwork · ในตาราง/เนื้อหาใช้ emoji ได้</p>
+<!-- ===== 04 LAYOUT GRID ===== -->
+<section id="layout">
+  <div class="eyebrow"><span class="lab">04 · Spacing &amp; Grid</span></div>
+  <h2>ระยะห่างและ grid</h2>
+  <div class="grid g3" style="margin-top:14px">
+    <div class="card"><h3>Container</h3><p>กว้างสุด 1140px · ขอบข้าง 16px · section ห่างกัน 32px (บน+ล่าง)</p></div>
+    <div class="card"><h3>Spacing scale</h3><p>4 · 8 · 12 · 16 · 24 · 32 · 48 · 64 px <br><code class="tok">--s1</code> … <code class="tok">--s8</code> · ระยะใน grid = 16px</p></div>
+    <div class="card"><h3>มุม</h3><p>การ์ด 12px · chip/กล่องเล็ก 8px · ปุ่ม/badge/tag = <b>มุมหยักพิกเซล 3px</b> (ลายเซ็นแบรนด์)</p></div>
+    <div class="card"><h3>Grid</h3><p><code class="tok">.g2</code> ≥280px · <code class="tok">.g3</code> ≥250px · <code class="tok">.g4</code> ≥230px (video card)</p></div>
+    <div class="card"><h3>Breakpoints</h3><p>820px: use case / pipeline เรียงเป็นคอลัมน์เดียว · 560px: video card 2 คอลัมน์ · nav เลื่อนแนวนอน</p></div>
+    <div class="card"><h3>เงา</h3><p>ใช้เฉพาะตอน hover การ์ดที่คลิกได้ · ปกติแยกชั้นด้วยสีพื้น + เส้น 1px</p></div>
+  </div>
+</section>
+
+<!-- ===== 05 ICONS ===== -->
+<section id="icons">
+  <div class="eyebrow"><span class="lab">05 · Icons</span></div>
+  <h2>Pixel Icon Set · 18 ตัว</h2>
+  <p class="h2sub">กริด 12×12 · ใช้สีตาม currentColor · <code class="tok">site.js</code> ฝัง sprite ให้เองทุกหน้า (แก้ปัญหาไอคอนไม่ขึ้นตอนเปิดไฟล์ในเครื่อง) · ไฟล์แยกอยู่ที่ <code class="tok">assets/icons/*.svg</code></p>
+  <div class="ds-grid">
+    <div class="icon-cell"><svg class="pi xl"><use href="#i-ai"/></svg><span class="n">ai</span></div>
+    <div class="icon-cell"><svg class="pi xl"><use href="#i-data"/></svg><span class="n">data</span></div>
+    <div class="icon-cell"><svg class="pi xl"><use href="#i-prompt"/></svg><span class="n">prompt</span></div>
+    <div class="icon-cell"><svg class="pi xl"><use href="#i-model"/></svg><span class="n">model</span><span class="new">ใหม่</span></div>
+    <div class="icon-cell"><svg class="pi xl"><use href="#i-credit"/></svg><span class="n">credit</span></div>
+    <div class="icon-cell"><svg class="pi xl"><use href="#i-time"/></svg><span class="n">time</span></div>
+    <div class="icon-cell"><svg class="pi xl"><use href="#i-cost"/></svg><span class="n">cost</span></div>
+    <div class="icon-cell"><svg class="pi xl"><use href="#i-video"/></svg><span class="n">video</span></div>
+    <div class="icon-cell"><svg class="pi xl"><use href="#i-image"/></svg><span class="n">image</span></div>
+    <div class="icon-cell"><svg class="pi xl"><use href="#i-automation"/></svg><span class="n">automation</span></div>
+    <div class="icon-cell c-ok"><svg class="pi xl"><use href="#i-pass"/></svg><span class="n">pass</span></div>
+    <div class="icon-cell c-warn"><svg class="pi xl"><use href="#i-maybe"/></svg><span class="n">maybe</span></div>
+    <div class="icon-cell c-bad"><svg class="pi xl"><use href="#i-fail"/></svg><span class="n">fail</span></div>
+    <div class="icon-cell"><svg class="pi xl"><use href="#i-cursor"/></svg><span class="n">cursor</span></div>
+    <div class="icon-cell"><svg class="pi xl"><use href="#i-copy"/></svg><span class="n">copy</span><span class="new">ใหม่</span></div>
+    <div class="icon-cell"><svg class="pi xl"><use href="#i-arrow"/></svg><span class="n">arrow</span><span class="new">ใหม่</span></div>
+    <div class="icon-cell"><svg class="pi xl"><use href="#i-idea"/></svg><span class="n">idea</span><span class="new">ใหม่</span></div>
+    <div class="icon-cell"><svg class="pi xl"><use href="#i-external"/></svg><span class="n">external</span><span class="new">ใหม่</span></div>
+  </div>
+  <p class="ds-note" style="margin-top:10px">วิธีใช้ <code class="tok">&lt;svg class="pi"&gt;&lt;use href="#i-credit"/&gt;&lt;/svg&gt;</code> · ขนาด <code class="tok">.sm</code> 16 · ปกติ 20 · <code class="tok">.lg</code> 32 · <code class="tok">.xl</code> 48 px</p>
+
+  <h3>ไอคอนตัวไหนใช้ตรงไหน</h3>
+  <div class="tablewrap">
+    <table>
+      <tr><th>ไอคอน</th><th>ใช้กับ</th><th>หน้า</th></tr>
+      <tr><td><svg class="pi"><use href="#i-pass"/></svg> <svg class="pi"><use href="#i-maybe"/></svg> <svg class="pi"><use href="#i-fail"/></svg></td><td>ใน badge ผลทดสอบ</td><td>Compare · Use Cases · AI Video</td></tr>
+      <tr><td><svg class="pi"><use href="#i-credit"/></svg> <svg class="pi"><use href="#i-cost"/></svg></td><td>เครดิต / ราคาบาท ใน video card · stat tile · ตาราง</td><td>Compare · Use Cases</td></tr>
+      <tr><td><svg class="pi"><use href="#i-time"/></svg> <svg class="pi"><use href="#i-model"/></svg></td><td>เวลาที่ใช้ · ชื่อโมเดล ใน kv / settings</td><td>Use Cases · AI Video</td></tr>
+      <tr><td><svg class="pi"><use href="#i-copy"/></svg></td><td>ปุ่ม Copy prompt</td><td>Prompts · AI Video</td></tr>
+      <tr><td><svg class="pi"><use href="#i-arrow"/></svg></td><td>ลูกศร pipeline (input → output) · ปุ่ม "อ่านต่อ" ในการ์ด</td><td>AI Video · หน้าแรก</td></tr>
+      <tr><td><svg class="pi"><use href="#i-idea"/></svg></td><td>หัวกล่องบทเรียน (lesson)</td><td>ทุกหน้าที่มีบทเรียน</td></tr>
+      <tr><td><svg class="pi"><use href="#i-external"/></svg></td><td>ลิงก์ออกนอกเว็บ (Higgsfield, เอกสารผู้ผลิต)</td><td>ทุกหน้า</td></tr>
+      <tr><td><svg class="pi"><use href="#i-video"/></svg> <svg class="pi"><use href="#i-image"/></svg> <svg class="pi"><use href="#i-prompt"/></svg> <svg class="pi"><use href="#i-data"/></svg></td><td>ประเภทคอนเทนต์ในการ์ดหน้าแรก (วิดีโอ · รูป · prompt · ข้อมูลเปรียบเทียบ)</td><td>หน้าแรก</td></tr>
+      <tr><td><svg class="pi"><use href="#i-ai"/></svg> <svg class="pi"><use href="#i-automation"/></svg> <svg class="pi"><use href="#i-cursor"/></svg></td><td>สำรองไว้ใช้ใน artwork / social · ยังไม่ใช้บนเว็บ</td><td>—</td></tr>
+    </table>
+  </div>
+</section>
+
+<!-- ===== 06 GRAPHIC ===== -->
+<section id="graphic">
+  <div class="eyebrow"><span class="lab">06 · Graphic</span></div>
+  <h2>Graphic Language · ใช้แค่ 3 อย่าง</h2>
+  <p class="h2sub">ตัด pixel corner กับ pixel grid ออกจากเว็บ (รกและมองไม่เห็นบนพื้นสว่าง) · เหลือเฉพาะที่มีหน้าที่จริง</p>
   <div class="ds-sample">
-    <div class="ds-row" style="margin-bottom:14px">
-      <span class="badge pass"><svg><use href="assets/pixel-icons.svg#i-pass"/></svg>Pass</span>
-      <span class="badge maybe"><svg><use href="assets/pixel-icons.svg#i-maybe"/></svg>Maybe</span>
-      <span class="badge fail"><svg><use href="assets/pixel-icons.svg#i-fail"/></svg>Fail</span>
-      <span class="ds-note">solid</span>
-    </div>
-    <div class="ds-row" style="margin-bottom:14px">
-      <span class="badge ghost pass"><svg><use href="assets/pixel-icons.svg#i-pass"/></svg>Pass</span>
-      <span class="badge ghost maybe"><svg><use href="assets/pixel-icons.svg#i-maybe"/></svg>Maybe</span>
-      <span class="badge ghost fail"><svg><use href="assets/pixel-icons.svg#i-fail"/></svg>Fail</span>
-      <span class="ds-note">ghost — บนภาพ/พื้นสี</span>
-    </div>
-    <div class="ds-row">
-      <span class="badge lg pass"><svg><use href="assets/pixel-icons.svg#i-pass"/></svg>Pass</span>
-      <span class="badge lg maybe"><svg><use href="assets/pixel-icons.svg#i-maybe"/></svg>Maybe</span>
-      <span class="badge lg fail"><svg><use href="assets/pixel-icons.svg#i-fail"/></svg>Fail</span>
-      <span class="ds-note">large — social artwork</span>
-    </div>
-  </div>
-</section>
-
-<!-- ===== 5. ICONS ===== -->
-<section>
-  <div class="eyebrow"><span class="lab">05</span><span class="lab">Pixel Icon Set</span></div>
-  <p class="h2sub">12×12 grid · block-based · currentColor · sprite <code class="tok">assets/pixel-icons.svg</code> · ไฟล์แยก <code class="tok">assets/icons/*.svg</code></p>
-  <div class="ds-grid">
-    <div class="icon-cell"><svg class="pi xl"><use href="assets/pixel-icons.svg#i-ai"/></svg><span class="lab">AI</span></div>
-    <div class="icon-cell"><svg class="pi xl"><use href="assets/pixel-icons.svg#i-data"/></svg><span class="lab">Data</span></div>
-    <div class="icon-cell"><svg class="pi xl"><use href="assets/pixel-icons.svg#i-prompt"/></svg><span class="lab">Prompt</span></div>
-    <div class="icon-cell"><svg class="pi xl"><use href="assets/pixel-icons.svg#i-credit"/></svg><span class="lab">Credit</span></div>
-    <div class="icon-cell"><svg class="pi xl"><use href="assets/pixel-icons.svg#i-time"/></svg><span class="lab">Time</span></div>
-    <div class="icon-cell"><svg class="pi xl"><use href="assets/pixel-icons.svg#i-cost"/></svg><span class="lab">Cost</span></div>
-    <div class="icon-cell"><svg class="pi xl"><use href="assets/pixel-icons.svg#i-video"/></svg><span class="lab">Video</span></div>
-    <div class="icon-cell"><svg class="pi xl"><use href="assets/pixel-icons.svg#i-image"/></svg><span class="lab">Image</span></div>
-    <div class="icon-cell"><svg class="pi xl"><use href="assets/pixel-icons.svg#i-automation"/></svg><span class="lab">Automation</span></div>
-    <div class="icon-cell" style="color:var(--ok)"><svg class="pi xl"><use href="assets/pixel-icons.svg#i-pass"/></svg><span class="lab">Pass</span></div>
-    <div class="icon-cell" style="color:var(--warn)"><svg class="pi xl"><use href="assets/pixel-icons.svg#i-maybe"/></svg><span class="lab">Maybe</span></div>
-    <div class="icon-cell" style="color:var(--accent-hi)"><svg class="pi xl"><use href="assets/pixel-icons.svg#i-fail"/></svg><span class="lab">Fail</span></div>
-    <div class="icon-cell"><svg class="pi xl"><use href="assets/pixel-icons.svg#i-cursor"/></svg><span class="lab">Cursor</span></div>
-  </div>
-  <p class="ds-note" style="margin-top:10px">ใช้: <code class="tok">&lt;svg class="pi"&gt;&lt;use href="assets/pixel-icons.svg#i-credit"/&gt;&lt;/svg&gt;</code> · ขนาด .pi 20px · .lg 32px · .xl 48px</p>
-</section>
-
-<!-- ===== 6. GRAPHIC ELEMENTS ===== -->
-<section>
-  <div class="eyebrow"><span class="lab">06</span><span class="lab">Graphic Language</span></div>
-  <div class="grid g3">
-    <div class="ds-sample px-corner-deco"><div class="lab">Pixel corner</div><p class="ds-note">มุมซ้ายบนของการ์ด/ภาพ · <code class="tok">.px-corner-deco</code></p></div>
-    <div class="ds-sample"><div class="lab">Pixel divider</div><div class="px-divider" style="margin:12px 0"></div><div class="px-divider muted" style="margin:0"></div><p class="ds-note"><code class="tok">.px-divider</code> / <code class="tok">.muted</code></p></div>
-    <div class="ds-sample"><div class="lab">Pixel highlight</div><p style="margin:10px 0 4px">ตัวที่ดีที่สุด <span class="px-hl">ถูกกว่า 3 เท่า</span> ของตัวที่แย่ที่สุด</p><p class="ds-note"><code class="tok">.px-hl</code> · <code class="tok">.px-hl.red</code></p></div>
-    <div class="ds-sample px-grid" style="min-height:90px"><div class="lab">Pixel grid</div><p class="ds-note">ใช้เป็น accent เฉพาะจุด ไม่เต็มพื้นหลัง · <code class="tok">.px-grid</code></p></div>
-    <div class="ds-sample"><div class="lab">Stepped corners</div><div class="ds-row" style="margin-top:10px"><span class="px-corner" style="background:var(--accent);color:#fff;padding:8px 14px;font-family:var(--font-display);font-weight:700;font-size:var(--fs-xs)">BUTTON</span><span class="px-corner" style="background:var(--card2);padding:8px 14px;font-size:var(--fs-xs)">การ์ด</span></div><p class="ds-note"><code class="tok">.px-corner</code> — ตัดมุม 3px</p></div>
-    <div class="ds-sample"><div class="lab">Stat tile</div><div class="stat" style="margin-top:10px;padding:12px 14px"><span class="lab">Credits</span><span class="num">24<small>/ clip</small></span></div></div>
-  </div>
-</section>
-
-<!-- ===== 7. COMPONENTS ===== -->
-<section>
-  <div class="eyebrow"><span class="lab">07</span><span class="lab">Components</span></div>
-  <div class="grid g3">
-    <div>
-      <div class="lab" style="margin-bottom:8px">Video card 9:16 (ทุกใบเท่ากัน · object-fit cover)</div>
-      <div class="vcard">
-        <video controls preload="metadata" src="https://d8j0ntlcm91z4.cloudfront.net/user_3FvAUpXpCnZUma0p4ZCgNFe1CGD/hf_20260922_221717_f3028521-d89f-4e31-a02f-b57101865983.mp4"></video>
-        <div class="body">
-          <div class="lab">NERD TEST / <b>001</b></div>
-          <div class="name">Gemini Omni Flash 1.1</div>
-          <div class="row"><span>Google · 720p</span><span class="credits">24 CREDITS</span></div>
-          <span class="badge pass"><svg><use href="assets/pixel-icons.svg#i-pass"/></svg>Pass</span>
-          <div class="note">ไทยชัด · ปากตรง · ภาพ เสียง คน smooth</div>
-        </div>
+    <div class="grid g3" style="gap:28px">
+      <div>
+        <p class="demo-label">1 · มุมหยักพิกเซล</p>
+        <div class="ds-row"><span class="btn primary">ปุ่ม</span><span class="badge pass"><svg><use href="#i-pass"/></svg>Pass</span><span class="series-test"><span class="series-tag">NERD TEST</span></span></div>
+        <p class="ds-note" style="margin:10px 0 0">ใช้กับปุ่ม · badge · tag เท่านั้น — การ์ดใช้มุมมนปกติ</p>
+      </div>
+      <div>
+        <p class="demo-label">2 · เส้นคั่นพิกเซล</p>
+        <div class="px-divider" style="margin:14px 0 18px"></div>
+        <p class="ds-note" style="margin:0">ใต้ hero ของแต่ละหน้า 1 จุดเท่านั้น</p>
+      </div>
+      <div>
+        <p class="demo-label">3 · ไฮไลต์เต็มบรรทัด</p>
+        <p style="margin:0 0 10px;font-size:var(--fs-lg);line-height:1.8">ตัวที่ดีที่สุด <span class="px-hl">ถูกกว่า 3 เท่า</span> ของตัวที่แย่ที่สุด</p>
+        <p class="ds-note" style="margin:0">พื้นเหลืองเต็มความสูง ไม่ใช้แถบครึ่งล่าง (ทับสระล่างภาษาไทย) · 1 จุดต่อ section</p>
       </div>
     </div>
-    <div>
-      <div class="lab" style="margin-bottom:8px">Buttons</div>
-      <div class="ds-row"><a class="btn primary px-corner" href="#">ดูผลเปรียบเทียบ</a><a class="btn px-corner" href="#">ดู Use Cases</a></div>
-      <div class="lab" style="margin:18px 0 8px">Series tags</div>
+  </div>
+</section>
+
+<!-- ===== 07 COMPONENTS ===== -->
+<section id="components">
+  <div class="eyebrow"><span class="lab">07 · Components</span></div>
+  <h2>Components</h2>
+  <p class="h2sub">ตัวอย่างใช้งานจริง แล้วตามด้วยตารางรายการทั้งหมด</p>
+
+  <div class="grid g2">
+    <div class="ds-sample">
+      <p class="demo-label">Buttons · IBM Plex Sans Thai 16px / 600 · สูง 44px</p>
+      <div class="ds-row">
+        <a class="btn primary" href="#">ดูผลเปรียบเทียบ</a>
+        <a class="btn" href="#">ดู Use Cases</a>
+        <a class="btn ghost" href="#">อ่านต่อ <svg><use href="#i-arrow"/></svg></a>
+        <a class="btn dark" href="#">สมัครคอร์ส</a>
+        <a class="btn sm" href="#"><svg><use href="#i-copy"/></svg>Copy</a>
+      </div>
+      <p class="ds-note" style="margin:10px 0 0"><code class="tok">.btn.primary</code> ใช้ 1 ปุ่มต่อจอ · <code class="tok">.btn</code> รอง · <code class="tok">.ghost</code> · <code class="tok">.dark</code> CTA ขายคอร์ส · <code class="tok">.sm</code> 14px ในกล่อง</p>
+    </div>
+    <div class="ds-sample">
+      <p class="demo-label">Result badges · 16px</p>
+      <div class="ds-row" style="margin-bottom:12px">
+        <span class="badge pass"><svg><use href="#i-pass"/></svg>Pass</span>
+        <span class="badge maybe"><svg><use href="#i-maybe"/></svg>Maybe</span>
+        <span class="badge fail"><svg><use href="#i-fail"/></svg>Fail</span>
+        <span class="ds-note">solid · บนการ์ด</span>
+      </div>
+      <div class="ds-row" style="margin-bottom:12px">
+        <span class="badge soft sm pass"><svg><use href="#i-pass"/></svg>Pass</span>
+        <span class="badge soft sm maybe"><svg><use href="#i-maybe"/></svg>Maybe</span>
+        <span class="badge soft sm fail"><svg><use href="#i-fail"/></svg>Fail</span>
+        <span class="ds-note">soft · sm 14px · ในตาราง</span>
+      </div>
+      <div class="ds-row">
+        <span class="badge lg pass"><svg><use href="#i-pass"/></svg>Pass</span>
+        <span class="badge lg fail"><svg><use href="#i-fail"/></svg>Fail</span>
+        <span class="ds-note">lg · social artwork</span>
+      </div>
+    </div>
+    <div class="ds-sample">
+      <p class="demo-label">Chip · Tag · Series tag</p>
+      <div class="chips" style="margin-bottom:12px"><span class="chip">โมเดลที่ทดสอบ <b>11</b></span><span class="chip">เครดิตรวม <b>582</b></span></div>
+      <div class="ds-row" style="margin-bottom:12px"><span class="card" style="padding:0;border:0;background:none"><span class="tag">Model Compare</span></span></div>
       <div class="ds-row">
         <span class="series-test"><span class="series-tag">NERD TEST</span></span>
         <span class="series-compare"><span class="series-tag">NERD COMPARE</span></span>
@@ -222,41 +326,220 @@
         <span class="series-note"><span class="series-tag">NERD NOTE</span></span>
         <span class="series-take"><span class="series-tag">NERD TAKE</span></span>
       </div>
-      <div class="lab" style="margin:18px 0 8px">Lesson block</div>
-      <div class="lesson" style="margin:0"><b>บทเรียน</b> — ต้องเทียบ ไม่ใช่เชื่อชื่อ</div>
-      <div class="lab" style="margin:18px 0 8px">Chips</div>
-      <div class="chips"><span class="chip">โมเดล <b>11</b></span><span class="chip">เครดิตรวม <b>582</b></span></div>
     </div>
+    <div class="ds-sample">
+      <p class="demo-label">Callouts · พื้นสีเต็มกล่อง</p>
+      <div class="lesson" style="margin:0 0 8px"><b><svg class="pi sm"><use href="#i-idea"/></svg> บทเรียน</b> — ต้องเทียบ ไม่ใช่เชื่อชื่อ</div>
+      <div class="callout note" style="margin:0 0 8px"><b>หมายเหตุ</b> — ราคาบาทคิดจากแพ็กเกจ $39</div>
+      <div class="callout ok" style="margin:0 0 8px"><b>ผ่าน</b> — ไทยชัด ปากตรง</div>
+      <div class="callout info" style="margin:0"><b>ข้อมูล</b> — โมเดลเปลี่ยนเร็ว ทดสอบซ้ำก่อนใช้</div>
+    </div>
+  </div>
+
+  <div class="grid g3" style="margin-top:16px">
     <div>
-      <div class="lab" style="margin-bottom:8px">Social 4:5 skeleton</div>
-      <div class="social series-test">
-        <div style="display:flex;justify-content:space-between;align-items:center"><span class="lab">NERD TEST / <b>018</b></span><span class="jp">テスト</span></div>
-        <div class="h">โมเดลตัวไหน<br>พูดไทยได้จริง</div>
-        <div class="shot">ภาพผลลัพธ์ / screenshot / compare</div>
-        <div class="data">
-          <span class="lab"><b>24</b> CREDIT</span><span class="lab"><b>03:00</b> MIN</span>
-          <span class="lab">MODEL <b>FLASH 1.1</b></span><span class="badge pass" style="justify-self:start"><svg><use href="assets/pixel-icons.svg#i-pass"/></svg>Pass</span>
+      <p class="demo-label">Video card 9:16</p>
+      <div class="vcard">
+        <video controls preload="metadata" src="https://d8j0ntlcm91z4.cloudfront.net/user_3FvAUpXpCnZUma0p4ZCgNFe1CGD/hf_20260922_221717_f3028521-d89f-4e31-a02f-b57101865983.mp4"></video>
+        <div class="body">
+          <div class="rank lab">#1</div>
+          <div class="name">Gemini Omni Flash 1.1</div>
+          <div class="row"><span>Google · 720p</span><span class="credits" data-cr="24">24</span></div>
+          <span class="badge pass"><svg><use href="#i-pass"/></svg>Pass</span>
+          <div class="note">ไทยชัด · ปากตรง · ภาพ เสียง คน smooth</div>
         </div>
-        <div class="foot"><span class="lab">MARKETING · AI · DATA</span><img src="assets/brand/logo-on-dark.svg" alt=""></div>
+      </div>
+    </div>
+    <div style="display:flex;flex-direction:column;gap:16px">
+      <div>
+        <p class="demo-label">Article card</p>
+        <a class="card" href="#"><span class="tag">Use Case</span><h3>คลิป UGC รีวิวบ้านพูดไทย จากรูป 2 รูป</h3><p>ใส่รูปคน + รูปบ้าน แล้วได้คลิปพูดไทย 8 วิ</p><span class="more">อ่านต่อ →</span></a>
+      </div>
+      <div>
+        <p class="demo-label">Stat tile</p>
+        <div class="grid" style="grid-template-columns:1fr 1fr;gap:10px">
+          <div class="stat"><span class="lab"><svg class="pi sm"><use href="#i-credit"/></svg> Credits</span><span class="num">24<small>/ clip</small></span></div>
+          <div class="stat"><span class="lab"><svg class="pi sm"><use href="#i-time"/></svg> Time</span><span class="num">3<small>min</small></span></div>
+        </div>
+      </div>
+    </div>
+    <div style="display:flex;flex-direction:column;gap:16px">
+      <div>
+        <p class="demo-label">Steps</p>
+        <ol class="steps">
+          <li><b>อัปโหลดรูป 2 รูป</b><span>รูปคน + รูปบ้าน</span></li>
+          <li><b>วาง prompt</b><span>บอกให้ใช้ทั้งสองรูปเป็น reference</span></li>
+        </ol>
+      </div>
+      <div>
+        <p class="demo-label">Prompt block</p>
+        <div class="prompt"><button class="copy"><svg class="pi sm"><use href="#i-copy"/></svg>Copy</button><pre>UGC-style vertical selfie video.
+The young Thai woman from the reference photo…</pre></div>
       </div>
     </div>
   </div>
-</section>
 
-<!-- ===== 8. LAYOUT RULES ===== -->
-<section>
-  <div class="eyebrow"><span class="lab">08</span><span class="lab">Layout Rules</span></div>
-  <div class="grid g2">
-    <div class="ds-sample do"><div class="lab" style="color:var(--ok)">DO</div>
-      <p class="ds-note">whitespace เยอะ · headline ใหญ่ 1 บรรทัดหลัก · ข้อมูลจริง (เครดิต/เวลา/โมเดล) เป็นพระเอก · ภาพจริง/screenshot · Pixel Nerd เป็น supporting element เล็กๆ · 1 accent ต่อชิ้น · JP accent 5–15%</p></div>
-    <div class="ds-sample dont"><div class="lab" style="color:var(--accent-hi)">DON'T</div>
-      <p class="ds-note">decoration เต็มพื้นที่ · pixel grid เต็มหลัง · emoji ใหญ่แทน badge · หลาย accent น้ำหนักเท่ากัน · หุ่นยนต์/สมองเรืองแสง/neon · stock photo คนยิ้มถือ tablet · สีฟ้า</p></div>
+  <h3>รายการ component ทั้งหมด</h3>
+  <div class="tablewrap">
+    <table class="inv">
+      <tr><th>Component</th><th>class</th><th>ใช้ที่หน้า</th><th>สถานะ</th></tr>
+      <tr><td>Header + Nav</td><td><code class="tok">.site-head .site-nav</code></td><td>ทุกหน้า</td><td><span class="st ok">พร้อม</span></td></tr>
+      <tr><td>Hero</td><td><code class="tok">.hero</code></td><td>ทุกหน้า</td><td><span class="st ok">พร้อม</span></td></tr>
+      <tr><td>สารบัญด้านซ้าย (ไปที่หัวข้อ)</td><td><code class="tok">.doc .side-toc</code></td><td>Design System · Prompts · Use Cases (หน้ายาว)</td><td><span class="st ok">พร้อม</span></td></tr>
+      <tr><td>Section head</td><td><code class="tok">.eyebrow h2 .h2sub</code></td><td>ทุกหน้า</td><td><span class="st ok">พร้อม</span></td></tr>
+      <tr><td>Button</td><td><code class="tok">.btn .primary .ghost .dark .sm</code></td><td>หน้าแรก · CTA</td><td><span class="st ok">พร้อม</span></td></tr>
+      <tr><td>Result badge</td><td><code class="tok">.badge .pass .maybe .fail .soft .sm .lg</code></td><td>Compare · Use Cases · AI Video</td><td><span class="st ok">พร้อม</span></td></tr>
+      <tr><td>Verdict pill (เก่า)</td><td><code class="tok">.verdict</code></td><td>Prompts</td><td><span class="st fix">เปลี่ยนเป็น .badge.soft.sm</span></td></tr>
+      <tr><td>Chip / Tag / Series tag</td><td><code class="tok">.chip .tag .series-tag</code></td><td>หน้าแรก · Compare</td><td><span class="st ok">พร้อม</span></td></tr>
+      <tr><td>Article card</td><td><code class="tok">.card</code></td><td>หน้าแรก · Prompts</td><td><span class="st fix">เพิ่มไอคอนประเภท</span></td></tr>
+      <tr><td>Video card</td><td><code class="tok">.vcard</code></td><td>Compare · Use Cases</td><td><span class="st ok">พร้อม</span></td></tr>
+      <tr><td>Stat tile</td><td><code class="tok">.stat</code></td><td>AI Video (settings) · Compare</td><td><span class="st fix">รวม .settings เข้า .stat</span></td></tr>
+      <tr><td>Key–value</td><td><code class="tok">.kv</code></td><td>Use Cases</td><td><span class="st ok">พร้อม</span></td></tr>
+      <tr><td>Steps</td><td><code class="tok">.steps .compact</code></td><td>Use Cases · AI Video</td><td><span class="st ok">พร้อม</span></td></tr>
+      <tr><td>Prompt block + copy</td><td><code class="tok">.prompt .pmeta</code></td><td>Prompts</td><td><span class="st fix">เพิ่มไอคอน copy</span></td></tr>
+      <tr><td>Annotated prompt</td><td><code class="tok">.anno .legend</code></td><td>AI Video</td><td><span class="st ok">พร้อม (พื้นสีแทนขีดเส้นใต้)</span></td></tr>
+      <tr><td>Pipeline (input → output)</td><td><code class="tok">.pipe .node</code></td><td>AI Video</td><td><span class="st ok">พร้อม</span></td></tr>
+      <tr><td>Input brief</td><td><code class="tok">.brief</code></td><td>Compare</td><td><span class="st ok">พร้อม</span></td></tr>
+      <tr><td>Table</td><td><code class="tok">.tablewrap table</code></td><td>Compare</td><td><span class="st ok">พร้อม</span></td></tr>
+      <tr><td>Callout / Lesson</td><td><code class="tok">.lesson .callout .note .ok .info</code></td><td>ทุกหน้า</td><td><span class="st ok">พร้อม (พื้นสีเต็ม)</span></td></tr>
+      <tr><td>Nerd note (ตัวละคร + ทิป)</td><td><code class="tok">.nerd-note</code></td><td>AI Video</td><td><span class="st fix">ย้ายเข้า style.css</span></td></tr>
+      <tr><td>Lightbox</td><td><code class="tok">img[data-zoom]</code></td><td>Compare · AI Video</td><td><span class="st ok">พร้อม</span></td></tr>
+      <tr><td>Footer</td><td><code class="tok">footer</code></td><td>ทุกหน้า</td><td><span class="st fix">เพิ่มลิงก์เพจ FB + เมนู</span></td></tr>
+      <tr><td>Course CTA band</td><td><code class="tok">.cta-band</code></td><td>หน้าแรก · ท้ายบทความ</td><td><span class="st new">ต้องสร้าง</span></td></tr>
+      <tr><td>FAQ</td><td><code class="tok">.faq</code></td><td>หน้าแรก (มี FAQ schema แล้ว)</td><td><span class="st new">ต้องสร้าง</span></td></tr>
+    </table>
   </div>
-  <p class="ds-note" style="margin-top:12px">Container 1140px · gutter 16px · การ์ด grid 230–280px · มือถือ 2 คอลัมน์สำหรับ video card</p>
 </section>
 
-<footer>Nerd MarTech Design System v1.0 · 23 ก.ย. 2569 · ไฟล์ต้นทาง <code class="tok">assets/style.css</code> · Brand Guide <code class="tok">10-Project/01-NerdMarTech/00-Context/01-Brand.md</code></footer>
+<!-- ===== 08 PAGE LAYOUTS ===== -->
+<section id="pages">
+  <div class="eyebrow"><span class="lab">08 · Page Layouts</span></div>
+  <h2>Layout แต่ละหน้า</h2>
+  <p class="h2sub">ลำดับ section จากบนลงล่าง · ทุกหน้าเริ่มด้วย Header + Hero และจบด้วย Footer</p>
+  <div class="pages">
+    <div class="page">
+      <h3>หน้าแรก <small>index.html</small></h3>
+      <p>บอกว่าเราเป็นใคร แล้วพาไปคอนเทนต์ล่าสุด</p>
+      <div class="wf">
+        <div class="hd">Header + Nav</div>
+        <div>Hero: H1 + lead + 2 ปุ่ม <i>.hero .btns</i></div>
+        <div>ตัวเลขสรุป <i>.chips</i></div>
+        <div>ล่าสุด <i>.card × 3 · g3</i></div>
+        <div>ทำไมต้องเนิร์ด <i>.card × 3</i></div>
+        <div class="new">ขายคอร์ส AI <i>.cta-band ใหม่</i></div>
+        <div class="new">คำถามที่พบบ่อย <i>.faq ใหม่</i></div>
+        <div class="hd">Footer</div>
+      </div>
+    </div>
+    <div class="page">
+      <h3>สร้างวิดีโอด้วย AI <small>ai-video.html</small></h3>
+      <p>สอนทำทีละขั้น: input อะไร → prompt → ได้อะไร</p>
+      <div class="wf">
+        <div class="hd">Header + Nav</div>
+        <div>Hero + badge ผล</div>
+        <div class="row"><div>รูป 2 รูป</div><div>prompt</div><div class="ac">วิดีโอ</div></div>
+        <div>Prompt แยกสี 6 ส่วน <i>.anno .legend</i></div>
+        <div>ค่าที่ตั้ง <i>.stat × 4</i></div>
+        <div>ขั้นตอน <i>.steps</i></div>
+        <div class="yl">Nerd note + บทเรียน <i>.nerd-note .lesson</i></div>
+        <div class="hd">Footer</div>
+      </div>
+    </div>
+    <div class="page">
+      <h3>Use Cases <small>use-cases.html</small></h3>
+      <p>1 เคส = 1 จอ · วิดีโอซ้าย รายละเอียดขวา</p>
+      <div class="wf">
+        <div class="hd">Header + Nav</div>
+        <div>Hero</div>
+        <div>Section head <i>.eyebrow h2</i></div>
+        <div class="row two"><div class="ac">วิดีโอ .vcard</div><div>kv · steps 2×2 · lesson</div></div>
+        <div><i style="text-align:left">↻ ซ้ำตามจำนวนเคส</i></div>
+        <div class="new">ขายคอร์ส AI <i>.cta-band</i></div>
+        <div class="hd">Footer</div>
+      </div>
+    </div>
+    <div class="page">
+      <h3>Prompts <small>prompts.html</small></h3>
+      <p>prompt ที่ใช้จริง พร้อมผลและเครดิต</p>
+      <div class="wf">
+        <div class="hd">Header + Nav</div>
+        <div>Hero</div>
+        <div>โครง prompt 6 ส่วน <i>.card × 6 · g3</i></div>
+        <div>Prompt #n: h2 + meta + badge <i>.pmeta .badge.soft</i></div>
+        <div>กล่อง prompt + ปุ่ม copy <i>.prompt</i></div>
+        <div class="yl">บทเรียน <i>.lesson</i></div>
+        <div><i style="text-align:left">↻ ซ้ำตามจำนวน prompt</i></div>
+        <div class="hd">Footer</div>
+      </div>
+    </div>
+    <div class="page">
+      <h3>Model Compare <small>compare.html</small></h3>
+      <p>input เดียวกัน เทียบทุกโมเดล จัดอันดับ</p>
+      <div class="wf">
+        <div class="hd">Header + Nav</div>
+        <div>Hero</div>
+        <div>โจทย์ที่ใช้ทดสอบ <i>.brief + .chips</i></div>
+        <div class="row"><div class="ac">#1 Pass</div><div class="ac">#2 Pass</div><div>#3 …</div></div>
+        <div>ตารางสรุป + ราคาบาท <i>.tablewrap</i></div>
+        <div class="yl">บทเรียน <i>.lesson × n</i></div>
+        <div class="hd">Footer</div>
+      </div>
+    </div>
+    <div class="page">
+      <h3>บทความ / Nerd Test <small>template ใหม่</small></h3>
+      <p>สำหรับคอนเทนต์ถัดไป ใช้โครงเดียวกันทุกชิ้น</p>
+      <div class="wf">
+        <div class="hd">Header + Nav</div>
+        <div>Series tag + H1 + วันที่ <i>.series-tag</i></div>
+        <div>ตัวเลขทดสอบ <i>.stat × 3 (เครดิต · เวลา · โมเดล)</i></div>
+        <div class="ac">ผลลัพธ์ + badge <i>.vcard / รูป</i></div>
+        <div>ขั้นตอน + prompt <i>.steps .prompt</i></div>
+        <div class="yl">บทเรียน 1 ข้อ <i>.lesson</i></div>
+        <div class="new">ขายคอร์ส AI <i>.cta-band</i></div>
+        <div class="hd">Footer</div>
+      </div>
+    </div>
+  </div>
+  <div class="wf-legend">
+    <span style="--c:var(--text)">Header / Footer</span>
+    <span style="--c:var(--accent-soft)">พระเอกของหน้า (ผลลัพธ์)</span>
+    <span style="--c:var(--yellow-soft)">บทเรียน / ทิป</span>
+    <span class="dash">ยังไม่มี ต้องสร้าง</span>
+  </div>
+</section>
 
+<!-- ===== 09 DO / DON'T ===== -->
+<section id="dodont">
+  <div class="eyebrow"><span class="lab">09 · Do / Don't</span></div>
+  <div class="grid g2">
+    <div class="rule do-box">
+      <h3>ทำ</h3>
+      <ul>
+        <li>whitespace เยอะ · headline ใหญ่ 1 บรรทัดหลัก</li>
+        <li>ข้อมูลจริง (เครดิต/เวลา/โมเดล) เป็นพระเอก</li>
+        <li>ภาพจริง / screenshot</li>
+        <li>แดง 1 สีต่อชิ้น · ปุ่มแดง 1 ปุ่มต่อจอ</li>
+        <li>เน้นด้วยพื้นสีอ่อนเต็มกล่อง</li>
+        <li>Pixel Nerd เป็นตัวประกอบเล็กๆ</li>
+      </ul>
+    </div>
+    <div class="rule dont-box">
+      <h3>ไม่ทำ</h3>
+      <ul>
+        <li>ตัวอักษรเล็กกว่า 14px</li>
+        <li>ถ่างตัวอักษร (letter-spacing)</li>
+        <li>เส้นสีขอบด้านเดียว</li>
+        <li>decoration / pixel grid เต็มพื้น</li>
+        <li>หลาย accent น้ำหนักเท่ากัน · สีฟ้าทุกเฉด</li>
+        <li>หุ่นยนต์ สมองเรืองแสง neon · stock photo</li>
+      </ul>
+    </div>
+  </div>
+</section>
+</main>
+</div>
+
+<footer>Nerd MarTech Design System v2.0 (light) · 23 ก.ย. 2569 · ไฟล์ต้นทาง <code class="tok">assets/style.css</code></footer>
 </div>
 <script src="assets/site.js"></script>
 </body>

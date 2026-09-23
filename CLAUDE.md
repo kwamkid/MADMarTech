@@ -40,10 +40,10 @@ prompts.html          Prompt ที่ใช้จริง 5 ตัว (ปุ�
 compare.html          Model Compare — โจทย์เดียว 8 โมเดล เรียงอันดับ PASS/MAYBE/FAIL (FAQ schema)
 design-system.html    Living style guide (noindex) — ทุก component ที่ใช้จริง
 assets/style.css      สไตล์กลางทั้งเว็บ — แก้ที่นี่ที่เดียว
-assets/site.js        credits→บาท + lightbox (โหลดทุกหน้า ก่อน </body>)
-assets/pixel-icons.svg   sprite ไอคอน pixel 13 ตัว (id: i-ai i-data i-prompt i-credit i-time i-cost i-video i-image i-automation i-pass i-maybe i-fail i-cursor)
+assets/site.js        ฝัง icon sprite + side TOC highlight + credits→บาท + lightbox (โหลดทุกหน้า ก่อน </body>)
+assets/pixel-icons.svg   sprite ไอคอน pixel 18 ตัว (i-ai data prompt model credit time cost video image automation pass maybe fail cursor copy arrow idea external) — สำเนาเดียวกันฝังอยู่ในบล็อก @icons ของ site.js · ในหน้าใช้ `<use href="#i-xxx">` เท่านั้น (อ้างไฟล์ภายนอกแล้ว file:// ไม่ขึ้น) · แก้ไอคอนต้องอัปเดต 3 ที่: sprite · icons/*.svg · site.js
 assets/icons/*.svg    ไอคอนเดี่ยว (ชุดเดียวกับ sprite)
-assets/brand/         logo-on-dark.svg (ใช้บนเว็บ) · logo-on-light.svg · logo-mono-white/black.svg · favicon · app icon · character.*
+assets/brand/         logo-on-light.svg (ใช้บนเว็บ — ธีมสว่าง) · logo-on-dark.svg (บนพื้นดำ/เขียว) · logo-mono-white/black.svg · favicon · app icon · character.*
 assets/character/     Pixel Nerd 20 ท่า PNG พื้นใส (01-basic … 20-statement) ตัดจาก character sheet
 assets/image-reference/  presenter.jpg · house.jpg (รูปอ้างอิงที่ใช้ทดสอบ ย่อแล้ว)
 assets/videos/        .mp4 ที่โหลดจาก Higgsfield (ตอนนี้มี nerd-desk-omni-flash.mp4) — ที่เหลือยังใช้ลิงก์ CDN
@@ -56,8 +56,9 @@ CNAME · robots.txt · sitemap.xml (เพิ่มหน้าใหม่ต�
 
 - ชื่อแสดง **"Nerd MarTech"** (เว้นวรรค) ในทุกที่ที่คนเห็น · `nerdmartech` ใช้เฉพาะ URL/ไฟล์/handle · wordmark เน้นสีเฉพาะ **Tech**
 - **ห้ามมีคำว่า MAD Marketing / MADMarTech / MADMarTechAI** ที่ไหนอีก (ลบหมดแล้ว) · madmartech.com เป็นเว็บพนัน ห้ามลิงก์
-- **ห้ามสีฟ้าทุกเฉด** · พาเลต: ดำ #111111 · แดงส้ม #d25240 (primary) / #e8674f (ตัวหนังสือเล็ก) · เหลือง #efd058 · เขียว #3b605c · ม่วง #6f5cd6 · off-white #f9f8f6 · muted #a3a19c · pass #7fc8a9
-- ฟอนต์: **IBM Plex Sans Thai** (body) · **Space Grotesk** (label/ตัวเลข/H display) · **Zen Kaku Gothic New** (accent ญี่ปุ่น ≤15%) — โหลดจาก Google Fonts ทุกหน้า
+- **ห้ามสีฟ้าทุกเฉด** · เว็บเป็น**ธีมสว่าง** (v2): พื้น off-white #f9f8f6 · การ์ดขาว · ตัวหนังสือ #111111 · muted #5f5b54 · แดง #d25240 (fill/ปุ่มหลัก) / #b3402e (ตัวหนังสือ/ลิงก์) · เหลือง #efd058 (ไฮไลต์ ห้ามเป็นตัวหนังสือ) · เขียว #3b605c · ม่วง #6f5cd6 · pass #7fc8a9 — สีสถานะมี fill/soft/ink ดู `:root`
+- **ห้าม letter-spacing** ทุกที่ (อาจารย์ไม่ชอบ + ใช้กับไทยไม่ได้) · **ห้ามเส้นสีขอบด้านเดียว** (border-left/right) — เน้นด้วยพื้นสีอ่อนเต็มกล่อง
+- ฟอนต์: **IBM Plex Sans Thai** (body + ปุ่ม + เมนู) · **Space Grotesk** (เฉพาะข้อมูลอังกฤษสั้นๆ: ตัวเลข/label/badge) · **Zen Kaku Gothic New** (accent ญี่ปุ่น ≤15%) — โหลดจาก Google Fonts ทุกหน้า
 - โลโก้ = Pixel Nerd head SVG แนวนอน อยู่กลาง header · ห้าม redraw / เพิ่มปาก จมูก คาง
 - Visual: Minimal · Nerdy · Japanese editorial · Pixel — ไม่ใช่ cyberpunk / neon / หุ่นยนต์ / stock photo
 - น้ำเสียง: ตรง ไม่ขายฝัน · ห้าม "ก่อนใคร" "ปังกว่า" "เปลี่ยน X เป็น Y" "AI ทำแทนคุณ" · บอกตัวที่ FAIL ด้วย · ตัวเลขเครดิต/บาทต้องมาจากที่จ่ายจริง
@@ -67,9 +68,9 @@ CNAME · robots.txt · sitemap.xml (เพิ่มหน้าใหม่ต�
 
 ## 5. Design tokens (ใน `:root` ของ style.css)
 
-- Type scale **4 ขนาดเท่านั้น**: `--fs-xs 12` (label/tag) · `--fs-sm 14` (caption/meta) · `--fs-md 16` (เนื้อหา) · `--fs-lg 18` (lead ใต้ H1 เท่านั้น) · หัวข้อ `--fs-h1` clamp(28–44) · `--fs-h2 24` · `--fs-h3 18` — **ห้ามใส่ font-size เป็นเลขในหน้า** ใช้ token เสมอ
-- `--px:3px` หน่วย pixel สำหรับมุมขั้นบันได (`.px-corner`, badge, `.out`)
-- Components หลัก: `.site-head/.logo/.logo-wm/.site-nav/.links` · `.hero` · `.eyebrow + .lab` (หัว section แบบ "01 · ชื่อ") · `.card` · `.vcard` (วิดีโอ 9:16 + body + `.out` tag มุมซ้ายบน) · `.badge` · `.kv` · `.steps` (+`.compact` = ตาราง 2×2) · `.lesson` · `.prompt` (+ปุ่ม copy) · `.uc` / `.uc.two` (layout 1 use case = 1 viewport) · `.brief` (แถบ SAME INPUT หน้า compare) · `.lb` lightbox
+- Type scale — **ขั้นต่ำ 14px**: `--fs-sm 14` (caption/meta · `--fs-xs` = 14 เท่ากัน เก็บไว้เพื่อ compat) · `--fs-md 16` (เนื้อหา · ปุ่ม · badge) · `--fs-lg 18` (lead ใต้ H1 เท่านั้น) · หัวข้อ `--fs-h1` clamp(30–46) · `--fs-h2 26` · `--fs-h3 20` — **ห้ามใส่ font-size เป็นเลขในหน้า** ใช้ token เสมอ
+- `--px:3px` มุมหยักพิกเซล — ใช้กับปุ่ม · badge · tag เท่านั้น (การ์ดใช้ `--r` 12px) · spacing `--s1…--s8`
+- Components หลัก: `.site-head/.logo/.logo-wm/.site-nav/.links` · `.hero` · `.eyebrow + .lab` (หัว section แบบ "01 · ชื่อ") · `.card` · `.vcard` (วิดีโอ 9:16 + body + `.out` tag มุมซ้ายบน) · `.badge` · `.kv` · `.steps` (+`.compact` = ตาราง 2×2) · `.lesson` / `.callout` (.note .ok .info .dark) · `.prompt` (+ปุ่ม copy) · `.doc` + `.side-toc` (สารบัญติดซ้ายสำหรับหน้ายาว) · `.uc` / `.uc.two` (layout 1 use case = 1 viewport) · `.brief` (แถบ SAME INPUT หน้า compare) · `.lb` lightbox
 - หน้าใหม่ต้องมี: header เดียวกันทุกหน้า + ลิงก์เมนู 5 หน้า · footer "Nerd MarTech · จัดทำโดย AOO Commerce · ผลทดสอบเป็นข้อมูล ณ วันที่ทดสอบ…" · `<script src="assets/site.js">` · meta OG/canonical · เพิ่มใน sitemap
 
 ---

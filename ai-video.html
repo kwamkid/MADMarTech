@@ -21,55 +21,54 @@
 <link rel="icon" href="favicon.ico" sizes="any">
 <link rel="icon" type="image/png" sizes="32x32" href="assets/brand/favicon-32.png">
 <link rel="apple-touch-icon" href="assets/brand/apple-touch-icon.png">
-<meta name="theme-color" content="#111111">
+<meta name="theme-color" content="#f9f8f6">
 <style>
 /* ---- pipeline ---- */
 .pipe{display:grid;grid-template-columns:1fr auto 1fr auto 1fr;gap:12px;align-items:start;margin:24px 0 8px}
-.pipe .node{background:var(--card);border:1px solid var(--line);padding:16px;display:flex;flex-direction:column;gap:10px;position:relative}
+.pipe .node{background:var(--card);border:1px solid var(--line);border-radius:var(--r);padding:16px;display:flex;flex-direction:column;gap:10px;position:relative}
 .pipe .node .lab{margin-bottom:2px}
-.pipe .arrow{display:flex;align-items:center;justify-content:center;font-family:var(--font-display);font-weight:700;color:var(--accent-hi);font-size:26px;padding:0 2px}
-.pipe .node.out{border-color:var(--accent);box-shadow:inset 0 0 0 1px var(--accent)}
+.pipe .arrow{font-size:28px;font-weight:700;display:flex;align-items:center;justify-content:center;color:var(--accent);padding:0 2px;align-self:center}
+.pipe .arrow svg{width:28px;height:28px;fill:currentColor;shape-rendering:crispEdges}
+.pipe .node.out{background:var(--accent-soft);border-color:var(--accent-soft)}
 .inputs{display:grid;grid-template-columns:1fr 1fr;gap:10px}
 .inputs figure{margin:0;display:flex;flex-direction:column;gap:6px}
-.inputs img{width:100%;aspect-ratio:1/1;object-fit:cover;display:block;border:1px solid var(--line)}
-.inputs figcaption{font-size:var(--fs-xs);color:var(--muted);display:flex;justify-content:space-between;gap:6px}
+.inputs img{width:100%;aspect-ratio:1/1;object-fit:cover;display:block;border-radius:var(--r-sm)}
+.inputs figcaption{font-size:var(--fs-sm);color:var(--muted);display:flex;justify-content:space-between;gap:6px}
 .inputs figcaption b{color:var(--text);font-weight:600}
-.pipe .node video{width:100%;aspect-ratio:9/16;max-height:360px;object-fit:cover;background:#000;display:block;border:1px solid var(--line)}
-.miniprompt{font-size:var(--fs-xs);line-height:1.55;color:var(--muted);background:var(--bg2);border:1px solid var(--line);padding:10px 12px;max-height:230px;overflow:hidden;position:relative}
+.pipe .node video{width:100%;aspect-ratio:9/16;max-height:360px;object-fit:cover;background:#111;display:block;border-radius:var(--r-sm)}
+.miniprompt{font-size:var(--fs-sm);line-height:1.6;color:var(--muted);background:var(--bg2);border-radius:var(--r-sm);padding:10px 12px;max-height:230px;overflow:hidden;position:relative}
 .miniprompt::after{content:"";position:absolute;left:0;right:0;bottom:0;height:60px;background:linear-gradient(transparent,var(--bg2))}
-.meta{display:flex;flex-wrap:wrap;gap:6px 14px;font-size:var(--fs-xs);color:var(--muted)}
-.meta b{font-family:var(--font-display);color:var(--text);font-weight:600;letter-spacing:.02em}
+.meta{display:flex;flex-wrap:wrap;gap:6px 14px;font-size:var(--fs-sm);color:var(--muted)}
+.meta b{font-family:var(--font-display);color:var(--text);font-weight:600}
 @media(max-width:820px){.pipe{grid-template-columns:1fr}.pipe .arrow{transform:rotate(90deg);padding:4px 0}}
 
-/* ---- annotated prompt ---- */
-.anno{background:var(--bg2);border:1px solid var(--line);padding:18px 20px;font-size:var(--fs-sm);line-height:1.9;position:relative}
-.anno .copy{position:absolute;top:10px;right:10px;background:var(--card2);border:1px solid var(--line);color:var(--muted);font-size:var(--fs-xs);padding:4px 10px;border-radius:8px;cursor:pointer;font-family:inherit}
-.anno .copy.done{color:var(--ok);border-color:var(--ok)}
-.anno mark{background:transparent;color:var(--text);border-bottom:3px solid;padding-bottom:1px;position:relative}
-.anno mark::before{content:attr(data-n);font-family:var(--font-display);font-size:var(--fs-xs);font-weight:700;letter-spacing:.06em;position:relative;top:-9px;margin-right:3px;padding:1px 4px;color:#111}
-.c1{border-color:var(--accent-hi)}.c1::before{background:var(--accent-hi)}
-.c2{border-color:var(--accent2)}.c2::before{background:var(--accent2)}
-.c3{border-color:var(--ok)}.c3::before{background:var(--ok)}
-.c4{border-color:var(--purple)}.c4::before{background:var(--purple);color:#fff}
-.c5{border-color:#f9f8f6}.c5::before{background:#f9f8f6}
-.c6{border-color:var(--muted)}.c6::before{background:var(--muted)}
-.legend{display:grid;grid-template-columns:repeat(auto-fit,minmax(170px,1fr));gap:10px;margin-top:14px}
-.legend div{border-left:3px solid;padding:6px 10px;font-size:var(--fs-sm)}
-.legend div b{display:block;font-family:var(--font-display);font-size:var(--fs-xs);letter-spacing:.1em;text-transform:uppercase;margin-bottom:2px}
+/* ---- annotated prompt: each part = tinted fill (no underline/side border) ---- */
+.anno{background:var(--card);border:1px solid var(--line);border-radius:var(--r);padding:20px 22px;font-size:var(--fs-md);line-height:2;position:relative}
+.anno mark{color:var(--text);background:var(--t);padding:2px 4px;border-radius:4px;-webkit-box-decoration-break:clone;box-decoration-break:clone}
+.anno mark::before{content:attr(data-n);font-family:var(--font-display);font-size:var(--fs-sm);font-weight:700;margin-right:6px;padding:0 6px;border-radius:3px;background:var(--c);color:var(--ci,#fff)}
+.c1{--c:var(--accent);--t:var(--accent-soft)}
+.c2{--c:var(--accent2);--t:var(--yellow-soft);--ci:#111}
+.c3{--c:var(--ok);--t:var(--ok-soft);--ci:#0c2a1e}
+.c4{--c:var(--purple);--t:var(--purple-soft)}
+.c5{--c:var(--green);--t:var(--green-soft)}
+.c6{--c:var(--muted);--t:var(--card2)}
+.legend{display:grid;grid-template-columns:repeat(auto-fit,minmax(200px,1fr));gap:10px;margin-top:14px}
+.legend div{background:var(--t);border-radius:var(--r-sm);padding:10px 14px;font-size:var(--fs-sm)}
+.legend div b{display:block;font-size:var(--fs-md);margin-bottom:2px}
 .legend div span{color:var(--muted)}
 
 /* ---- settings table ---- */
-.settings{display:grid;grid-template-columns:repeat(auto-fit,minmax(150px,1fr));gap:10px}
-.settings div{background:var(--card);border:1px solid var(--line);padding:12px 14px}
+.settings{display:grid;grid-template-columns:repeat(auto-fit,minmax(170px,1fr));gap:10px}
+.settings div{background:var(--card);border:1px solid var(--line);border-radius:var(--r);padding:12px 14px}
 .settings .lab{display:block;margin-bottom:4px}
 .settings b{font-family:var(--font-display);font-size:20px;font-weight:700}
-.settings small{display:block;color:var(--muted);font-size:var(--fs-xs);margin-top:2px}
+.settings small{display:block;color:var(--muted);font-size:var(--fs-sm);margin-top:2px}
 
 /* ---- character strip ---- */
-.nerd-note{display:grid;grid-template-columns:120px 1fr;gap:18px;align-items:center;background:var(--card);border:1px solid var(--line);padding:18px 20px}
-.nerd-note img{width:120px;height:auto;image-rendering:auto}
-.nerd-note p{margin:0;font-size:var(--fs-sm)}
-.nerd-note p b{color:var(--accent-hi)}
+.nerd-note{display:grid;grid-template-columns:120px 1fr;gap:18px;align-items:center;background:var(--yellow-soft);border-radius:var(--r);padding:18px 20px}
+.nerd-note img{width:120px;height:auto}
+.nerd-note p{margin:0;font-size:var(--fs-md)}
+.nerd-note p b{color:var(--text)}
 @media(max-width:600px){.nerd-note{grid-template-columns:1fr}.nerd-note img{width:90px}}
 </style>
 </head>
@@ -77,7 +76,7 @@
 
 <header class="site-head">
   <a class="logo" href="index.html" aria-label="Nerd MarTech">
-    <img src="assets/brand/logo-on-dark.svg" alt="" class="logo-sym">
+    <img src="assets/brand/logo-on-light.svg" alt="" class="logo-sym">
     <span class="logo-wm">Nerd<br>Mar<span>Tech</span></span>
   </a>
   <nav class="site-nav"><div class="wrap"><div class="links"><a href="index.html">หน้าแรก</a><a href="ai-video.html" class="active">สร้างวิดีโอด้วย AI</a><a href="use-cases.html">Use Cases</a><a href="prompts.html">Prompts</a><a href="compare.html">Model Compare</a></div></div></nav>
@@ -108,15 +107,15 @@
       <div class="miniprompt">UGC-style vertical selfie video. The young Thai woman from the reference photo stands in front of the luxury two-story grey house from the reference photo at dusk, holding the phone at arm's length, natural handheld movement, warm evening light. She smiles and speaks to camera in clear natural Thai with accurate lip sync, friendly excited tone. She says in Thai: "สวัสดีค่ะ วันนี้พามาดูบ้านหลังนี้ค่ะ …" Native Thai speech audio only, soft ambient evening sound, no music, no subtitles.</div>
       <div class="meta"><span>ภาษาอังกฤษ ยกเว้นบทพูด</span><span><b>6</b> ส่วน · ดูด้านล่าง ↓</span></div>
     </div>
-    <div class="arrow">→</div>
+    <div class="arrow"><svg><use href="#i-arrow"/></svg></div>
     <div class="node out">
       <span class="lab red">03 · OUTPUT — คลิป</span>
       <video controls preload="metadata" src="https://d8j0ntlcm91z4.cloudfront.net/user_3FvAUpXpCnZUma0p4ZCgNFe1CGD/hf_20260922_221717_f3028521-d89f-4e31-a02f-b57101865983.mp4"></video>
       <div class="meta"><span><b>9:16</b> · <b>8s</b> · 720p</span><span><b>24</b> credits ≈ <b>฿31</b></span><span>~<b>3</b> นาที</span></div>
-      <span class="badge pass"><svg><use href="assets/pixel-icons.svg#i-pass"/></svg>PASS</span>
+      <span class="badge pass"><svg><use href="#i-pass"/></svg>PASS</span>
     </div>
   </div>
-  <p class="ds-note" style="color:var(--muted);font-size:var(--fs-xs);margin:6px 0 0">โมเดล: Gemini Omni Flash 1.1 (โหมด reference-to-video) ผ่าน Higgsfield · สั่งงานผ่าน Claude Cowork · ไม่มีการตัดต่อเพิ่ม ไม่มีการเลือกเทคจากหลายรอบ — นี่คือรอบแรก</p>
+  <p class="ds-note" style="margin:6px 0 0">โมเดล: Gemini Omni Flash 1.1 (โหมด reference-to-video) ผ่าน Higgsfield · สั่งงานผ่าน Claude Cowork · ไม่มีการตัดต่อเพิ่ม ไม่มีการเลือกเทคจากหลายรอบ — นี่คือรอบแรก</p>
 </section>
 
 <!-- ===== PROMPT ANATOMY ===== -->

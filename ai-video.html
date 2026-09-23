@@ -32,21 +32,21 @@
 .inputs{display:grid;grid-template-columns:1fr 1fr;gap:10px}
 .inputs figure{margin:0;display:flex;flex-direction:column;gap:6px}
 .inputs img{width:100%;aspect-ratio:1/1;object-fit:cover;display:block;border:1px solid var(--line)}
-.inputs figcaption{font-size:12px;color:var(--muted);display:flex;justify-content:space-between;gap:6px}
+.inputs figcaption{font-size:var(--fs-xs);color:var(--muted);display:flex;justify-content:space-between;gap:6px}
 .inputs figcaption b{color:var(--text);font-weight:600}
 .pipe .node video{width:100%;aspect-ratio:9/16;max-height:360px;object-fit:cover;background:#000;display:block;border:1px solid var(--line)}
-.miniprompt{font-size:13px;line-height:1.55;color:var(--muted);background:var(--bg2);border:1px solid var(--line);padding:10px 12px;max-height:230px;overflow:hidden;position:relative}
+.miniprompt{font-size:var(--fs-xs);line-height:1.55;color:var(--muted);background:var(--bg2);border:1px solid var(--line);padding:10px 12px;max-height:230px;overflow:hidden;position:relative}
 .miniprompt::after{content:"";position:absolute;left:0;right:0;bottom:0;height:60px;background:linear-gradient(transparent,var(--bg2))}
-.meta{display:flex;flex-wrap:wrap;gap:6px 14px;font-size:13px;color:var(--muted)}
+.meta{display:flex;flex-wrap:wrap;gap:6px 14px;font-size:var(--fs-xs);color:var(--muted)}
 .meta b{font-family:var(--font-display);color:var(--text);font-weight:600;letter-spacing:.02em}
 @media(max-width:820px){.pipe{grid-template-columns:1fr}.pipe .arrow{transform:rotate(90deg);padding:4px 0}}
 
 /* ---- annotated prompt ---- */
-.anno{background:var(--bg2);border:1px solid var(--line);padding:18px 20px;font-size:15.5px;line-height:1.9;position:relative}
-.anno .copy{position:absolute;top:10px;right:10px;background:var(--card2);border:1px solid var(--line);color:var(--muted);font-size:12px;padding:4px 10px;border-radius:8px;cursor:pointer;font-family:inherit}
+.anno{background:var(--bg2);border:1px solid var(--line);padding:18px 20px;font-size:var(--fs-sm);line-height:1.9;position:relative}
+.anno .copy{position:absolute;top:10px;right:10px;background:var(--card2);border:1px solid var(--line);color:var(--muted);font-size:var(--fs-xs);padding:4px 10px;border-radius:8px;cursor:pointer;font-family:inherit}
 .anno .copy.done{color:var(--ok);border-color:var(--ok)}
 .anno mark{background:transparent;color:var(--text);border-bottom:3px solid;padding-bottom:1px;position:relative}
-.anno mark::before{content:attr(data-n);font-family:var(--font-display);font-size:10px;font-weight:700;letter-spacing:.06em;position:relative;top:-9px;margin-right:3px;padding:1px 4px;color:#111}
+.anno mark::before{content:attr(data-n);font-family:var(--font-display);font-size:var(--fs-xs);font-weight:700;letter-spacing:.06em;position:relative;top:-9px;margin-right:3px;padding:1px 4px;color:#111}
 .c1{border-color:var(--accent-hi)}.c1::before{background:var(--accent-hi)}
 .c2{border-color:var(--accent2)}.c2::before{background:var(--accent2)}
 .c3{border-color:var(--ok)}.c3::before{background:var(--ok)}
@@ -54,8 +54,8 @@
 .c5{border-color:#f9f8f6}.c5::before{background:#f9f8f6}
 .c6{border-color:var(--muted)}.c6::before{background:var(--muted)}
 .legend{display:grid;grid-template-columns:repeat(auto-fit,minmax(170px,1fr));gap:10px;margin-top:14px}
-.legend div{border-left:3px solid;padding:6px 10px;font-size:14px}
-.legend div b{display:block;font-family:var(--font-display);font-size:11px;letter-spacing:.1em;text-transform:uppercase;margin-bottom:2px}
+.legend div{border-left:3px solid;padding:6px 10px;font-size:var(--fs-sm)}
+.legend div b{display:block;font-family:var(--font-display);font-size:var(--fs-xs);letter-spacing:.1em;text-transform:uppercase;margin-bottom:2px}
 .legend div span{color:var(--muted)}
 
 /* ---- settings table ---- */
@@ -63,12 +63,12 @@
 .settings div{background:var(--card);border:1px solid var(--line);padding:12px 14px}
 .settings .lab{display:block;margin-bottom:4px}
 .settings b{font-family:var(--font-display);font-size:20px;font-weight:700}
-.settings small{display:block;color:var(--muted);font-size:13px;margin-top:2px}
+.settings small{display:block;color:var(--muted);font-size:var(--fs-xs);margin-top:2px}
 
 /* ---- character strip ---- */
 .nerd-note{display:grid;grid-template-columns:120px 1fr;gap:18px;align-items:center;background:var(--card);border:1px solid var(--line);padding:18px 20px}
 .nerd-note img{width:120px;height:auto;image-rendering:auto}
-.nerd-note p{margin:0;font-size:15px}
+.nerd-note p{margin:0;font-size:var(--fs-sm)}
 .nerd-note p b{color:var(--accent-hi)}
 @media(max-width:600px){.nerd-note{grid-template-columns:1fr}.nerd-note img{width:90px}}
 </style>
@@ -116,7 +116,7 @@
       <span class="badge pass"><svg><use href="assets/pixel-icons.svg#i-pass"/></svg>PASS</span>
     </div>
   </div>
-  <p class="ds-note" style="color:var(--muted);font-size:13px;margin:6px 0 0">โมเดล: Gemini Omni Flash 1.1 (โหมด reference-to-video) ผ่าน Higgsfield · สั่งงานผ่าน Claude Cowork · ไม่มีการตัดต่อเพิ่ม ไม่มีการเลือกเทคจากหลายรอบ — นี่คือรอบแรก</p>
+  <p class="ds-note" style="color:var(--muted);font-size:var(--fs-xs);margin:6px 0 0">โมเดล: Gemini Omni Flash 1.1 (โหมด reference-to-video) ผ่าน Higgsfield · สั่งงานผ่าน Claude Cowork · ไม่มีการตัดต่อเพิ่ม ไม่มีการเลือกเทคจากหลายรอบ — นี่คือรอบแรก</p>
 </section>
 
 <!-- ===== PROMPT ANATOMY ===== -->
@@ -147,8 +147,8 @@
   <div class="eyebrow"><span class="lab">03</span><span class="lab">ค่าที่ตั้งตอนสั่งเจน</span></div>
   <p class="h2sub">ไม่มีค่าลับ ตั้งแค่นี้</p>
   <div class="settings">
-    <div><span class="lab">Model</span><b style="font-size:16px">Gemini Omni Flash 1.1</b><small>ผ่าน Higgsfield</small></div>
-    <div><span class="lab">Mode</span><b style="font-size:16px">reference-to-video</b><small>รับหลายรูปในรอบเดียว</small></div>
+    <div><span class="lab">Model</span><b style="font-size:var(--fs-md)">Gemini Omni Flash 1.1</b><small>ผ่าน Higgsfield</small></div>
+    <div><span class="lab">Mode</span><b style="font-size:var(--fs-md)">reference-to-video</b><small>รับหลายรูปในรอบเดียว</small></div>
     <div><span class="lab">Aspect</span><b>9:16</b><small>Reels / TikTok / Shorts</small></div>
     <div><span class="lab">Duration</span><b>8s</b><small>พอสำหรับบทพูด 1 ประโยคยาว</small></div>
     <div><span class="lab">Resolution</span><b>720p</b><small>พอสำหรับมือถือ · 1080p แพงกว่าไม่คุ้ม</small></div>

@@ -12,16 +12,17 @@
 <style>
 .ds-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(150px,1fr));gap:12px}
 .type-row{display:grid;grid-template-columns:150px 1fr;gap:16px;align-items:baseline;padding:12px 0;border-bottom:1px solid var(--line)}
-.type-row .lab{font-size:11px}
+.type-row .lab{font-size:var(--fs-xs)}
 .icon-cell{display:flex;flex-direction:column;align-items:center;gap:8px;background:var(--card);border:1px solid var(--line);padding:16px 8px}
-.icon-cell .lab{font-size:10px}
+.icon-cell .lab{font-size:var(--fs-xs)}
 .lockup{display:inline-flex;align-items:center;gap:14px;padding:22px 20px}
 .lockup img{flex:none}
 .lockup img{height:56px;width:auto}
 .lockup .wm{font-family:var(--font-body);font-weight:700;font-size:24px;line-height:1.05;letter-spacing:-.01em;white-space:nowrap}
 .lockup.stack .wm{white-space:normal}
+.g3 .lockup{padding:18px 16px;gap:10px;overflow:hidden}.g3 .lockup img{height:44px}.g3 .lockup .wm{font-size:20px}.g3 .lockup .desc{white-space:nowrap}
 .lockup .wm span{color:var(--accent-hi)}
-.lockup .desc{font-family:var(--font-display);font-size:10px;letter-spacing:.22em;color:var(--muted);margin-top:4px}
+.lockup .desc{font-family:var(--font-display);font-size:var(--fs-xs);letter-spacing:.22em;color:var(--muted);margin-top:4px}
 .lockup.stack{flex-direction:column;text-align:center;gap:10px}
 .lockup.on-red .wm,.lockup.on-red .desc{color:#fff}.lockup.on-red .wm span{color:#111}
 .lockup.on-yellow .wm,.lockup.on-yellow .desc{color:#111}.lockup.on-yellow .wm span{color:#111}
@@ -30,7 +31,7 @@
 .lockup.on-purple .wm,.lockup.on-purple .desc{color:var(--offwhite)}.lockup.on-purple .wm span{color:var(--accent2)}
 .social{aspect-ratio:4/5;background:var(--bg);border:1px solid var(--line);padding:28px;display:flex;flex-direction:column;position:relative;max-width:360px}
 .social .h{font-weight:700;font-size:26px;line-height:1.2;margin:14px 0 10px}
-.social .shot{flex:1;background:var(--card2);border:1px solid var(--line);display:flex;align-items:center;justify-content:center;color:var(--muted);font-size:13px}
+.social .shot{flex:1;background:var(--card2);border:1px solid var(--line);display:flex;align-items:center;justify-content:center;color:var(--muted);font-size:var(--fs-xs)}
 .social .data{display:grid;grid-template-columns:1fr 1fr;gap:6px 14px;margin-top:12px}
 .social .foot{display:flex;justify-content:space-between;align-items:center;margin-top:14px}
 .social .foot img{height:26px;width:auto}
@@ -120,13 +121,14 @@
 <!-- ===== 3. TYPE ===== -->
 <section>
   <div class="eyebrow"><span class="lab">03</span><span class="lab">Typography</span></div>
-  <div class="type-row"><div class="lab">Display / H1<br>IBM Plex Sans Thai 700</div><div style="font-size:clamp(28px,5vw,44px);font-weight:700;line-height:1.15">เนิร์ดทดสอบเครื่องมือการตลาด<span class="px-hl red">ให้ก่อน</span></div></div>
-  <div class="type-row"><div class="lab">H2 · 24/700</div><div style="font-size:24px;font-weight:700">โมเดล AI Video ตัวไหน "พูดไทย" ได้จริง</div></div>
-  <div class="type-row"><div class="lab">H3 · 18/700</div><div style="font-size:18px;font-weight:700">ถ่ายพรีเซนเตอร์ครั้งเดียว เปลี่ยนคนได้ไม่จำกัด</div></div>
-  <div class="type-row"><div class="lab">Body · 16/400</div><div>เครื่องมือการตลาดและ AI ออกใหม่ทุกสัปดาห์ ไม่มีใครมีเวลาลองหมด — เราลองให้ นั่งเทียบทีละตัว จ่ายเครดิตจริง แล้วเขียนผลตรงๆ</div></div>
-  <div class="type-row"><div class="lab">Muted · 14/400</div><div class="ds-note">ผลทดสอบเป็นข้อมูล ณ วันที่ทดสอบ โมเดล AI เปลี่ยนเร็ว ควรทดสอบซ้ำก่อนใช้งานจริง</div></div>
-  <div class="type-row"><div class="lab">Lab Data<br>Space Grotesk 600</div><div class="ds-row"><span class="lab">NERD TEST / <b>014</b></span><span class="lab"><b>128</b> CREDITS</span><span class="lab"><b>02:43</b> MIN</span><span class="lab">RESULT: <b>PASS</b></span></div></div>
-  <div class="type-row"><div class="lab">Big Number<br>Space Grotesk 700</div><div class="lab big">24 <small style="font-size:16px;color:var(--muted)">CREDITS</small></div></div>
+  <div class="type-row"><div class="lab">H1 · --fs-h1<br>28–44 / 700</div><div style="font-size:var(--fs-h1);font-weight:700;line-height:1.15">เนิร์ดทดสอบเครื่องมือการตลาด<span class="px-hl red">ให้ก่อน</span></div></div>
+  <div class="type-row"><div class="lab">H2 · --fs-h2<br>24 / 700</div><div style="font-size:var(--fs-h2);font-weight:700">โมเดล AI Video ตัวไหน "พูดไทย" ได้จริง</div></div>
+  <div class="type-row"><div class="lab">H3 · --fs-h3<br>18 / 700</div><div style="font-size:var(--fs-h3);font-weight:700">ถ่ายพรีเซนเตอร์ครั้งเดียว เปลี่ยนคนได้ไม่จำกัด</div></div>
+  <div class="type-row"><div class="lab">LG · --fs-lg<br>18 / 400 · hero lead</div><div style="font-size:var(--fs-lg);color:var(--muted)">ประโยคนำใต้ H1 เท่านั้น — ไม่ใช้ในเนื้อหา</div></div>
+  <div class="type-row"><div class="lab">MD · --fs-md<br>16 / 400 · body</div><div>เครื่องมือการตลาดและ AI ออกใหม่ทุกสัปดาห์ ไม่มีใครมีเวลาลองหมด — เราลองให้ นั่งเทียบทีละตัว จ่ายเครดิตจริง แล้วเขียนผลตรงๆ</div></div>
+  <div class="type-row"><div class="lab">SM · --fs-sm<br>14 / 400 · caption · meta</div><div class="ds-note">ผลทดสอบเป็นข้อมูล ณ วันที่ทดสอบ โมเดล AI เปลี่ยนเร็ว ควรทดสอบซ้ำก่อนใช้งานจริง</div></div>
+  <div class="type-row"><div class="lab">XS · --fs-xs<br>12 · label · tag · Space Grotesk</div><div class="ds-row"><span class="lab">NERD TEST / <b>014</b></span><span class="lab"><b>128</b> CREDITS</span><span class="lab"><b>02:43</b> MIN</span><span class="lab">RESULT: <b>PASS</b></span></div></div>
+  <div class="type-row"><div class="lab">Big Number<br>Space Grotesk 700</div><div class="lab big">24 <small style="font-size:var(--fs-md);color:var(--muted)">CREDITS</small></div></div>
   <div class="type-row"><div class="lab">JP Accent<br>Zen Kaku Gothic New</div><div class="ds-row"><span class="jp">マーケティング</span><span class="jp">人工知能</span><span class="jp">データ</span><span class="ds-note">— ใช้ 5–15% ของชิ้นงาน ไม่ใช่ตัวหลัก</span></div></div>
 </section>
 
@@ -186,7 +188,7 @@
     <div class="ds-sample"><div class="lab">Pixel divider</div><div class="px-divider" style="margin:12px 0"></div><div class="px-divider muted" style="margin:0"></div><p class="ds-note"><code class="tok">.px-divider</code> / <code class="tok">.muted</code></p></div>
     <div class="ds-sample"><div class="lab">Pixel highlight</div><p style="margin:10px 0 4px">ตัวที่ดีที่สุด <span class="px-hl">ถูกกว่า 3 เท่า</span> ของตัวที่แย่ที่สุด</p><p class="ds-note"><code class="tok">.px-hl</code> · <code class="tok">.px-hl.red</code></p></div>
     <div class="ds-sample px-grid" style="min-height:90px"><div class="lab">Pixel grid</div><p class="ds-note">ใช้เป็น accent เฉพาะจุด ไม่เต็มพื้นหลัง · <code class="tok">.px-grid</code></p></div>
-    <div class="ds-sample"><div class="lab">Stepped corners</div><div class="ds-row" style="margin-top:10px"><span class="px-corner" style="background:var(--accent);color:#fff;padding:8px 14px;font-family:var(--font-display);font-weight:700;font-size:13px">BUTTON</span><span class="px-corner" style="background:var(--card2);padding:8px 14px;font-size:13px">การ์ด</span></div><p class="ds-note"><code class="tok">.px-corner</code> — ตัดมุม 3px</p></div>
+    <div class="ds-sample"><div class="lab">Stepped corners</div><div class="ds-row" style="margin-top:10px"><span class="px-corner" style="background:var(--accent);color:#fff;padding:8px 14px;font-family:var(--font-display);font-weight:700;font-size:var(--fs-xs)">BUTTON</span><span class="px-corner" style="background:var(--card2);padding:8px 14px;font-size:var(--fs-xs)">การ์ด</span></div><p class="ds-note"><code class="tok">.px-corner</code> — ตัดมุม 3px</p></div>
     <div class="ds-sample"><div class="lab">Stat tile</div><div class="stat" style="margin-top:10px;padding:12px 14px"><span class="lab">Credits</span><span class="num">24<small>/ clip</small></span></div></div>
   </div>
 </section>

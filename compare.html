@@ -3,13 +3,13 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>เปรียบเทียบโมเดล AI Video พูดไทย 8 ตัว — Nerd MarTech</title>
-<meta name="description" content="ทดสอบ 8 โมเดลด้วยโจทย์เดียวกัน คนเดิม บ้านเดิม บทพูดไทยเดิม บอกเครดิตที่ใช้และผลจริง">
+<title>เปรียบเทียบโมเดล AI Video พูดไทย 11 ตัว — Nerd MarTech</title>
+<meta name="description" content="ทดสอบ 11 โมเดลด้วยโจทย์เดียวกัน คนเดิม บ้านเดิม บทพูดไทยเดิม บอกเครดิตที่ใช้และผลจริง">
 <link rel="canonical" href="https://nerdmartech.com/compare.html">
 <meta property="og:type" content="article">
 <meta property="og:site_name" content="Nerd MarTech">
-<meta property="og:title" content="เปรียบเทียบโมเดล AI Video พูดไทย 8 ตัว — Nerd MarTech">
-<meta property="og:description" content="ทดสอบ 8 โมเดลด้วยโจทย์เดียวกัน คนเดิม บ้านเดิม บทพูดไทยเดิม บอกเครดิตที่ใช้และผลจริง">
+<meta property="og:title" content="เปรียบเทียบโมเดล AI Video พูดไทย 11 ตัว — Nerd MarTech">
+<meta property="og:description" content="ทดสอบ 11 โมเดลด้วยโจทย์เดียวกัน คนเดิม บ้านเดิม บทพูดไทยเดิม บอกเครดิตที่ใช้และผลจริง">
 <meta property="og:url" content="https://nerdmartech.com/compare.html">
 <meta property="og:locale" content="th_TH">
 <meta name="twitter:card" content="summary_large_image">
@@ -21,35 +21,27 @@
 <meta name="theme-color" content="#f9f8f6">
 <script type="application/ld+json">
 {"@context":"https://schema.org","@type":"FAQPage","mainEntity":[
- {"@type":"Question","name":"โมเดล AI สร้างวิดีโอตัวไหนพูดภาษาไทยได้ชัดที่สุด","acceptedAnswer":{"@type":"Answer","text":"จากการทดสอบ 8 โมเดลด้วยโจทย์เดียวกัน Gemini Omni Flash 1.1 ให้เสียงไทยชัด ปากตรง และภาพ smooth ที่สุด ในราคา 24 credits ต่อคลิป 8 วินาที รองลงมาคือ Gemini Omni Flash รุ่นเดิม ส่วน Kling 3.0 พูดไทยออกมาเป็นสำเนียงเขมร และ Seedance 2.5 เพี้ยนแบบชาวต่างชาติพูดไทย"}},
+ {"@type":"Question","name":"โมเดล AI สร้างวิดีโอตัวไหนพูดภาษาไทยได้ชัดที่สุด","acceptedAnswer":{"@type":"Answer","text":"จากการทดสอบ 11 โมเดลด้วยโจทย์เดียวกัน Gemini Omni Flash 1.1 ให้เสียงไทยชัด ปากตรง และภาพ smooth ที่สุด ในราคา 24 credits ต่อคลิป 8 วินาที รองลงมาคือ Gemini Omni Flash รุ่นเดิม ส่วน Kling 3.0 พูดไทยออกมาเป็นสำเนียงเขมร และ Seedance 2.5 เพี้ยนแบบชาวต่างชาติพูดไทย"}},
  {"@type":"Question","name":"Google Veo 3.1 พูดไทยได้ไหม","acceptedAnswer":{"@type":"Answer","text":"เสียงไทยชัดมาก แต่ภาพกระตุกไม่ smooth และเป็นโมเดลที่แพงที่สุดในการทดสอบ (80 credits) แพงกว่า Gemini Omni Flash 1.1 ประมาณ 3 เท่าโดยผลไม่ดีกว่า"}},
  {"@type":"Question","name":"ฟีเจอร์ Extend ต่อความยาววิดีโอ AI ใช้ได้ไหม","acceptedAnswer":{"@type":"Answer","text":"ต่อภาพได้ แต่เสียงถูกสร้างใหม่ทุกครั้ง ทำให้เสียงและสำเนียงเปลี่ยน วิธีที่ใช้ได้คือเจนหลายคลิปสั้นจากรูปอ้างอิงชุดเดิมและโมเดลเดิม แล้วนำมาตัดต่อ"}},
  {"@type":"Question","name":"ถ้ามีคลิปที่ดีแล้ว เปลี่ยนพรีเซนเตอร์เป็นคนอื่นได้ไหม","acceptedAnswer":{"@type":"Answer","text":"ได้ ด้วย motion transfer เช่น Genjutsu ของ Higgsfield (56 credits) หรือ Kling 3.0 Omni Edit (16 credits) ซึ่งคงเสียงและการเคลื่อนไหวเดิม เปลี่ยนเฉพาะหน้าคน"}}
 ]}
 </script>
 </head>
-<body>
-<header class="site-head">
-  <a class="logo" href="index.html" aria-label="Nerd MarTech">
-    <img src="assets/brand/logo-on-light.svg" alt="" class="logo-sym">
-    <span class="logo-wm">Nerd<br>Mar<span>Tech</span></span>
-  </a>
-  <nav class="site-nav"><div class="wrap"><div class="links"><a href="index.html">หน้าแรก</a><a href="ai-video.html">สร้างวิดีโอด้วย AI</a><a href="use-cases.html">Use Cases</a><a href="prompts.html">Prompts</a><a href="compare.html" class="active">Model Compare</a></div></div></nav>
-</header>
+<body data-page="compare.html">
 
-<div class="wrap">
-
+<div class="wrap page-hero">
 <div class="hero">
   <div class="lab red">NERD COMPARE / 001</div>
   <h1>โมเดล AI Video ตัวไหน <em>พูดไทย</em> ได้จริง</h1>
-  <p>8 โมเดล โจทย์เดียวกันเป๊ะ — รูปอ้างอิง 2 รูปเดิม · prompt เดิม · บทพูดไทยเดิม · 9:16 · 8 วินาที — แล้วดูว่าใครทำได้ ใครทำไม่ได้ ในราคาเท่าไหร่</p>
+  <p>11 โมเดล โจทย์เดียวกันเป๊ะ — รูปอ้างอิง 2 รูปเดิม · prompt เดิม · บทพูดไทยเดิม · 9:16 · 8 วินาที — แล้วดูว่าใครทำได้ ใครทำไม่ได้ ในราคาเท่าไหร่</p>
   <div class="px-divider"></div>
 </div>
+</div>
 
-<div class="doc">
-<aside class="side-toc"><span class="toc-title">ไปที่หัวข้อ</span><a href="#input">โจทย์ที่ใช้ทดสอบ</a><a href="#ranking">01 · ผลเรียงตามอันดับ</a><a href="#summary">02 · ตารางสรุป</a><a href="#lessons">03 · สิ่งที่ได้จากการเทียบ</a><a href="#faq">04 · คำถามที่พบบ่อย</a></aside>
-<main>
-<section id="input">
+<main id="content">
+
+<section id="input" data-toc="โจทย์ที่ใช้ทดสอบ">
   <div class="brief">
     <div class="brief-in">
       <img data-zoom src="assets/image-reference/presenter.jpg" alt="รูปพรีเซนเตอร์ที่ใช้เป็นรูปอ้างอิง">
@@ -59,20 +51,21 @@
       <div class="lab">SAME INPUT · ทุกโมเดล</div>
       <p><b>รูป 2 รูป</b> คน + บ้าน · <b>prompt</b> UGC selfie แนวตั้ง พูดไทย lip sync (<a href="ai-video.html">ดู prompt เต็ม</a>) · <b>บทพูด</b> "สวัสดีค่ะ วันนี้พามาดูบ้านหลังนี้ค่ะ สองชั้น สไตล์คลาสสิก หน้าบ้านกว้างมาก จอดรถได้สองคันสบายๆ ใครสนใจทักมาได้เลยนะคะ"</p>
       <div class="chips">
-        <span class="chip">ทดสอบ <b>8</b> โมเดล</span>
-        <span class="chip">PASS <b>2</b> · MAYBE <b>3</b> · FAIL <b>3</b></span>
-        <span class="chip">เครดิตที่จ่ายจริง <b>300</b> ≈ <b>฿387</b></span>
+        <span class="chip">ทดสอบ <b>11</b> โมเดล · 13 คลิป</span>
+        <span class="chip">PASS <b>4</b> · MAYBE <b>3</b> · FAIL <b>4</b></span>
+        <span class="chip">เครดิตที่จ่ายจริง <b>512</b> ≈ <b>฿660</b></span>
         <span class="chip">ทดสอบ <b>22 ก.ย. 2569</b></span>
       </div>
     </div>
   </div>
 </section>
 
-<section id="ranking">
-<div class="eyebrow"><span class="lab">01</span><span class="lab">ผลเรียงตามอันดับ</span></div>
+<section id="ranking" data-toc="01 · ผลเรียงตามอันดับ">
+<div class="eyebrow"><span class="lab">01</span><span class="lab">ผลเรียงตามอันดับ · 11 โมเดล</span></div>
+<p class="h2sub">#01–#02 และ #05–#10 เจนใหม่จากรูปชุดเดียวกัน · #03–#04 เอาคลิป #01 มาเปลี่ยนคน · #11 เอาคลิป #01 มาต่อความยาว</p>
 <div class="grid g4">
   <div class="vcard">
-    <video controls preload="metadata" src="https://d8j0ntlcm91z4.cloudfront.net/user_3FvAUpXpCnZUma0p4ZCgNFe1CGD/hf_20260922_221717_f3028521-d89f-4e31-a02f-b57101865983.mp4"></video>
+    <video controls preload="metadata" src="https://d8j0ntlcm91z4.cloudfront.net/user_3FvAUpXpCnZUma0p4ZCgNFe1CGD/hf_20260922_221717_f3028521-d89f-4e31-a02f-b57101865983.mp4#t=0.1"></video>
     <div class="body">
       <div class="rank lab">#01</div>
       <div class="name">Gemini Omni Flash 1.1</div>
@@ -82,7 +75,7 @@
     </div>
   </div>
   <div class="vcard">
-    <video controls preload="metadata" src="https://d8j0ntlcm91z4.cloudfront.net/user_3FvAUpXpCnZUma0p4ZCgNFe1CGD/hf_20260922_221717_2bf8f233-65db-4ea8-b2e8-1d1f57557e45.mp4"></video>
+    <video controls preload="metadata" src="https://d8j0ntlcm91z4.cloudfront.net/user_3FvAUpXpCnZUma0p4ZCgNFe1CGD/hf_20260922_221717_2bf8f233-65db-4ea8-b2e8-1d1f57557e45.mp4#t=0.1"></video>
     <div class="body">
       <div class="rank lab">#02</div>
       <div class="name">Gemini Omni Flash</div>
@@ -92,9 +85,29 @@
     </div>
   </div>
   <div class="vcard">
-    <video controls preload="metadata" src="https://d8j0ntlcm91z4.cloudfront.net/user_3FvAUpXpCnZUma0p4ZCgNFe1CGD/hf_20260922_224517_5dd59071-e9bd-47af-bae9-199c1f6dfa85.mp4"></video><span class="out">input: start frame</span>
+    <video controls preload="metadata" src="https://d8j0ntlcm91z4.cloudfront.net/user_3FvAUpXpCnZUma0p4ZCgNFe1CGD/hf_20260922_224524_89072b8a-0713-4898-9764-28af3fb6534c.mp4#t=0.1"></video><span class="out">input: คลิป + รูปคน</span>
     <div class="body">
       <div class="rank lab">#03</div>
+      <div class="name">Genjutsu (Motion Control)</div>
+      <div class="row"><span>Higgsfield · 720p</span><span class="credits" data-cr="56">56 credits</span></div>
+      <span class="badge pass"><svg><use href="#i-pass"/></svg>PASS</span>
+      <div class="note">หน้าคนและภาษาดีมาก ฉากหลังกระตุกเล็กน้อย — เจนนานสุด ~10 นาที</div>
+    </div>
+  </div>
+  <div class="vcard">
+    <video controls preload="metadata" src="https://d8j0ntlcm91z4.cloudfront.net/user_3FvAUpXpCnZUma0p4ZCgNFe1CGD/hf_20260922_224517_8dc9c414-276f-410a-b6c8-73585a2ee64f.mp4#t=0.1"></video><span class="out">input: คลิป + รูปคน</span>
+    <div class="body">
+      <div class="rank lab">#04</div>
+      <div class="name">Kling 3.0 Omni Edit</div>
+      <div class="row"><span>Kling · pro</span><span class="credits" data-cr="16">16 credits</span></div>
+      <span class="badge pass"><svg><use href="#i-pass"/></svg>PASS</span>
+      <div class="note">ดูดี ใช้ได้ — ถูกกว่า Genjutsu 3.5 เท่า และเร็วกว่า</div>
+    </div>
+  </div>
+  <div class="vcard">
+    <video controls preload="metadata" src="https://d8j0ntlcm91z4.cloudfront.net/user_3FvAUpXpCnZUma0p4ZCgNFe1CGD/hf_20260922_224517_5dd59071-e9bd-47af-bae9-199c1f6dfa85.mp4#t=0.1"></video><span class="out">input: start frame</span>
+    <div class="body">
+      <div class="rank lab">#05</div>
       <div class="name">Google Veo 3.1</div>
       <div class="row"><span>Google · preview high</span><span class="credits" data-cr="80">80 credits</span></div>
       <span class="badge maybe"><svg><use href="#i-maybe"/></svg>MAYBE</span>
@@ -102,9 +115,9 @@
     </div>
   </div>
   <div class="vcard">
-    <video controls preload="metadata" src="https://d8j0ntlcm91z4.cloudfront.net/user_3FvAUpXpCnZUma0p4ZCgNFe1CGD/hf_20260922_221717_cc05b334-5328-415e-b4e5-8290e969a33a.mp4"></video>
+    <video controls preload="metadata" src="https://d8j0ntlcm91z4.cloudfront.net/user_3FvAUpXpCnZUma0p4ZCgNFe1CGD/hf_20260922_221717_cc05b334-5328-415e-b4e5-8290e969a33a.mp4#t=0.1"></video>
     <div class="body">
-      <div class="rank lab">#04</div>
+      <div class="rank lab">#06</div>
       <div class="name">MiniMax H3</div>
       <div class="row"><span>MiniMax · 2K</span><span class="credits" data-cr="16">16 credits</span></div>
       <span class="badge maybe"><svg><use href="#i-maybe"/></svg>MAYBE</span>
@@ -112,9 +125,9 @@
     </div>
   </div>
   <div class="vcard">
-    <video controls preload="metadata" src="https://d8j0ntlcm91z4.cloudfront.net/user_3FvAUpXpCnZUma0p4ZCgNFe1CGD/hf_20260922_224516_fa6a7c97-6988-4390-8e73-ec53517bf62b.mp4"></video><span class="out">output 16:9 · cropped</span>
+    <video controls preload="metadata" src="https://d8j0ntlcm91z4.cloudfront.net/user_3FvAUpXpCnZUma0p4ZCgNFe1CGD/hf_20260922_224516_fa6a7c97-6988-4390-8e73-ec53517bf62b.mp4#t=0.1"></video><span class="out">output 16:9 · cropped</span>
     <div class="body">
-      <div class="rank lab">#05</div>
+      <div class="rank lab">#07</div>
       <div class="name">Grok Video 1.5</div>
       <div class="row"><span>xAI · 720p</span><span class="credits" data-cr="36">36 credits</span></div>
       <span class="badge maybe"><svg><use href="#i-maybe"/></svg>MAYBE</span>
@@ -122,9 +135,9 @@
     </div>
   </div>
   <div class="vcard">
-    <video controls preload="metadata" src="https://d8j0ntlcm91z4.cloudfront.net/user_3FvAUpXpCnZUma0p4ZCgNFe1CGD/hf_20260922_221717_e7df7267-19be-49d9-8c59-13f36366624b.mp4"></video>
+    <video controls preload="metadata" src="https://d8j0ntlcm91z4.cloudfront.net/user_3FvAUpXpCnZUma0p4ZCgNFe1CGD/hf_20260922_221717_e7df7267-19be-49d9-8c59-13f36366624b.mp4#t=0.1"></video>
     <div class="body">
-      <div class="rank lab">#06</div>
+      <div class="rank lab">#08</div>
       <div class="name">Seedance 2.5</div>
       <div class="row"><span>ByteDance · 720p</span><span class="credits" data-cr="56">56 credits</span></div>
       <span class="badge fail"><svg><use href="#i-fail"/></svg>FAIL</span>
@@ -132,9 +145,9 @@
     </div>
   </div>
   <div class="vcard">
-    <video controls preload="metadata" src="https://d8j0ntlcm91z4.cloudfront.net/user_3FvAUpXpCnZUma0p4ZCgNFe1CGD/hf_20260922_224517_88fc1b0f-058c-4f48-9e4a-6688b60b714d.mp4"></video><span class="out">input: start frame</span>
+    <video controls preload="metadata" src="https://d8j0ntlcm91z4.cloudfront.net/user_3FvAUpXpCnZUma0p4ZCgNFe1CGD/hf_20260922_224517_88fc1b0f-058c-4f48-9e4a-6688b60b714d.mp4#t=0.1"></video><span class="out">input: start frame</span>
     <div class="body">
-      <div class="rank lab">#07</div>
+      <div class="rank lab">#09</div>
       <div class="name">Kling 3.0 pro</div>
       <div class="row"><span>Kling · 1080p</span><span class="credits" data-cr="20">20 credits</span></div>
       <span class="badge fail"><svg><use href="#i-fail"/></svg>FAIL</span>
@@ -142,40 +155,53 @@
     </div>
   </div>
   <div class="vcard">
-    <video controls preload="metadata" src="https://d8j0ntlcm91z4.cloudfront.net/user_3FvAUpXpCnZUma0p4ZCgNFe1CGD/hf_20260922_221717_18b3f0a4-b136-41c9-b9a1-899ff667cfdc.mp4"></video>
+    <video controls preload="metadata" src="https://d8j0ntlcm91z4.cloudfront.net/user_3FvAUpXpCnZUma0p4ZCgNFe1CGD/hf_20260922_221717_18b3f0a4-b136-41c9-b9a1-899ff667cfdc.mp4#t=0.1"></video>
     <div class="body">
-      <div class="rank lab">#08</div>
+      <div class="rank lab">#10</div>
       <div class="name">FLUX 3 Video</div>
       <div class="row"><span>BFL · 720p</span><span class="credits" data-cr="44">44 credits</span></div>
       <span class="badge fail"><svg><use href="#i-fail"/></svg>FAIL</span>
       <div class="note">ไม่มีบ้านในภาพเลย มีแต่เสียงพากย์ — ไม่เข้าใจรูปอ้างอิง</div>
     </div>
   </div>
+  <div class="vcard">
+    <video controls preload="metadata" src="https://cdn.higgsfield.ai/cinematic/splice/job/d310e5db-30e8-4124-aed9-a1ab6be56caf/spliced.mp4#t=0.1"></video><span class="out">input: คลิปเดิม</span>
+    <div class="body">
+      <div class="rank lab">#11</div>
+      <div class="name">Omni Flash 1.1 Extend</div>
+      <div class="row"><span>Google · ต่อคลิป · ลอง 2 ครั้ง</span><span class="credits" data-cr="70">70 credits</span></div>
+      <span class="badge fail"><svg><use href="#i-fail"/></svg>FAIL</span>
+      <div class="note">ต่อภาพได้ แต่<b>เสียงถูกสร้างใหม่</b> สำเนียงเพี้ยนเป็นเขมร ทั้ง 2 ครั้ง</div>
+    </div>
+  </div>
 </div>
-<p class="ds-note" style="margin:10px 0 0">โมเดลที่รับได้แค่รูปเดียว (Veo · Kling · Grok) ใช้เฟรมแรกของคลิปอันดับ 1 เป็นภาพตั้งต้น เพื่อให้คนและบ้านเหมือนกันทุกตัว · โมเดลแก้คลิป/เปลี่ยนคน (Genjutsu · Kling Omni Edit) เป็นคนละงาน ดูที่ <a href="use-cases.html#motion-transfer">Use Case 02</a></p>
+<p class="ds-note" style="margin:10px 0 0">โมเดลที่รับได้แค่รูปเดียว (Veo · Kling · Grok) ใช้เฟรมแรกของคลิปอันดับ 1 เป็นภาพตั้งต้น เพื่อให้คนและบ้านเหมือนกันทุกตัว · ส่วน #03–#04 (Genjutsu · Kling Omni Edit) เอาคลิป #01 มาเปลี่ยนคน และ #11 เอาคลิป #01 มาต่อความยาว</p>
 </section>
 
-<section id="summary">
-<div class="eyebrow"><span class="lab">02</span><span class="lab">ตารางสรุป</span></div>
+<section id="summary" data-toc="02 · ตารางสรุป">
+<div class="eyebrow"><span class="lab">02</span><span class="lab">ตารางสรุป · ค่าใช้จ่ายต่อโมเดล</span></div>
 <div class="tablewrap">
 <table>
-  <thead><tr><th>#</th><th>โมเดล</th><th class="num">credits · บาท</th><th>เสียงไทย</th><th>ภาพ</th><th>ผล</th></tr></thead>
+  <thead><tr><th>#</th><th>โมเดล</th><th>วิธีป้อน</th><th class="num">credits · บาท</th><th>เสียงไทย</th><th>ภาพ</th><th>ผล</th></tr></thead>
   <tbody>
-    <tr><td>1</td><td>Gemini Omni Flash 1.1</td><td class="num" data-cr="24">24</td><td>✓ ชัด</td><td>✓ smooth</td><td><span class="badge soft sm pass"><svg><use href="#i-pass"/></svg>PASS</span></td></tr>
-    <tr><td>2</td><td>Gemini Omni Flash</td><td class="num" data-cr="24">24</td><td>✓ ชัด</td><td>✓</td><td><span class="badge soft sm pass"><svg><use href="#i-pass"/></svg>PASS</span></td></tr>
-    <tr><td>3</td><td>Google Veo 3.1</td><td class="num" data-cr="80">80</td><td>✓ ชัดมาก</td><td>✗ กระตุก</td><td><span class="badge soft sm maybe"><svg><use href="#i-maybe"/></svg>MAYBE</span></td></tr>
-    <tr><td>4</td><td>MiniMax H3</td><td class="num" data-cr="16">16</td><td>✓ ชัด</td><td>△ ดูเป็นภาพเจน</td><td><span class="badge soft sm maybe"><svg><use href="#i-maybe"/></svg>MAYBE</span></td></tr>
-    <tr><td>5</td><td>Grok Video 1.5</td><td class="num" data-cr="36">36</td><td>△ เสียงคอม</td><td>△ แทบไม่ขยับ · ผิดสัดส่วน</td><td><span class="badge soft sm maybe"><svg><use href="#i-maybe"/></svg>MAYBE</span></td></tr>
-    <tr><td>6</td><td>Seedance 2.5</td><td class="num" data-cr="56">56</td><td>✗ เพี้ยน</td><td>✓</td><td><span class="badge soft sm fail"><svg><use href="#i-fail"/></svg>FAIL</span></td></tr>
-    <tr><td>7</td><td>Kling 3.0 pro</td><td class="num" data-cr="20">20</td><td>✗ เป็นเขมร</td><td>✓</td><td><span class="badge soft sm fail"><svg><use href="#i-fail"/></svg>FAIL</span></td></tr>
-    <tr><td>8</td><td>FLUX 3 Video</td><td class="num" data-cr="44">44</td><td>✓</td><td>✗ ไม่มีบ้าน</td><td><span class="badge soft sm fail"><svg><use href="#i-fail"/></svg>FAIL</span></td></tr>
+    <tr><td>1</td><td>Gemini Omni Flash 1.1</td><td>รูปอ้างอิง 2 รูป</td><td class="num" data-cr="24">24</td><td>✓ ชัด</td><td>✓ smooth</td><td><span class="badge soft sm pass"><svg><use href="#i-pass"/></svg>PASS</span></td></tr>
+    <tr><td>2</td><td>Gemini Omni Flash</td><td>รูปอ้างอิง 2 รูป</td><td class="num" data-cr="24">24</td><td>✓ ชัด</td><td>✓</td><td><span class="badge soft sm pass"><svg><use href="#i-pass"/></svg>PASS</span></td></tr>
+    <tr><td>3</td><td>Genjutsu</td><td>คลิป + รูปคน</td><td class="num" data-cr="56">56</td><td>✓ ชัด</td><td>△ ฉากหลังกระตุกนิด</td><td><span class="badge soft sm pass"><svg><use href="#i-pass"/></svg>PASS</span></td></tr>
+    <tr><td>4</td><td>Kling 3.0 Omni Edit</td><td>คลิป + รูปคน</td><td class="num" data-cr="16">16</td><td>✓ ชัด</td><td>✓</td><td><span class="badge soft sm pass"><svg><use href="#i-pass"/></svg>PASS</span></td></tr>
+    <tr><td>5</td><td>Google Veo 3.1</td><td>start image</td><td class="num" data-cr="80">80</td><td>✓ ชัดมาก</td><td>✗ กระตุก</td><td><span class="badge soft sm maybe"><svg><use href="#i-maybe"/></svg>MAYBE</span></td></tr>
+    <tr><td>6</td><td>MiniMax H3</td><td>รูปอ้างอิง 2 รูป</td><td class="num" data-cr="16">16</td><td>✓ ชัด</td><td>△ ดูเป็นภาพเจน</td><td><span class="badge soft sm maybe"><svg><use href="#i-maybe"/></svg>MAYBE</span></td></tr>
+    <tr><td>7</td><td>Grok Video 1.5</td><td>start image</td><td class="num" data-cr="36">36</td><td>△ เสียงคอม</td><td>△ แทบไม่ขยับ · ผิดสัดส่วน</td><td><span class="badge soft sm maybe"><svg><use href="#i-maybe"/></svg>MAYBE</span></td></tr>
+    <tr><td>8</td><td>Seedance 2.5</td><td>รูปอ้างอิง 2 รูป</td><td class="num" data-cr="56">56</td><td>✗ เพี้ยน</td><td>✓</td><td><span class="badge soft sm fail"><svg><use href="#i-fail"/></svg>FAIL</span></td></tr>
+    <tr><td>9</td><td>Kling 3.0 pro</td><td>start image</td><td class="num" data-cr="20">20</td><td>✗ เป็นเขมร</td><td>✓</td><td><span class="badge soft sm fail"><svg><use href="#i-fail"/></svg>FAIL</span></td></tr>
+    <tr><td>10</td><td>FLUX 3 Video</td><td>รูปอ้างอิง 2 รูป</td><td class="num" data-cr="44">44</td><td>✓</td><td>✗ ไม่มีบ้าน</td><td><span class="badge soft sm fail"><svg><use href="#i-fail"/></svg>FAIL</span></td></tr>
+    <tr><td>11</td><td>Omni Flash 1.1 Extend</td><td>คลิปเดิม</td><td class="num" data-cr="70">70</td><td>✗ เสียงเปลี่ยน · เขมร</td><td>✓</td><td><span class="badge soft sm fail"><svg><use href="#i-fail"/></svg>FAIL</span></td></tr>
   </tbody>
 </table>
 </div>
 <p class="rate-note" style="margin-top:8px">ราคาบาทคิดจากแพ็กเกจ Higgsfield $39 = 1.29 บาท/เครดิต (แพ็กเกจ $15 = 2.50 · $99 = 1.09) — เปลี่ยนแพ็กเกจ ราคาต่อคลิปเปลี่ยนตาม</p>
 </section>
 
-<section id="lessons">
+<section id="lessons" data-toc="03 · สิ่งที่ได้จากการเทียบ">
 <div class="eyebrow"><span class="lab">03</span><span class="lab">สิ่งที่ได้จากการเทียบ</span></div>
 <div class="grid g2">
 <div class="lesson"><b>แพงไม่ได้แปลว่าดี</b> — อันดับ 1 (24 credits) ถูกกว่าตัวที่แพงที่สุด (Veo 3.1, 80 credits) 3 เท่า และผลดีกว่า</div>
@@ -185,23 +211,18 @@
 </div>
 </section>
 
-<section id="faq">
+<section id="faq" data-toc="04 · คำถามที่พบบ่อย">
 <div class="eyebrow"><span class="lab">04</span><span class="lab">คำถามที่พบบ่อย</span></div>
   <div class="faq">
-    <details><summary>โมเดล AI สร้างวิดีโอตัวไหนพูดภาษาไทยได้ชัดที่สุด</summary><p>จากการทดสอบ 8 โมเดลด้วยโจทย์เดียวกัน Gemini Omni Flash 1.1 ให้เสียงไทยชัด ปากตรง และภาพ smooth ที่สุด ในราคา 24 credits ต่อคลิป 8 วินาที รองลงมาคือ Gemini Omni Flash รุ่นเดิม ส่วน Kling 3.0 พูดไทยออกมาเป็นสำเนียงเขมร และ Seedance 2.5 เพี้ยนแบบชาวต่างชาติพูดไทย</p></details>
+    <details><summary>โมเดล AI สร้างวิดีโอตัวไหนพูดภาษาไทยได้ชัดที่สุด</summary><p>จากการทดสอบ 11 โมเดลด้วยโจทย์เดียวกัน Gemini Omni Flash 1.1 ให้เสียงไทยชัด ปากตรง และภาพ smooth ที่สุด ในราคา 24 credits ต่อคลิป 8 วินาที รองลงมาคือ Gemini Omni Flash รุ่นเดิม ส่วน Kling 3.0 พูดไทยออกมาเป็นสำเนียงเขมร และ Seedance 2.5 เพี้ยนแบบชาวต่างชาติพูดไทย</p></details>
     <details><summary>Google Veo 3.1 พูดไทยได้ไหม</summary><p>เสียงไทยชัดมาก แต่ภาพกระตุกไม่ smooth และเป็นโมเดลที่แพงที่สุดในการทดสอบ (80 credits) แพงกว่า Gemini Omni Flash 1.1 ประมาณ 3 เท่าโดยผลไม่ดีกว่า</p></details>
     <details><summary>ฟีเจอร์ Extend ต่อความยาววิดีโอ AI ใช้ได้ไหม</summary><p>ต่อภาพได้ แต่เสียงถูกสร้างใหม่ทุกครั้ง ทำให้เสียงและสำเนียงเปลี่ยน วิธีที่ใช้ได้คือเจนหลายคลิปสั้นจากรูปอ้างอิงชุดเดิมและโมเดลเดิม แล้วนำมาตัดต่อ</p></details>
     <details><summary>ถ้ามีคลิปที่ดีแล้ว เปลี่ยนพรีเซนเตอร์เป็นคนอื่นได้ไหม</summary><p>ได้ ด้วย motion transfer เช่น Genjutsu ของ Higgsfield (56 credits) หรือ Kling 3.0 Omni Edit (16 credits) ซึ่งคงเสียงและการเคลื่อนไหวเดิม เปลี่ยนเฉพาะหน้าคน</p></details>
   </div>
 </section>
-</main>
-</div>
 
-<footer>
-  <div class="foot-links"><a href="index.html">หน้าแรก</a><a href="ai-video.html">สร้างวิดีโอด้วย AI</a><a href="use-cases.html">Use Cases</a><a href="prompts.html">Prompts</a><a href="compare.html">Model Compare</a></div>
-  <p>Nerd MarTech · จัดทำโดย AOO Commerce · ทดสอบ 22 ก.ย. 2569 ผ่าน Higgsfield · ผลเป็นข้อมูล ณ วันที่ทดสอบ โมเดล AI เปลี่ยนเร็ว ควรทดสอบซ้ำก่อนใช้งานจริง</p>
-</footer>
-</div>
+</main>
+
 <script src="assets/site.js"></script>
 </body>
 </html>

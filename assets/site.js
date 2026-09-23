@@ -8,6 +8,74 @@
   holder.innerHTML = '<svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" style="position:absolute;width:0;height:0;overflow:hidden">' + SPRITE + '</svg>';
   document.body.insertBefore(holder.firstChild, document.body.firstChild);
 
+  // --- shared layout: header + [left TOC | body | right slot] + footer ---
+  // pages only contain: optional hero, <main id="content"> with <section id data-toc="label">, optional <aside class="side-right">
+  var NAV = [['index.html', 'หน้าแรก'], ['ai-video.html', 'ทำคลิปด้วย AI'], ['compare.html', 'Model Compare']];
+  var FB = 'https://www.facebook.com/NerdMarTech';
+  var here = document.body.getAttribute('data-page') || location.pathname.split('/').pop() || 'index.html';
+  var navLinks = function(cls){
+    return NAV.map(function(n){ return '<a href="' + n[0] + '"' + (n[0] === here && cls ? ' class="active"' : '') + '>' + n[1] + '</a>'; }).join('');
+  };
+  var head = document.createElement('header');
+  head.className = 'site-head';
+  head.innerHTML = '<a class="logo" href="index.html" aria-label="Nerd MarTech"><img src="assets/brand/logo-on-light.svg" alt="" class="logo-sym">' +
+    '<span class="logo-wm">Nerd<br>Mar<span>Tech</span></span></a>' +
+    '<nav class="site-nav"><div class="wrap"><div class="links">' + navLinks(true) + '</div></div></nav>';
+  document.body.insertBefore(head, document.body.firstChild.nextSibling);
+
+  // header is sticky with a negative top = logo row scrolls away, nav bar stays. Heights feed the CSS.
+  var navBar = head.querySelector('.site-nav'), rootStyle = document.documentElement.style;
+  function measureHead(){
+    rootStyle.setProperty('--head-h', head.offsetHeight + 'px');
+    rootStyle.setProperty('--logo-h', (head.offsetHeight - navBar.offsetHeight) + 'px');
+  }
+  measureHead();
+  addEventListener('resize', measureHead);
+  addEventListener('load', measureHead);  // web fonts change the header height
+  // home: header sits on top of the video hero (white) until the hero scrolls away
+  var heroBg = document.querySelector('.hero-bg');
+  if (heroBg) {
+    document.body.classList.add('home');
+    var logoImg = head.querySelector('.logo-sym');
+    var onScroll = function(){
+      var past = heroBg.getBoundingClientRect().bottom <= navBar.offsetHeight;
+      document.body.classList.toggle('past-hero', past);
+      var dark = !past || innerWidth <= 700;
+      var want = 'assets/brand/logo-on-' + (dark ? 'dark' : 'light') + '.svg';
+      if (logoImg.getAttribute('src') !== want) logoImg.setAttribute('src', want);
+    };
+    addEventListener('resize', onScroll);
+    addEventListener('scroll', onScroll, {passive:true});
+    onScroll();
+  }
+
+  var main = document.getElementById('content');
+  if (main) {
+    var lay = document.createElement('div');
+    lay.className = 'wrap layout';
+    main.parentNode.insertBefore(lay, main);
+    var left = document.createElement('aside');
+    left.className = 'side-toc';
+    var secs = main.querySelectorAll('section[id][data-toc]');
+    if (secs.length) {
+      left.innerHTML = '<span class="toc-title">ไปที่หัวข้อ</span>' + Array.prototype.map.call(secs, function(s){
+        return '<a href="#' + s.id + '">' + s.getAttribute('data-toc') + '</a>';
+      }).join('');
+    }
+    var right = document.querySelector('aside.side-right') || document.createElement('aside');
+    right.className = 'side-right';
+    lay.appendChild(left); lay.appendChild(main); lay.appendChild(right);
+    if (right.children.length) lay.classList.add('has-right');
+    if (!secs.length) lay.classList.add('no-left');
+
+    var foot = document.createElement('footer');
+    foot.className = 'site-foot';
+    foot.innerHTML = '<div class="wrap"><div class="foot-links">' + navLinks(false) +
+      '<a class="fb" href="' + FB + '" target="_blank" rel="noopener">เพจ Facebook <svg class="pi sm"><use href="#i-external"/></svg></a></div>' +
+      '<p>Nerd MarTech · จัดทำโดย AOO Commerce · ผลทดสอบเป็นข้อมูล ณ วันที่ทดสอบ โมเดล AI เปลี่ยนเร็ว ควรทดสอบซ้ำก่อนใช้งานจริง</p></div>';
+    lay.parentNode.insertBefore(foot, lay.nextSibling);
+  }
+
   // --- nav: on narrow screens scroll the active menu item into view ---
   var act = document.querySelector('.links a.active'), lk = document.querySelector('.links');
   if (act && lk && lk.scrollWidth > lk.clientWidth) lk.scrollLeft = act.offsetLeft - (lk.clientWidth - act.offsetWidth) / 2;
@@ -39,12 +107,17 @@
       dots.forEach(function(d, j){ d.className = j < i ? 'past' : (j === i ? 'cur' : ''); });
     }
     if (order.length) mark(order[0]);
-    if ('IntersectionObserver' in window) {
-      var io = new IntersectionObserver(function(entries){
-        entries.forEach(function(e){ if (e.isIntersecting) mark(e.target.id); });
-      }, {rootMargin:'-30% 0px -60% 0px'});
-      secs.forEach(function(s){ io.observe(s); });
+    // scroll-spy: the last section whose top has passed 35% of the viewport is "current"
+    var ticking = false;
+    function spy(){
+      ticking = false;
+      var line = innerHeight * 0.35, cur = order[0];
+      for (var k = 0; k < secs.length; k++) { if (secs[k].getBoundingClientRect().top <= line) cur = secs[k].id; }
+      mark(cur);
     }
+    addEventListener('scroll', function(){ if (!ticking) { ticking = true; requestAnimationFrame(spy); } }, {passive:true});
+    addEventListener('resize', spy);
+    spy();
   }
 
   // --- copy buttons: .prompt .copy (copies <pre>) · .anno .copy (joins <mark> parts) ---

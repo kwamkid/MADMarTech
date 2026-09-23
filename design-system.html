@@ -71,27 +71,20 @@
 .do-box li,.dont-box li{margin:3px 0}
 </style>
 </head>
-<body>
-<header class="site-head">
-  <a class="logo" href="index.html" aria-label="Nerd MarTech">
-    <img src="assets/brand/logo-on-light.svg" alt="" class="logo-sym">
-    <span class="logo-wm">Nerd<br>Mar<span>Tech</span></span>
-  </a>
-  <nav class="site-nav"><div class="wrap"><div class="links"><a href="index.html">หน้าแรก</a><a href="ai-video.html">สร้างวิดีโอด้วย AI</a><a href="use-cases.html">Use Cases</a><a href="prompts.html">Prompts</a><a href="compare.html">Model Compare</a><a href="design-system.html" class="active">Design System</a></div></div></nav>
-</header>
-<div class="wrap">
+<body data-page="design-system.html">
 
+<div class="wrap page-hero">
 <div class="hero" style="padding-bottom:12px">
   <div class="lab red">Design System v2.0 · Light</div>
   <h1>Design System</h1>
   <p>ทุกอย่างในหน้านี้ดึงจาก <code class="tok">assets/style.css</code> ตัวเดียวกับเว็บจริง แก้ที่ token แล้วทุกหน้าเปลี่ยนตาม · อ้างอิง Brand Guide <code class="tok">00-Context/01-Brand.md</code></p>
 </div>
+</div>
 
-<div class="doc">
-<aside class="side-toc"><span class="toc-title">ไปที่หัวข้อ</span><a href="#principles">หลักการ</a><a href="#logo">Logo</a><a href="#color">สี</a><a href="#type">ตัวอักษร</a><a href="#layout">Spacing &amp; Grid</a><a href="#icons">Icons</a><a href="#graphic">Graphic</a><a href="#components">Components</a><a href="#pages">Layout แต่ละหน้า</a><a href="#dodont">Do / Don't</a></aside>
-<main>
+<main id="content">
+
 <!-- ===== 00 PRINCIPLES ===== -->
-<section id="principles">
+<section id="principles" data-toc="หลักการ">
   <div class="eyebrow"><span class="lab">00 · หลักการ v2</span></div>
   <h2>6 กติกาที่ใช้ทั้งเว็บ</h2>
   <p class="h2sub">เปลี่ยนจาก v1 (ธีมมืด) มาเป็นธีมสว่าง แล้วตัดสิ่งที่อ่านยากออก</p>
@@ -106,7 +99,7 @@
 </section>
 
 <!-- ===== 01 LOGO ===== -->
-<section id="logo">
+<section id="logo" data-toc="Logo">
   <div class="eyebrow"><span class="lab">01 · Logo</span></div>
   <h2>Logo &amp; Lockup</h2>
   <p class="h2sub">Master Symbol = Pixel Nerd Head · ชื่อแสดง <b>Nerd MarTech</b> เน้นสีเฉพาะ <b>Tech</b> · บนพื้นสว่างใช้ <code class="tok">logo-on-light.svg</code></p>
@@ -138,7 +131,7 @@
 </section>
 
 <!-- ===== 02 COLOR ===== -->
-<section id="color">
+<section id="color" data-toc="สี">
   <div class="eyebrow"><span class="lab">02 · Color</span></div>
   <h2>สี</h2>
   <p class="h2sub">แบ่งเป็น 4 กลุ่ม · สีสถานะมี 3 ระดับเสมอ: <b>fill</b> (พื้นเข้ม) · <b>soft</b> (พื้นอ่อน) · <b>ink</b> (ตัวหนังสือบนพื้นอ่อน)</p>
@@ -177,7 +170,7 @@
 </section>
 
 <!-- ===== 03 TYPE ===== -->
-<section id="type">
+<section id="type" data-toc="ตัวอักษร">
   <div class="eyebrow"><span class="lab">03 · Typography</span></div>
   <h2>ตัวอักษร</h2>
   <p class="h2sub">ขั้นต่ำ 14px · letter-spacing 0 ทุกที่ · ไทยทั้งหมดใช้ <b>IBM Plex Sans Thai</b></p>
@@ -193,7 +186,7 @@
 </section>
 
 <!-- ===== 04 LAYOUT GRID ===== -->
-<section id="layout">
+<section id="layout" data-toc="Spacing &amp; Grid">
   <div class="eyebrow"><span class="lab">04 · Spacing &amp; Grid</span></div>
   <h2>ระยะห่างและ grid</h2>
   <div class="grid g3" style="margin-top:14px">
@@ -207,7 +200,7 @@
 </section>
 
 <!-- ===== 05 ICONS ===== -->
-<section id="icons">
+<section id="icons" data-toc="Icons">
   <div class="eyebrow"><span class="lab">05 · Icons</span></div>
   <h2>Pixel Icon Set · 18 ตัว</h2>
   <p class="h2sub">กริด 12×12 · ใช้สีตาม currentColor · <code class="tok">site.js</code> ฝัง sprite ให้เองทุกหน้า (แก้ปัญหาไอคอนไม่ขึ้นตอนเปิดไฟล์ในเครื่อง) · ไฟล์แยกอยู่ที่ <code class="tok">assets/icons/*.svg</code></p>
@@ -237,11 +230,11 @@
   <div class="tablewrap">
     <table>
       <tr><th>ไอคอน</th><th>ใช้กับ</th><th>หน้า</th></tr>
-      <tr><td><svg class="pi"><use href="#i-pass"/></svg> <svg class="pi"><use href="#i-maybe"/></svg> <svg class="pi"><use href="#i-fail"/></svg></td><td>ใน badge ผลทดสอบ</td><td>Compare · Use Cases · AI Video</td></tr>
-      <tr><td><svg class="pi"><use href="#i-credit"/></svg> <svg class="pi"><use href="#i-cost"/></svg></td><td>เครดิต / ราคาบาท ใน video card · stat tile · ตาราง</td><td>Compare · Use Cases</td></tr>
-      <tr><td><svg class="pi"><use href="#i-time"/></svg> <svg class="pi"><use href="#i-model"/></svg></td><td>เวลาที่ใช้ · ชื่อโมเดล ใน kv / settings</td><td>Use Cases · AI Video</td></tr>
-      <tr><td><svg class="pi"><use href="#i-copy"/></svg></td><td>ปุ่ม Copy prompt</td><td>Prompts · AI Video</td></tr>
-      <tr><td><svg class="pi"><use href="#i-arrow"/></svg></td><td>ลูกศร pipeline (input → output) · ปุ่ม "อ่านต่อ" ในการ์ด</td><td>AI Video · หน้าแรก</td></tr>
+      <tr><td><svg class="pi"><use href="#i-pass"/></svg> <svg class="pi"><use href="#i-maybe"/></svg> <svg class="pi"><use href="#i-fail"/></svg></td><td>ใน badge ผลทดสอบ</td><td>Compare · ทำคลิปด้วย AI</td></tr>
+      <tr><td><svg class="pi"><use href="#i-credit"/></svg> <svg class="pi"><use href="#i-cost"/></svg></td><td>เครดิต / ราคาบาท ใน video card · stat tile · ตาราง</td><td>Compare · ทำคลิปด้วย AI</td></tr>
+      <tr><td><svg class="pi"><use href="#i-time"/></svg> <svg class="pi"><use href="#i-model"/></svg></td><td>เวลาที่ใช้ · ชื่อโมเดล ใน kv / settings</td><td>ทำคลิปด้วย AI</td></tr>
+      <tr><td><svg class="pi"><use href="#i-copy"/></svg></td><td>ปุ่ม Copy prompt</td><td>ทำคลิปด้วย AI</td></tr>
+      <tr><td><svg class="pi"><use href="#i-arrow"/></svg></td><td>ลูกศร pipeline (input → output) · ปุ่ม "อ่านต่อ" ในการ์ด</td><td>ทำคลิปด้วย AI · หน้าแรก</td></tr>
       <tr><td><svg class="pi"><use href="#i-idea"/></svg></td><td>หัวกล่องบทเรียน (lesson)</td><td>ทุกหน้าที่มีบทเรียน</td></tr>
       <tr><td><svg class="pi"><use href="#i-external"/></svg></td><td>ลิงก์ออกนอกเว็บ (Higgsfield, เอกสารผู้ผลิต)</td><td>ทุกหน้า</td></tr>
       <tr><td><svg class="pi"><use href="#i-video"/></svg> <svg class="pi"><use href="#i-image"/></svg> <svg class="pi"><use href="#i-prompt"/></svg> <svg class="pi"><use href="#i-data"/></svg></td><td>ประเภทคอนเทนต์ในการ์ดหน้าแรก (วิดีโอ · รูป · prompt · ข้อมูลเปรียบเทียบ)</td><td>หน้าแรก</td></tr>
@@ -251,7 +244,7 @@
 </section>
 
 <!-- ===== 06 GRAPHIC ===== -->
-<section id="graphic">
+<section id="graphic" data-toc="Graphic">
   <div class="eyebrow"><span class="lab">06 · Graphic</span></div>
   <h2>Graphic Language · ใช้แค่ 3 อย่าง</h2>
   <p class="h2sub">ตัด pixel corner กับ pixel grid ออกจากเว็บ (รกและมองไม่เห็นบนพื้นสว่าง) · เหลือเฉพาะที่มีหน้าที่จริง</p>
@@ -277,7 +270,7 @@
 </section>
 
 <!-- ===== 07 COMPONENTS ===== -->
-<section id="components">
+<section id="components" data-toc="Components">
   <div class="eyebrow"><span class="lab">07 · Components</span></div>
   <h2>Components</h2>
   <p class="h2sub">ตัวอย่างใช้งานจริง แล้วตามด้วยตารางรายการทั้งหมด</p>
@@ -329,7 +322,7 @@
     </div>
     <div class="ds-sample">
       <p class="demo-label">Callouts · พื้นสีเต็มกล่อง</p>
-      <div class="lesson" style="margin:0 0 8px"><b><svg class="pi sm"><use href="#i-idea"/></svg> บทเรียน</b> — ต้องเทียบ ไม่ใช่เชื่อชื่อ</div>
+      <div class="lesson" style="margin:0 0 8px"><b>บทเรียน</b> — ต้องเทียบ ไม่ใช่เชื่อชื่อ</div>
       <div class="callout note" style="margin:0 0 8px"><b>หมายเหตุ</b> — ราคาบาทคิดจากแพ็กเกจ $39</div>
       <div class="callout ok" style="margin:0 0 8px"><b>ผ่าน</b> — ไทยชัด ปากตรง</div>
       <div class="callout info" style="margin:0"><b>ข้อมูล</b> — โมเดลเปลี่ยนเร็ว ทดสอบซ้ำก่อนใช้</div>
@@ -340,7 +333,7 @@
     <div>
       <p class="demo-label">Video card 9:16</p>
       <div class="vcard">
-        <video controls preload="metadata" src="https://d8j0ntlcm91z4.cloudfront.net/user_3FvAUpXpCnZUma0p4ZCgNFe1CGD/hf_20260922_221717_f3028521-d89f-4e31-a02f-b57101865983.mp4"></video>
+        <video controls preload="metadata" src="https://d8j0ntlcm91z4.cloudfront.net/user_3FvAUpXpCnZUma0p4ZCgNFe1CGD/hf_20260922_221717_f3028521-d89f-4e31-a02f-b57101865983.mp4#t=0.1"></video>
         <div class="body">
           <div class="rank lab">#1</div>
           <div class="name">Gemini Omni Flash 1.1</div>
@@ -388,31 +381,32 @@ The young Thai woman from the reference photo…</pre></div>
       <tr><td>สารบัญด้านซ้าย (ไปที่หัวข้อ)</td><td><code class="tok">.doc .side-toc</code></td><td>ทุกหน้า ยกเว้นหน้าแรก · มือถือเป็นแถบ journey ด้านล่าง</td><td><span class="st ok">พร้อม</span></td></tr>
       <tr><td>Section head</td><td><code class="tok">.eyebrow h2 .h2sub</code></td><td>ทุกหน้า</td><td><span class="st ok">พร้อม</span></td></tr>
       <tr><td>Button</td><td><code class="tok">.btn .primary .ghost .dark .sm</code></td><td>หน้าแรก · CTA</td><td><span class="st ok">พร้อม</span></td></tr>
-      <tr><td>Result badge</td><td><code class="tok">.badge .pass .maybe .fail .soft .sm .lg</code></td><td>Compare · Use Cases · AI Video</td><td><span class="st ok">พร้อม</span></td></tr>
-      <tr><td>Verdict pill (เก่า)</td><td><code class="tok">.verdict</code></td><td>Prompts</td><td><span class="st ok">เปลี่ยนเป็น .badge.soft.sm แล้ว</span></td></tr>
+      <tr><td>Result badge</td><td><code class="tok">.badge .pass .maybe .fail .soft .sm .lg</code></td><td>Compare · ทำคลิปด้วย AI</td><td><span class="st ok">พร้อม</span></td></tr>
+      <tr><td>Verdict pill (เก่า)</td><td><code class="tok">.verdict</code></td><td>ทำคลิปด้วย AI</td><td><span class="st ok">เปลี่ยนเป็น .badge.soft.sm แล้ว</span></td></tr>
       <tr><td>Chip / Tag / Series tag</td><td><code class="tok">.chip .tag .series-tag</code></td><td>หน้าแรก · Compare</td><td><span class="st ok">พร้อม</span></td></tr>
-      <tr><td>Article card</td><td><code class="tok">.card</code></td><td>หน้าแรก · Prompts</td><td><span class="st ok">พร้อม</span></td></tr>
-      <tr><td>Video card</td><td><code class="tok">.vcard</code></td><td>Compare · Use Cases</td><td><span class="st ok">พร้อม</span></td></tr>
-      <tr><td>Stat tile</td><td><code class="tok">.stat</code></td><td>AI Video (settings) · Compare</td><td><span class="st ok">พร้อม (.stats)</span></td></tr>
-      <tr><td>Key–value</td><td><code class="tok">.kv</code></td><td>Use Cases</td><td><span class="st ok">พร้อม</span></td></tr>
-      <tr><td>Steps</td><td><code class="tok">.steps .compact</code></td><td>Use Cases · AI Video</td><td><span class="st ok">พร้อม</span></td></tr>
-      <tr><td>Prompt block + copy</td><td><code class="tok">.prompt .pmeta</code></td><td>Prompts</td><td><span class="st ok">พร้อม</span></td></tr>
-      <tr><td>Annotated prompt</td><td><code class="tok">.anno .legend</code></td><td>AI Video</td><td><span class="st ok">พร้อม (พื้นสีแทนขีดเส้นใต้)</span></td></tr>
-      <tr><td>Pipeline (input → output)</td><td><code class="tok">.pipe .node</code></td><td>AI Video</td><td><span class="st ok">พร้อม</span></td></tr>
+      <tr><td>Article card</td><td><code class="tok">.card</code></td><td>หน้าแรก · ทำคลิปด้วย AI</td><td><span class="st ok">พร้อม</span></td></tr>
+      <tr><td>Video card</td><td><code class="tok">.vcard</code></td><td>Compare · ทำคลิปด้วย AI</td><td><span class="st ok">พร้อม</span></td></tr>
+      <tr><td>Stat tile</td><td><code class="tok">.stat</code></td><td>ทำคลิปด้วย AI · Compare</td><td><span class="st ok">พร้อม (.stats)</span></td></tr>
+      <tr><td>Key–value</td><td><code class="tok">.kv</code></td><td>ทำคลิปด้วย AI</td><td><span class="st ok">พร้อม</span></td></tr>
+      <tr><td>Steps</td><td><code class="tok">.steps .compact</code></td><td>ทำคลิปด้วย AI</td><td><span class="st ok">พร้อม</span></td></tr>
+      <tr><td>Prompt block + copy</td><td><code class="tok">.prompt .pmeta</code></td><td>ทำคลิปด้วย AI</td><td><span class="st ok">พร้อม</span></td></tr>
+      <tr><td>Annotated prompt</td><td><code class="tok">.anno .legend</code></td><td>ทำคลิปด้วย AI</td><td><span class="st ok">พร้อม (พื้นสีแทนขีดเส้นใต้)</span></td></tr>
+      <tr><td>Pipeline (input → output)</td><td><code class="tok">.pipe .node</code></td><td>ทำคลิปด้วย AI</td><td><span class="st ok">พร้อม</span></td></tr>
       <tr><td>Input brief</td><td><code class="tok">.brief</code></td><td>Compare</td><td><span class="st ok">พร้อม</span></td></tr>
       <tr><td>Table</td><td><code class="tok">.tablewrap table</code></td><td>Compare</td><td><span class="st ok">พร้อม</span></td></tr>
       <tr><td>Callout / Lesson</td><td><code class="tok">.lesson .callout .note .ok .info</code></td><td>ทุกหน้า</td><td><span class="st ok">พร้อม (พื้นสีเต็ม)</span></td></tr>
-      <tr><td>Nerd note (ตัวละคร + ทิป)</td><td><code class="tok">.nerd-note</code></td><td>AI Video</td><td><span class="st ok">พร้อม</span></td></tr>
-      <tr><td>Lightbox</td><td><code class="tok">img[data-zoom]</code></td><td>Compare · AI Video</td><td><span class="st ok">พร้อม</span></td></tr>
-      <tr><td>Footer</td><td><code class="tok">footer</code></td><td>ทุกหน้า</td><td><span class="st fix">มีเมนูแล้ว · รอลิงก์เพจ FB</span></td></tr>
-      <tr><td>Course CTA band</td><td><code class="tok">.cta-band</code></td><td>หน้าแรก · ท้ายบทความ</td><td><span class="st new">ต้องสร้าง</span></td></tr>
+      <tr><td>Nerd note (ตัวละคร + ทิป)</td><td><code class="tok">.nerd-note</code></td><td>ทำคลิปด้วย AI</td><td><span class="st ok">พร้อม</span></td></tr>
+      <tr><td>Lightbox</td><td><code class="tok">img[data-zoom]</code></td><td>Compare · ทำคลิปด้วย AI</td><td><span class="st ok">พร้อม</span></td></tr>
+      <tr><td>Footer</td><td><code class="tok">footer</code></td><td>ทุกหน้า</td><td><span class="st ok">พร้อม (เมนู + เพจ FB)</span></td></tr>
+      <tr><td>Hero วิดีโอพื้นหลัง</td><td><code class="tok">.hero-bg</code></td><td>หน้าแรก</td><td><span class="st ok">พร้อม</span></td></tr>
+      <tr><td>ป้ายรอข้อมูลจริง</td><td><code class="tok">.wip .wip-box</code></td><td>ทำคลิปด้วย AI</td><td><span class="st ok">พร้อม</span></td></tr>
       <tr><td>FAQ</td><td><code class="tok">.faq</code></td><td>Compare (ตรงกับ FAQ schema)</td><td><span class="st ok">พร้อม</span></td></tr>
     </table>
   </div>
 </section>
 
 <!-- ===== 08 PAGE LAYOUTS ===== -->
-<section id="pages">
+<section id="pages" data-toc="Layout แต่ละหน้า">
   <div class="eyebrow"><span class="lab">08 · Page Layouts</span></div>
   <h2>Layout แต่ละหน้า</h2>
   <p class="h2sub">ลำดับ section จากบนลงล่าง · ทุกหน้าเริ่มด้วย Header + Hero และจบด้วย Footer</p>
@@ -422,52 +416,26 @@ The young Thai woman from the reference photo…</pre></div>
       <p>บอกว่าเราเป็นใคร แล้วพาไปคอนเทนต์ล่าสุด</p>
       <div class="wf">
         <div class="hd">Header + Nav</div>
-        <div class="row two"><div>H1 + lead + 2 ปุ่ม</div><div class="ac">คลิป Nerd 16:9</div></div>
+        <div class="ac">Hero: คลิป Nerd เป็นพื้นหลัง + H1 + 2 ปุ่ม <i>.hero-bg</i></div>
         <div>ตัวเลขสรุป <i>.chips</i></div>
         <div>ล่าสุด <i>.card × 3 · g3</i></div>
         <div>ทำไมต้องเนิร์ด <i>.card × 3</i></div>
-        <div class="new">ขายคอร์ส AI <i>.cta-band ใหม่</i></div>
-                <div class="hd">Footer</div>
+                        <div class="hd">Footer</div>
       </div>
     </div>
     <div class="page">
-      <h3>สร้างวิดีโอด้วย AI <small>ai-video.html</small></h3>
-      <p>สอนทำทีละขั้น: input อะไร → prompt → ได้อะไร</p>
+      <h3>ทำคลิปด้วย AI <small>ai-video.html</small></h3>
+      <p>คู่มือทำคลิปพูดไทย 1 นาที 7 ขั้น (รวม Use Cases + Prompts เดิม)</p>
       <div class="wf">
         <div class="hd">Header + Nav</div>
-        <div>Hero + badge ผล</div>
-        <div class="row"><div>รูป 2 รูป</div><div>prompt</div><div class="ac">วิดีโอ</div></div>
-        <div>Prompt แยกสี 6 ส่วน <i>.anno .legend</i></div>
-        <div>ค่าที่ตั้ง <i>.stat × 4</i></div>
-        <div>ขั้นตอน <i>.steps</i></div>
-        <div class="yl">Nerd note + บทเรียน <i>.nerd-note .lesson</i></div>
-        <div class="hd">Footer</div>
-      </div>
-    </div>
-    <div class="page">
-      <h3>Use Cases <small>use-cases.html</small></h3>
-      <p>1 เคส = 1 จอ · วิดีโอซ้าย รายละเอียดขวา</p>
-      <div class="wf">
-        <div class="hd">Header + Nav</div>
-        <div>Hero</div>
-        <div>Section head <i>.eyebrow h2</i></div>
-        <div class="row two"><div class="ac">วิดีโอ .vcard</div><div>kv · steps 2×2 · lesson</div></div>
-        <div><i style="text-align:left">↻ ซ้ำตามจำนวนเคส</i></div>
-        <div class="new">ขายคอร์ส AI <i>.cta-band</i></div>
-        <div class="hd">Footer</div>
-      </div>
-    </div>
-    <div class="page">
-      <h3>Prompts <small>prompts.html</small></h3>
-      <p>prompt ที่ใช้จริง พร้อมผลและเครดิต</p>
-      <div class="wf">
-        <div class="hd">Header + Nav</div>
-        <div>Hero</div>
-        <div>โครง prompt 6 ส่วน <i>.card × 6 · g3</i></div>
-        <div>Prompt #n: h2 + meta + badge <i>.pmeta .badge.soft</i></div>
-        <div>กล่อง prompt + ปุ่ม copy <i>.prompt</i></div>
-        <div class="yl">บทเรียน <i>.lesson</i></div>
-        <div><i style="text-align:left">↻ ซ้ำตามจำนวน prompt</i></div>
+        <div class="row two"><div>H1 + stat × 3</div><div class="ac">คลิป 1 นาที</div></div>
+        <div>ภาพรวม 7 ขั้น <i>.flow</i></div>
+        <div>1 บท + storyboard <i>.steps .prompt</i></div>
+        <div>2 รูป + อัปโหลด · 3 เลือกโมเดล <i>.card .badge</i></div>
+        <div class="ac">4 เจนทีละช็อต <i>.pipe .anno .stats</i></div>
+        <div>5 ต่อคลิป · 6 ซับ + เพลง <i>.callout .card</i></div>
+        <div>7 สรุปต้นทุน <i>.tablewrap</i></div>
+        <div class="yl">คลัง prompt <i>.prompt × 5</i></div>
         <div class="hd">Footer</div>
       </div>
     </div>
@@ -495,7 +463,6 @@ The young Thai woman from the reference photo…</pre></div>
         <div class="ac">ผลลัพธ์ + badge <i>.vcard / รูป</i></div>
         <div>ขั้นตอน + prompt <i>.steps .prompt</i></div>
         <div class="yl">บทเรียน 1 ข้อ <i>.lesson</i></div>
-        <div class="new">ขายคอร์ส AI <i>.cta-band</i></div>
         <div class="hd">Footer</div>
       </div>
     </div>
@@ -509,7 +476,7 @@ The young Thai woman from the reference photo…</pre></div>
 </section>
 
 <!-- ===== 09 DO / DON'T ===== -->
-<section id="dodont">
+<section id="dodont" data-toc="Do / Don't">
   <div class="eyebrow"><span class="lab">09 · Do / Don't</span></div>
   <div class="grid g2">
     <div class="rule do-box">
@@ -536,11 +503,9 @@ The young Thai woman from the reference photo…</pre></div>
     </div>
   </div>
 </section>
-</main>
-</div>
 
-<footer>Nerd MarTech Design System v2.0 (light) · 23 ก.ย. 2569 · ไฟล์ต้นทาง <code class="tok">assets/style.css</code></footer>
-</div>
+</main>
+
 <script src="assets/site.js"></script>
 </body>
 </html>

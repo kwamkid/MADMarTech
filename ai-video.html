@@ -3,18 +3,18 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>สร้างวิดีโอด้วย AI จากรูป 2 รูป — Nerd MarTech</title>
-<meta name="description" content="ดูจริงว่าใส่อะไรเข้าไปบ้าง — รูปคน 1 รูป + รูปบ้าน 1 รูป + prompt 1 ย่อหน้า — แล้วออกมาเป็นคลิปพูดไทย 8 วินาทีได้อย่างไร พร้อมเครดิตและเวลาที่ใช้จริง">
+<title>ทำคลิปพูดไทย 1 นาที ด้วย Claude × Higgsfield — Nerd MarTech</title>
+<meta name="description" content="คู่มือทำคลิปพูดไทย 1 นาทีด้วย Claude × Higgsfield ตั้งแต่เขียนบท วาง storyboard อัปโหลดรูป เลือกโมเดลที่พูดไทยได้จริง เจนทีละช็อต ต่อคลิป ใส่ซับและเพลง พร้อมเครดิตและค่าใช้จ่ายจริง">
 <link rel="canonical" href="https://nerdmartech.com/ai-video.html">
 <meta property="og:type" content="article">
 <meta property="og:site_name" content="Nerd MarTech">
-<meta property="og:title" content="สร้างวิดีโอด้วย AI จากรูป 2 รูป — Nerd MarTech">
-<meta property="og:description" content="รูปคน + รูปบ้าน + prompt → คลิปพูดไทย 8 วิ ใน 3 นาที 24 credits — ดูทุกขั้นตอนที่ใช้จริง">
+<meta property="og:title" content="ทำคลิปพูดไทย 1 นาที ด้วย Claude × Higgsfield — Nerd MarTech">
+<meta property="og:description" content="คู่มือทำคลิปพูดไทย 1 นาทีด้วย Claude × Higgsfield ตั้งแต่เขียนบท วาง storyboard อัปโหลดรูป เลือกโมเดลที่พูดไทยได้จริง เจนทีละช็อต ต่อคลิป ใส่ซับและเพลง พร้อมเครดิตและค่าใช้จ่ายจริง">
 <meta property="og:url" content="https://nerdmartech.com/ai-video.html">
 <meta property="og:locale" content="th_TH">
 <meta name="twitter:card" content="summary_large_image">
 <script type="application/ld+json">
-{"@context":"https://schema.org","@type":"HowTo","name":"สร้างวิดีโอรีวิวบ้านพูดไทยด้วย AI จากรูป 2 รูป","description":"ใช้รูปพรีเซนเตอร์ 1 รูป และรูปโครงการ 1 รูป ร่วมกับ prompt 1 ย่อหน้า สร้างคลิปแนวตั้ง 8 วินาที พร้อมเสียงพูดไทย","totalTime":"PT3M","estimatedCost":{"@type":"MonetaryAmount","currency":"credits","value":"24"},"tool":[{"@type":"HowToTool","name":"Higgsfield (Gemini Omni Flash 1.1)"},{"@type":"HowToTool","name":"Claude Cowork"}],"step":[{"@type":"HowToStep","name":"เตรียมรูป 2 รูป","text":"รูปคนหน้าชัด 1 รูป และรูปบ้าน/โครงการ 1 รูป"},{"@type":"HowToStep","name":"เขียน prompt","text":"ระบุรูปแบบคลิป คนกับฉากจากรูปอ้างอิง การเคลื่อนไหว ภาษาไทย บทพูด และเสียง"},{"@type":"HowToStep","name":"สั่งเจน","text":"เลือกโหมด reference-to-video ใส่รูป 2 รูปเป็น image references ตั้ง 9:16 8 วินาที"},{"@type":"HowToStep","name":"ตรวจผล","text":"เช็คเสียงไทย ปากตรง หน้าเหมือน — ไม่ผ่านให้เจนใหม่"}]}
+{"@context":"https://schema.org","@type":"HowTo","name":"ทำคลิปพูดไทย 1 นาที ด้วย Claude × Higgsfield","description":"คู่มือทำคลิปพูดไทย 1 นาทีด้วย Claude × Higgsfield ตั้งแต่เขียนบท วาง storyboard อัปโหลดรูป เลือกโมเดลที่พูดไทยได้จริง เจนทีละช็อต ต่อคลิป ใส่ซับและเพลง พร้อมเครดิตและค่าใช้จ่ายจริง","tool":[{"@type":"HowToTool","name":"Claude Cowork"},{"@type":"HowToTool","name":"Higgsfield (Gemini Omni Flash 1.1)"},{"@type":"HowToTool","name":"CapCut"}],"step":[{"@type":"HowToStep","name":"เขียนบทและ storyboard","text":"ให้ Claude เขียนบท 60 วินาที แล้วแบ่งเป็น 8 ช็อต ช็อตละ 8 วินาที"},{"@type":"HowToStep","name":"เตรียมรูปและอัปโหลด","text":"รูปคนหน้าชัดและรูปฉากจริง อัปโหลดเข้า Higgsfield ผ่าน Claude Cowork"},{"@type":"HowToStep","name":"เลือกโมเดล","text":"ใช้โมเดลที่พูดไทยผ่านการทดสอบ เช่น Gemini Omni Flash 1.1"},{"@type":"HowToStep","name":"เจนทีละช็อต","text":"ใช้ prompt 6 ส่วนกับรูปอ้างอิงชุดเดิมทุกช็อต"},{"@type":"HowToStep","name":"ต่อคลิป","text":"ให้ Claude Cowork เรียงและรวมทุกช็อตเป็นไฟล์เดียว"},{"@type":"HowToStep","name":"ใส่ซับและเพลง","text":"ใส่ซับไทยและเพลงที่มีสิทธิ์ใช้ใน CapCut แล้ว export 9:16"},{"@type":"HowToStep","name":"สรุปต้นทุน","text":"รวมเครดิตทุกช็อตรวมรอบที่เจนใหม่"}]}
 </script>
 <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans+Thai:wght@400;500;600;700&family=Space+Grotesk:wght@500;600;700&family=Zen+Kaku+Gothic+New:wght@500;700&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="assets/style.css">
@@ -57,32 +57,135 @@
 .legend div b{display:block;font-size:var(--fs-md);margin-bottom:2px}
 .legend div span{color:var(--muted)}
 
+
+/* ---- guide ---- */
+.wip{display:inline-flex;align-items:center;gap:6px;font-size:var(--fs-sm);font-weight:600;color:var(--warn-ink);background:var(--warn-soft);padding:2px 10px;border-radius:999px;white-space:nowrap}
+.wip-box{border:2px dashed var(--line2);border-radius:var(--r);background:var(--card2);display:flex;flex-direction:column;align-items:center;justify-content:center;gap:10px;text-align:center;color:var(--muted);padding:24px}
+.guide-hero{display:grid;grid-template-columns:minmax(0,1fr) 260px;gap:32px;align-items:start}
+.guide-hero .wip-box{aspect-ratio:9/16}
+@media(max-width:820px){.guide-hero{grid-template-columns:minmax(0,1fr)}.guide-hero .wip-box{aspect-ratio:16/9}}
+.stepno{display:inline-flex;align-items:center;justify-content:center;width:36px;height:36px;background:var(--text);color:#fff;font-family:var(--font-display);font-weight:700;font-size:var(--fs-lg);margin-right:10px;vertical-align:4px;clip-path:polygon(var(--px) 0,calc(100% - var(--px)) 0,100% var(--px),100% calc(100% - var(--px)),calc(100% - var(--px)) 100%,var(--px) 100%,0 calc(100% - var(--px)),0 var(--px))}
+.tool{display:inline-block;font-size:var(--fs-sm);font-weight:600;background:var(--card2);color:var(--text);padding:2px 10px;border-radius:999px;margin-right:6px}
+.flow{display:grid;grid-template-columns:repeat(auto-fit,minmax(190px,1fr));gap:10px}
+.flow a{display:flex;flex-direction:column;gap:4px;background:var(--card);border:1px solid var(--line);border-radius:var(--r);padding:14px 16px;color:var(--text)}
+.flow a:hover{text-decoration:none;border-color:var(--line2);box-shadow:var(--shadow)}
+.flow a b{font-size:var(--fs-md)}
+.flow a small{color:var(--muted);font-size:var(--fs-sm)}
+.flow .n{font-family:var(--font-display);font-weight:700;color:var(--accent-ink)}
+.pick{display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:12px}
+.pick .card h3{font-size:var(--fs-md)}
+.pblock{padding:8px 0 20px;border-bottom:1px solid var(--line);margin-bottom:20px}
+.pblock:last-child{border-bottom:0}
+.pblock h3{margin:0 0 4px}
+.check{margin:0;padding-left:20px}.check li{margin:4px 0}
 </style>
 </head>
-<body>
+<body data-page="ai-video.html">
 
-<header class="site-head">
-  <a class="logo" href="index.html" aria-label="Nerd MarTech">
-    <img src="assets/brand/logo-on-light.svg" alt="" class="logo-sym">
-    <span class="logo-wm">Nerd<br>Mar<span>Tech</span></span>
-  </a>
-  <nav class="site-nav"><div class="wrap"><div class="links"><a href="index.html">หน้าแรก</a><a href="ai-video.html" class="active">สร้างวิดีโอด้วย AI</a><a href="use-cases.html">Use Cases</a><a href="prompts.html">Prompts</a><a href="compare.html">Model Compare</a></div></div></nav>
-</header>
-
-<div class="wrap">
-
-<div class="hero">
-  <div class="lab red">NERD TEST / 001 · HOW IT WAS MADE</div>
-  <h1>รูป 2 รูป + prompt 1 ย่อหน้า<br><em>= คลิปพูดไทย 8 วินาที</em></h1>
-  <p>หน้านี้ไม่สอนทฤษฎี — เอาของที่ใส่เข้าไปจริงมาวางให้ดูทั้งหมด รูปที่ใช้ prompt ที่พิมพ์ ค่าที่ตั้ง แล้วผลที่ได้ออกมาเป็นอย่างนี้ ใครอยากทำตามก็ก๊อปไปได้เลย</p>
-  <div class="px-divider"></div>
+<div class="wrap page-hero">
+<div class="hero guide-hero">
+  <div>
+    <div class="lab red">คู่มือ · Claude × Higgsfield</div>
+    <h1>ทำคลิปพูดไทย 1 นาที<br><em>ด้วย Claude × Higgsfield</em></h1>
+    <p>ตั้งแต่เขียนบท วาง storyboard อัปโหลดรูป เลือกโมเดลที่พูดไทยได้จริง เจนทีละช็อต ต่อคลิป ใส่ซับกับเพลง จนได้คลิปพร้อมโพสต์ — ทุกขั้นบอกเครื่องมือ เวลา และเครดิตที่ใช้จริง</p>
+    <div class="stats">
+      <div class="stat"><span class="lab">Length</span><span class="num">60s</span><small>แนวตั้ง 9:16</small></div>
+      <div class="stat"><span class="lab">Shots</span><span class="num">~8</span><small>ช็อตละ 8 วิ</small></div>
+      <div class="stat"><span class="lab">Credits</span><span class="num">~240</span><small>≈ ฿310 · ประมาณการ</small></div>
+    </div>
+    <div class="px-divider"></div>
+  </div>
+  <div class="wip-box">
+    <svg class="pi xl"><use href="#i-video"/></svg>
+    <b style="color:var(--text)">คลิปตัวอย่าง 1 นาที</b>
+    <span class="wip">กำลังทำ</span>
+    <small>คลิปจริงที่ทำตามคู่มือนี้ทุกขั้น</small>
+  </div>
+</div>
 </div>
 
-<div class="doc">
-<aside class="side-toc"><span class="toc-title">ไปที่หัวข้อ</span><a href="#pipeline">ภาพรวม: เข้า → ออก</a><a href="#anatomy">02 · แกะ prompt</a><a href="#settings">03 · ค่าที่ตั้ง</a><a href="#steps">04 · ลำดับที่ทำจริง</a></aside>
-<main>
-<!-- ===== PIPELINE ===== -->
-<section id="pipeline">
+<main id="content">
+
+<!-- ===== OVERVIEW ===== -->
+<section id="overview" data-toc="ภาพรวม 7 ขั้น">
+  <h2>ภาพรวม 7 ขั้น</h2>
+  <p class="h2sub">โมเดลวิดีโอเจนได้ครั้งละ 8–10 วิ คลิป 1 นาทีเลยต้องทำเป็นช็อตสั้นๆ แล้วต่อกัน — Claude ทำหน้าที่เขียนบทและสั่งงาน Higgsfield แทนเรา</p>
+  <div class="flow">
+    <a href="#step1"><span class="n">01</span><b>บท + storyboard</b><small>Claude</small></a>
+    <a href="#step2"><span class="n">02</span><b>เตรียมรูป + อัปโหลด</b><small>Claude Cowork → Higgsfield</small></a>
+    <a href="#step3"><span class="n">03</span><b>เลือกโมเดล</b><small>ดูผลเทียบ 11 โมเดล</small></a>
+    <a href="#step4"><span class="n">04</span><b>เจนทีละช็อต</b><small>Higgsfield · prompt 6 ส่วน</small></a>
+    <a href="#step5"><span class="n">05</span><b>ต่อคลิป</b><small>Claude Cowork</small></a>
+    <a href="#step6"><span class="n">06</span><b>ซับ + เพลง</b><small>CapCut</small></a>
+    <a href="#step7"><span class="n">07</span><b>สรุปต้นทุน</b><small>เครดิต · บาท</small></a>
+  </div>
+</section>
+
+<!-- ===== STEP 1 ===== -->
+<section id="step1" data-toc="1 · บท + storyboard">
+  <h2><span class="stepno">1</span>เขียนบท + วาง storyboard</h2>
+  <p class="h2sub"><span class="tool">Claude</span>ทำก่อนเปิด Higgsfield — บทดีคือครึ่งหนึ่งของคลิป ที่เหลือคือคำสั่งกล้อง</p>
+  <ol class="steps compact">
+    <li><b>60 วิ = 8 ช็อต × 8 วิ</b><span>บทพูดช็อตละไม่เกิน 25–30 คำ เกินนี้พูดไม่ทัน</span></li>
+    <li><b>ช็อตแรกต้องดึงคนดูใน 3 วิ</b><span>เปิดด้วยปัญหาหรือภาพที่แปลก ไม่ใช่ "สวัสดีค่ะ"</span></li>
+    <li><b>ตัดสินตั้งแต่ตอนนี้ว่าช็อตไหนพูดหน้ากล้อง</b><span>ยิ่งพูดหน้ากล้องหลายช็อต ยิ่งเสี่ยงเสียงไม่เหมือนกัน — ดูขั้น 5</span></li>
+    <li><b>ช็อตสุดท้ายเป็น CTA</b><span>บอกให้ทำอะไรต่อ ทัก · โทร · กดลิงก์</span></li>
+  </ol>
+  <h3>Prompt ให้ Claude เขียนบท</h3>
+  <div class="prompt">
+    <button class="copy">Copy</button>
+<pre>ช่วยเขียนบทคลิปแนวตั้ง 60 วินาที ภาษาไทย สำหรับ [สินค้า/บริการ] กลุ่มเป้าหมาย [ใคร]
+แบ่งเป็น 8 ช็อต ช็อตละ 8 วินาที ทำเป็นตาราง แต่ละช็อตบอก:
+- ภาพที่เห็น (คน · ฉาก · มุมกล้อง)
+- บทพูดภาษาไทย ไม่เกิน 30 คำ
+- ใครพูด: พรีเซนเตอร์พูดหน้ากล้อง หรือเสียงบรรยาย
+- รูปอ้างอิงที่ต้องใช้
+ช็อตแรกต้องดึงคนดูใน 3 วินาที ช็อตสุดท้ายเป็น CTA</pre>
+  </div>
+  <div class="callout note"><b>รอข้อมูลจริง</b> — ตาราง storyboard ของคลิปตัวอย่าง 1 นาที จะมาใส่ตรงนี้ พร้อมบทที่ใช้จริงทั้ง 8 ช็อต</div>
+</section>
+
+<!-- ===== STEP 2 ===== -->
+<section id="step2" data-toc="2 · รูป + อัปโหลด">
+  <h2><span class="stepno">2</span>เตรียมรูป + อัปโหลดผ่าน Cowork</h2>
+  <p class="h2sub"><span class="tool">Claude Cowork</span><span class="tool">Higgsfield</span>ใช้รูปชุดเดียวกันทุกช็อต คนกับฉากถึงจะเหมือนกันทั้งคลิป</p>
+  <div class="grid g2">
+    <div class="card">
+      <h3>รูปที่ต้องมี</h3>
+      <ul class="check">
+        <li><b>รูปคน 1 รูป</b> — หน้าตรง ชัด แสงดี · ต้องได้รับอนุญาตจากเจ้าของหน้า</li>
+        <li><b>รูปฉาก / สินค้าจริง</b> — ช็อตละ 1 รูปตามที่ storyboard ระบุ</li>
+        <li>ไม่ต้องตัดพื้น ไม่ต้องรีทัช — โมเดลดูออกเองว่ารูปไหนคน รูปไหนฉาก</li>
+      </ul>
+    </div>
+    <div class="card">
+      <h3>อัปโหลดยังไง</h3>
+      <ol class="check">
+        <li>เชื่อม Higgsfield connector ใน Claude</li>
+        <li>วางรูปในโฟลเดอร์ที่ Cowork เข้าถึงได้</li>
+        <li>สั่ง "อัปโหลดรูปพวกนี้เข้า Higgsfield" — ได้ media id กลับมา ใช้ซ้ำได้ทุกช็อต</li>
+      </ol>
+      <span class="wip">รอภาพหน้าจอจริง</span>
+    </div>
+  </div>
+</section>
+
+<!-- ===== STEP 3 ===== -->
+<section id="step3" data-toc="3 · เลือกโมเดล">
+  <h2><span class="stepno">3</span>เลือกโมเดลที่พูดไทยได้จริง</h2>
+  <p class="h2sub">ลองให้แล้ว 11 โมเดล — ตัวแพงไม่ได้แปลว่าพูดไทยดี · ผลเต็มอยู่ที่ <a href="compare.html">Model Compare</a></p>
+  <div class="pick">
+    <div class="card"><span class="badge pass"><svg><use href="#i-pass"/></svg>PASS</span><h3>Gemini Omni Flash 1.1</h3><p>ตัวหลัก · เจนจากรูป · ไทยชัด ปากตรง · <b data-cr="24">24</b></p></div>
+    <div class="card"><span class="badge pass"><svg><use href="#i-pass"/></svg>PASS</span><h3>Kling 3.0 Omni Edit</h3><p>เปลี่ยนคนในคลิปที่ดีแล้ว เสียงเดิม ฉากเดิม · <b data-cr="16">16</b></p></div>
+    <div class="card"><span class="badge maybe"><svg><use href="#i-maybe"/></svg>MAYBE</span><h3>Google Veo 3.1</h3><p>เสียงไทยชัดมาก แต่ภาพกระตุก และแพงสุด · <b data-cr="80">80</b></p></div>
+  </div>
+  <div class="lesson"><b>เลี่ยงสำหรับภาษาไทย</b> — Kling 3.0 pro พูดเป็นเขมร · Seedance 2.5 เพี้ยนแบบต่างชาติ · Extend ต่อคลิปแล้วเสียงเปลี่ยน</div>
+</section>
+
+<!-- ===== STEP 4 ===== -->
+<section id="step4" data-toc="4 · เจนทีละช็อต">
+  <h2><span class="stepno">4</span>เจนทีละช็อต</h2>
+  <p class="h2sub"><span class="tool">Higgsfield</span>ตัวอย่าง 1 ช็อตจริง — รูป 2 รูป + prompt 1 ย่อหน้า = คลิปพูดไทย 8 วิ</p>
   <div class="pipe">
     <div class="node">
       <span class="lab">01 · INPUT — รูป 2 รูป</span>
@@ -101,18 +204,14 @@
     <div class="arrow"><svg><use href="#i-arrow"/></svg></div>
     <div class="node out">
       <span class="lab red">03 · OUTPUT — คลิป</span>
-      <video controls preload="metadata" src="https://d8j0ntlcm91z4.cloudfront.net/user_3FvAUpXpCnZUma0p4ZCgNFe1CGD/hf_20260922_221717_f3028521-d89f-4e31-a02f-b57101865983.mp4"></video>
+      <video controls preload="metadata" src="https://d8j0ntlcm91z4.cloudfront.net/user_3FvAUpXpCnZUma0p4ZCgNFe1CGD/hf_20260922_221717_f3028521-d89f-4e31-a02f-b57101865983.mp4#t=0.1"></video>
       <div class="meta"><span><b>9:16</b> · <b>8s</b> · 720p</span><span><b>24</b> credits ≈ <b>฿31</b></span><span>~<b>3</b> นาที</span></div>
       <span class="badge pass"><svg><use href="#i-pass"/></svg>PASS</span>
     </div>
   </div>
-  <p class="ds-note" style="margin:6px 0 0">โมเดล: Gemini Omni Flash 1.1 (โหมด reference-to-video) ผ่าน Higgsfield · สั่งงานผ่าน Claude Cowork · ไม่มีการตัดต่อเพิ่ม ไม่มีการเลือกเทคจากหลายรอบ — นี่คือรอบแรก</p>
-</section>
 
-<!-- ===== PROMPT ANATOMY ===== -->
-<section id="anatomy">
-  <div class="eyebrow"><span class="lab">02</span><span class="lab">แกะ prompt ทีละส่วน</span></div>
-  <p class="h2sub">prompt ทั้งหมดมี 6 ส่วน เรียงตามนี้ทุกครั้ง — ส่วนที่คนมักลืมคือ ส่วน 4 กับ 6 แล้วก็สงสัยว่าทำไมได้สำเนียงเพี้ยนกับมีเพลงโผล่มา</p>
+  <h3>แกะ prompt ทีละส่วน</h3>
+  <p class="h2sub">prompt มี 6 ส่วน เรียงตามนี้ทุกช็อต เปลี่ยนแค่ส่วน 2, 3 กับ 5 ตาม storyboard — ส่วนที่คนมักลืมคือ 4 กับ 6</p>
   <div class="anno" id="anno">
     <button class="copy">Copy prompt</button>
     <mark class="c1" data-n="1">UGC-style vertical selfie video.</mark>
@@ -130,12 +229,8 @@
     <div class="c5"><b>5 · บทพูด</b><span>ใส่ในเครื่องหมายคำพูด นำด้วย She says in Thai: · 8 วิ ≈ 25–30 คำ เกินนี้พูดไม่ทัน</span></div>
     <div class="c6"><b>6 · เสียง</b><span>no music, no subtitles — ไม่บอก บางโมเดลใส่เพลงกับซับให้เองแล้วแก้ไม่ได้</span></div>
   </div>
-</section>
 
-<!-- ===== SETTINGS ===== -->
-<section id="settings">
-  <div class="eyebrow"><span class="lab">03</span><span class="lab">ค่าที่ตั้งตอนสั่งเจน</span></div>
-  <p class="h2sub">ไม่มีค่าลับ ตั้งแค่นี้</p>
+  <h3>ค่าที่ตั้ง</h3>
   <div class="stats">
     <div class="stat"><span class="lab">Model</span><span class="num txt">Gemini Omni Flash 1.1</span><small>ผ่าน Higgsfield</small></div>
     <div class="stat"><span class="lab">Mode</span><span class="num txt">reference-to-video</span><small>รับหลายรูปในรอบเดียว</small></div>
@@ -144,11 +239,8 @@
     <div class="stat"><span class="lab">Resolution</span><span class="num">720p</span><small>พอสำหรับมือถือ · 1080p แพงกว่าไม่คุ้ม</small></div>
     <div class="stat"><span class="lab">Cost</span><span class="num">24</span><small>credits ≈ ฿31 ต่อรอบ (แพ็กเกจ $39)</small></div>
   </div>
-</section>
 
-<!-- ===== STEPS ===== -->
-<section id="steps">
-  <div class="eyebrow"><span class="lab">04</span><span class="lab">ลำดับที่ทำจริง</span></div>
+  <h3>ลำดับที่ทำจริง (ต่อ 1 ช็อต)</h3>
   <div class="grid g2">
     <ol class="steps">
       <li><b>อัปโหลดรูป 2 รูป</b><span>ได้ media id กลับมา 2 ตัว — ไม่ต้องบอกว่ารูปไหนคน รูปไหนบ้าน โมเดลดูออกเอง</span></li>
@@ -165,20 +257,132 @@
         <img src="assets/character/08-think.png" alt="">
         <p><b>อย่าลืมเรื่องสิทธิ์รูป</b> — รูปคนที่ใช้ต้องได้รับอนุญาตแล้ว รูปในหน้านี้ใช้เพื่อการทดสอบ ถ้าจะทำจริงให้ใช้รูปพรีเซนเตอร์หรือพนักงานของโครงการเอง</p>
       </div>
-      <div class="lesson"><b>ใช้ต่อได้เลย</b> — prompt เต็มพร้อมช่อง [ ] ให้แก้ อยู่ที่ <a href="prompts.html#p-ugc">Prompt #1</a> · ขั้นตอนแบบเต็มอยู่ที่ <a href="use-cases.html#ugc-house">Use Case 01</a></div>
     </div>
   </div>
 </section>
 
+<!-- ===== STEP 5 ===== -->
+<section id="step5" data-toc="5 · ต่อคลิป">
+  <h2><span class="stepno">5</span>ต่อคลิปด้วย Cowork</h2>
+  <p class="h2sub"><span class="tool">Claude Cowork</span>ดาวน์โหลดทุกช็อต เรียงตาม storyboard แล้วรวมเป็นไฟล์เดียว</p>
+  <div class="callout"><b>ปัญหาใหญ่: เสียงแต่ละช็อตไม่เหมือนกัน</b> — โมเดลสร้างเสียงใหม่ทุกครั้งที่เจน รูปชุดเดิมทำให้หน้าเหมือน แต่ไม่ได้ทำให้เสียงเหมือน เราลอง Extend ให้แล้ว 2 ครั้ง เสียงเปลี่ยนทั้งสองครั้ง (<a href="compare.html#ranking">ดูผล #11</a>)</div>
+  <div class="grid g2" style="margin-top:14px">
+    <div class="card">
+      <h3>ทางแก้ที่ใช้ได้</h3>
+      <ul class="check">
+        <li>ให้พูดหน้ากล้องแค่ช็อตเปิดกับปิด ช็อตกลางเป็นภาพประกอบ + เสียงบรรยายไฟล์เดียวทั้งคลิป</li>
+        <li>เจนช็อตพูดด้วยรูปชุดเดิม + โมเดลเดิม แล้วคัดเฉพาะช็อตที่เสียงใกล้กัน</li>
+        <li>ใส่ซับทุกช็อต — ช่วยกลบความต่างของเสียงได้เยอะ</li>
+      </ul>
+    </div>
+    <div class="card">
+      <h3>สั่ง Cowork ต่อคลิป</h3>
+      <p>ดาวน์โหลดไฟล์ทุกช็อต → เรียงตามเลขช็อต → รวมเป็นไฟล์เดียว 9:16</p>
+      <span class="wip">กำลังทดสอบกับคลิปจริง</span>
+    </div>
+  </div>
+</section>
+
+<!-- ===== STEP 6 ===== -->
+<section id="step6" data-toc="6 · ซับ + เพลง">
+  <h2><span class="stepno">6</span>ใส่ซับ + เพลงใน CapCut</h2>
+  <p class="h2sub"><span class="tool">CapCut</span>ขั้นนี้ทำเอง — Claude กดใน CapCut ให้ไม่ได้</p>
+  <div class="grid g3">
+    <div class="card"><h3>ซับไทย</h3><p>ใช้ auto caption แล้วไล่แก้คำผิด — ชื่อสินค้า ตัวเลข ราคา ผิดบ่อยสุด</p></div>
+    <div class="card"><h3>เพลง</h3><p>ใช้เพลงที่มีสิทธิ์ใช้เชิงพาณิชย์ · เพลงในคลัง CapCut บางเพลงเอาไปใช้โฆษณาไม่ได้ ต้องเช็คก่อน · เบาเสียงเพลงให้ต่ำกว่าเสียงพูด</p></div>
+    <div class="card"><h3>Export</h3><p>1080×1920 · 30fps · ตรวจรอยต่อระหว่างช็อตก่อนโพสต์</p></div>
+  </div>
+  <div class="callout note" style="margin-top:14px"><b>รอข้อมูลจริง</b> — ขั้นตอนใน CapCut ที่ใช้กับคลิปตัวอย่าง พร้อมภาพหน้าจอ</div>
+</section>
+
+<!-- ===== STEP 7 ===== -->
+<section id="step7" data-toc="7 · สรุปต้นทุน">
+  <h2><span class="stepno">7</span>สรุปต้นทุน</h2>
+  <p class="h2sub">ประมาณการจากราคาที่จ่ายจริงต่อช็อต · ตัวเลขจริงจะอัปเดตหลังทำคลิปตัวอย่างเสร็จ <span class="wip">ประมาณการ</span></p>
+  <div class="tablewrap fit">
+    <table>
+      <thead><tr><th>รายการ</th><th>จำนวน</th><th class="num">credits · บาท</th></tr></thead>
+      <tbody>
+        <tr><td>เจนช็อต (Omni Flash 1.1 · 24/ช็อต)</td><td>8 ช็อต</td><td class="num" data-cr="192">192</td></tr>
+        <tr><td>เจนใหม่ช็อตที่ไม่ผ่าน</td><td>~2 ช็อต</td><td class="num" data-cr="48">48</td></tr>
+        <tr><td><b>รวม</b></td><td></td><td class="num" data-cr="240">240</td></tr>
+      </tbody>
+    </table>
+  </div>
+  <p class="rate-note" style="margin-top:8px">ราคาบาทคิดจากแพ็กเกจ Higgsfield $39 = 1.29 บาท/เครดิต · ไม่รวมค่า Claude และ CapCut</p>
+</section>
+
+<!-- ===== PROMPT LIBRARY ===== -->
+<section id="prompts" data-toc="คลัง prompt">
+  <h2>คลัง prompt ที่ใช้จริง</h2>
+  <p class="h2sub">ทุกตัวเจนจริงแล้ว บอกโมเดลและผล · แก้เฉพาะในวงเล็บ [ ] แล้วใช้ได้เลย</p>
+  <div class="pblock" id="p-ugc">
+  <h3>Prompt #1 — UGC รีวิวบ้าน จากรูปอ้างอิง 2 รูป</h3>
+  <div class="pmeta">
+    <span>ใช้กับ <b>Gemini Omni Flash 1.1</b> (mode: reference-to-video)</span>
+    <span>input: รูปคน + รูปบ้าน (image_references)</span>
+    <span>9:16 · 8s · 720p</span>
+    <span class="badge soft sm pass"><svg><use href="#i-pass"/></svg>Pass</span><span>ดีที่สุดจาก 11 โมเดล</span>
+  </div>
+  <div class="prompt">
+    <button class="copy">Copy</button>
+<pre>UGC-style vertical selfie video. The young Thai woman from the reference photo stands in front of the [luxury two-story grey house] from the reference photo at dusk, holding the phone at arm's length, natural handheld movement, warm evening light. She smiles and speaks to camera in clear natural Thai with accurate lip sync, friendly excited tone. She says in Thai: "[สวัสดีค่ะ วันนี้พามาดูบ้านหลังนี้ค่ะ สองชั้น สไตล์คลาสสิก หน้าบ้านกว้างมาก จอดรถได้สองคันสบายๆ ใครสนใจทักมาได้เลยนะคะ]" Native Thai speech audio only, soft ambient evening sound, no music, no subtitles.</pre>
+  </div>
+  <div class="lesson"><b>ผลเมื่อใช้ prompt เดียวกันกับโมเดลอื่น</b> — Omni Flash (รุ่นเก่า) ผ่าน · MiniMax H3 ไทยชัดแต่ภาพดูเจน · Seedance 2.5 ไทยเพี้ยน · FLUX 3 ไม่มีบ้านในภาพ → prompt ดีไม่ช่วยถ้าโมเดลไม่รองรับไทย</div>
+  </div>
+  <div class="pblock" id="p-start">
+  <h3>Prompt #2 — เวอร์ชัน start image (รูปเดียว)</h3>
+  <div class="pmeta">
+    <span>ใช้กับ <b>Veo 3.1 · Kling 3.0 · Grok 1.5</b></span>
+    <span>input: ภาพนิ่ง "คนยืนหน้าบ้าน" 1 รูป (start_image)</span>
+    <span class="badge soft sm maybe"><svg><use href="#i-maybe"/></svg>Maybe</span><span>ผลขึ้นกับโมเดล — Veo เสียงดีภาพกระตุก · Kling เป็นเขมร · Grok เสียงคอม</span>
+  </div>
+  <div class="prompt">
+    <button class="copy">Copy</button>
+<pre>UGC-style vertical selfie video, animate the start frame. The young Thai woman holds the phone at arm's length in front of the [luxury two-story grey house] at dusk, natural handheld movement, warm evening light. She smiles and speaks to camera in clear natural Thai with accurate lip sync, friendly excited tone. She says in Thai: "[บทพูด]" Native Thai speech audio only, soft ambient evening sound, no music, no subtitles.</pre>
+  </div>
+  <div class="lesson"><b>ต่างจาก #1 ตรงไหน</b> — เพิ่ม "animate the start frame" และไม่ต้องอ้าง reference photo เพราะโมเดลกลุ่มนี้รับรูปเดียว · ข้อสังเกต: Veo 3.1 เขียน prompt ใหม่ให้เองยาว 5 เท่า (enhance_prompt) ผลออกมาไม่ได้ดีกว่า</div>
+  </div>
+  <div class="pblock" id="p-motion">
+  <h3>Prompt #3 — Motion transfer (Genjutsu)</h3>
+  <div class="pmeta">
+    <span>ใช้กับ <b>Genjutsu — Higgsfield Motion Control</b></span>
+    <span>input: คลิปต้นแบบ (video_references) + รูปคนใหม่ (image_references)</span>
+    <span class="badge soft sm pass"><svg><use href="#i-pass"/></svg>Pass</span><span>หน้าและภาษาดีมาก</span>
+  </div>
+  <div class="prompt">
+    <button class="copy">Copy</button>
+<pre>Transfer the motion, expressions, lip movement and Thai speech from the reference video to the woman in the reference image. Keep her identity from the reference image, keep the [house background and dusk lighting]. Preserve the original Thai audio.</pre>
+  </div>
+  </div>
+  <div class="pblock" id="p-edit">
+  <h3>Prompt #4 — เปลี่ยนคนในคลิป (Kling Omni Edit)</h3>
+  <div class="pmeta">
+    <span>ใช้กับ <b>Kling 3.0 Omni Edit</b> (mode: pro)</span>
+    <span>input: คลิปต้นแบบ (video_references) + รูปคนใหม่ (image_references)</span>
+    <span class="badge soft sm pass"><svg><use href="#i-pass"/></svg>Pass</span><span>ถูกที่สุด 16 credits</span>
+  </div>
+  <div class="prompt">
+    <button class="copy">Copy</button>
+<pre>Keep the video exactly as is (same [house], same camera motion, same Thai speech and lip sync) but replace the presenter with the woman from the reference image, matching her face and hair.</pre>
+  </div>
+  <div class="lesson"><b>หัวใจของ prompt แก้คลิป</b> — บอกให้ชัดว่า "อะไรห้ามเปลี่ยน" (เสียง กล้อง ฉาก) ก่อนบอกว่า "เปลี่ยนอะไร" — โมเดลแก้คลิปมักเปลี่ยนเกินที่สั่งถ้าไม่ล็อกไว้</div>
+  </div>
+  <div class="pblock" id="p-extend">
+  <h3>Prompt #5 — ต่อคลิป (Extend) — ไม่แนะนำ</h3>
+  <div class="pmeta">
+    <span>ใช้กับ <b>Gemini Omni Flash 1.1</b> (reference-to-video + video_references)</span>
+    <span class="badge soft sm fail"><svg><use href="#i-fail"/></svg>Fail</span><span>ผ่าน MCP ถูก safety filter บล็อก · ผ่านหน้าเว็บทำได้ (70 credits/ครั้ง) แต่เสียงเปลี่ยน</span>
+  </div>
+  <div class="prompt">
+    <button class="copy">Copy</button>
+<pre>Continue the reference video as the next shot — same young Thai woman, same voice, same house, same dusk lighting and handheld selfie style. She now turns slightly and gestures toward the driveway and front door, then speaks to camera in clear natural Thai with accurate lip sync, friendly tone. She says in Thai: "[ด้านหน้ามีสวนเล็กๆ กับที่จอดรถกว้างมาก เดี๋ยวพาเข้าไปดูข้างในกันนะคะ]" Native Thai speech audio only, soft ambient evening sound, no music, no subtitles.</pre>
+  </div>
+  <div class="lesson"><b>ทำไมไม่ผ่าน</b> — คำว่า "same voice" ใน prompt ไม่มีผล เพราะโมเดลไม่มี voice reference ให้ฟัง มันสร้างเสียงใหม่จากบทเสมอ → ใช้วิธีใน <a href="#step5">ขั้น 5 · ต่อคลิป</a> แทน</div>
+  </div>
+</section>
+
 </main>
-</div>
-
-<footer>
-  <div class="foot-links"><a href="index.html">หน้าแรก</a><a href="ai-video.html">สร้างวิดีโอด้วย AI</a><a href="use-cases.html">Use Cases</a><a href="prompts.html">Prompts</a><a href="compare.html">Model Compare</a></div>
-  <p>Nerd MarTech · จัดทำโดย AOO Commerce · ผลทดสอบเป็นข้อมูล ณ วันที่ทดสอบ โมเดล AI เปลี่ยนเร็ว ควรทดสอบซ้ำก่อนใช้งานจริง</p>
-</footer>
-
-</div>
 
 <script src="assets/site.js"></script>
 </body>

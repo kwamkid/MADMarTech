@@ -25,7 +25,7 @@
 - Hosting: **GitHub Pages** repo `kwamkid/nerdmartech` branch `main` root · custom domain `nerdmartech.com` (ไฟล์ `CNAME` ห้ามลบ · `.nojekyll` ห้ามลบ)
 - DNS ที่ Cloudflare: A 185.199.108–111.153 + CNAME www → kwamkid.github.io (DNS only)
 - Deploy = **push main** เท่านั้น · ผู้ใช้ push เอง (Claude commit ได้ แต่ไม่ push)
-- ทดสอบ local: `python3 -m http.server 8765` แล้วเปิด `http://localhost:8765/` (ห้ามเปิด file:// เพราะ `<use href>` ของ SVG sprite ไม่ทำงาน)
+- ทดสอบ local: เปิดไฟล์ตรงๆ (file://) ได้แล้ว — sprite ไอคอน header footer ฝังใน site.js · หรือ `python3 -m http.server 8765`
 - Commit message ภาษาอังกฤษ สั้น บอกว่าแก้อะไร
 
 ---
@@ -33,14 +33,13 @@
 ## 3. โครงไฟล์
 
 ```
-index.html            หน้าแรก
-ai-video.html         "สร้างวิดีโอด้วย AI" — รูป 2 รูป + prompt → คลิป (แกะ prompt 6 ส่วน · HowTo schema)
-use-cases.html        Use Case 01–03 · 1 เคส = 1 viewport
-prompts.html          Prompt ที่ใช้จริง 5 ตัว (ปุ่ม copy)
-compare.html          Model Compare — โจทย์เดียว 8 โมเดล เรียงอันดับ PASS/MAYBE/FAIL (FAQ schema)
+index.html            หน้าแรก — hero วิดีโอพื้นหลัง (.hero-bg) + ล่าสุด + ทำไมต้องเนิร์ด
+ai-video.html         "ทำคลิปด้วย AI" — คู่มือทำคลิปพูดไทย 1 นาที 7 ขั้น + คลัง prompt 5 ตัว (รวม Use Cases/Prompts เดิม · HowTo schema) · ส่วนที่ยังไม่มีข้อมูลจริงติดป้าย .wip
+compare.html          Model Compare — 11 โมเดล (#01–02,#05–10 เจนจากรูป · #03–04 เปลี่ยนคน · #11 Extend) การ์ด + ตาราง 11 แถว (FAQ schema + FAQ ที่มองเห็น)
+use-cases.html · prompts.html   หน้า redirect (noindex) → ai-video.html / compare.html ตาม #hash — กันลิงก์เก่าจากโพสต์ FB เสีย · ไม่อยู่ใน sitemap
 design-system.html    Living style guide (noindex) — ทุก component ที่ใช้จริง
 assets/style.css      สไตล์กลางทั้งเว็บ — แก้ที่นี่ที่เดียว
-assets/site.js        ฝัง icon sprite + side TOC highlight + credits→บาท + lightbox (โหลดทุกหน้า ก่อน </body>)
+assets/site.js        **สร้าง layout กลาง** (header · TOC ซ้าย · ช่องขวา · footer) + icon sprite + TOC/journey bar + copy + credits→บาท + lightbox
 assets/pixel-icons.svg   sprite ไอคอน pixel 18 ตัว (i-ai data prompt model credit time cost video image automation pass maybe fail cursor copy arrow idea external) — สำเนาเดียวกันฝังอยู่ในบล็อก @icons ของ site.js · ในหน้าใช้ `<use href="#i-xxx">` เท่านั้น (อ้างไฟล์ภายนอกแล้ว file:// ไม่ขึ้น) · แก้ไอคอนต้องอัปเดต 3 ที่: sprite · icons/*.svg · site.js
 assets/icons/*.svg    ไอคอนเดี่ยว (ชุดเดียวกับ sprite)
 assets/brand/         logo-on-light.svg (ใช้บนเว็บ — ธีมสว่าง) · logo-on-dark.svg (บนพื้นดำ/เขียว) · logo-mono-white/black.svg · favicon · app icon · character.*
@@ -71,13 +70,25 @@ CNAME · robots.txt · sitemap.xml (เพิ่มหน้าใหม่ต�
 - Type scale — **ขั้นต่ำ 14px**: `--fs-sm 14` (caption/meta · `--fs-xs` = 14 เท่ากัน เก็บไว้เพื่อ compat) · `--fs-md 16` (เนื้อหา · ปุ่ม · badge) · `--fs-lg 18` (lead ใต้ H1 เท่านั้น) · หัวข้อ `--fs-h1` clamp(30–46) · `--fs-h2 26` · `--fs-h3 20` — **ห้ามใส่ font-size เป็นเลขในหน้า** ใช้ token เสมอ
 - `--px:3px` มุมหยักพิกเซล — ใช้กับปุ่ม · badge · tag เท่านั้น (การ์ดใช้ `--r` 12px) · spacing `--s1…--s8`
 - Components หลัก: `.site-head/.logo/.logo-wm/.site-nav/.links` · `.hero` · `.eyebrow + .lab` (หัว section แบบ "01 · ชื่อ") · `.card` · `.vcard` (วิดีโอ 9:16 + body + `.out` tag มุมซ้ายบน) · `.badge` · `.kv` · `.steps` (+`.compact` = ตาราง 2×2) · `.lesson` / `.callout` (.note .ok .info .dark) · `.prompt` (+ปุ่ม copy) · `.doc` + `.side-toc` (สารบัญติดซ้ายสำหรับหน้ายาว) · `.uc` / `.uc.two` (layout 1 use case = 1 viewport) · `.brief` (แถบ SAME INPUT หน้า compare) · `.lb` lightbox
-- หน้าใหม่ต้องมี: header เดียวกันทุกหน้า + ลิงก์เมนู 5 หน้า · footer "Nerd MarTech · จัดทำโดย AOO Commerce · ผลทดสอบเป็นข้อมูล ณ วันที่ทดสอบ…" · `<script src="assets/site.js">` · meta OG/canonical · เพิ่มใน sitemap
+- **หน้าใหม่ = เขียนแค่เนื้อหา** header/footer/เมนูมาจาก site.js (แก้เมนูที่ตัวแปร `NAV` ที่เดียว):
+  ```html
+  <body data-page="ชื่อไฟล์.html">
+  <div class="wrap page-hero"><div class="hero">…H1…</div></div>
+  <main id="content">
+    <section id="x" data-toc="ชื่อในสารบัญ">…</section>
+  </main>
+  <aside class="side-right">…(ถ้ามี · ว่าง = ไม่กินที่)</aside>
+  <script src="assets/site.js"></script>
+  ```
+  + meta OG/canonical + เพิ่มใน sitemap · layout = header · [TOC ซ้าย 200 | body | ขวา 220] · footer · มือถือ TOC = แถบ journey ล่างจอ
 
 ---
 
 ## 6. site.js — ของที่ทำงานอัตโนมัติ
 
 - **เครดิต → บาท**: ใส่ `data-cr="24"` บน `<span class="credits">` หรือ `<td class="num">` แล้ว JS เติมบาทให้ · เรต `RATE = 1.29` (Higgsfield แพ็กเกจ $39) · เรตอื่น: $15 = 2.50 · $99 = 1.09 — เปลี่ยนที่ตัวแปรเดียว
+- **Layout กลาง**: ดูหัวข้อ 5 · เมนูอยู่ใน `NAV` · ลิงก์เพจ FB `FB` · ข้อความ footer อยู่ใน site.js
+- **Copy**: ปุ่ม `.copy` ใน `.prompt` (ก๊อป `<pre>`) / `.anno` (รวม `<mark>`) ทำงานเอง ไม่ต้องใส่ onclick
 - **Lightbox**: ใส่ `data-zoom` บน `<img>` → คลิกขยาย · ปิดด้วย Esc / คลิกนอกรูป / ปุ่ม ×
 
 ---
@@ -88,7 +99,7 @@ CNAME · robots.txt · sitemap.xml (เพิ่มหน้าใหม่ต�
 1 Gemini Omni Flash 1.1 — 24 cr — PASS (ดีสุด/ถูกสุดในกลุ่มผ่าน) · 2 Gemini Omni Flash — 24 — PASS · 3 Veo 3.1 — 80 — MAYBE (เสียงชัด ภาพกระตุก) · 4 MiniMax H3 — 16 — MAYBE (ดูเป็นภาพเจน) · 5 Grok Video 1.5 — 36 — MAYBE (เสียงคอม · ออก 16:9) · 6 Seedance 2.5 — 56 — FAIL (ไทยเพี้ยน) · 7 Kling 3.0 pro — 20 — FAIL (เป็นเขมร) · 8 FLUX 3 Video — 44 — FAIL (ไม่มีบ้าน) · รวม 300 cr
 Veo/Kling/Grok รับรูปเดียว → ใช้เฟรมแรกของคลิปอันดับ 1 เป็น start frame
 
-**งานแก้คลิป (อยู่ใน Use Cases ไม่ใช่ Compare)**
+**งานแก้/ต่อคลิป (อยู่ใน Compare #03 #04 #11 แล้ว)**
 - Kling 3.0 Omni Edit เปลี่ยนคน → เด็ก — 16 cr — PASS (UC02)
 - Genjutsu = motion transfer ของ Higgsfield — 56 cr — ใช้ได้ (เทสต์แรกใส่คนเดิมเลยไม่เห็นเปลี่ยน)
 - "Change weather" preset Rain (Video Edit ในหน้าเว็บ Higgsfield) — 36 cr — ยังไม่ขึ้นเว็บ
@@ -125,7 +136,8 @@ Veo/Kling/Grok รับรูปเดียว → ใช้เฟรมแร
 5. `og:image` — ผู้ใช้เจนใน ChatGPT วางที่ `assets/og.png` (1200×630) แล้วเพิ่ม `<meta property="og:image">` ทุกหน้า
 6. โหลด .mp4 ทั้งหมดมาไว้ `assets/videos/` (ชื่อ: uc01-omni-flash · uc02-child-kling-edit · uc02-genjutsu · uc03-extend-1/2 · rain-change-weather · compare-XX-model) แล้วเปลี่ยน src
 7. Brand kit round 2 — export lockup PNG/SVG · social 4:5 template 6 series (NERD TEST / COMPARE / FOUND / FAIL / NOTE / TAKE) · ปก 9:16 — ใช้ Playwright render จาก design-system.html
-8. หน้าแรก: ตัวเลข chips (11 โมเดล) ต้องอัปเดตให้ตรง compare ใหม่ (8 โมเดล) · การ์ด "ล่าสุด" เพิ่มลิงก์ ai-video.html
+8. ~~หน้าแรก chips / การ์ดล่าสุด~~ ✅ 11 โมเดล · ลิงก์คู่มือแล้ว
+9. **คลิปตัวอย่าง 1 นาที** (อาจารย์ทำ) → เติมใน ai-video.html ทุกจุดที่ติด `.wip` / `.wip-box` / callout "รอข้อมูลจริง" (storyboard · ภาพหน้าจอ Cowork · ขั้นต่อคลิป · CapCut · ต้นทุนจริง)
 
 ---
 

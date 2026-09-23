@@ -10,7 +10,7 @@
 
   // --- shared layout: header + [left TOC | body | right slot] + footer ---
   // pages only contain: optional hero, <main id="content"> with <section id data-toc="label">, optional <aside class="side-right">
-  var NAV = [['index.html', 'หน้าแรก'], ['ai-video.html', 'ทำคลิปด้วย AI'], ['compare.html', 'Model Compare']];
+  var NAV = [['index.html', 'หน้าแรก'], ['ai-video.html', 'ทำคลิปด้วย AI'], ['ai-edit.html', 'ตัดต่อด้วย AI'], ['compare.html', 'Model Compare']];
   var FB = 'https://www.facebook.com/NerdMarTech';
   var here = document.body.getAttribute('data-page') || location.pathname.split('/').pop() || 'index.html';
   var navLinks = function(cls){

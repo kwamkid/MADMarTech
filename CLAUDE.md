@@ -124,6 +124,8 @@ Veo/Kling/Grok รับรูปเดียว → ใช้เฟรมแร
 
 ## 8. Higgsfield — สิ่งที่รู้แล้ว (กันพลาดซ้ำ)
 
+> **เขียนบทพูดไทยให้วิดีโอ AI ต้องอ่าน `../00-Context/03-AI_Video_Thai_Speech.md` ก่อน** — คำที่ AI พูดผิดบ่อย (โครงการ · เริ่มต้น · นะคะ) + กฎเขียนบท/prompt ที่ได้จากที่ลองจริง
+
 - Model id ที่ใช้: `gemini_omni_flash_1_1` (mode: reference-to-video / edit) · `kling_video_edit` (Kling 3.0 Omni Edit, roles video_references + image_references) · `hf_mult_motion_control` (Genjutsu) · `seedance_2_5` (mode omni_reference)
 - Prompt โครง 6 ส่วน (รูปแบบ · คน+ฉาก "from the reference photo" · การเคลื่อนไหว · "clear natural Thai with accurate lip sync" · บทพูดในเครื่องหมายคำพูดนำด้วย She says in Thai: · "Native Thai speech audio only, no music, no subtitles")
 - ตัวการ์ตูนบนฉากจริง: ล็อกสไตล์ใน prompt "flat 2D black-and-white line-art, thick outlines, no 3D, like a hand-drawn sticker composited into a real film"

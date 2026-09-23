@@ -1,0 +1,218 @@
+<!DOCTYPE html>
+<html lang="th">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>ตัดต่อวิดีโอด้วย AI — สั่งเป็นภาษาไทย Claude Code × CapCut</title>
+<meta name="description" content="ตัดต่อวิดีโอด้วย AI ทั้งคลิป: Claude Code รวม 9 คลิป ใส่ซับไทย เพลง transition เสียงประกอบ เร่งความเร็ว เปลี่ยนฟอนต์ใน CapCut ให้เอง คนแค่พิมพ์สั่งเป็นภาษาไทย พร้อมคำสั่งที่ใช้จริงและสิ่งที่ต้องแก้">
+<link rel="canonical" href="https://nerdmartech.com/ai-edit.html">
+<meta property="og:type" content="article">
+<meta property="og:site_name" content="Nerd MarTech">
+<meta property="og:title" content="ตัดต่อวิดีโอด้วย AI — สั่งเป็นภาษาไทย Claude Code × CapCut">
+<meta property="og:description" content="Claude Code รวม 9 คลิป ใส่ซับไทย เพลง transition เสียงประกอบ เปลี่ยนฟอนต์ใน CapCut ให้เอง คนแค่พิมพ์สั่ง — คำสั่งจริง ผลจริง สิ่งที่ต้องแก้">
+<meta property="og:url" content="https://nerdmartech.com/ai-edit.html">
+<meta property="og:locale" content="th_TH">
+<meta name="twitter:card" content="summary_large_image">
+<script type="application/ld+json">
+{"@context":"https://schema.org","@type":"HowTo","name":"ตัดต่อวิดีโอด้วย AI: Claude Code × CapCut","description":"ให้ Claude Code ตัดต่อคลิปใน CapCut Desktop ให้ทั้งคลิป ตั้งแต่รวมคลิป ใส่ซับไทย เพลง transition เสียงประกอบ เร่งความเร็ว จนเปลี่ยนฟอนต์ คนแค่พิมพ์สั่งเป็นภาษาไทย","totalTime":"PT30M","tool":[{"@type":"HowToTool","name":"Claude Code"},{"@type":"HowToTool","name":"CapCut Desktop (Mac)"}],"step":[{"@type":"HowToStep","name":"เตรียมคลิปวัตถุดิบ","text":"คลิปที่เจนเสร็จแล้ว 9 ไฟล์ ตั้งชื่อเรียงตามลำดับ 01–09"},{"@type":"HowToStep","name":"พิมพ์สั่งสิ่งที่อยากได้","text":"บอก Claude Code เป็นภาษาไทย: ใส่ซับ เพลง transition เสียงประกอบ เร่งความเร็วบางช็อต"},{"@type":"HowToStep","name":"Claude Code เขียนโปรเจกต์ CapCut","text":"Claude Code เขียนไฟล์โปรเจกต์ของ CapCut Desktop ผ่านสคริปต์ใน terminal"},{"@type":"HowToStep","name":"เปิด CapCut ดูแล้วสั่งแก้","text":"เปิดโปรเจกต์ดูผล ไม่ชอบตรงไหนพิมพ์บอก เช่น เปลี่ยนฟอนต์ซับ"},{"@type":"HowToStep","name":"Export","text":"Export 1080×1920 แนวตั้ง"},{"@type":"HowToStep","name":"เก็บเป็น skill","text":"เก็บขั้นตอนทั้งหมดเป็น skill ไว้ใช้กับคลิปถัดไป"}]}
+</script>
+<link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans+Thai:wght@400;500;600;700&family=Space+Grotesk:wght@500;600;700&family=Zen+Kaku+Gothic+New:wght@500;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="assets/style.css?v=20260924a">
+<link rel="icon" href="favicon.ico" sizes="any">
+<link rel="icon" type="image/png" sizes="32x32" href="assets/brand/favicon-32.png">
+<link rel="apple-touch-icon" href="assets/brand/apple-touch-icon.png">
+<meta name="theme-color" content="#f9f8f6">
+<style>
+.guide-hero{display:grid;grid-template-columns:minmax(0,1fr) 280px;gap:32px;align-items:start}
+@media(max-width:820px){.guide-hero{grid-template-columns:minmax(0,1fr)}.guide-hero video{max-width:320px;margin:0 auto}}
+.stepno{display:inline-flex;align-items:center;justify-content:center;width:36px;height:36px;background:var(--text);color:#fff;font-family:var(--font-display);font-weight:700;font-size:var(--fs-lg);margin-right:10px;vertical-align:4px;clip-path:polygon(var(--px) 0,calc(100% - var(--px)) 0,100% var(--px),100% calc(100% - var(--px)),calc(100% - var(--px)) 100%,var(--px) 100%,0 calc(100% - var(--px)),0 var(--px))}
+.tool{display:inline-block;font-size:var(--fs-sm);font-weight:600;background:var(--card2);color:var(--text);padding:2px 10px;border-radius:999px;margin-right:6px}
+.flow{display:grid;grid-template-columns:repeat(auto-fit,minmax(170px,1fr));gap:10px}
+.flow a{display:flex;flex-direction:column;gap:4px;background:var(--card);border:1px solid var(--line);border-radius:var(--r);padding:14px 16px;color:var(--text)}
+.flow a:hover{text-decoration:none;border-color:var(--line2);box-shadow:var(--shadow)}
+.flow a b{font-size:var(--fs-md)}
+.flow a small{color:var(--muted);font-size:var(--fs-sm)}
+.flow .n{font-family:var(--font-display);font-weight:700;color:var(--accent-ink)}
+/* 9 source clips: small tiles */
+.clips{display:grid;grid-template-columns:repeat(9,minmax(0,1fr));gap:8px}
+.clips figure{margin:0;display:flex;flex-direction:column;gap:4px}
+.clips video{width:100%;aspect-ratio:9/16;object-fit:cover;background:#111;border-radius:var(--r-sm);display:block}
+.clips figcaption{font-size:var(--fs-sm);color:var(--muted);line-height:1.35}
+.clips figcaption b{display:block;font-family:var(--font-display);color:var(--text)}
+@media(max-width:900px){.clips{grid-template-columns:repeat(5,minmax(0,1fr));gap:6px}.clips figcaption{font-size:var(--fs-sm)}}
+.merge{display:flex;align-items:center;gap:10px;margin:14px 0 0;font-size:var(--fs-md)}
+.merge svg{width:22px;height:22px;fill:var(--accent);transform:rotate(90deg);shape-rendering:crispEdges}
+.shots{display:grid;grid-template-columns:repeat(auto-fit,minmax(200px,1fr));gap:12px}
+.shots figure{margin:0;display:flex;flex-direction:column;gap:6px}
+.shots img{width:100%;display:block;border-radius:var(--r-sm);border:1px solid var(--line);cursor:zoom-in}
+.shots figcaption{font-size:var(--fs-sm);color:var(--muted)}
+.wide-shot img{width:100%;display:block;border-radius:var(--r);border:1px solid var(--line);cursor:zoom-in}
+.wide-shot figure{margin:0}
+.wide-shot figcaption{font-size:var(--fs-sm);color:var(--muted);margin-top:6px}
+.check{margin:0;padding-left:20px}.check li{margin:4px 0}
+</style>
+</head>
+<body data-page="ai-edit.html">
+
+<div class="wrap page-hero">
+<div class="hero guide-hero">
+  <div>
+    <div class="lab red">คู่มือ · Claude Code × CapCut</div>
+    <h1>ตัดต่อวิดีโอด้วย AI<br>สั่งเป็นภาษาไทย<br><em>Claude Code × CapCut</em></h1>
+    <p>คลิปรีวิวบ้านทางขวา ตัดต่อโดย Claude Code ทั้งคลิป — รวม 9 คลิป ใส่ซับไทย เพลง transition เสียงประกอบ เร่งความเร็วบางช่วง จนเปลี่ยนฟอนต์ซับ คนแค่พิมพ์สั่ง แล้วเปิด CapCut ดูผล ไม่ได้กดตัดต่อในโปรแกรมเองสักปุ่มครับผม</p>
+    <div class="stats">
+      <div class="stat"><span class="lab">Input</span><span class="num">9</span><small>คลิป · รวม 90 วิ</small></div>
+      <div class="stat"><span class="lab">Output</span><span class="num">85s</span><small>1080×1920 · 9:16</small></div>
+      <div class="stat"><span class="lab">Credits</span><span class="num">0</span><small>ขั้นตัดต่อไม่ใช้เครดิต Higgsfield</small></div>
+    </div>
+    <div class="px-divider"></div>
+  </div>
+  <video class="show-media" src="assets/videos/ugc-house-review-final.mp4" poster="assets/videos/ugc-house-review-final.jpg" controls playsinline preload="none"></video>
+</div>
+</div>
+
+<main id="content">
+
+<!-- ===== OVERVIEW ===== -->
+<section id="overview" data-toc="ภาพรวม">
+  <h2>ภาพรวม 6 ขั้น</h2>
+  <p class="h2sub">ต่อจาก <a href="ai-video.html">คู่มือทำคลิปพูดไทยด้วย Claude × Higgsfield</a> — ได้คลิปครบแล้ว ขั้นนี้คือตัดต่อให้พร้อมโพสต์</p>
+  <div class="flow">
+    <a href="#step1"><span class="n">01</span><b>วัตถุดิบ 9 คลิป</b><small>จาก Higgsfield</small></a>
+    <a href="#step2"><span class="n">02</span><b>พิมพ์สั่ง</b><small>ภาษาไทย 5 บรรทัด</small></a>
+    <a href="#step3"><span class="n">03</span><b>Claude Code ตัดต่อ</b><small>สคริปต์ใน terminal</small></a>
+    <a href="#step4"><span class="n">04</span><b>เปิดดู + สั่งแก้</b><small>เปลี่ยนฟอนต์ซับ</small></a>
+    <a href="#step5"><span class="n">05</span><b>Export</b><small>1080×1920</small></a>
+    <a href="#step6"><span class="n">06</span><b>เก็บเป็น skill</b><small>ใช้ซ้ำคลิปถัดไป</small></a>
+  </div>
+</section>
+
+<!-- ===== STEP 1 ===== -->
+<section id="step1" data-toc="1 · วัตถุดิบ 9 คลิป">
+  <h2><span class="stepno">1</span>วัตถุดิบ: 9 คลิปที่เจนมา</h2>
+  <p class="h2sub"><span class="tool">Higgsfield</span>Gemini Omni Flash 1.1 · ช็อตละ 10 วิ · ตั้งชื่อไฟล์เรียง 01–09 ไว้ Claude Code จะได้รู้ลำดับ · <a href="ai-video.html">ดูวิธีเจน</a></p>
+  <div class="clips">
+    <figure><video src="assets/videos/ugc-house/01-front-intro.mp4" poster="assets/videos/ugc-house/01-front-intro.jpg" controls playsinline preload="none"></video><figcaption><b>01</b>หน้าบ้าน</figcaption></figure>
+    <figure><video src="assets/videos/ugc-house/02-front-location.mp4" poster="assets/videos/ugc-house/02-front-location.jpg" controls playsinline preload="none"></video><figcaption><b>02</b>ห้อง + ทำเล</figcaption></figure>
+    <figure><video src="assets/videos/ugc-house/03-carport-ev.mp4" poster="assets/videos/ugc-house/03-carport-ev.jpg" controls playsinline preload="none"></video><figcaption><b>03</b>ที่จอดรถ + EV</figcaption></figure>
+    <figure><video src="assets/videos/ugc-house/04-living-room.mp4" poster="assets/videos/ugc-house/04-living-room.jpg" controls playsinline preload="none"></video><figcaption><b>04</b>ห้องนั่งเล่น</figcaption></figure>
+    <figure><video src="assets/videos/ugc-house/05-private-zone.mp4" poster="assets/videos/ugc-house/05-private-zone.jpg" controls playsinline preload="none"></video><figcaption><b>05</b>ห้องนอนชั้นล่าง</figcaption></figure>
+    <figure><video src="assets/videos/ugc-house/06-kitchen-krapao.mp4" poster="assets/videos/ugc-house/06-kitchen-krapao.jpg" controls playsinline preload="none"></video><figcaption><b>06</b>ครัว ผัดกะเพรา</figcaption></figure>
+    <figure><video src="assets/videos/ugc-house/07-garden.mp4" poster="assets/videos/ugc-house/07-garden.jpg" controls playsinline preload="none"></video><figcaption><b>07</b>สวน</figcaption></figure>
+    <figure><video src="assets/videos/ugc-house/08-pool-jump.mp4" poster="assets/videos/ugc-house/08-pool-jump.jpg" controls playsinline preload="none"></video><figcaption><b>08</b>กระโดดสระ</figcaption></figure>
+    <figure><video src="assets/videos/ugc-house/09-price-outro.mp4" poster="assets/videos/ugc-house/09-price-outro.jpg" controls playsinline preload="none"></video><figcaption><b>09</b>ราคา + ปิด</figcaption></figure>
+  </div>
+  <p class="merge"><svg><use href="#i-arrow"/></svg><span>9 ไฟล์นี้คือทั้งหมดที่ส่งให้ Claude Code — ไม่มีซับ ไม่มีเพลง ไม่มี transition</span></p>
+</section>
+
+<!-- ===== STEP 2 ===== -->
+<section id="step2" data-toc="2 · พิมพ์สั่ง">
+  <h2><span class="stepno">2</span>พิมพ์สั่งสิ่งที่อยากได้</h2>
+  <p class="h2sub"><span class="tool">Claude Code</span>คำสั่งจริงที่ใช้ — ภาษาพูดธรรมดา ไม่ต้องรู้ศัพท์ตัดต่อ</p>
+  <div class="prompt">
+    <button class="copy">Copy</button>
+<pre>อยาก
+เพิ่ม subtitle
+เพิ่มเสียงเพลง
+ใส่ transition
+มีเสียง effect น่ารักๆ
+เร่งความเร็วบางช็อต</pre>
+  </div>
+  <div class="lesson"><b>สั่งสั้นได้ เพราะ Claude Code ทำงานกับไฟล์ในเครื่องได้เอง</b> — คลิป 9 ไฟล์กับ storyboard ที่ทำไว้ตอนเจนอยู่ในโฟลเดอร์เดียวกัน ไม่ต้องพิมพ์ซับให้ ไม่ต้องบอกความยาวคลิป</div>
+</section>
+
+<!-- ===== STEP 3 ===== -->
+<section id="step3" data-toc="3 · Claude Code ตัดต่อ">
+  <h2><span class="stepno">3</span>Claude Code ตัดต่อผ่าน terminal</h2>
+  <p class="h2sub"><span class="tool">Claude Code</span><span class="tool">CapCut Desktop · Mac</span>ไม่ได้กดปุ่มใน CapCut — เขียนไฟล์โปรเจกต์ของ CapCut ด้วยสคริปต์ แล้ว CapCut เปิดขึ้นมาเป็น timeline ครบ</p>
+  <ol class="steps compact">
+    <li><b>CapCut เก็บโปรเจกต์เป็นไฟล์</b><span>ทุกคลิป ซับ เพลง เอฟเฟกต์ บน timeline ถูกเขียนอยู่ในไฟล์โปรเจกต์ (draft) บนเครื่อง</span></li>
+    <li><b>Claude Code เขียนไฟล์นั้นแทนเรา</b><span>รันสคริปต์ใน terminal ใส่คลิป 9 ตัว ซับ เพลง transition เสียงประกอบ และปรับความเร็วลงในไฟล์นั้น</span></li>
+    <li><b>คนแค่เปิด CapCut ดู</b><span>ทุกอย่างอยู่บน timeline แก้ต่อเองในโปรแกรมได้ตามปกติ</span></li>
+    <li><b>ได้คลิปสั้นลงจาก 90 เป็น 85 วิ</b><span>จากการเร่งความเร็วบางช่วง</span></li>
+  </ol>
+  <h3 style="margin-top:22px">สิ่งที่ถูกใส่ลงไป</h3>
+  <div class="tablewrap fit">
+    <table>
+      <thead><tr><th>สั่งว่า</th><th>ได้อะไร</th></tr></thead>
+      <tbody>
+        <tr><td>เพิ่ม subtitle</td><td>ซับไทยทุกประโยค · คำสำคัญเด้งขึ้นมาเป็นป้ายสีเหลือง เช่น "เพดานสูง 2 ชั้น!"</td></tr>
+        <tr><td>เพิ่มเสียงเพลง</td><td>เพลงบรรเลงจากคลัง CapCut (Young Rich Pixies – Cartoon Ukulele) ทั้งคลิป</td></tr>
+        <tr><td>ใส่ transition</td><td>transition ทุกรอยต่อระหว่างช็อต</td></tr>
+        <tr><td>เสียง effect น่ารักๆ</td><td>เสียงประกอบแยกแทร็ก วางตามจังหวะในคลิป</td></tr>
+        <tr><td>เร่งความเร็วบางช็อต</td><td>เร่งช่วงที่ไม่มีคนพูด · คลิปรวมเหลือ 85 วิ</td></tr>
+      </tbody>
+    </table>
+  </div>
+  <div class="wide-shot" style="margin-top:16px">
+    <figure><img data-zoom src="assets/screens/capcut-2.jpg" alt="timeline ใน CapCut ที่ Claude Code สร้าง มี 9 คลิป แทร็กซับ เพลง และเสียงประกอบ" loading="lazy"><figcaption>timeline ที่ Claude Code เขียนให้ — แทร็กบนสุดคือซับ ถัดมาคือ 9 คลิปพร้อม transition · เพลง · เสียงประกอบ (คลิกเพื่อขยาย)</figcaption></figure>
+  </div>
+</section>
+
+<!-- ===== STEP 4 ===== -->
+<section id="step4" data-toc="4 · เปิดดู + สั่งแก้">
+  <h2><span class="stepno">4</span>เปิดดู ไม่ชอบตรงไหนพิมพ์บอก</h2>
+  <p class="h2sub"><span class="tool">Claude Code</span>รอบแรกไม่ผ่านเรื่องฟอนต์ — สั่งแก้เป็นภาษาไทยอีกรอบ</p>
+  <div class="prompt">
+    <button class="copy">Copy</button>
+<pre>ตัว effect ของ subtitle ผมไม่ชอบ และ font ก็ไม่ชอบครับ
+เพราะเวลา font โดนอังกฤษ มันกระโดด
+มี font มินิมอลตัวหนา อยู่ใน CapCut ที่ภาษาอังกฤษไม่โดน
+ให้เปลี่ยนเป็น font พวกนั้นเลยครับ</pre>
+  </div>
+  <div class="callout"><b>ปัญหาที่เจอ: ฟอนต์ไทยบางตัวไม่มีตัวอังกฤษในตัว</b> — ซับที่มีทั้งไทยและอังกฤษหรือตัวเลขปนกัน (เช่น "2 ชั้น" "EV") ตัวอังกฤษจะถูกดึงไปใช้ฟอนต์อื่น ขนาดและเส้นฐานไม่เท่ากัน ตัวหนังสือเลยดูกระโดด → เลือกฟอนต์ที่มีทั้งไทยและอังกฤษในตัวเดียว</div>
+  <div class="shots" style="margin-top:16px">
+    <figure><img data-zoom src="assets/screens/capcut-4.jpg" alt="ซับหลังแก้ฟอนต์: เพดานสูง 2 ชั้น!" loading="lazy"><figcaption>หลังแก้ — ไทย ตัวเลข อยู่ในบรรทัดเดียวกันพอดี</figcaption></figure>
+    <figure><img data-zoom src="assets/screens/capcut-5.jpg" alt="ซับสองบรรทัดในช็อตที่จอดรถ" loading="lazy"><figcaption>ซับสองบรรทัด ตัวหนา ขอบดำ อ่านง่ายบนพื้นหลังสว่าง</figcaption></figure>
+    <figure><img data-zoom src="assets/screens/capcut-3.jpg" alt="หน้าจอ CapCut ตอนเล่นช็อตห้องนั่งเล่น" loading="lazy"><figcaption>หน้าจอ CapCut ตอนเปิดดู — ซับกับคำเด้งอยู่บน timeline ครบ</figcaption></figure>
+  </div>
+</section>
+
+<!-- ===== STEP 5 ===== -->
+<section id="step5" data-toc="5 · Export">
+  <h2><span class="stepno">5</span>Export</h2>
+  <p class="h2sub"><span class="tool">CapCut</span>1080×1920 · 30fps · แนวตั้งพร้อมลง TikTok / Reels</p>
+  <div class="wide-shot">
+    <figure><img data-zoom src="assets/screens/capcut-1.jpg" alt="หน้าต่าง Export ของ CapCut" loading="lazy"><figcaption>export เสร็จ ได้ไฟล์ 85 วิ</figcaption></figure>
+  </div>
+  <div class="callout note" style="margin-top:14px"><b>เช็คก่อนโพสต์</b> — เพลงในคลัง CapCut บางเพลงเอาไปใช้เชิงพาณิชย์หรือยิงโฆษณาไม่ได้ ต้องเช็คสิทธิ์ของเพลงก่อน · ไล่ดูซับทุกประโยค ชื่อเฉพาะกับตัวเลขผิดบ่อยสุด</div>
+</section>
+
+<!-- ===== STEP 6 ===== -->
+<section id="step6" data-toc="6 · เก็บเป็น skill">
+  <h2><span class="stepno">6</span>เก็บเป็น skill ไว้ใช้ซ้ำ</h2>
+  <p class="h2sub"><span class="tool">Claude Code</span>ทำครั้งเดียว คลิปถัดไปสั่งประโยคเดียว</p>
+  <div class="grid g2">
+    <div class="card">
+      <h3>skill: capcut-auto-editor</h3>
+      <p>เก็บขั้นตอนทั้งหมดของคลิปนี้ไว้ในรูปแบบ skill ของ Claude Code — ครั้งหน้าพิมพ์ "แต่งคลิปใน capcut ให้หน่อย" หรือ "ทำแบบคลิป 0924" ก็ได้ครบชุด</p>
+    </div>
+    <div class="card">
+      <h3>เลือกสไตล์ได้ 5 แบบ</h3>
+      <p>น่ารัก · เท่ · เวอร์ · เทคโนโลยี · แอ็กชัน — สลับชุดซับ เพลง transition เสียงประกอบให้เข้ากับสไตล์ที่เลือก</p>
+    </div>
+  </div>
+  <div class="lesson" style="margin-top:14px"><b>ข้อควรรู้</b> — วิธีนี้เขียนไฟล์โปรเจกต์ของ CapCut โดยตรง ไม่ใช่ฟีเจอร์ทางการของ CapCut ถ้า CapCut อัปเดตเวอร์ชันแล้วรูปแบบไฟล์เปลี่ยน skill อาจต้องแก้ตาม · ควรสำรองโปรเจกต์เดิมก่อนสั่งทุกครั้ง</div>
+</section>
+
+<!-- ===== COST ===== -->
+<section id="cost" data-toc="ต้นทุน">
+  <h2>ต้นทุนทั้งคลิป</h2>
+  <p class="h2sub">ตัวเลขจากประวัติเครดิตใน Higgsfield</p>
+  <div class="tablewrap fit">
+    <table>
+      <thead><tr><th>ขั้น</th><th>รายละเอียด</th><th class="num">credits · บาท</th></tr></thead>
+      <tbody>
+        <tr><td>เจนคลิป</td><td>9 ช็อต + ยิงแก้ 7 ครั้ง (Omni Flash 1.1 · 30/ช็อต)</td><td class="num" data-cr="480">480</td></tr>
+        <tr><td>ตัดต่อ</td><td>Claude Code × CapCut</td><td class="num">0</td></tr>
+      </tbody>
+    </table>
+  </div>
+  <p class="rate-note" style="margin-top:8px">ราคาบาทคิดจากแพ็กเกจ Higgsfield $39 = 1.29 บาท/เครดิต · ไม่รวมค่า Claude และ CapCut</p>
+</section>
+
+</main>
+
+<script src="assets/site.js?v=20260924a"></script>
+</body>
+</html>

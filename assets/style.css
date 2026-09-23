@@ -381,9 +381,9 @@ section[id]{scroll-margin-top:72px}
 
 /* nerd note: character + tip (filled yellow) */
 .nerd-note{display:grid;grid-template-columns:110px 1fr;gap:18px;align-items:center;background:var(--yellow-soft);border-radius:var(--r);padding:18px 20px}
-.nerd-note img{width:110px;height:auto}
+.nerd-note img{width:110px;height:140px;object-fit:contain}
 .nerd-note p{margin:0;font-size:var(--fs-md)}
-@media(max-width:600px){.nerd-note{grid-template-columns:72px 1fr;gap:12px;padding:14px}.nerd-note img{width:72px}}
+@media(max-width:600px){.nerd-note{grid-template-columns:72px 1fr;gap:12px;padding:14px}.nerd-note img{width:72px;height:92px}}
 
 /* FAQ (<details>) — keep in sync with FAQPage JSON-LD on the same page */
 .faq{display:flex;flex-direction:column;gap:8px}

@@ -38,7 +38,7 @@
     document.body.classList.add('home');
     var logoImg = head.querySelector('.logo-sym');
     var onScroll = function(){
-      var past = heroBg.getBoundingClientRect().bottom <= navBar.offsetHeight;
+      var past = heroBg.getBoundingClientRect().bottom <= navBar.offsetHeight + 120;  // flip to light a bit before the hero is fully gone
       document.body.classList.toggle('past-hero', past);
       var dark = !past || innerWidth <= 700;
       var want = 'assets/brand/logo-on-' + (dark ? 'dark' : 'light') + '.svg';
@@ -119,6 +119,24 @@
     addEventListener('resize', spy);
     spy();
   }
+
+  // --- before/after video slider (.ba): drag to reveal, keep both videos in sync, tabs swap the "after" clip ---
+  document.querySelectorAll('[data-ba]').forEach(function(ba){
+    var range = ba.querySelector('.ba-range'), after = ba.querySelector('.ba-after'), before = ba.querySelector('.ba-before video');
+    range.addEventListener('input', function(){ ba.style.setProperty('--pos', range.value + '%'); });
+    before.addEventListener('timeupdate', function(){
+      if (Math.abs(after.currentTime - before.currentTime) > 0.25 && before.currentTime < (after.duration || 99)) after.currentTime = before.currentTime;
+    });
+    var tabs = ba.querySelectorAll('.ba-tabs button');
+    tabs.forEach(function(b){
+      b.addEventListener('click', function(){
+        tabs.forEach(function(x){ x.classList.toggle('on', x === b); });
+        after.src = b.getAttribute('data-src');
+        after.currentTime = before.currentTime;
+        after.play().catch(function(){});
+      });
+    });
+  });
 
   // --- copy buttons: .prompt .copy (copies <pre>) · .anno .copy (joins <mark> parts) ---
   var ICON_COPY = '<svg class="pi sm"><use href="#i-copy"/></svg>', ICON_DONE = '<svg class="pi sm"><use href="#i-pass"/></svg>';

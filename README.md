@@ -1,4 +1,4 @@
-# MADMarTechAI
+# MADMarTech
 
 เว็บรวม use case · prompt · ผลเปรียบเทียบโมเดล AI สำหรับงานการตลาด — static HTML ไม่มี build step
 
@@ -13,20 +13,16 @@ assets/style.css  สไตล์ร่วมทุกหน้า
 assets/videos/    วางไฟล์ .mp4 ที่ดาวน์โหลดจาก Higgsfield ไว้ที่นี่ (แทนลิงก์ CDN)
 ```
 
-## ขึ้น GitHub Pages ครั้งแรก (ทำครั้งเดียว)
+## ขึ้น GitHub Pages ครั้งแรก — ด้วย GitHub Desktop (ทำครั้งเดียว)
 
-1. สร้าง repo ใหม่บน GitHub ชื่อ `madmartechai` (Public)
-2. ใน Terminal ที่โฟลเดอร์นี้:
-   ```
-   git remote add origin https://github.com/<USER>/madmartechai.git
-   git push -u origin main
-   ```
-3. ที่ GitHub → Settings → Pages → Source: **Deploy from a branch** → Branch: `main` / `(root)` → Save
-4. รอ ~1 นาที เว็บขึ้นที่ `https://<USER>.github.io/madmartechai/`
+1. GitHub Desktop → **File → Add Local Repository** → เลือกโฟลเดอร์ `MADMarTech` นี้ (มี git อยู่แล้ว)
+2. กดปุ่ม **Publish repository** → ชื่อ `madmartech` → **เอาติ๊ก "Keep this code private" ออก** (Pages ฟรีต้องเป็น Public) → Publish
+3. เปิด repo บน GitHub → Settings → Pages → Source: **Deploy from a branch** → Branch: `main` / `(root)` → Save
+4. รอ ~1 นาที เว็บขึ้นที่ `https://<USER>.github.io/madmartech/`
 
 ## อัปเดตครั้งถัดไป
 
-Claude แก้ไฟล์ + commit ให้ในโฟลเดอร์นี้ → อาจารย์ `git push` อย่างเดียว (หรือกด Push ใน GitHub Desktop) → เว็บอัปเดตเองใน ~1 นาที
+Claude แก้ไฟล์ + commit ให้ในโฟลเดอร์นี้ → เปิด GitHub Desktop จะเห็น commit ใหม่รอ → กด **Push origin** → เว็บอัปเดตเองใน ~1 นาที
 
 ## ถ้าจะใช้โดเมนตัวเอง
 

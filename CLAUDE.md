@@ -107,7 +107,7 @@ Veo/Kling/Grok รับรูปเดียว → ใช้เฟรมแร
 - ตัวการ์ตูน Pixel Nerd บนฉากออฟฟิศจริง — Omni Flash 1.1 reference-to-video 16:9 8s — 24 cr — ผลดีมาก (ไฟล์ assets/videos/nerd-desk-omni-flash.mp4) · Seedance 2.5 โจทย์เดียวกัน 56 cr — แย่กว่า
 
 **ฟีเจอร์พิเศษ Higgsfield (23 ก.ย. 2569 · compare.html#special · ผู้ใช้ดูแล้ว PASS ทั้ง 3 · คนในคลิปสร้างด้วย soul_2 ไม่ใช่คนจริง)**
-- Genjutsu Motion Control `hf_mult_motion_control` — คลิป #01 + รูปผู้ชายใส่แว่น → เปลี่ยนคน — 56 cr — …/hf_20260923_100130_042ab00f-83c8-4bc3-b08b-dadd7b8f3dd5.mp4 (แทนเทสต์เดิมที่ใส่คนเดิม)
+- Genjutsu Motion Control `hf_mult_motion_control` — คลิป #01 + รูปผู้ชายใส่แว่น → เปลี่ยนคน — 56 cr — …/hf_20260923_102741_fa58a099-aa87-44b3-bcac-e331285d0781.mp4 (แทนเทสต์เดิมที่ใส่คนเดิม)
 - Genjutsu Replace Object `hf_mult_replace_object` — คลิป #01 + รูปแจ็คเก็ตยีนส์เขียว → เปลี่ยนเสื้อ — 63 cr — …/hf_20260923_100135_7cc31f30-7ca1-4b19-a655-15b150889468.mp4
 - Viral preset "boarding pass" (execute_preset · ใส่รูปเต็มตัว 1 รูป + prompt ชุด) — ชุดไทย → ชุดราตรี → แจ็คเก็ตหนัง ในคลิปเดียว 9s — 63 cr — …/hf_20260923_100238_8750cbb2-09e8-4518-b61b-6ae3f3a1f5af.mp4
 - กับดัก: execute_preset ต้องใช้ media_id (media_import_url) ไม่ใช่ job_id — ใส่ job_id แล้ว error และไม่หักเงิน · generate_video ของ Genjutsu เด้ง preset "IN THE DARK" → ส่งซ้ำพร้อม declined_preset_id

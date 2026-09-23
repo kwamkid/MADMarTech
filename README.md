@@ -1,7 +1,7 @@
 # NerdMarTech — nerdmartech.com
 
 เว็บรวม use case · prompt · ผลเปรียบเทียบโมเดล AI สำหรับงานการตลาด — static HTML ไม่มี build step
-แบรนด์ในเครือ MAD Marketing · จัดทำโดย AOO Commerce
+จัดทำโดย AOO Commerce
 
 ## โครงสร้าง
 

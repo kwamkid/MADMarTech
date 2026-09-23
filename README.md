@@ -18,7 +18,7 @@ robots.txt / sitemap.xml   SEO — เพิ่มหน้าใหม่ต้
 
 ## Hosting
 
-- GitHub repo: `kwamkid/MADMarTech` → GitHub Pages (branch `main` / root)
+- GitHub repo: `kwamkid/nerdmartech` → GitHub Pages (branch `main` / root)
 - โดเมน: `nerdmartech.com` จดที่ Cloudflare · DNS ชี้มาที่ GitHub Pages
 
 ### DNS ที่ Cloudflare (ตั้งครั้งเดียว)

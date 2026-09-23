@@ -41,16 +41,9 @@
 .flow a b{font-size:var(--fs-md)}
 .flow a small{color:var(--muted);font-size:var(--fs-sm)}
 .flow .n{font-family:var(--font-display);font-weight:700;color:var(--accent-ink)}
-/* 9 source clips: small tiles */
-.clips{display:grid;grid-template-columns:repeat(9,minmax(0,1fr));gap:8px}
-.clips figure{margin:0;display:flex;flex-direction:column;gap:4px}
-.clips video{width:100%;aspect-ratio:9/16;object-fit:cover;background:#111;border-radius:var(--r-sm);display:block}
-.clips figcaption{font-size:var(--fs-sm);color:var(--muted);line-height:1.35}
-.clips figcaption b{display:block;font-family:var(--font-display);color:var(--text)}
-@media(max-width:900px){.clips{grid-template-columns:repeat(5,minmax(0,1fr));gap:6px}.clips figcaption{font-size:var(--fs-sm)}}
 .merge{display:flex;align-items:center;gap:10px;margin:14px 0 0;font-size:var(--fs-md)}
 .merge svg{width:22px;height:22px;fill:var(--accent);transform:rotate(90deg);shape-rendering:crispEdges}
-.shots{display:grid;grid-template-columns:repeat(auto-fit,minmax(200px,1fr));gap:12px}
+.shots{display:grid;grid-template-columns:repeat(2,minmax(0,320px));gap:12px}
 .shots figure{margin:0;display:flex;flex-direction:column;gap:6px}
 .shots img{width:100%;display:block;border-radius:var(--r-sm);border:1px solid var(--line);cursor:zoom-in}
 .shots figcaption{font-size:var(--fs-sm);color:var(--muted)}
@@ -153,7 +146,10 @@
     </table>
   </div>
   <div class="wide-shot" style="margin-top:16px">
-    <figure><img data-zoom src="assets/screens/capcut-2.jpg" alt="timeline ใน CapCut ที่ Claude Code สร้าง มี 9 คลิป แทร็กซับ เพลง และเสียงประกอบ" loading="lazy"><figcaption>timeline ที่ Claude Code เขียนให้ — แทร็กบนสุดคือซับ ถัดมาคือ 9 คลิปพร้อม transition · เพลง · เสียงประกอบ (คลิกเพื่อขยาย)</figcaption></figure>
+    <figure><img data-zoom src="assets/screens/capcut-2.jpg" alt="timeline ใน CapCut ที่ Claude Code สร้าง มี 9 คลิป แทร็กซับ เพลง และเสียงประกอบ" loading="lazy"><figcaption>timeline ที่ Claude Code เขียนให้ (คลิกเพื่อขยาย)</figcaption></figure>
+  </div>
+  <div class="wide-shot" style="margin-top:16px">
+    <figure><img data-zoom src="assets/screens/capcut-timeline-zoom.jpg" alt="ซูม timeline ใน CapCut: แทร็กซับ 9 คลิป เพลง และเสียงประกอบ" loading="lazy"><figcaption>ซูมเฉพาะ timeline — บนสุด คือ ซับ และ คำเด้ง · ถัดมา คือ 9 คลิป พร้อม transition ตรงรอยต่อ · แถบสีน้ำเงิน คือ เพลง Cartoon Ukulele · แถวล่างสุด คือ เสียงประกอบ</figcaption></figure>
   </div>
 </section>
 
@@ -172,7 +168,9 @@
   <div class="shots" style="margin-top:16px">
     <figure><img data-zoom src="assets/screens/capcut-4.jpg" alt="ซับหลังแก้ฟอนต์: เพดานสูง 2 ชั้น!" loading="lazy"><figcaption>หลังแก้ — ไทย ตัวเลข อยู่ในบรรทัดเดียวกันพอดี</figcaption></figure>
     <figure><img data-zoom src="assets/screens/capcut-5.jpg" alt="ซับสองบรรทัดในช็อตที่จอดรถ" loading="lazy"><figcaption>ซับสองบรรทัด ตัวหนา ขอบดำ อ่านง่ายบนพื้นหลังสว่าง</figcaption></figure>
-    <figure><img data-zoom src="assets/screens/capcut-3.jpg" alt="หน้าจอ CapCut ตอนเล่นช็อตห้องนั่งเล่น" loading="lazy"><figcaption>หน้าจอ CapCut ตอนเปิดดู — ซับกับคำเด้งอยู่บน timeline ครบ</figcaption></figure>
+  </div>
+  <div class="wide-shot" style="margin-top:16px">
+    <figure><img data-zoom src="assets/screens/capcut-3.jpg" alt="หน้าจอ CapCut ตอนเล่นช็อตห้องนั่งเล่น" loading="lazy"><figcaption>หน้าจอ CapCut ตอนเปิดดู — ซับ กับ คำเด้ง อยู่บน timeline ครบ (คลิกเพื่อขยาย)</figcaption></figure>
   </div>
 </section>
 
@@ -223,7 +221,9 @@
       <thead><tr><th>ขั้น</th><th>รายละเอียด</th><th class="num">credits · บาท</th></tr></thead>
       <tbody>
         <tr><td>เจนคลิป</td><td>9 ช็อต + ยิงแก้ 7 ครั้ง (Omni Flash 1.1 · 30/ช็อต)</td><td class="num" data-cr="480">480</td></tr>
+        <tr><td>โคลนเสียงสำรอง</td><td>เสียง "Jija" เผื่อเสียงช็อตไหนเพี้ยน — สุดท้ายไม่ได้ใช้ เสียงเหมือนกันทั้ง 9 ช็อต</td><td class="num" data-cr="40">40</td></tr>
         <tr><td>ตัดต่อ</td><td>Claude Code × CapCut</td><td class="num">0</td></tr>
+        <tr><td><b>รวมที่จ่ายจริง</b></td><td></td><td class="num" data-cr="520">520</td></tr>
       </tbody>
     </table>
   </div>

@@ -10,6 +10,9 @@ index.html        หน้าแรก
 use-cases.html    Use Cases
 prompts.html      Prompts ที่ใช้จริง (ปุ่ม copy)
 compare.html      Model Compare (+ FAQ schema สำหรับ AEO)
+design-system.html  Living style guide (noindex) — component ทุกตัวที่ใช้ในเว็บ
+assets/pixel-icons.svg · assets/icons/   Pixel icon set 13 ตัว
+assets/brand/     โลโก้ · favicon · app icon
 assets/style.css  สไตล์ร่วมทุกหน้า
 assets/videos/    วางไฟล์ .mp4 ที่ดาวน์โหลดจาก Higgsfield ไว้ที่นี่ (แทนลิงก์ CDN)
 CNAME             โดเมนของ GitHub Pages (nerdmartech.com) — ห้ามลบ

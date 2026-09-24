@@ -34,7 +34,7 @@
 
 ```
 index.html            หน้าแรก — hero วิดีโอพื้นหลัง (.hero-bg) + ล่าสุด + ทำไมต้องเนิร์ด
-ai-video.html         "ทำคลิปด้วย AI" — คู่มือทำคลิปพูดไทย 6 ขั้น จากคลิปจริง (รีวิวบ้าน 85s · storyboard 9 ช็อต · คลิป 9 ตัว · ต้นทุนจริง 520 cr) + คลัง prompt 5 ตัว · HowTo + VideoObject · ขั้น 5 สรุปสั้นแล้วลิงก์ไป ai-edit · เหลือ .wip แค่ภาพหน้าจออัปโหลดในขั้น 2
+ai-video.html         "ทำคลิปด้วย AI" — คู่มือทำคลิปพูดไทย 6 ขั้น จากคลิปจริง (รีวิวบ้าน 85s · storyboard 9 ช็อต · คลิป 9 ตัว · ต้นทุนจริง 520 cr) + คลัง prompt 5 ตัว · HowTo + VideoObject · ขั้น 5 สรุปสั้นแล้วลิงก์ไป ai-edit
 ai-edit.html          "ตัดต่อด้วย AI" — Claude Code ตัดต่อใน CapCut (เขียน draft ผ่าน terminal) 6 ขั้น · คำสั่งจริง · ภาพหน้าจอ + ซูม timeline · FAQ + FAQPage · VideoObject · คำหลัก "AI ตัดต่อวิดีโอ"
 compare.html          Model Compare — 11 โมเดล (#01–02,#05–10 เจนจากรูป · #03–04 เปลี่ยนคน · #11 Extend) การ์ด + ตาราง 11 แถว (FAQ schema + FAQ ที่มองเห็น)
 use-cases.html · prompts.html   หน้า redirect (noindex) → ai-video.html / compare.html ตาม #hash — กันลิงก์เก่าจากโพสต์ FB เสีย · ไม่อยู่ใน sitemap
@@ -150,8 +150,8 @@ Veo/Kling/Grok รับรูปเดียว → ใช้เฟรมแร
 6. โหลด .mp4 ทั้งหมดมาไว้ `assets/videos/` (ชื่อ: uc01-omni-flash · uc02-child-kling-edit · uc02-genjutsu · uc03-extend-1/2 · rain-change-weather · compare-XX-model) แล้วเปลี่ยน src
 7. Brand kit round 2 — export lockup PNG/SVG · social 4:5 template 6 series (NERD TEST / COMPARE / FOUND / FAIL / NOTE / TAKE) · ปก 9:16 — ใช้ Playwright render จาก design-system.html
 8. ~~หน้าแรก chips / การ์ดล่าสุด~~ ✅ 11 โมเดล · ลิงก์คู่มือแล้ว
-9. ~~คลิปตัวอย่าง~~ ✅ 24 ก.ย. — รีวิวบ้าน 85s ขึ้น ai-video + ai-edit แล้ว · เหลือภาพหน้าจออัปโหลดรูปเข้า Higgsfield (ขั้น 2 ยังติด .wip)
-10. `sameAs` ใน Organization schema หน้าแรก — รอลิงก์เพจ FB "Nerd MarTech · เนิร์ดลอง AI ให้ดู"
+9. ~~คลิปตัวอย่าง~~ ✅ 24 ก.ย. — รีวิวบ้าน 85s ขึ้น ai-video + ai-edit แล้ว
+10. ~~`sameAs`~~ ✅ facebook.com/NerdMarTech
 11. SEO: คำค้นทั้งหมดอยู่ที่ `../00-Context/02-SEO_Keywords.md` (DataForSEO · รอบ 1–4)
 
 ---

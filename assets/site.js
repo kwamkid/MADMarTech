@@ -13,12 +13,18 @@
   var NAV = [['index.html', 'หน้าแรก'], ['ai-video.html', 'ทำคลิปด้วย AI'], ['ai-edit.html', 'ตัดต่อด้วย AI'], ['compare.html', 'Model Compare']];
   var FB = 'https://www.facebook.com/NerdMarTech';
   var here = document.body.getAttribute('data-page') || location.pathname.split('/').pop() || 'index.html';
+  // home = '/' on the live site (no index.html in the URL); file:// preview still needs the file name
+  var HOME = location.protocol === 'file:' ? 'index.html' : '/';
+  var href = function(f){ return f === 'index.html' ? HOME : f; };
+  if (location.protocol !== 'file:' && /\/index\.html$/.test(location.pathname) && history.replaceState) {
+    history.replaceState(null, '', location.pathname.replace(/index\.html$/, '') + location.search + location.hash);
+  }
   var navLinks = function(cls){
-    return NAV.map(function(n){ return '<a href="' + n[0] + '"' + (n[0] === here && cls ? ' class="active"' : '') + '>' + n[1] + '</a>'; }).join('');
+    return NAV.map(function(n){ return '<a href="' + href(n[0]) + '"' + (n[0] === here && cls ? ' class="active"' : '') + '>' + n[1] + '</a>'; }).join('');
   };
   var head = document.createElement('header');
   head.className = 'site-head';
-  head.innerHTML = '<a class="logo" href="index.html" aria-label="Nerd MarTech"><img src="assets/brand/logo-on-light.svg" alt="" class="logo-sym">' +
+  head.innerHTML = '<a class="logo" href="' + HOME + '" aria-label="Nerd MarTech"><img src="assets/brand/logo-on-light.svg" alt="" class="logo-sym">' +
     '<span class="logo-wm">Nerd<br>Mar<span>Tech</span></span></a>' +
     '<nav class="site-nav"><div class="wrap"><div class="links">' + navLinks(true) + '</div></div></nav>';
   document.body.insertBefore(head, document.body.firstChild.nextSibling);

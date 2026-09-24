@@ -141,7 +141,7 @@ Veo/Kling/Grok รับรูปเดียว → ใช้เฟรมแร
 2. **Hero scroll-driven** หน้าแรก — คอนเซ็ปต์ "เดินไปกับเนิร์ด": ตัวละครสลับท่าตาม scroll (01 basic → 09 phone → 08 think → 05 work → 14/15 → 12 explain → 16 tired) · headline พิมพ์แบบ terminal · เครดิตนับ · badge PASS/FAIL stamp · CSS+JS ล้วน ไม่ใช้ library · fallback ภาพนิ่ง
 3. **หนังสั้น "ตี 2 ที่แล็บ"** — ตัวการ์ตูน 2D บนฉากจริง 4 ช็อต × 8s ด้วย Omni Flash 1.1 (~100 cr) — ต้องเขียน storyboard .md ให้ผู้ใช้ตรวจก่อนยิง (ท่า · ฉาก · กล้อง · เสียง · prompt · เครดิต)
 4. โลโก้ผู้ผลิตโมเดลใน Compare — รอผู้ใช้วางไฟล์ทางการที่ `assets/logos/{google,xai,bytedance,kling,minimax,bfl,higgsfield}.svg` แล้วค่อยใส่ (ห้ามวาดเอง)
-5. `og:image` — ผู้ใช้เจนใน ChatGPT วางที่ `assets/og.png` (1200×630) แล้วเพิ่ม `<meta property="og:image">` ทุกหน้า
+5. ~~`og:image`~~ ✅ 24 ก.ย. — `assets/og.png` 1200×630 (ครอปจากปกเพจ FB `../99-Logo/fb-cover.png`) ใส่ครบ 4 หน้า + twitter:image · หน้าใหม่ต้องใส่ด้วย
 6. โหลด .mp4 ทั้งหมดมาไว้ `assets/videos/` (ชื่อ: uc01-omni-flash · uc02-child-kling-edit · uc02-genjutsu · uc03-extend-1/2 · rain-change-weather · compare-XX-model) แล้วเปลี่ยน src
 7. Brand kit round 2 — export lockup PNG/SVG · social 4:5 template 6 series (NERD TEST / COMPARE / FOUND / FAIL / NOTE / TAKE) · ปก 9:16 — ใช้ Playwright render จาก design-system.html
 8. ~~หน้าแรก chips / การ์ดล่าสุด~~ ✅ 11 โมเดล · ลิงก์คู่มือแล้ว

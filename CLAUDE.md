@@ -34,7 +34,8 @@
 
 ```
 index.html            หน้าแรก — hero วิดีโอพื้นหลัง (.hero-bg) + ล่าสุด + ทำไมต้องเนิร์ด
-ai-video.html         "ทำคลิปด้วย AI" — คู่มือทำคลิปพูดไทย 1 นาที 7 ขั้น + คลัง prompt 5 ตัว (รวม Use Cases/Prompts เดิม · HowTo schema) · ส่วนที่ยังไม่มีข้อมูลจริงติดป้าย .wip
+ai-video.html         "ทำคลิปด้วย AI" — คู่มือทำคลิปพูดไทย 6 ขั้น จากคลิปจริง (รีวิวบ้าน 85s · storyboard 9 ช็อต · คลิป 9 ตัว · ต้นทุนจริง 520 cr) + คลัง prompt 5 ตัว · HowTo + VideoObject · ขั้น 5 สรุปสั้นแล้วลิงก์ไป ai-edit · เหลือ .wip แค่ภาพหน้าจออัปโหลดในขั้น 2
+ai-edit.html          "ตัดต่อด้วย AI" — Claude Code ตัดต่อใน CapCut (เขียน draft ผ่าน terminal) 6 ขั้น · คำสั่งจริง · ภาพหน้าจอ + ซูม timeline · FAQ + FAQPage · VideoObject · คำหลัก "AI ตัดต่อวิดีโอ"
 compare.html          Model Compare — 11 โมเดล (#01–02,#05–10 เจนจากรูป · #03–04 เปลี่ยนคน · #11 Extend) การ์ด + ตาราง 11 แถว (FAQ schema + FAQ ที่มองเห็น)
 use-cases.html · prompts.html   หน้า redirect (noindex) → ai-video.html / compare.html ตาม #hash — กันลิงก์เก่าจากโพสต์ FB เสีย · ไม่อยู่ใน sitemap
 design-system.html    Living style guide (noindex) — ทุก component ที่ใช้จริง
@@ -46,6 +47,10 @@ assets/brand/         logo-on-light.svg (ใช้บนเว็บ — ธี�
 assets/character/     Pixel Nerd 20 ท่า PNG พื้นใส (01-basic … 20-statement) ตัดจาก character sheet
 assets/image-reference/  presenter.jpg · house.jpg (รูปอ้างอิงที่ใช้ทดสอบ ย่อแล้ว)
 assets/videos/        .mp4 ที่โหลดจาก Higgsfield (ตอนนี้มี nerd-desk-omni-flash.mp4) — ที่เหลือยังใช้ลิงก์ CDN
+assets/videos/ugc-house-review-final.mp4/.jpg   คลิปรีวิวบ้านฉบับตัดต่อ (720p 14 MB · ต้นฉบับ 0924.mp4 อยู่ใน ../02-Content/ugc-house-review/)
+assets/videos/ugc-house/01…09-*.mp4/.jpg      คลิปต้นฉบับ 9 ช็อต ย่อ 360p (ใช้ใน .clips)
+assets/screens/capcut-*.jpg   ภาพหน้าจอ CapCut (timeline · ซูม timeline · export · ซับ)
+llms.txt              สรุปเว็บให้ AI answer engine (AEO) — เพิ่ม/เปลี่ยนหน้าต้องแก้ด้วย
 CNAME · robots.txt · sitemap.xml (เพิ่มหน้าใหม่ต้องเพิ่มใน sitemap) · README.md
 ```
 
@@ -145,7 +150,9 @@ Veo/Kling/Grok รับรูปเดียว → ใช้เฟรมแร
 6. โหลด .mp4 ทั้งหมดมาไว้ `assets/videos/` (ชื่อ: uc01-omni-flash · uc02-child-kling-edit · uc02-genjutsu · uc03-extend-1/2 · rain-change-weather · compare-XX-model) แล้วเปลี่ยน src
 7. Brand kit round 2 — export lockup PNG/SVG · social 4:5 template 6 series (NERD TEST / COMPARE / FOUND / FAIL / NOTE / TAKE) · ปก 9:16 — ใช้ Playwright render จาก design-system.html
 8. ~~หน้าแรก chips / การ์ดล่าสุด~~ ✅ 11 โมเดล · ลิงก์คู่มือแล้ว
-9. **คลิปตัวอย่าง 1 นาที** (อาจารย์ทำ) → เติมใน ai-video.html ทุกจุดที่ติด `.wip` / `.wip-box` / callout "รอข้อมูลจริง" (storyboard · ภาพหน้าจอ Cowork · ขั้นต่อคลิป · CapCut · ต้นทุนจริง)
+9. ~~คลิปตัวอย่าง~~ ✅ 24 ก.ย. — รีวิวบ้าน 85s ขึ้น ai-video + ai-edit แล้ว · เหลือภาพหน้าจออัปโหลดรูปเข้า Higgsfield (ขั้น 2 ยังติด .wip)
+10. `sameAs` ใน Organization schema หน้าแรก — รอลิงก์เพจ FB "Nerd MarTech · เนิร์ดลอง AI ให้ดู"
+11. SEO: คำค้นทั้งหมดอยู่ที่ `../00-Context/02-SEO_Keywords.md` (DataForSEO · รอบ 1–4)
 
 ---
 

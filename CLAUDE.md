@@ -101,7 +101,7 @@ CNAME · robots.txt · sitemap.xml (เพิ่มหน้าใหม่ต�
 ## 7. ข้อมูลผลทดสอบที่อยู่บนเว็บ (อย่าแก้ตัวเลขโดยไม่มีหลักฐาน)
 
 **Compare (22 ก.ย. 2569 · โจทย์เดียว: รูปคน + รูปบ้าน + บทไทยเดิม · 9:16 · 8s)**
-1 Gemini Omni Flash 1.1 — 24 cr — PASS (ดีสุด/ถูกสุดในกลุ่มผ่าน) · 2 Gemini Omni Flash — 24 — PASS · 3 Veo 3.1 — 80 — MAYBE (เสียงชัด ภาพกระตุก) · 4 MiniMax H3 — 16 — MAYBE (ดูเป็นภาพเจน) · 5 Grok Video 1.5 — 36 — MAYBE (เสียงคอม · ออก 16:9) · 6 Seedance 2.5 — 56 — FAIL (ไทยเพี้ยน) · 7 Kling 3.0 pro — 20 — FAIL (เป็นเขมร) · 8 FLUX 3 Video — 44 — FAIL (ไม่มีบ้าน) · รวม 300 cr
+1 Gemini Omni Flash 1.1 — 24 cr — PASS (ดีสุด/ถูกสุดในกลุ่มผ่าน) · 2 Gemini Omni Flash — 24 — PASS · 3 Veo 3.1 — 80 — PASS (ภาพสวยแบบภาพยนตร์ เสียงชัด · แพงสุด · เปลี่ยนจาก MAYBE 24 ก.ย. ตามที่อาจารย์ดูซ้ำ) · 4 MiniMax H3 — 16 — MAYBE (ดูเป็นภาพเจน) · 5 Grok Video 1.5 — 36 — MAYBE (เสียงคอม · ออก 16:9) · 6 Seedance 2.5 — 56 — FAIL (ไทยเพี้ยน) · 7 Kling 3.0 pro — 20 — FAIL (เป็นเขมร) · 8 FLUX 3 Video — 44 — FAIL (ไม่มีบ้าน) · รวม 300 cr
 Veo/Kling/Grok รับรูปเดียว → ใช้เฟรมแรกของคลิปอันดับ 1 เป็น start frame
 
 **งานแก้/ต่อคลิป (อยู่ใน Compare #03 #04 #11 แล้ว)**

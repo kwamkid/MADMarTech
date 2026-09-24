@@ -30,7 +30,7 @@
 <script type="application/ld+json">
 {"@context":"https://schema.org","@type":"FAQPage","mainEntity":[
  {"@type":"Question","name":"โมเดล AI สร้างวิดีโอตัวไหนพูดภาษาไทยได้ชัดที่สุด","acceptedAnswer":{"@type":"Answer","text":"จากการทดสอบ 11 โมเดลด้วยโจทย์เดียวกัน Gemini Omni Flash 1.1 ให้เสียงไทยชัด ปากตรง และภาพ smooth ที่สุด ในราคา 24 credits ต่อคลิป 8 วินาที รองลงมาคือ Gemini Omni Flash รุ่นเดิม ส่วน Kling 3.0 พูดไทยออกมาเป็นสำเนียงเขมร และ Seedance 2.5 เพี้ยนแบบชาวต่างชาติพูดไทย"}},
- {"@type":"Question","name":"Google Veo 3.1 พูดไทยได้ไหม","acceptedAnswer":{"@type":"Answer","text":"เสียงไทยชัดมาก แต่ภาพกระตุกไม่ smooth และเป็นโมเดลที่แพงที่สุดในการทดสอบ (80 credits) แพงกว่า Gemini Omni Flash 1.1 ประมาณ 3 เท่าโดยผลไม่ดีกว่า"}},
+ {"@type":"Question","name":"Google Veo 3.1 พูดไทยได้ไหม","acceptedAnswer":{"@type":"Answer","text":"ได้ และทำได้ดี — เสียงไทยชัดมาก ภาพชัดแสงสวยแบบภาพยนตร์ ท่าทางเป็นธรรมชาติ ผ่านการทดสอบ แต่เป็นโมเดลที่แพงที่สุด (80 credits) แพงกว่า Gemini Omni Flash 1.1 ประมาณ 3.3 เท่า และรับรูปอ้างอิงได้แค่รูปเดียว ต้องทำภาพตั้งต้นก่อน · เหมาะกับงานที่อยากได้ภาพระดับโฆษณา"}},
  {"@type":"Question","name":"ฟีเจอร์ Extend ต่อความยาววิดีโอ AI ใช้ได้ไหม","acceptedAnswer":{"@type":"Answer","text":"ต่อภาพได้ แต่เสียงถูกสร้างใหม่ทุกครั้ง ทำให้เสียงและสำเนียงเปลี่ยน วิธีที่ใช้ได้คือเจนหลายคลิปสั้นจากรูปอ้างอิงชุดเดิมและโมเดลเดิม แล้วนำมาตัดต่อ"}},
  {"@type":"Question","name":"ถ้ามีคลิปที่ดีแล้ว เปลี่ยนพรีเซนเตอร์เป็นคนอื่นได้ไหม","acceptedAnswer":{"@type":"Answer","text":"ได้ ด้วย motion transfer เช่น Genjutsu ของ Higgsfield (56 credits) หรือ Kling 3.0 Omni Edit (16 credits) ซึ่งคงเสียงและการเคลื่อนไหวเดิม เปลี่ยนเฉพาะหน้าคน"}}
 ]}
@@ -60,7 +60,7 @@
       <p><b>รูป 2 รูป</b> คน + บ้าน · <b>prompt</b> UGC selfie แนวตั้ง พูดไทย lip sync (<a href="ai-video.html">ดู prompt เต็ม</a>) · <b>บทพูด</b> "สวัสดีค่ะ วันนี้พามาดูบ้านหลังนี้ค่ะ สองชั้น สไตล์คลาสสิก หน้าบ้านกว้างมาก จอดรถได้สองคันสบายๆ ใครสนใจทักมาได้เลยนะคะ"</p>
       <div class="chips">
         <span class="chip">ทดสอบ <b>11</b> โมเดล · 13 คลิป</span>
-        <span class="chip">PASS <b>4</b> · MAYBE <b>3</b> · FAIL <b>4</b></span>
+        <span class="chip">PASS <b>5</b> · MAYBE <b>2</b> · FAIL <b>4</b></span>
         <span class="chip">เครดิตที่จ่ายจริง <b>512</b> ≈ <b>฿660</b></span>
         <span class="chip">ทดสอบ <b>22 ก.ย. 2569</b></span>
       </div>
@@ -119,8 +119,8 @@
       <div class="rank lab">#05</div>
       <div class="name">Google Veo 3.1</div>
       <div class="row"><span>Google · preview high</span><span class="credits" data-cr="80">80 credits</span></div>
-      <span class="badge maybe"><svg><use href="#i-maybe"/></svg>MAYBE</span>
-      <div class="note">เสียงไทยชัดมาก แต่ภาพกระตุก — แพงที่สุด 3.3 เท่าของอันดับ 1</div>
+      <span class="badge pass"><svg><use href="#i-pass"/></svg>PASS</span>
+      <div class="note">ภาพชัดแสงสวยแบบภาพยนตร์ ท่าทางสวย เสียงไทยชัดมาก — แต่แพงที่สุด 3.3 เท่าของอันดับ 1</div>
     </div>
   </div>
   <div class="vcard">
@@ -198,7 +198,7 @@
     <tr><td>2</td><td>Gemini Omni Flash</td><td>รูปอ้างอิง 2 รูป</td><td class="num" data-cr="24">24</td><td>✓ ชัด</td><td>✓</td><td><span class="badge soft sm pass"><svg><use href="#i-pass"/></svg>PASS</span></td></tr>
     <tr><td>3</td><td>Genjutsu</td><td>คลิป + รูปคน</td><td class="num" data-cr="56">56</td><td>✓ ชัด</td><td>✓ เปลี่ยนคนได้จริง</td><td><span class="badge soft sm pass"><svg><use href="#i-pass"/></svg>PASS</span></td></tr>
     <tr><td>4</td><td>Kling 3.0 Omni Edit</td><td>คลิป + รูปคน</td><td class="num" data-cr="16">16</td><td>✓ ชัด</td><td>✓</td><td><span class="badge soft sm pass"><svg><use href="#i-pass"/></svg>PASS</span></td></tr>
-    <tr><td>5</td><td>Google Veo 3.1</td><td>start image</td><td class="num" data-cr="80">80</td><td>✓ ชัดมาก</td><td>✗ กระตุก</td><td><span class="badge soft sm maybe"><svg><use href="#i-maybe"/></svg>MAYBE</span></td></tr>
+    <tr><td>5</td><td>Google Veo 3.1</td><td>start image</td><td class="num" data-cr="80">80</td><td>✓ ชัดมาก</td><td>✓ สวยแบบภาพยนตร์</td><td><span class="badge soft sm pass"><svg><use href="#i-pass"/></svg>PASS</span></td></tr>
     <tr><td>6</td><td>MiniMax H3</td><td>รูปอ้างอิง 2 รูป</td><td class="num" data-cr="16">16</td><td>✓ ชัด</td><td>△ ดูเป็นภาพเจน</td><td><span class="badge soft sm maybe"><svg><use href="#i-maybe"/></svg>MAYBE</span></td></tr>
     <tr><td>7</td><td>Grok Video 1.5</td><td>start image</td><td class="num" data-cr="36">36</td><td>△ เสียงคอม</td><td>△ แทบไม่ขยับ · ผิดสัดส่วน</td><td><span class="badge soft sm maybe"><svg><use href="#i-maybe"/></svg>MAYBE</span></td></tr>
     <tr><td>8</td><td>Seedance 2.5</td><td>รูปอ้างอิง 2 รูป</td><td class="num" data-cr="56">56</td><td>✗ เพี้ยน</td><td>✓</td><td><span class="badge soft sm fail"><svg><use href="#i-fail"/></svg>FAIL</span></td></tr>
@@ -267,7 +267,7 @@
 <div class="eyebrow"><span class="lab">03</span><span class="lab">สิ่งที่ได้จากการเทียบ</span></div>
 <h2>เลือก AI สร้างวิดีโอยังไงให้คุ้ม</h2>
 <div class="grid g2">
-<div class="lesson"><b>แพงไม่ได้แปลว่าดี</b> — อันดับ 1 (24 credits) ถูกกว่าตัวที่แพงที่สุด (Veo 3.1, 80 credits) 3 เท่า และผลดีกว่า</div>
+<div class="lesson"><b>ถูกไม่ได้แปลว่าแย่</b> — อันดับ 1 (24 credits) ถูกกว่าตัวที่แพงที่สุด (Veo 3.1, 80 credits) 3.3 เท่า และผ่านเหมือนกัน · Veo คุ้มเมื่ออยากได้ภาพสวยระดับภาพยนตร์</div>
 <div class="lesson"><b>ภาษาไทยคือด่านแรก</b> — Kling พูดออกมาเป็นเขมร Seedance เพี้ยนแบบต่างชาติ Grok เป็นเสียงคอม · โมเดลที่เก่งภาพไม่ได้แปลว่าเก่งเสียงไทย</div>
 <div class="lesson"><b>รับหลายรูปได้ = ประหยัดขั้นตอน</b> — Omni Flash ใส่รูปคน + รูปบ้านได้เลย ส่วน Veo/Kling/Grok ต้องเตรียมภาพนิ่งก่อนอีก 1 ขั้น</div>
 <div class="lesson"><b>โมเดลเดียวกัน คนละโหมด ผลคนละเรื่อง</b> — Kling 3.0 เจนจากศูนย์พูดเป็นเขมร แต่โหมดแก้คลิปเดิม (คงเสียงต้นฉบับ) ใช้ได้ดี — คำตอบไม่ใช่ "แบรนด์ไหน" แต่คือ "ให้มันสร้างอะไร"</div>
@@ -279,7 +279,7 @@
 <h2>คำถามที่พบบ่อย: AI สร้างวิดีโอตัวไหนดี</h2>
   <div class="faq">
     <details><summary>โมเดล AI สร้างวิดีโอตัวไหนพูดภาษาไทยได้ชัดที่สุด</summary><p>จากการทดสอบ 11 โมเดลด้วยโจทย์เดียวกัน Gemini Omni Flash 1.1 ให้เสียงไทยชัด ปากตรง และภาพ smooth ที่สุด ในราคา 24 credits ต่อคลิป 8 วินาที รองลงมาคือ Gemini Omni Flash รุ่นเดิม ส่วน Kling 3.0 พูดไทยออกมาเป็นสำเนียงเขมร และ Seedance 2.5 เพี้ยนแบบชาวต่างชาติพูดไทย</p></details>
-    <details><summary>Google Veo 3.1 พูดไทยได้ไหม</summary><p>เสียงไทยชัดมาก แต่ภาพกระตุกไม่ smooth และเป็นโมเดลที่แพงที่สุดในการทดสอบ (80 credits) แพงกว่า Gemini Omni Flash 1.1 ประมาณ 3 เท่าโดยผลไม่ดีกว่า</p></details>
+    <details><summary>Google Veo 3.1 พูดไทยได้ไหม</summary><p>ได้ และทำได้ดี — เสียงไทยชัดมาก ภาพชัดแสงสวยแบบภาพยนตร์ ท่าทางเป็นธรรมชาติ ผ่านการทดสอบ แต่เป็นโมเดลที่แพงที่สุด (80 credits) แพงกว่า Gemini Omni Flash 1.1 ประมาณ 3.3 เท่า และรับรูปอ้างอิงได้แค่รูปเดียว ต้องทำภาพตั้งต้นก่อน · เหมาะกับงานที่อยากได้ภาพระดับโฆษณา</p></details>
     <details><summary>ฟีเจอร์ Extend ต่อความยาววิดีโอ AI ใช้ได้ไหม</summary><p>ต่อภาพได้ แต่เสียงถูกสร้างใหม่ทุกครั้ง ทำให้เสียงและสำเนียงเปลี่ยน วิธีที่ใช้ได้คือเจนหลายคลิปสั้นจากรูปอ้างอิงชุดเดิมและโมเดลเดิม แล้วนำมาตัดต่อ</p></details>
     <details><summary>ถ้ามีคลิปที่ดีแล้ว เปลี่ยนพรีเซนเตอร์เป็นคนอื่นได้ไหม</summary><p>ได้ ด้วย motion transfer เช่น Genjutsu ของ Higgsfield (56 credits) หรือ Kling 3.0 Omni Edit (16 credits) ซึ่งคงเสียงและการเคลื่อนไหวเดิม เปลี่ยนเฉพาะหน้าคน</p></details>
   </div>

@@ -146,6 +146,22 @@
     });
   });
 
+  // --- synced pair ([data-sync]): videos start when visible, stay on the same frame, loop together ---
+  document.querySelectorAll('[data-sync]').forEach(function(box){
+    var vids = box.querySelectorAll('video'); if (vids.length < 2) return;
+    var lead = vids[0], rest = Array.prototype.slice.call(vids, 1);
+    var playAll = function(){ vids.forEach(function(v){ v.play().catch(function(){}); }); };
+    lead.addEventListener('timeupdate', function(){
+      rest.forEach(function(v){ if (Math.abs(v.currentTime - lead.currentTime) > 0.2) v.currentTime = lead.currentTime; });
+    });
+    lead.addEventListener('ended', function(){ vids.forEach(function(v){ v.currentTime = 0; }); playAll(); });
+    if ('IntersectionObserver' in window) {
+      new IntersectionObserver(function(es){
+        es.forEach(function(e){ if (e.isIntersecting) playAll(); else vids.forEach(function(v){ v.pause(); }); });
+      }, {threshold: 0.3}).observe(box);
+    } else { playAll(); }
+  });
+
   // --- copy buttons: .prompt .copy (copies <pre>) · .anno .copy (joins <mark> parts) ---
   var ICON_COPY = '<svg class="pi sm"><use href="#i-copy"/></svg>', ICON_DONE = '<svg class="pi sm"><use href="#i-pass"/></svg>';
   document.querySelectorAll('.prompt .copy, .anno .copy').forEach(function(btn){

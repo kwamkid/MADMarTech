@@ -533,3 +533,28 @@ video.show-media{object-fit:cover;display:block}
 .ba .ba-tabs{position:absolute;left:10px;right:10px;bottom:10px;z-index:3}
 .ba .ba-tabs button{background:rgba(17,17,17,.55);color:#fff;backdrop-filter:blur(6px)}
 .ba .ba-tabs button.on{background:#fff;color:#111}
+
+/* ---------- side-by-side synced pair: original | "jutsu" badge | result (.pair [data-sync]) ---------- */
+.pair{display:grid;grid-template-columns:minmax(0,1fr) 150px minmax(0,1fr);gap:16px;align-items:center;margin-top:24px}
+.pair figure{margin:0;display:flex;flex-direction:column;gap:8px}
+.pair video{width:100%;aspect-ratio:9/16;object-fit:cover;background:#111;border-radius:var(--r);display:block}
+.pair figcaption{font-size:var(--fs-sm);color:var(--muted);display:flex;justify-content:space-between;gap:8px}
+.pair figcaption b{color:var(--text);font-weight:600}
+.jutsu{display:flex;flex-direction:column;align-items:center;gap:10px;text-align:center}
+.jutsu .orb{position:relative;width:120px;height:120px;display:grid;place-items:center}
+.jutsu .orb::before,.jutsu .orb::after{content:"";position:absolute;inset:0;border-radius:50%;border:3px dashed var(--accent);animation:jutsu-spin 6s linear infinite}
+.jutsu .orb::after{inset:14px;border-style:dotted;border-color:var(--text);animation-duration:4s;animation-direction:reverse}
+.jutsu .orb img{width:72px;height:auto;position:relative;animation:jutsu-bob 1.6s ease-in-out infinite;image-rendering:pixelated}
+.jutsu b{font-family:var(--font-display);font-size:var(--fs-lg);color:var(--accent-ink)}
+.jutsu small{font-size:var(--fs-sm);color:var(--muted);line-height:1.5}
+.jutsu .go{width:28px;height:28px;fill:var(--accent);shape-rendering:crispEdges;animation:jutsu-nudge 1.2s ease-in-out infinite}
+@keyframes jutsu-spin{to{transform:rotate(360deg)}}
+@keyframes jutsu-bob{0%,100%{transform:translateY(0)}50%{transform:translateY(-6px)}}
+@keyframes jutsu-nudge{0%,100%{transform:translateX(0)}50%{transform:translateX(6px)}}
+@media(max-width:820px){
+  .pair{grid-template-columns:minmax(0,1fr) minmax(0,1fr);gap:10px}
+  .pair .jutsu{grid-column:1/-1;grid-row:1;flex-direction:row;justify-content:center;gap:12px}
+  .jutsu .orb{width:84px;height:84px}.jutsu .orb img{width:50px}
+  .jutsu .go{transform:rotate(90deg);animation:none}
+}
+@media(prefers-reduced-motion:reduce){.jutsu .orb::before,.jutsu .orb::after,.jutsu .orb img,.jutsu .go{animation:none}}

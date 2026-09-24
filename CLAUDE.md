@@ -115,6 +115,7 @@ Veo/Kling/Grok รับรูปเดียว → ใช้เฟรมแร
 - Genjutsu Motion Control `hf_mult_motion_control` — คลิป #01 + รูปผู้ชายใส่แว่น → เปลี่ยนคน — 56 cr — …/hf_20260923_102741_fa58a099-aa87-44b3-bcac-e331285d0781.mp4 (แทนเทสต์เดิมที่ใส่คนเดิม)
 - Genjutsu Replace Object `hf_mult_replace_object` — คลิป #01 + รูปแจ็คเก็ตยีนส์เขียว → เปลี่ยนเสื้อ — 63 cr — …/hf_20260923_100135_7cc31f30-7ca1-4b19-a655-15b150889468.mp4
 - Viral preset "boarding pass" (execute_preset · ใส่รูปเต็มตัว 1 รูป + prompt ชุด) — ชุดไทย → ชุดราตรี → แจ็คเก็ตหนัง ในคลิปเดียว 9s — 63 cr — …/hf_20260923_100238_8750cbb2-09e8-4518-b61b-6ae3f3a1f5af.mp4
+- Genjutsu Replace Object คลิปยาว (24 ก.ย.) — ต้นฉบับ 18.8s 4 ฉาก (ผู้หญิงเข็นรถเข็นเด็ก) → ผู้ชาย · 480p · 60 cr · job 71302a2f · หน้าแรกแสดงคู่ต้นฉบับ/ผล เล่นพร้อมกัน (`.pair[data-sync]` + `.jutsu`) · ไฟล์ assets/videos/genjutsu-long-before/after.mp4 · ต้นฉบับ .mov อยู่ ../02-Content/genjutsu-long/ · Genjutsu หดเวลา ~1.5% → เร่งต้นฉบับ setpts 0.985 ให้ตัดฉากตรงกัน
 - กับดัก: execute_preset ต้องใช้ media_id (media_import_url) ไม่ใช่ job_id — ใส่ job_id แล้ว error และไม่หักเงิน · generate_video ของ Genjutsu เด้ง preset "IN THE DARK" → ส่งซ้ำพร้อม declined_preset_id
 
 **ลิงก์ CDN ที่ใช้อยู่** (Higgsfield อาจลบ — ควรโหลดมาไว้ assets/videos/ แล้วเปลี่ยน src)

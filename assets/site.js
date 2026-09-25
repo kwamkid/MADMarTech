@@ -167,7 +167,7 @@
     var headRow = t.tHead ? t.tHead.rows[0] : (t.rows[0] && t.rows[0].cells[0] && t.rows[0].cells[0].tagName === 'TH' ? t.rows[0] : null);
     if (!headRow) return;
     if (!t.tHead) headRow.classList.add('head-row');
-    var labels = Array.prototype.map.call(headRow.cells, function(c){ return c.textContent.trim(); });
+    var labels = Array.prototype.map.call(headRow.cells, function(c){ var d = document.createElement('div'); d.innerHTML = c.innerHTML.replace(/<br\s*\/?>/gi, ' '); return d.textContent.replace(/\s+/g, ' ').trim(); });
     t.classList.add('stack');
     Array.prototype.forEach.call(t.rows, function(r){
       if (r === headRow) return;
@@ -199,6 +199,12 @@
   // --- decision matrix ([data-matrix]): preset buttons set weights x scores (1-5) = total /100, re-rank live ---
   document.querySelectorAll('[data-matrix]').forEach(function(mx){
     var presets = mx.querySelectorAll('.mx-presets button'), body = mx.querySelector('tbody');
+    // score pills: 1 = red · 3 = yellow · 5 = green (hue 5 → 145, never reaches blue)
+    mx.querySelectorAll('td.sc').forEach(function(td){
+      var v = parseFloat(td.textContent); if (isNaN(v)) return;
+      td.setAttribute('data-sort', v);
+      td.innerHTML = '<span style="--h:' + Math.round(5 + (Math.min(Math.max(v, 1), 5) - 1) / 4 * 140) + '">' + td.textContent + '</span>';
+    });
     var renumber = function(){
       Array.prototype.forEach.call(body.rows, function(r, i){ r.querySelector('.rk').textContent = i + 1; r.querySelector('.mdl').setAttribute('data-rank', i + 1); });
     };

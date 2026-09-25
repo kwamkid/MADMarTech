@@ -588,7 +588,10 @@ table.dt th.nosort{cursor:default}table.dt th.nosort::after{display:none}
 .mx-presets button.on{background:var(--accent);border-color:var(--accent);color:#fff}
 .matrix td.sc,.matrix th.sc{text-align:center}
 .matrix td.rk{font-family:var(--font-display);font-weight:700;color:var(--accent-ink)}
-.matrix td.mdl b{display:block}
+.matrix td.mdl{min-width:250px}
+.matrix td.mdl b{display:block;white-space:nowrap}
+.matrix th small{font-weight:500;color:var(--muted)}
+.matrix td.sc span{display:inline-block;min-width:34px;padding:3px 6px;border-radius:6px;font-family:var(--font-display);font-weight:700;background:hsl(var(--h) 62% 86%);color:hsl(var(--h) 55% 24%)}
 .matrix td.mdl small{display:flex;flex-wrap:wrap;align-items:center;gap:6px;color:var(--muted);font-size:var(--fs-sm);margin-top:2px}
 .matrix td.tot{white-space:nowrap}
 .matrix td.tot b{font-family:var(--font-display);font-size:var(--fs-lg);margin-left:8px}

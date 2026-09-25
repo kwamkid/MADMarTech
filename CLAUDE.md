@@ -37,7 +37,9 @@
 index.html            หน้าแรก — hero วิดีโอพื้นหลัง (.hero-bg) + ล่าสุด + ทำไมต้องเนิร์ด
 ai-video.html         "ทำคลิปด้วย AI" — คู่มือทำคลิปพูดไทย 6 ขั้น จากคลิปจริง (รีวิวบ้าน 85s · storyboard 9 ช็อต · คลิป 9 ตัว · ต้นทุนจริง 520 cr) + คลัง prompt 5 ตัว · HowTo + VideoObject · ขั้น 5 สรุปสั้นแล้วลิงก์ไป ai-edit
 ai-edit.html          "ตัดต่อด้วย AI" — Claude Code ตัดต่อใน CapCut (เขียน draft ผ่าน terminal) 6 ขั้น · คำสั่งจริง · ภาพหน้าจอ + ซูม timeline · FAQ + FAQPage · VideoObject · คำหลัก "AI ตัดต่อวิดีโอ"
-compare.html          Model Compare — **decision matrix 8 โมเดลสร้างคลิป** (6 เกณฑ์ 1–5 × น้ำหนัก = /100 · ปุ่มสมดุล/คุ้ม/ภาพสวย/เสียงไทย (ไม่มี slider — อาจารย์ว่าดูแล้วงง) · `[data-matrix]` ใน site.js · คะแนนร่างจากโน้ต รออาจารย์ตรวจ 25 ก.ย.) + การ์ดคลิป 8 ตัวเรียงตามคะแนน + หัวข้อ "แก้คลิปเดิม" (Genjutsu MC/RO · Kling Omni Edit · Extend · Viral preset — ไม่นับคะแนน) · FAQ + ItemList schema
+compare.html          Model Compare — **decision matrix 8 โมเดลสร้างคลิป** (6 เกณฑ์ 1–5 × น้ำหนัก = /100 · ปุ่มสมดุล/คุ้ม/ภาพสวย/เสียงไทย (ไม่มี slider — อาจารย์ว่าดูแล้วงง) · `[data-matrix]` ใน site.js · คะแนนร่างจากโน้ต รออาจารย์ตรวจ 25 ก.ย.) + การ์ดคลิป 8 ตัวเรียงตามคะแนน (ไม่มี badge PASS/FAIL แล้ว — ใช้คะแนนแทน · หัวข้อแก้คลิปเดิมยังมี badge) + หัวข้อ "แก้คลิปเดิม" (Genjutsu MC/RO · Kling Omni Edit · Extend · Viral preset — ไม่นับคะแนน) · FAQ + ItemList schema
+
+หน้าที่มีตารางกว้างใส่ `<body … data-wide>` = เนื้อหากว้าง 1440px (ใช้ที่ compare) · hero ที่มีคลิป 9:16 ใช้ `.hero.split.v916` (คลิป 180px)
 
 ตารางทุกตัวใน `.tablewrap` = datatable กลาง: มือถือเปลี่ยนเป็นการ์ดทีละแถว (site.js ใส่ `data-label` ให้เอง) · ใส่ `class="dt"` = กดหัวคอลัมน์เรียงได้ (`th.nosort` ปิด)
 use-cases.html · prompts.html   หน้า redirect (noindex) → ai-video.html / compare.html ตาม #hash — กันลิงก์เก่าจากโพสต์ FB เสีย · ไม่อยู่ใน sitemap

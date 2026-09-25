@@ -28,7 +28,7 @@
 {"@context": "https://schema.org", "@type": "BreadcrumbList", "itemListElement": [{"@type": "ListItem", "position": 1, "name": "หน้าแรก", "item": "https://nerdmartech.com/"}, {"@type": "ListItem", "position": 2, "name": "สร้างวิดีโอด้วย AI", "item": "https://nerdmartech.com/ai-video.html"}]}
 </script>
 <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans+Thai:wght@400;500;600;700&family=Space+Grotesk:wght@500;600;700&family=Zen+Kaku+Gothic+New:wght@500;700&display=swap" rel="stylesheet">
-<link rel="stylesheet" href="assets/style.css?v=20260924d">
+<link rel="stylesheet" href="assets/style.css?v=20260925a">
 <link rel="icon" href="favicon.ico?v=2" sizes="any">
 <link rel="icon" type="image/png" sizes="32x32" href="assets/brand/favicon-32.png?v=2">
 <link rel="apple-touch-icon" href="assets/brand/apple-touch-icon.png?v=2">
@@ -118,7 +118,7 @@
   <div class="flow">
     <a href="#step1"><span class="n">01</span><b>บท + storyboard</b><small>Claude</small></a>
     <a href="#step2"><span class="n">02</span><b>เตรียมรูป + อัปโหลด</b><small>Claude Cowork → Higgsfield</small></a>
-    <a href="#step3"><span class="n">03</span><b>เลือกโมเดล</b><small>ดูผลเทียบ 11 โมเดล</small></a>
+    <a href="#step3"><span class="n">03</span><b>เลือกโมเดล</b><small>ดูตารางให้คะแนน 8 โมเดล</small></a>
     <a href="#step4"><span class="n">04</span><b>เจนทีละช็อต</b><small>Higgsfield · prompt 6 ส่วน</small></a>
     <a href="#step5"><span class="n">05</span><b>ต่อคลิป + ตัดต่อ</b><small>Claude Code × CapCut</small></a>
     <a href="#step6"><span class="n">06</span><b>สรุปต้นทุน</b><small>เครดิต · บาท</small></a>
@@ -194,7 +194,7 @@
 <!-- ===== STEP 3 ===== -->
 <section id="step3" data-toc="3 · เลือกโมเดล">
   <h2><span class="stepno">3</span>เลือกโมเดลที่พูดไทยได้จริง</h2>
-  <p class="h2sub">ลองให้แล้ว 11 โมเดล — ตัวแพงไม่ได้แปลว่าพูดไทยดี · ผลเต็มอยู่ที่ <a href="compare.html">Model Compare</a></p>
+  <p class="h2sub">ให้คะแนนแล้ว 8 โมเดล — ตัวแพงไม่ได้แปลว่าพูดไทยดี · ผลเต็มอยู่ที่ <a href="compare.html">Model Compare</a></p>
   <div class="pick">
     <div class="card"><span class="badge pass"><svg><use href="#i-pass"/></svg>PASS</span><h3>Gemini Omni Flash 1.1</h3><p>ตัวหลัก · เจนจากรูป · ไทยชัด ปากตรง · <b data-cr="24">24</b></p></div>
     <div class="card"><span class="badge pass"><svg><use href="#i-pass"/></svg>PASS</span><h3>Kling 3.0 Omni Edit</h3><p>เปลี่ยนคนในคลิปที่ดีแล้ว เสียงเดิม ฉากเดิม · <b data-cr="16">16</b></p></div>
@@ -272,7 +272,7 @@
     <div style="display:flex;flex-direction:column;gap:12px">
       <div class="nerd-note">
         <img src="assets/character/17-idea.png" alt="">
-        <p><b>ประเด็นที่คนมองข้าม</b> — ความยากไม่ได้อยู่ที่ prompt แต่อยู่ที่เลือกโมเดล prompt เดียวกันนี้ใส่โมเดลอื่นได้ผลตั้งแต่ "ดีพอ" จนถึง "พูดเขมร" ดูผลทั้ง 11 ตัวได้ที่ <a href="compare.html">Model Compare</a></p>
+        <p><b>ประเด็นที่คนมองข้าม</b> — ความยากไม่ได้อยู่ที่ prompt แต่อยู่ที่เลือกโมเดล prompt เดียวกันนี้ใส่โมเดลอื่นได้ผลตั้งแต่ "ดีพอ" จนถึง "พูดเขมร" ดูคะแนนทั้ง 8 ตัวได้ที่ <a href="compare.html">Model Compare</a></p>
       </div>
       <div class="nerd-note">
         <img src="assets/character/08-think.png" alt="">
@@ -344,7 +344,7 @@
     <span>ใช้กับ <b>Gemini Omni Flash 1.1</b> (mode: reference-to-video)</span>
     <span>input: รูปคน + รูปบ้าน (image_references)</span>
     <span>9:16 · 8s · 720p</span>
-    <span class="badge soft sm pass"><svg><use href="#i-pass"/></svg>Pass</span><span>ดีที่สุดจาก 11 โมเดล</span>
+    <span class="badge soft sm pass"><svg><use href="#i-pass"/></svg>Pass</span><span>คะแนนสูงสุดจาก 8 โมเดล (91/100)</span>
   </div>
   <div class="prompt">
     <button class="copy">Copy</button>
@@ -406,6 +406,6 @@
 
 </main>
 
-<script src="assets/site.js?v=20260924d"></script>
+<script src="assets/site.js?v=20260925a"></script>
 </body>
 </html>

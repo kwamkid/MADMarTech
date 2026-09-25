@@ -162,6 +162,77 @@
     } else { playAll(); }
   });
 
+  // --- datatable (shared): label cells for the mobile card view · sortable headers on table.dt ---
+  document.querySelectorAll('.tablewrap table').forEach(function(t){
+    var headRow = t.tHead ? t.tHead.rows[0] : (t.rows[0] && t.rows[0].cells[0] && t.rows[0].cells[0].tagName === 'TH' ? t.rows[0] : null);
+    if (!headRow) return;
+    if (!t.tHead) headRow.classList.add('head-row');
+    var labels = Array.prototype.map.call(headRow.cells, function(c){ return c.textContent.trim(); });
+    t.classList.add('stack');
+    Array.prototype.forEach.call(t.rows, function(r){
+      if (r === headRow) return;
+      Array.prototype.forEach.call(r.cells, function(c, i){ if (!c.hasAttribute('data-label')) c.setAttribute('data-label', labels[i] || ''); });
+    });
+    if (!t.classList.contains('dt') || !t.tBodies[0]) return;
+    var num = function(td){ var v = parseFloat((td.getAttribute('data-sort') || td.textContent).replace(/[^0-9.\-]/g, '')); return isNaN(v) ? null : v; };
+    Array.prototype.forEach.call(headRow.cells, function(th, i){
+      if (th.classList.contains('nosort')) return;
+      th.setAttribute('role', 'button'); th.tabIndex = 0;
+      var go = function(){
+        var dir = th.getAttribute('aria-sort') === 'descending' ? 'ascending' : 'descending';
+        Array.prototype.forEach.call(headRow.cells, function(x){ x.removeAttribute('aria-sort'); });
+        th.setAttribute('aria-sort', dir);
+        var body = t.tBodies[0], rows = Array.prototype.slice.call(body.rows);
+        rows.sort(function(a, b){
+          var x = a.cells[i], y = b.cells[i], nx = num(x), ny = num(y), r;
+          r = (nx !== null && ny !== null) ? nx - ny : x.textContent.trim().localeCompare(y.textContent.trim(), 'th');
+          return dir === 'ascending' ? r : -r;
+        });
+        rows.forEach(function(r){ body.appendChild(r); });
+        t.dispatchEvent(new CustomEvent('dt:sorted'));
+      };
+      th.addEventListener('click', go);
+      th.addEventListener('keydown', function(e){ if (e.key === 'Enter' || e.key === ' ') { e.preventDefault(); go(); } });
+    });
+  });
+
+  // --- decision matrix ([data-matrix]): weights x scores (1-5) = total /100, re-rank live ---
+  document.querySelectorAll('[data-matrix]').forEach(function(mx){
+    var sliders = mx.querySelectorAll('.mx-weights input'), presets = mx.querySelectorAll('.mx-presets button');
+    var body = mx.querySelector('tbody');
+    var weights = function(){ return Array.prototype.map.call(sliders, function(s){ return +s.value; }); };
+    var calc = function(sort){
+      var w = weights(), sum = w.reduce(function(a, b){ return a + b; }, 0) || 1;
+      var rows = Array.prototype.slice.call(body.rows);
+      rows.forEach(function(r){
+        var s = r.getAttribute('data-s').split(',').map(Number), t = 0;
+        s.forEach(function(v, i){ t += (w[i] || 0) * v / 5; });
+        t = Math.round(t / sum * 100);
+        r.setAttribute('data-total', t);
+        var cell = r.querySelector('.tot'); cell.setAttribute('data-sort', t);
+        cell.querySelector('b').textContent = t; cell.querySelector('.bar i').style.width = t + '%';
+      });
+      if (sort !== false) {
+        rows.sort(function(a, b){ return b.getAttribute('data-total') - a.getAttribute('data-total'); });
+        rows.forEach(function(r){ body.appendChild(r); });
+      }
+      renumber();
+      presets.forEach(function(p){ p.classList.toggle('on', p.getAttribute('data-w') === w.join(',')); });
+    };
+    var renumber = function(){
+      Array.prototype.forEach.call(body.rows, function(r, i){ r.querySelector('.rk').textContent = i + 1; r.querySelector('.mdl').setAttribute('data-rank', i + 1); });
+    };
+    sliders.forEach(function(s){ s.addEventListener('input', function(){ s.nextElementSibling.textContent = s.value; calc(); }); });
+    presets.forEach(function(p){
+      p.addEventListener('click', function(){
+        p.getAttribute('data-w').split(',').forEach(function(v, i){ sliders[i].value = v; sliders[i].nextElementSibling.textContent = v; });
+        calc();
+      });
+    });
+    mx.querySelector('table').addEventListener('dt:sorted', renumber);
+    calc();
+  });
+
   // --- copy buttons: .prompt .copy (copies <pre>) · .anno .copy (joins <mark> parts) ---
   var ICON_COPY = '<svg class="pi sm"><use href="#i-copy"/></svg>', ICON_DONE = '<svg class="pi sm"><use href="#i-pass"/></svg>';
   document.querySelectorAll('.prompt .copy, .anno .copy').forEach(function(btn){

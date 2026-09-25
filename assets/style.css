@@ -588,7 +588,7 @@ table.dt th.nosort{cursor:default}table.dt th.nosort::after{display:none}
 .mx-presets button.on{background:var(--accent);border-color:var(--accent);color:#fff}
 .matrix td.sc,.matrix th.sc{text-align:center}
 .matrix td.rk{font-family:var(--font-display);font-weight:700;color:var(--accent-ink)}
-.matrix td.mdl{min-width:250px}
+.matrix td.mdl{min-width:200px}
 .matrix td.mdl b{display:block;white-space:nowrap}
 .matrix th small{font-weight:500;color:var(--muted)}
 .matrix td.sc span{display:inline-block;min-width:34px;padding:3px 6px;border-radius:6px;font-family:var(--font-display);font-weight:700;background:hsl(var(--h) 62% 86%);color:hsl(var(--h) 55% 24%)}
@@ -631,5 +631,10 @@ table.dt th.nosort{cursor:default}table.dt th.nosort::after{display:none}
 /* wide page (body[data-wide]): content up to 1440px — for wide tables like the compare matrix */
 body[data-wide] .wrap.layout{max-width:1440px}  /* content only — hero/header/footer stay 1140px */
 /* matrix: tighter columns so the whole table fits */
-.matrix th,.matrix td{padding-left:8px;padding-right:8px}
-.matrix .bar{width:64px}
+.matrix th,.matrix td{padding-left:6px;padding-right:6px}
+.matrix .bar{width:44px}
+.matrix table{min-width:0}
+.matrix td.num small{display:block;margin:0}
+.matrix td.sc span{min-width:30px;padding:3px 4px}
+.matrix .vthumb{width:40px}
+.matrix td.tot b{margin-left:6px}

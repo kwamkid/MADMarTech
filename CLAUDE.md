@@ -35,9 +35,9 @@
 
 ```
 index.html            หน้าแรก — hero วิดีโอพื้นหลัง (.hero-bg) + ล่าสุด + ทำไมต้องเนิร์ด
-ai-video.html         "ทำคลิปด้วย AI" — คู่มือทำคลิปพูดไทย 6 ขั้น จากคลิปจริง (รีวิวบ้าน 85s · storyboard 9 ช็อต · คลิป 9 ตัว · ต้นทุนจริง 520 cr) + คลัง prompt 5 ตัว · HowTo + VideoObject · ขั้น 5 สรุปสั้นแล้วลิงก์ไป ai-edit
+ai-video.html         "ทำคลิปด้วย AI" — คู่มือทำคลิปพูดไทย 6 ขั้น จากคลิปจริง (รีวิวบ้าน 85s · storyboard 9 ช็อต · คลิป 9 ตัว · ต้นทุนจริง 520 cr) + คลัง prompt 4 ตัว · HowTo + VideoObject · ขั้น 5 สรุปสั้นแล้วลิงก์ไป ai-edit
 ai-edit.html          "ตัดต่อด้วย AI" — Claude Code ตัดต่อใน CapCut (เขียน draft ผ่าน terminal) 6 ขั้น · คำสั่งจริง · ภาพหน้าจอ + ซูม timeline · FAQ + FAQPage · VideoObject · คำหลัก "AI ตัดต่อวิดีโอ"
-compare.html          Model Compare — **decision matrix 8 โมเดลสร้างคลิป** (6 เกณฑ์ 1–5 × น้ำหนัก = /100 · ปุ่มสมดุล/คุ้ม/ภาพสวย/เสียงไทย (ไม่มี slider — อาจารย์ว่าดูแล้วงง) · `[data-matrix]` ใน site.js · คะแนนร่างจากโน้ต รออาจารย์ตรวจ 25 ก.ย.) + การ์ดคลิป 8 ตัวเรียงตามคะแนน (ไม่มี badge PASS/FAIL แล้ว — ใช้คะแนนแทน · หัวข้อแก้คลิปเดิมยังมี badge) + หัวข้อ "แก้คลิปเดิม" (Genjutsu MC/RO · Extend · Viral preset — ไม่นับคะแนน · เอา Kling Omni Edit ออก 25 ก.ย. เพราะคลิปเทสต์ไม่ได้เปลี่ยนเป็นคนใหม่จริง) · FAQ + ItemList schema
+compare.html          Model Compare — **decision matrix 8 โมเดลสร้างคลิป** (6 เกณฑ์ 1–5 × น้ำหนัก = /100 · ปุ่มสมดุล/คุ้ม/ภาพสวย/เสียงไทย (ไม่มี slider — อาจารย์ว่าดูแล้วงง) · `[data-matrix]` ใน site.js · คะแนนอาจารย์ตรวจแล้ว ok 25 ก.ย.) + การ์ดคลิป 8 ตัวเรียงตามคะแนน (ไม่มี badge PASS/FAIL แล้ว — ใช้คะแนนแทน · หัวข้อแก้คลิปเดิมยังมี badge) + หัวข้อ "แก้คลิปเดิม" (Genjutsu MC/RO · Extend · Viral preset — ไม่นับคะแนน · เอา Kling Omni Edit ออก 25 ก.ย. เพราะคลิปเทสต์ไม่ได้เปลี่ยนเป็นคนใหม่จริง) · FAQ + ItemList schema
 
 ทุกหน้าใช้ container 1140px (อาจารย์ไม่เอา full width) · ถ้าตารางกว้างเกิน ให้บีบคอลัมน์แทน · `<body data-wide>` ยังมีใน CSS แต่ไม่ได้ใช้ · hero ที่มีคลิป 9:16 ใช้ `.hero.split.v916` (คลิป 180px)
 
@@ -110,7 +110,7 @@ CNAME · robots.txt · sitemap.xml (เพิ่มหน้าใหม่ต�
 Veo/Kling/Grok รับรูปเดียว → ใช้เฟรมแรกของคลิปอันดับ 1 เป็น start frame
 
 **งานแก้/ต่อคลิป (อยู่ใน Compare #03 #04 #11 แล้ว)**
-- Kling 3.0 Omni Edit เปลี่ยนคน → เด็ก — 16 cr — PASS (UC02)
+- ~~Kling 3.0 Omni Edit~~ — เอาออกจากเว็บทั้งหมด 25 ก.ย. (อาจารย์: คลิปเทสต์ไม่ได้เปลี่ยนเป็นคนใหม่จริง) · เป็นโมเดลแก้คลิป ไม่ใช่โมเดลสร้างคลิป
 - Genjutsu = motion transfer ของ Higgsfield — 56 cr — ใช้ได้ (เทสต์แรกใส่คนเดิมเลยไม่เห็นเปลี่ยน)
 - "Change weather" preset Rain (Video Edit ในหน้าเว็บ Higgsfield) — 36 cr — ยังไม่ขึ้นเว็บ
 - Omni Flash 1.1 Extend — 70 cr/ครั้ง — FAIL (เสียงถูกสร้างใหม่) ×2 (UC03) · ผ่าน MCP โดน safety filter

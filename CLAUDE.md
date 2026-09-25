@@ -23,7 +23,8 @@
 
 - **Static HTML + CSS + JS ล้วน** ไม่มี build step ไม่มี framework ไม่มี npm — เปิดไฟล์ตรงๆ ได้
 - Hosting: **GitHub Pages** repo `kwamkid/nerdmartech` branch `main` root · custom domain `nerdmartech.com` (ไฟล์ `CNAME` ห้ามลบ · `.nojekyll` ห้ามลบ)
-- DNS ที่ Cloudflare: A 185.199.108–111.153 + CNAME www → kwamkid.github.io (DNS only)
+- DNS ที่ Cloudflare: A 185.199.108–111.153 + CNAME www → kwamkid.github.io · **Proxied (เมฆส้ม) ทั้ง apex และ www** · เปิด Always Use HTTPS แล้ว (25 ก.ย. 2569) → http/www เด้งไป https://nerdmartech.com/ · cache HTML 10 นาที วิดีโอ 4 ชม.
+- IndexNow key: `372d74c2fa4768046465bfa1e5086d16.txt` (root) · ส่ง URL ใหม่ได้ที่ api.indexnow.org/indexnow หลัง Pages build เสร็จ · GSC + Bing Webmaster ยืนยันแล้ว
 - Deploy = **push main** เท่านั้น · ผู้ใช้ push เอง (Claude commit ได้ แต่ไม่ push)
 - ทดสอบ local: เปิดไฟล์ตรงๆ (file://) ได้แล้ว — sprite ไอคอน header footer ฝังใน site.js · หรือ `python3 -m http.server 8765`
 - Commit message ภาษาอังกฤษ สั้น บอกว่าแก้อะไร

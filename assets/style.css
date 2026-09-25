@@ -629,7 +629,7 @@ table.dt th.nosort{cursor:default}table.dt th.nosort::after{display:none}
 @media(max-width:640px){.lb-nav{width:40px;height:52px;font-size:32px}.lb-nav.prev{left:6px}.lb-nav.next{right:6px}}
 
 /* wide page (body[data-wide]): content up to 1440px — for wide tables like the compare matrix */
-body[data-wide] .wrap{max-width:1440px}
+body[data-wide] .wrap.layout{max-width:1440px}  /* content only — hero/header/footer stay 1140px */
 /* matrix: tighter columns so the whole table fits */
 .matrix th,.matrix td{padding-left:8px;padding-right:8px}
 .matrix .bar{width:64px}

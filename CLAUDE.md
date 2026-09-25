@@ -37,7 +37,7 @@
 index.html            หน้าแรก — hero วิดีโอพื้นหลัง (.hero-bg) + ล่าสุด + ทำไมต้องเนิร์ด
 ai-video.html         "ทำคลิปด้วย AI" — คู่มือทำคลิปพูดไทย 6 ขั้น จากคลิปจริง (รีวิวบ้าน 85s · storyboard 9 ช็อต · คลิป 9 ตัว · ต้นทุนจริง 520 cr) + คลัง prompt 5 ตัว · HowTo + VideoObject · ขั้น 5 สรุปสั้นแล้วลิงก์ไป ai-edit
 ai-edit.html          "ตัดต่อด้วย AI" — Claude Code ตัดต่อใน CapCut (เขียน draft ผ่าน terminal) 6 ขั้น · คำสั่งจริง · ภาพหน้าจอ + ซูม timeline · FAQ + FAQPage · VideoObject · คำหลัก "AI ตัดต่อวิดีโอ"
-compare.html          Model Compare — **decision matrix 8 โมเดลสร้างคลิป** (6 เกณฑ์ 1–5 × น้ำหนัก = /100 · ปุ่มสมดุล/คุ้ม/ภาพสวย/เสียงไทย + slider · `[data-matrix]` ใน site.js · คะแนนร่างจากโน้ต รออาจารย์ตรวจ 25 ก.ย.) + การ์ดคลิป 8 ตัวเรียงตามคะแนน + หัวข้อ "แก้คลิปเดิม" (Genjutsu MC/RO · Kling Omni Edit · Extend · Viral preset — ไม่นับคะแนน) · FAQ + ItemList schema
+compare.html          Model Compare — **decision matrix 8 โมเดลสร้างคลิป** (6 เกณฑ์ 1–5 × น้ำหนัก = /100 · ปุ่มสมดุล/คุ้ม/ภาพสวย/เสียงไทย (ไม่มี slider — อาจารย์ว่าดูแล้วงง) · `[data-matrix]` ใน site.js · คะแนนร่างจากโน้ต รออาจารย์ตรวจ 25 ก.ย.) + การ์ดคลิป 8 ตัวเรียงตามคะแนน + หัวข้อ "แก้คลิปเดิม" (Genjutsu MC/RO · Kling Omni Edit · Extend · Viral preset — ไม่นับคะแนน) · FAQ + ItemList schema
 
 ตารางทุกตัวใน `.tablewrap` = datatable กลาง: มือถือเปลี่ยนเป็นการ์ดทีละแถว (site.js ใส่ `data-label` ให้เอง) · ใส่ `class="dt"` = กดหัวคอลัมน์เรียงได้ (`th.nosort` ปิด)
 use-cases.html · prompts.html   หน้า redirect (noindex) → ai-video.html / compare.html ตาม #hash — กันลิงก์เก่าจากโพสต์ FB เสีย · ไม่อยู่ใน sitemap
@@ -97,7 +97,7 @@ CNAME · robots.txt · sitemap.xml (เพิ่มหน้าใหม่ต�
 - **เครดิต → บาท**: ใส่ `data-cr="24"` บน `<span class="credits">` หรือ `<td class="num">` แล้ว JS เติมบาทให้ · เรต `RATE = 1.29` (Higgsfield แพ็กเกจ $39) · เรตอื่น: $15 = 2.50 · $99 = 1.09 — เปลี่ยนที่ตัวแปรเดียว
 - **Layout กลาง**: ดูหัวข้อ 5 · เมนูอยู่ใน `NAV` · ลิงก์เพจ FB `FB` · ข้อความ footer อยู่ใน site.js
 - **Copy**: ปุ่ม `.copy` ใน `.prompt` (ก๊อป `<pre>`) / `.anno` (รวม `<mark>`) ทำงานเอง ไม่ต้องใส่ onclick
-- **Lightbox**: ใส่ `data-zoom` บน `<img>` → คลิกขยาย · ปิดด้วย Esc / คลิกนอกรูป / ปุ่ม ×
+- **Lightbox (กลาง)**: `img[data-zoom]` = รูป · `[data-zoom-video="…mp4"]` + `data-cap` = วิดีโอ · มีปุ่ม ‹ › / ลูกศรซ้ายขวา / ปัดบนมือถือ เลื่อนไปรายการถัดไป · Esc / คลิกนอกรูป / × ปิด · กลุ่ม = `[data-gallery]` ที่ใกล้ที่สุด ถ้าไม่มี = รูปทั้งหน้า (หรือวิดีโอทั้งหน้า)
 
 ---
 
@@ -137,6 +137,7 @@ Veo/Kling/Grok รับรูปเดียว → ใช้เฟรมแร
 
 - Model id ที่ใช้: `gemini_omni_flash_1_1` (mode: reference-to-video / edit) · `kling_video_edit` (Kling 3.0 Omni Edit, roles video_references + image_references) · `hf_mult_motion_control` (Genjutsu) · `seedance_2_5` (mode omni_reference)
 - Prompt โครง 6 ส่วน (รูปแบบ · คน+ฉาก "from the reference photo" · การเคลื่อนไหว · "clear natural Thai with accurate lip sync" · บทพูดในเครื่องหมายคำพูดนำด้วย She says in Thai: · "Native Thai speech audio only, no music, no subtitles")
+- Teaser หน้า Compare: `assets/videos/compare/teaser-8-models.mp4` (8 โมเดล × 3 วิ · ซับ MODEL/CREDITS/SCORE ทำเป็น PNG ด้วย PIL แล้ว overlay เพราะ ffmpeg ของ Homebrew ไม่มี drawtext) · คลิปเต็ม 8 ตัว 540p อยู่ `assets/videos/compare/NN-slug.mp4/.jpg` · ถ้าคะแนนเปลี่ยน ต้องทำ teaser ใหม่ (สคริปต์เดิมอยู่ใน scratchpad ของ session 25 ก.ย. — เขียนใหม่ได้จากคำอธิบายนี้)
 - ตัวการ์ตูนบนฉากจริง: ล็อกสไตล์ใน prompt "flat 2D black-and-white line-art, thick outlines, no 3D, like a hand-drawn sticker composited into a real film"
 - ยิงผ่าน MCP บางครั้งเด้ง preset แทน → ส่งซ้ำพร้อม `declined_preset_id` (ไม่คิดเงินซ้ำ)
 - ชื่อในบิล ≠ ชื่อปุ่ม (Extend = "Cinematic Video Editor" 70 · ฝน = "Change weather" 36) — เช็ค Transactions เสมอ

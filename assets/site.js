@@ -196,41 +196,35 @@
     });
   });
 
-  // --- decision matrix ([data-matrix]): weights x scores (1-5) = total /100, re-rank live ---
+  // --- decision matrix ([data-matrix]): preset buttons set weights x scores (1-5) = total /100, re-rank live ---
   document.querySelectorAll('[data-matrix]').forEach(function(mx){
-    var sliders = mx.querySelectorAll('.mx-weights input'), presets = mx.querySelectorAll('.mx-presets button');
-    var body = mx.querySelector('tbody');
-    var weights = function(){ return Array.prototype.map.call(sliders, function(s){ return +s.value; }); };
-    var calc = function(sort){
-      var w = weights(), sum = w.reduce(function(a, b){ return a + b; }, 0) || 1;
-      var rows = Array.prototype.slice.call(body.rows);
+    var presets = mx.querySelectorAll('.mx-presets button'), body = mx.querySelector('tbody');
+    var renumber = function(){
+      Array.prototype.forEach.call(body.rows, function(r, i){ r.querySelector('.rk').textContent = i + 1; r.querySelector('.mdl').setAttribute('data-rank', i + 1); });
+    };
+    var calc = function(w){
+      var sum = w.reduce(function(a, b){ return a + b; }, 0) || 1, rows = Array.prototype.slice.call(body.rows);
       rows.forEach(function(r){
-        var s = r.getAttribute('data-s').split(',').map(Number), t = 0;
-        s.forEach(function(v, i){ t += (w[i] || 0) * v / 5; });
+        var t = 0;
+        r.getAttribute('data-s').split(',').map(Number).forEach(function(v, i){ t += (w[i] || 0) * v / 5; });
         t = Math.round(t / sum * 100);
         r.setAttribute('data-total', t);
         var cell = r.querySelector('.tot'); cell.setAttribute('data-sort', t);
         cell.querySelector('b').textContent = t; cell.querySelector('.bar i').style.width = t + '%';
       });
-      if (sort !== false) {
-        rows.sort(function(a, b){ return b.getAttribute('data-total') - a.getAttribute('data-total'); });
-        rows.forEach(function(r){ body.appendChild(r); });
-      }
+      rows.sort(function(a, b){ return b.getAttribute('data-total') - a.getAttribute('data-total'); });
+      rows.forEach(function(r){ body.appendChild(r); });
       renumber();
-      presets.forEach(function(p){ p.classList.toggle('on', p.getAttribute('data-w') === w.join(',')); });
     };
-    var renumber = function(){
-      Array.prototype.forEach.call(body.rows, function(r, i){ r.querySelector('.rk').textContent = i + 1; r.querySelector('.mdl').setAttribute('data-rank', i + 1); });
-    };
-    sliders.forEach(function(s){ s.addEventListener('input', function(){ s.nextElementSibling.textContent = s.value; calc(); }); });
     presets.forEach(function(p){
       p.addEventListener('click', function(){
-        p.getAttribute('data-w').split(',').forEach(function(v, i){ sliders[i].value = v; sliders[i].nextElementSibling.textContent = v; });
-        calc();
+        presets.forEach(function(x){ x.classList.toggle('on', x === p); });
+        calc(p.getAttribute('data-w').split(',').map(Number));
       });
     });
     mx.querySelector('table').addEventListener('dt:sorted', renumber);
-    calc();
+    var on = mx.querySelector('.mx-presets .on') || presets[0];
+    calc(on.getAttribute('data-w').split(',').map(Number));
   });
 
   // --- copy buttons: .prompt .copy (copies <pre>) · .anno .copy (joins <mark> parts) ---
@@ -258,18 +252,53 @@
     else { el.innerHTML = c + ' credits <span class="thb">' + baht(c) + '</span>'; }
   });
 
-  // --- lightbox for [data-zoom] images ---
+  // --- lightbox (shared): img[data-zoom] + [data-zoom-video] · prev/next (buttons, ←/→, swipe) · Esc / click outside closes ---
+  // items are grouped by the nearest [data-gallery] ancestor; without one, all images (or all videos) on the page form one group
   var lb = document.createElement('div');
   lb.className = 'lb'; lb.setAttribute('role','dialog'); lb.setAttribute('aria-modal','true');
-  lb.innerHTML = '<button class="lb-x" aria-label="ปิด">×</button><img alt=""><div class="lb-cap"></div>';
+  lb.innerHTML = '<button class="lb-x" aria-label="ปิด">×</button>' +
+    '<button class="lb-nav prev" aria-label="ก่อนหน้า">‹</button><button class="lb-nav next" aria-label="ถัดไป">›</button>' +
+    '<img alt=""><video controls playsinline></video><div class="lb-cap"></div>';
   document.body.appendChild(lb);
-  var img = lb.querySelector('img'), cap = lb.querySelector('.lb-cap');
-  function open(src, alt){ img.src = src; img.alt = alt || ''; cap.textContent = alt || ''; lb.classList.add('on'); document.body.style.overflow='hidden'; }
-  function close(){ lb.classList.remove('on'); document.body.style.overflow=''; img.src=''; }
+  var img = lb.querySelector('img'), vid = lb.querySelector('video'), cap = lb.querySelector('.lb-cap');
+  var prevB = lb.querySelector('.prev'), nextB = lb.querySelector('.next');
+  var list = [], idx = 0;
+  var isVid = function(el){ return el.hasAttribute('data-zoom-video'); };
+  var groupOf = function(el){
+    var g = el.closest('[data-gallery]');
+    var sel = isVid(el) ? '[data-zoom-video]' : 'img[data-zoom]';
+    return Array.prototype.slice.call((g || document).querySelectorAll(sel)).filter(function(x){ return g || !x.closest('[data-gallery]'); });
+  };
+  function show(){
+    var el = list[idx], v = isVid(el);
+    lb.classList.toggle('vid', v);
+    vid.pause();
+    if (v) { vid.src = el.getAttribute('data-zoom-video'); vid.play().catch(function(){}); }
+    else { vid.removeAttribute('src'); img.src = el.getAttribute('data-zoom') || el.src; img.alt = el.alt || ''; }
+    var text = v ? (el.getAttribute('data-cap') || '') : (el.alt || '');
+    cap.textContent = (list.length > 1 ? (idx + 1) + ' / ' + list.length + (text ? ' · ' : '') : '') + text;
+    prevB.hidden = nextB.hidden = list.length < 2;
+  }
+  function open(el){ list = groupOf(el); idx = Math.max(0, list.indexOf(el)); show(); lb.classList.add('on'); document.body.style.overflow = 'hidden'; }
+  function step(d){ if (list.length < 2) return; idx = (idx + d + list.length) % list.length; show(); }
+  function close(){ lb.classList.remove('on'); document.body.style.overflow = ''; img.src = ''; vid.pause(); vid.removeAttribute('src'); vid.load(); }
   document.querySelectorAll('img[data-zoom]').forEach(function(im){
     im.classList.add('zoomable');
-    im.addEventListener('click', function(){ open(im.getAttribute('data-zoom') || im.src, im.alt); });
+    im.addEventListener('click', function(){ open(im); });
   });
-  lb.addEventListener('click', function(e){ if (e.target !== img) close(); });
-  document.addEventListener('keydown', function(e){ if (e.key === 'Escape' && lb.classList.contains('on')) close(); });
+  document.querySelectorAll('[data-zoom-video]').forEach(function(el){
+    el.addEventListener('click', function(e){ e.preventDefault(); open(el); });
+  });
+  prevB.addEventListener('click', function(e){ e.stopPropagation(); step(-1); });
+  nextB.addEventListener('click', function(e){ e.stopPropagation(); step(1); });
+  lb.addEventListener('click', function(e){ if (e.target !== img && e.target !== vid) close(); });
+  document.addEventListener('keydown', function(e){
+    if (!lb.classList.contains('on')) return;
+    if (e.key === 'Escape') close();
+    else if (e.key === 'ArrowLeft') { e.preventDefault(); step(-1); }
+    else if (e.key === 'ArrowRight') { e.preventDefault(); step(1); }
+  });
+  var tx = null;
+  lb.addEventListener('touchstart', function(e){ tx = e.touches[0].clientX; }, {passive: true});
+  lb.addEventListener('touchend', function(e){ if (tx === null) return; var dx = e.changedTouches[0].clientX - tx; if (Math.abs(dx) > 50) step(dx < 0 ? 1 : -1); tx = null; });
 })();

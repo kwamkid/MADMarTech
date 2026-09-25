@@ -35,22 +35,22 @@
  {"@type":"Question","name":"โมเดล AI สร้างวิดีโอตัวไหนพูดภาษาไทยได้ชัดที่สุด","acceptedAnswer":{"@type":"Answer","text":"จากการให้คะแนน 8 โมเดลด้วยโจทย์เดียวกัน Gemini Omni Flash 1.1 ให้เสียงไทยชัด ปากตรง และภาพ smooth ที่สุด ในราคา 24 credits ต่อคลิป 8 วินาที รองลงมาคือ Gemini Omni Flash รุ่นเดิม ส่วน Kling 3.0 พูดไทยออกมาเป็นสำเนียงเขมร และ Seedance 2.5 เพี้ยนแบบชาวต่างชาติพูดไทย"}},
  {"@type":"Question","name":"Google Veo 3.1 พูดไทยได้ไหม","acceptedAnswer":{"@type":"Answer","text":"ได้ และทำได้ดี — เสียงไทยชัดมาก ภาพชัดแสงสวยแบบภาพยนตร์ ท่าทางเป็นธรรมชาติ ผ่านการทดสอบ แต่เป็นโมเดลที่แพงที่สุด (80 credits) แพงกว่า Gemini Omni Flash 1.1 ประมาณ 3.3 เท่า และรับรูปอ้างอิงได้แค่รูปเดียว ต้องทำภาพตั้งต้นก่อน · เหมาะกับงานที่อยากได้ภาพระดับโฆษณา"}},
  {"@type":"Question","name":"ฟีเจอร์ Extend ต่อความยาววิดีโอ AI ใช้ได้ไหม","acceptedAnswer":{"@type":"Answer","text":"ต่อภาพได้ แต่เสียงถูกสร้างใหม่ทุกครั้ง ทำให้เสียงและสำเนียงเปลี่ยน วิธีที่ใช้ได้คือเจนหลายคลิปสั้นจากรูปอ้างอิงชุดเดิมและโมเดลเดิม แล้วนำมาตัดต่อ"}},
- {"@type":"Question","name":"ถ้ามีคลิปที่ดีแล้ว เปลี่ยนพรีเซนเตอร์เป็นคนอื่นได้ไหม","acceptedAnswer":{"@type":"Answer","text":"ได้ ด้วย motion transfer เช่น Genjutsu ของ Higgsfield (56 credits) หรือ Kling 3.0 Omni Edit (16 credits) ซึ่งคงเสียงและการเคลื่อนไหวเดิม เปลี่ยนเฉพาะหน้าคน"}}
+ {"@type":"Question","name":"ถ้ามีคลิปที่ดีแล้ว เปลี่ยนพรีเซนเตอร์เป็นคนอื่นได้ไหม","acceptedAnswer":{"@type":"Answer","text":"ได้ ด้วย motion transfer เช่น Genjutsu ของ Higgsfield (56 credits) ซึ่งคงท่าทางเดิม เปลี่ยนเป็นคนใหม่ได้จริง (ฉากกับโทนสีอาจเปลี่ยนตาม) หรือ Genjutsu Replace Object (63 credits) ที่คงฉากเดิมทุกอย่าง"}}
 ]}
 </script>
 </head>
 <body data-page="compare.html" data-wide>
 
 <div class="wrap page-hero">
-<div class="hero split v916">
+<div class="hero split">
   <div>
   <div class="lab red">NERD COMPARE / 001</div>
   <h1>AI สร้างวิดีโอ<br>ตัวไหน<em>พูดไทย</em>ได้จริง</h1>
   <p>8 โมเดล โจทย์เดียวกันเป๊ะ — รูปอ้างอิง 2 รูปเดิม · prompt เดิม · บทพูดไทยเดิม · 9:16 · 8 วินาที — ให้คะแนน 6 เกณฑ์ แล้วเลือกเองว่าเน้นอะไร: คุ้ม · ภาพสวย · เสียงไทย</p>
   <div class="px-divider"></div>
   </div>
-  <figure class="hero-media v916">
-    <video src="assets/videos/compare/teaser-8-models.mp4" poster="assets/videos/compare/teaser-8-models.jpg" autoplay muted loop playsinline controls preload="metadata" aria-label="teaser 8 โมเดล AI สร้างวิดีโอพูดไทย โมเดลละ 3 วินาที"></video>
+  <figure class="hero-media">
+    <video src="assets/videos/compare/teaser-8-models-16x9.mp4" poster="assets/videos/compare/teaser-8-models-16x9.jpg" autoplay muted loop playsinline controls preload="metadata" aria-label="teaser 8 โมเดล AI สร้างวิดีโอพูดไทย โมเดลละ 3 วินาที"></video>
     <figcaption>8 โมเดล โมเดลละ 3 วิ · โจทย์เดียวกัน · กดเปิดเสียงฟังสำเนียงได้</figcaption>
   </figure>
 </div>
@@ -68,7 +68,7 @@
       <div class="lab">SAME INPUT · ทุกโมเดล</div>
       <p><b>รูป 2 รูป</b> คน + บ้าน · <b>prompt</b> UGC selfie แนวตั้ง พูดไทย lip sync (<a href="ai-video.html">ดู prompt เต็ม</a>) · <b>บทพูด</b> "สวัสดีค่ะ วันนี้พามาดูบ้านหลังนี้ค่ะ สองชั้น สไตล์คลาสสิก หน้าบ้านกว้างมาก จอดรถได้สองคันสบายๆ ใครสนใจทักมาได้เลยนะคะ"</p>
       <div class="chips">
-        <span class="chip">โมเดลสร้างคลิป <b>8</b> · เครื่องมือแก้คลิป <b>5</b></span>
+        <span class="chip">โมเดลสร้างคลิป <b>8</b> · เครื่องมือแก้คลิป <b>4</b></span>
         <span class="chip">อันดับ 1 แบบสมดุล <b>Omni Flash 1.1</b></span>
         <span class="chip">เครดิตที่จ่ายจริง <b>512</b> ≈ <b>฿660</b></span>
         <span class="chip">ทดสอบ <b>22 ก.ย. 2569</b></span>
@@ -189,7 +189,7 @@
     </div>
   </div>
 </div>
-<p class="ds-note" style="margin:10px 0 0">โมเดลที่รับได้แค่รูปเดียว (Veo · Kling · Grok) ใช้เฟรมแรกของคลิปอันดับ 1 เป็นภาพตั้งต้น เพื่อให้คนและบ้านเหมือนกันทุกตัว · เครื่องมือแก้คลิปเดิม (Genjutsu · Kling Omni Edit · Extend) แยกไว้ใน<a href="#special">หัวข้อถัดไป</a> เพราะเป็นคนละโจทย์</p>
+<p class="ds-note" style="margin:10px 0 0">โมเดลที่รับได้แค่รูปเดียว (Veo · Kling · Grok) ใช้เฟรมแรกของคลิปอันดับ 1 เป็นภาพตั้งต้น เพื่อให้คนและบ้านเหมือนกันทุกตัว · เครื่องมือแก้คลิปเดิม (Genjutsu · Extend · Viral preset) แยกไว้ใน<a href="#special">หัวข้อถัดไป</a> เพราะเป็นคนละโจทย์</p>
 </section>
 
 <section id="special" data-toc="แก้คลิปเดิม (ไม่นับคะแนน)">
@@ -241,16 +241,6 @@
     </div>
   </div>
   <div class="vcard">
-    <video controls preload="metadata" src="https://d8j0ntlcm91z4.cloudfront.net/user_3FvAUpXpCnZUma0p4ZCgNFe1CGD/hf_20260922_224517_8dc9c414-276f-410a-b6c8-73585a2ee64f.mp4#t=0.1"></video><span class="out">คลิป #01 → คนใหม่</span>
-    <div class="body">
-      <div class="rank lab">Kling 3.0 Omni Edit</div>
-      <div class="name">เปลี่ยนคน เสียงเดิม ฉากเดิม</div>
-      <div class="row"><span>ใส่: คลิปต้นแบบ + รูปคนใหม่ · pro</span><span class="credits" data-cr="16">16 credits</span></div>
-      <span class="badge pass"><svg><use href="#i-pass"/></svg>PASS</span>
-      <div class="note">โมเดลแก้คลิป ไม่ใช่โมเดลสร้างคลิป — คงเสียงต้นฉบับไว้ เลยพูดไทยได้ แม้ Kling ตอนสร้างเองจะพูดเป็นเขมร · ถูกกว่า Genjutsu 3.5 เท่า และเร็วกว่า</div>
-    </div>
-  </div>
-  <div class="vcard">
     <video controls preload="metadata" src="https://cdn.higgsfield.ai/cinematic/splice/job/d310e5db-30e8-4124-aed9-a1ab6be56caf/spliced.mp4#t=0.1"></video><span class="out">คลิป #01 → ยาวขึ้น</span>
     <div class="body">
       <div class="rank lab">Omni Flash 1.1 · Extend</div>
@@ -261,7 +251,7 @@
     </div>
   </div>
 </div>
-<div class="lesson"><b>ใช้ตัวไหนเมื่อไหร่</b> — มีคลิปดีอยู่แล้ว อยากได้หลายเวอร์ชัน → Genjutsu หรือ Kling Omni Edit (ถูกกว่า) · อยากได้คลิปแฟชั่น/โชว์สินค้าเปลี่ยนลุคเร็วๆ → Viral preset · Genjutsu กับ Viral preset ใช้ได้ใน Higgsfield เท่านั้น</div>
+<div class="lesson"><b>ใช้ตัวไหนเมื่อไหร่</b> — มีคลิปดีอยู่แล้ว อยากได้หลายเวอร์ชัน → Genjutsu · อยากได้คลิปแฟชั่น/โชว์สินค้าเปลี่ยนลุคเร็วๆ → Viral preset · Genjutsu กับ Viral preset ใช้ได้ใน Higgsfield เท่านั้น</div>
 </section>
 
 <section id="lessons" data-toc="03 · สิ่งที่ได้จากการเทียบ">
@@ -271,7 +261,6 @@
 <div class="lesson"><b>ถูกไม่ได้แปลว่าแย่</b> — อันดับ 1 (24 credits) ถูกกว่าตัวที่แพงที่สุด (Veo 3.1, 80 credits) 3.3 เท่า และผ่านเหมือนกัน · Veo คุ้มเมื่ออยากได้ภาพสวยระดับภาพยนตร์</div>
 <div class="lesson"><b>ภาษาไทยคือด่านแรก</b> — Kling พูดออกมาเป็นเขมร Seedance เพี้ยนแบบต่างชาติ Grok เป็นเสียงคอม · โมเดลที่เก่งภาพไม่ได้แปลว่าเก่งเสียงไทย</div>
 <div class="lesson"><b>รับหลายรูปได้ = ประหยัดขั้นตอน</b> — Omni Flash ใส่รูปคน + รูปบ้านได้เลย ส่วน Veo/Kling/Grok ต้องเตรียมภาพนิ่งก่อนอีก 1 ขั้น</div>
-<div class="lesson"><b>โมเดลเดียวกัน คนละโหมด ผลคนละเรื่อง</b> — Kling 3.0 เจนจากศูนย์พูดเป็นเขมร แต่โหมดแก้คลิปเดิม (คงเสียงต้นฉบับ) ใช้ได้ดี — คำตอบไม่ใช่ "แบรนด์ไหน" แต่คือ "ให้มันสร้างอะไร"</div>
 </div>
 </section>
 
@@ -282,7 +271,7 @@
     <details><summary>โมเดล AI สร้างวิดีโอตัวไหนพูดภาษาไทยได้ชัดที่สุด</summary><p>จากการให้คะแนน 8 โมเดลด้วยโจทย์เดียวกัน Gemini Omni Flash 1.1 ให้เสียงไทยชัด ปากตรง และภาพ smooth ที่สุด ในราคา 24 credits ต่อคลิป 8 วินาที รองลงมาคือ Gemini Omni Flash รุ่นเดิม ส่วน Kling 3.0 พูดไทยออกมาเป็นสำเนียงเขมร และ Seedance 2.5 เพี้ยนแบบชาวต่างชาติพูดไทย</p></details>
     <details><summary>Google Veo 3.1 พูดไทยได้ไหม</summary><p>ได้ และทำได้ดี — เสียงไทยชัดมาก ภาพชัดแสงสวยแบบภาพยนตร์ ท่าทางเป็นธรรมชาติ ผ่านการทดสอบ แต่เป็นโมเดลที่แพงที่สุด (80 credits) แพงกว่า Gemini Omni Flash 1.1 ประมาณ 3.3 เท่า และรับรูปอ้างอิงได้แค่รูปเดียว ต้องทำภาพตั้งต้นก่อน · เหมาะกับงานที่อยากได้ภาพระดับโฆษณา</p></details>
     <details><summary>ฟีเจอร์ Extend ต่อความยาววิดีโอ AI ใช้ได้ไหม</summary><p>ต่อภาพได้ แต่เสียงถูกสร้างใหม่ทุกครั้ง ทำให้เสียงและสำเนียงเปลี่ยน วิธีที่ใช้ได้คือเจนหลายคลิปสั้นจากรูปอ้างอิงชุดเดิมและโมเดลเดิม แล้วนำมาตัดต่อ</p></details>
-    <details><summary>ถ้ามีคลิปที่ดีแล้ว เปลี่ยนพรีเซนเตอร์เป็นคนอื่นได้ไหม</summary><p>ได้ ด้วย motion transfer เช่น Genjutsu ของ Higgsfield (56 credits) หรือ Kling 3.0 Omni Edit (16 credits) ซึ่งคงเสียงและการเคลื่อนไหวเดิม เปลี่ยนเฉพาะหน้าคน</p></details>
+    <details><summary>ถ้ามีคลิปที่ดีแล้ว เปลี่ยนพรีเซนเตอร์เป็นคนอื่นได้ไหม</summary><p>ได้ ด้วย motion transfer เช่น Genjutsu ของ Higgsfield (56 credits) ซึ่งคงท่าทางเดิม เปลี่ยนเป็นคนใหม่ได้จริง (ฉากกับโทนสีอาจเปลี่ยนตาม) หรือ Genjutsu Replace Object (63 credits) ที่คงฉากเดิมทุกอย่าง</p></details>
   </div>
 </section>
 

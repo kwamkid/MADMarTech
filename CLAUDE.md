@@ -37,7 +37,7 @@
 index.html            หน้าแรก — hero วิดีโอพื้นหลัง (.hero-bg) + ล่าสุด + ทำไมต้องเนิร์ด
 ai-video.html         "ทำคลิปด้วย AI" — คู่มือทำคลิปพูดไทย 6 ขั้น จากคลิปจริง (รีวิวบ้าน 85s · storyboard 9 ช็อต · คลิป 9 ตัว · ต้นทุนจริง 520 cr) + คลัง prompt 5 ตัว · HowTo + VideoObject · ขั้น 5 สรุปสั้นแล้วลิงก์ไป ai-edit
 ai-edit.html          "ตัดต่อด้วย AI" — Claude Code ตัดต่อใน CapCut (เขียน draft ผ่าน terminal) 6 ขั้น · คำสั่งจริง · ภาพหน้าจอ + ซูม timeline · FAQ + FAQPage · VideoObject · คำหลัก "AI ตัดต่อวิดีโอ"
-compare.html          Model Compare — **decision matrix 8 โมเดลสร้างคลิป** (6 เกณฑ์ 1–5 × น้ำหนัก = /100 · ปุ่มสมดุล/คุ้ม/ภาพสวย/เสียงไทย (ไม่มี slider — อาจารย์ว่าดูแล้วงง) · `[data-matrix]` ใน site.js · คะแนนร่างจากโน้ต รออาจารย์ตรวจ 25 ก.ย.) + การ์ดคลิป 8 ตัวเรียงตามคะแนน (ไม่มี badge PASS/FAIL แล้ว — ใช้คะแนนแทน · หัวข้อแก้คลิปเดิมยังมี badge) + หัวข้อ "แก้คลิปเดิม" (Genjutsu MC/RO · Kling Omni Edit · Extend · Viral preset — ไม่นับคะแนน) · FAQ + ItemList schema
+compare.html          Model Compare — **decision matrix 8 โมเดลสร้างคลิป** (6 เกณฑ์ 1–5 × น้ำหนัก = /100 · ปุ่มสมดุล/คุ้ม/ภาพสวย/เสียงไทย (ไม่มี slider — อาจารย์ว่าดูแล้วงง) · `[data-matrix]` ใน site.js · คะแนนร่างจากโน้ต รออาจารย์ตรวจ 25 ก.ย.) + การ์ดคลิป 8 ตัวเรียงตามคะแนน (ไม่มี badge PASS/FAIL แล้ว — ใช้คะแนนแทน · หัวข้อแก้คลิปเดิมยังมี badge) + หัวข้อ "แก้คลิปเดิม" (Genjutsu MC/RO · Extend · Viral preset — ไม่นับคะแนน · เอา Kling Omni Edit ออก 25 ก.ย. เพราะคลิปเทสต์ไม่ได้เปลี่ยนเป็นคนใหม่จริง) · FAQ + ItemList schema
 
 หน้าที่มีตารางกว้างใส่ `<body … data-wide>` = เนื้อหากว้าง 1440px (ใช้ที่ compare) · hero ที่มีคลิป 9:16 ใช้ `.hero.split.v916` (คลิป 180px)
 
@@ -139,7 +139,7 @@ Veo/Kling/Grok รับรูปเดียว → ใช้เฟรมแร
 
 - Model id ที่ใช้: `gemini_omni_flash_1_1` (mode: reference-to-video / edit) · `kling_video_edit` (Kling 3.0 Omni Edit, roles video_references + image_references) · `hf_mult_motion_control` (Genjutsu) · `seedance_2_5` (mode omni_reference)
 - Prompt โครง 6 ส่วน (รูปแบบ · คน+ฉาก "from the reference photo" · การเคลื่อนไหว · "clear natural Thai with accurate lip sync" · บทพูดในเครื่องหมายคำพูดนำด้วย She says in Thai: · "Native Thai speech audio only, no music, no subtitles")
-- Teaser หน้า Compare: `assets/videos/compare/teaser-8-models.mp4` (8 โมเดล × 3 วิ · ซับ MODEL/CREDITS/SCORE ทำเป็น PNG ด้วย PIL แล้ว overlay เพราะ ffmpeg ของ Homebrew ไม่มี drawtext) · คลิปเต็ม 8 ตัว 540p อยู่ `assets/videos/compare/NN-slug.mp4/.jpg` · ถ้าคะแนนเปลี่ยน ต้องทำ teaser ใหม่ (สคริปต์เดิมอยู่ใน scratchpad ของ session 25 ก.ย. — เขียนใหม่ได้จากคำอธิบายนี้)
+- Teaser หน้า Compare: hero ใช้ `teaser-8-models-16x9.mp4` (1280×720 · คลิปซ้าย ข้อมูลขวา: ชื่อ · SCORE · CREDITS · MAX · จุดลำดับ) · เวอร์ชัน 9:16 `teaser-8-models.mp4` เก็บไว้ลง Reels/TikTok (8 โมเดล × 3 วิ · ซับ MODEL/CREDITS/SCORE ทำเป็น PNG ด้วย PIL แล้ว overlay เพราะ ffmpeg ของ Homebrew ไม่มี drawtext) · คลิปเต็ม 8 ตัว 540p อยู่ `assets/videos/compare/NN-slug.mp4/.jpg` · ถ้าคะแนนเปลี่ยน ต้องทำ teaser ใหม่ (สคริปต์เดิมอยู่ใน scratchpad ของ session 25 ก.ย. — เขียนใหม่ได้จากคำอธิบายนี้)
 - ตัวการ์ตูนบนฉากจริง: ล็อกสไตล์ใน prompt "flat 2D black-and-white line-art, thick outlines, no 3D, like a hand-drawn sticker composited into a real film"
 - ยิงผ่าน MCP บางครั้งเด้ง preset แทน → ส่งซ้ำพร้อม `declined_preset_id` (ไม่คิดเงินซ้ำ)
 - ชื่อในบิล ≠ ชื่อปุ่ม (Extend = "Cinematic Video Editor" 70 · ฝน = "Change weather" 36) — เช็ค Transactions เสมอ

@@ -618,9 +618,10 @@ table.dt th.nosort{cursor:default}table.dt th.nosort::after{display:none}
 .vthumb:hover img{transform:scale(1.06)}
 .matrix td.mdl .mdl-in{display:flex;align-items:center;gap:12px}
 /* hero with a 9:16 teaser on the right */
-.hero.split.v916{grid-template-columns:minmax(0,1fr) 300px;align-items:start}
-.hero-media.v916 video{aspect-ratio:9/16}
-@media(max-width:860px){.hero.split.v916{grid-template-columns:minmax(0,1fr)}.hero-media.v916{max-width:320px;margin:0 auto}}
+/* shared page hero with a 9:16 clip on the right (compare · ai-video · ai-edit) */
+.hero.split.v916{grid-template-columns:minmax(0,1fr) 220px;gap:40px;align-items:center}
+.hero-media.v916 video,.hero.split.v916>video{width:100%;aspect-ratio:9/16;object-fit:cover;background:#111;border-radius:var(--r);display:block}
+@media(max-width:860px){.hero.split.v916{grid-template-columns:minmax(0,1fr);gap:20px}.hero-media.v916,.hero.split.v916>video{max-width:240px;margin:0 auto}}
 
 .lb-nav{position:absolute;top:50%;transform:translateY(-50%);width:48px;height:64px;border:0;border-radius:var(--r-sm);background:rgba(255,255,255,.12);color:#fff;font-size:40px;line-height:1;cursor:pointer;font-family:inherit}
 .lb-nav:hover{background:rgba(255,255,255,.24)}

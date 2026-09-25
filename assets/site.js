@@ -199,11 +199,12 @@
   // --- decision matrix ([data-matrix]): preset buttons set weights x scores (1-5) = total /100, re-rank live ---
   document.querySelectorAll('[data-matrix]').forEach(function(mx){
     var presets = mx.querySelectorAll('.mx-presets button'), body = mx.querySelector('tbody');
-    // score pills: 1 = red · 3 = yellow · 5 = green (hue 5 → 145, never reaches blue)
+    // score pills: 1 = red (hue 5) · 3 = yellow (48) · 5 = green (145) — never reaches blue
     mx.querySelectorAll('td.sc').forEach(function(td){
       var v = parseFloat(td.textContent); if (isNaN(v)) return;
       td.setAttribute('data-sort', v);
-      td.innerHTML = '<span style="--h:' + Math.round(5 + (Math.min(Math.max(v, 1), 5) - 1) / 4 * 140) + '">' + td.textContent + '</span>';
+      var c = Math.min(Math.max(v, 1), 5), h = c <= 3 ? 5 + (c - 1) / 2 * 43 : 48 + (c - 3) / 2 * 97;
+      td.innerHTML = '<span style="--h:' + Math.round(h) + '">' + td.textContent + '</span>';
     });
     var renumber = function(){
       Array.prototype.forEach.call(body.rows, function(r, i){ r.querySelector('.rk').textContent = i + 1; r.querySelector('.mdl').setAttribute('data-rank', i + 1); });
